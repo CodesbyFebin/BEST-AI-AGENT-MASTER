@@ -1,8 +1,16 @@
-.next/
 node_modules/
-.env
-.env.local
+dist/
 *.log
+.env
 .DS_Store
-coverage/
-.vercel/
+.vite/
+reports/generated/
+# Security
+*.pem
+*.key
+*.pfx
+.env.local
+.env.production
+.aws/
+account
+.next/
