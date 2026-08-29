@@ -1,10 +1,14 @@
 # BestAIAgent.in
 
+![Hero banner](public/readme-banner.svg)
+
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)
 ![Static catalog](https://img.shields.io/badge/type-static%20catalog-22c55e)
 ![License](https://img.shields.io/badge/license-not%20yet%20specified-lightgrey)
 ![CI](https://img.shields.io/github/actions/workflow/status/CodesbyFebin/BESTAIAGENT-MASTER/ci.yml?label=CI&logo=github)
+![Stars](https://img.shields.io/github/stars/CodesbyFebin/BESTAIAGENT-MASTER?style=social)
+![Last commit](https://img.shields.io/github/last-commit/CodesbyFebin/BESTAIAGENT-MASTER)
 
 > Evidence-first authority graph for AI agents, models, frameworks, providers and MCP infrastructure. Unknown stays unknown, no synthetic rankings, no fake reviews.
 

@@ -11,30 +11,12 @@ const nextConfig: NextConfig = {
       permanent: true
     }));
   },
-  async rewrites() {
-    return [
-      { source: "/blog-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/image-sitemap.xml", destination: "/sitemap.xml" },
-      { source: "/free-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/coding-sitemap.xml", destination: "/sitemap-agents.xml" },
-      { source: "/research-sitemap.xml", destination: "/sitemap-research.xml" },
-      { source: "/reddit-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/industry-sitemap.xml", destination: "/sitemap-categories.xml" },
-      { source: "/longtail-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/entity-sitemap.xml", destination: "/sitemap.xml" },
-      { source: "/calculators-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/hub-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/author-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/mcp-sitemap.xml", destination: "/sitemap-mcp.xml" },
-      { source: "/glossary-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/tutorials-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/alternatives-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/pricing-sitemap.xml", destination: "/sitemap-pages.xml" },
-      { source: "/comparison-sitemap.xml", destination: "/sitemap-comparisons.xml" },
-      { source: "/tool-sitemap.xml", destination: "/sitemap.xml" },
-      { source: "/ai-agent-sitemap.xml", destination: "/sitemap-agents.xml" }
-    ];
-  },
+  // Intentionally no sitemap-alias rewrites here. `/sitemap.xml` (app/sitemap.ts)
+  // is the single canonical sitemap; Google Search Console flagged duplicate-
+  // canonical and discovered-not-indexed issues traced back to a prior set of
+  // ~20 fake sitemap alias URLs (e.g. /reddit-sitemap.xml, /blog-sitemap.xml)
+  // that all rewrote to the same handful of real sitemaps but were never
+  // linked from robots.txt or sitemap.xml itself. Do not re-add that pattern.
   async headers() {
     return [{
       source: "/:path*",
