@@ -38,7 +38,8 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
     description: page.description,
     alternates: { canonical: `/${slug}` },
     robots: { index: cluster ? false : (page as { index?: boolean }).index !== false, follow: true },
-    openGraph: { title: page.title, description: page.description, url: `/${slug}`, type: "article" }
+    openGraph: { title: page.title, description: page.description, url: `/${slug}`, type: "article" },
+    twitter: { card: "summary_large_image", title: page.title, description: page.description }
   };
 }
 
@@ -75,20 +76,31 @@ export default async function Page({ params }: P) {
 
   return <div className="shell detail">
     <div className="breadcrumbs"><Link href="/">Home</Link> / {page.title}</div>
-    <JsonLd data={{
-      "@type": "WebPage",
-      name: page.title,
-      url,
-      description: page.description,
-      isPartOf: { "@type": "WebSite", name: "BestAIAgent.in", url: SITE.url },
-      breadcrumb: {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
-          { "@type": "ListItem", position: 2, name: page.title, item: url }
-        ]
-      }
-    }} />
+    <JsonLd data={[
+      {
+        "@type": "WebPage",
+        name: page.title,
+        url,
+        description: page.description,
+        ...(authority ? { dateModified: authority.lastReviewed } : {}),
+        isPartOf: { "@type": "WebSite", name: "BestAIAgent.in", url: SITE.url },
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+            { "@type": "ListItem", position: 2, name: page.title, item: url }
+          ]
+        }
+      },
+      ...(authority ? [{
+        "@type": "FAQPage",
+        mainEntity: [{
+          "@type": "Question",
+          name: page.title,
+          acceptedAnswer: { "@type": "Answer", text: authority.directAnswer }
+        }]
+      }] : [])
+    ]} />
 
     <p className="eyebrow">{authority ? "Evidence-first authority page" : "Authority page"}</p>
     <h1 style={{ fontSize: "48px" }}>{page.title}</h1>

@@ -8,7 +8,10 @@ export const categories = [
   ["sales", "Sales agents", "Sales workflow agent tooling. Results and ROI are not estimated without evidence."],
   ["marketing", "Marketing agents", "Marketing workflow tooling. No fabricated performance claims."],
   ["research", "Research agents", "Research and browsing agents with source-linked identity."],
-  ["automation", "Automation agents", "Workflow automation and agent orchestration tools."]
+  ["automation", "Automation agents", "Workflow automation and agent orchestration tools."],
+  ["finance", "Finance AI agents", "AI agents applied to finance workflows — bookkeeping, invoicing, reconciliation and reporting. No fabricated ROI or compliance claims."],
+  ["open-source", "Open source AI agents", "AI agents with publicly available, licensed source code. Listed by verified repository identity, not by license claim alone."],
+  ["creative-design", "Creative & design agents", "AI agents applied to graphic design, visual and creative asset generation. No fabricated licensing or usage-rights claims."]
 ] as const;
 
 export const legacyPages: Record<string, { title: string; description: string; body: string[]; index: boolean }> = {

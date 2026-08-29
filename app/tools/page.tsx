@@ -51,6 +51,10 @@ export default function ToolsPage() {
       <h2>How we evaluate AI tools</h2>
       <p>Every tool is evaluated on capability (40%), ease of use (20%), pricing transparency (15%), India Fit (15%), and evidence quality (10%). Each dimension is scored independently on a 0-10 scale, then combined into a composite editorial score.</p>
       <p>India Fit verifies INR pricing availability, UPI payment support, Indic language capabilities, and DPDP Act compliance.</p>
+      <h2>How to use this directory</h2>
+      <p>Treat the category groupings as a starting shortlist, not a final decision. Tools in the same category often solve genuinely different problems at different scales — a terminal-based pair-programming tool and a repository-scale coding agent both sit under &quot;Coding &amp; Development&quot; but suit different workflows. Before adopting any tool listed here for a production use case, check its own pricing page directly (prices and free-tier limits change faster than any directory can track), confirm the specific capability you need is documented rather than inferred from the category description, and check the tool&apos;s entry in the frameworks, models, or agents directory on this site if it has one, since that page carries source-linked evidence rather than a category summary.</p>
+      <h2>Coding tools vs. voice tools vs. automation tools</h2>
+      <p>The four categories below aren&apos;t interchangeable layers of the same stack — they solve different problems and are frequently combined rather than chosen between. A typical production agent stack pulls from more than one category: a coding tool to build and maintain the agent&apos;s own codebase, an infrastructure tool (a vector database) to give it retrieval memory, and a business automation tool to trigger it from an external event. Voice tools are the odd one out — they matter specifically for agents with a spoken interface (call center automation, voice assistants) and are irrelevant to a purely text- or API-driven agent.</p>
     </div>
 
     {toolCategories.map((category) => (

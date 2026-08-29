@@ -287,4 +287,30 @@ export const trustPages: Record<string, TrustPage> = {
       { type: "ul", items: ["Page last reviewed: 2026-08-22", "Next scheduled review: 2027-02-22", "Reviewer: BestAIAgent.in editorial board"] },
     ]
   },
+
+  "how-to-verify": {
+    title: "How to Verify a Claim on BestAIAgent.in",
+    description: "A practical, step-by-step guide to checking any claim on this site yourself, rather than taking a published field at face value.",
+    blocks: [
+      { type: "p", text: "Every other trust page on this site documents how we produce and gate content. This page is different: it's a walkthrough for you, the reader, on how to independently check whether a specific claim on a specific page actually holds up — in under a minute, using nothing but the page itself and its cited source." },
+      { type: "h2", text: "Step 1: Find the receipt, not just the claim" },
+      { type: "p", text: "On an entity page (an agent, model, framework or provider), look for the evidence block near the claim — it names a publisher, a retrieval date, and links to a primary source. If a field has no such block, it means the field is unknown by this site's own rule, not that the claim is unverified-but-true — treat it as genuinely unknown." },
+      { type: "h2", text: "Step 2: Open the primary source directly" },
+      { type: "p", text: "Click through to the linked source and read the passage yourself, rather than trusting our paraphrase of it. This matters most for anything volatile — price, plan limits, model version — since these can change after our retrieval date." },
+      { type: "h2", text: "Step 3: Check the retrieval date against how fast the fact moves" },
+      { type: "p", text: "A pricing fact retrieved 90 days ago is a different risk than an identity fact retrieved 90 days ago — see [](/trust/freshness-policy) for the specific re-verification windows we apply per claim type. If a page looks stale for its claim type, that's worth flagging as a correction rather than assuming it still holds." },
+      { type: "h2", text: "Step 4: Distinguish a fact from an editorial judgment" },
+      { type: "p", text: "A number with a citation is a fact. A recommendation, a \"best for X\" framing, or a comparative verdict is an editorial judgment built on top of facts — it should be labeled as such on the page. If a judgment reads like a fact with no methodology attached, that's a real defect worth reporting." },
+      { type: "h2", text: "Step 5: Report what doesn't hold up" },
+      { type: "p", text: "If a source doesn't say what the page claims it says, or the retrieval date is older than the freshness window for that claim type, use [](/trust/corrections) to report it with the specific field and the source you checked. This is the same reporting path a reviewer would use internally." },
+      { type: "h2", text: "What verification does not mean" },
+      { type: "ul", items: ["A verified identity does not mean every field on that entity's page is verified — verification is field-level, not whole-page.", "A primary source can still be wrong; verification confirms we cited it accurately, not that the source itself is infallible.", "An evidence-ready comparison does not mean a universal winner — see [](/trust/comparison-methodology) for what a comparison page does and doesn't assert."] },
+      { type: "h2", text: "Related methodology pages" },
+      { type: "ul", items: ["[Evidence methodology](/trust/evidence-methodology)", "[Source classification](/trust/source-classification)", "[Freshness policy](/trust/freshness-policy)", "[Corrections](/trust/corrections)", "[Rating methodology](/trust/rating-methodology)"] },
+      { type: "h2", text: "Source receipts" },
+      { type: "ul", items: ["Internal — [Evidence methodology](/trust/evidence-methodology) (this site, retrieved 2026-08-29). The receipt structure this page teaches readers to check."] },
+      { type: "h2", text: "Last reviewed" },
+      { type: "ul", items: ["Page last reviewed: 2026-08-29", "Next scheduled review: 2027-02-28", "Reviewer: BestAIAgent.in editorial board"] },
+    ]
+  },
 };

@@ -48,6 +48,14 @@ export default function LearningPage() {
       <p className="lead">Tutorials, guides, and courses for AI agent development, from foundational concepts to advanced deployment, with a focus on the Indian AI ecosystem.</p>
     </section>
 
+    <div className="prose">
+      <h2>How to choose a starting point</h2>
+      <p>The three paths below assume different starting knowledge, not different ambitions — an experienced backend engineer can often start at Intermediate even with zero prior agent-specific work, while someone new to both programming and AI should expect the Beginner path to take longer than the listed 2-4 weeks. The paths are sequenced by dependency, not by difficulty label: Intermediate assumes you can already call an LLM API and handle a JSON response, and Advanced assumes you have something running that you now need to operate reliably rather than something to build from scratch.</p>
+      <p>A common mistake is starting at Advanced because a production deadline is looming. Deployment, security, and compliance content only pays off once there is a working agent behind it — reading about high availability for a system that doesn&apos;t exist yet just delays the point where you find out what actually breaks. If time is short, build the smallest working version first (Beginner path, module one and two), then jump straight to the specific Advanced module the deadline requires.</p>
+      <h2>What this page does not do</h2>
+      <p>This is a curated map of learning paths and external references, not a course platform — there is no login, no progress tracking, and no certificate. Each module description tells you what the module covers so you can judge relevance before spending time on it; the linked external resources are the official documentation and tutorials for the tools named, not summaries or paraphrases we&apos;ve written ourselves. Where a module references a specific product (Sarvam-30B, Krutrim-2, Bhashini, CrewAI, LangGraph), cross-check its current status on that product&apos;s own directory page before committing significant time, since product capabilities and availability change faster than a static learning path can.</p>
+    </div>
+
     {paths.map((p) => (
       <section key={p.level} style={{ marginBottom: 28 }}>
         <h2>Learning path: {p.level} <span className="muted" style={{ fontSize: 13, fontWeight: 400 }}>· {p.duration}</span></h2>

@@ -21,6 +21,9 @@ export default function GuidesIndexPage() {
       <h1>AI agent guides</h1>
       <p className="lead">Evidence-ready reference guides on agent architecture, workflows, memory, and orchestration. These are reachable by direct link but stay noindex until they clear editorial publication review — see the <Link href="/trust/editorial-methodology">editorial methodology</Link>.</p>
     </section>
+    <div className="prose">
+      <p>A <strong>pillar</strong> guide covers a broad topic end to end (what an AI agent is, at the level a newcomer needs). A <strong>cluster</strong> guide goes deep on one sub-topic the pillar references (agentic workflows, tool calling, multi-agent orchestration) and links back to the pillar for context. Both carry the same content-quality bar as any other page — the only reason they&apos;re noindex here is that a named editor hasn&apos;t yet signed off on the current draft, not that the content itself is unreliable.</p>
+    </div>
     {pillar.length > 0 && <section style={{ marginBottom: 28 }}>
       <h2>Pillar</h2>
       <div className="grid">

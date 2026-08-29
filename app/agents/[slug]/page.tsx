@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { StatusBadge } from "@/components/StatusBadge";
+import { EntityLogo } from "@/components/EntityLogo";
 import { entities, getEntity, getEvidence, legacyAgentSources } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
 
@@ -22,11 +23,14 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
   if (!entity && !legacy) return { title: "Not found", robots: { index: false, follow: true } };
   const name = entity?.name ?? legacy!.name;
   const summary = entity?.summary ?? legacy!.summary;
+  const title = `${name} — AI agent evidence`;
   return {
-    title: `${name} — AI agent evidence`,
+    title,
     description: summary,
     alternates: { canonical: `/agents/${slug}` },
-    robots: { index: Boolean(entity?.verification === "verified"), follow: true }
+    robots: { index: Boolean(entity?.verification === "verified"), follow: true },
+    openGraph: { title, description: summary, url: `/agents/${slug}`, type: "article" },
+    twitter: { card: "summary_large_image", title, description: summary }
   };
 }
 
@@ -39,8 +43,9 @@ export default async function Page({ params }: P) {
     if (!legacy) return notFound();
     return <div className="shell detail">
       <div className="breadcrumbs"><Link href="/">Home</Link> / <Link href="/agents">Agents</Link> / {legacy.name}</div>
-      <JsonLd data={{ "@type": "WebPage", name: legacy.name, url: `${SITE.url}/agents/${legacy.slug}`, about: { "@type": "Thing", name: legacy.name } }} />
+      <JsonLd data={{ "@type": "WebPage", name: legacy.name, url: `${SITE.url}/agents/${legacy.slug}`, about: { "@type": "SoftwareApplication", name: legacy.name, url: legacy.sourceUrl }, breadcrumb: { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE.url }, { "@type": "ListItem", position: 2, name: "Agents", item: `${SITE.url}/agents` }, { "@type": "ListItem", position: 3, name: legacy.name, item: `${SITE.url}/agents/${legacy.slug}` }] } }} />
       <section className="detailHero">
+        <EntityLogo name={legacy.name} sourceUrl={legacy.sourceUrl} developer={legacy.developer} size={56} />
         <p className="eyebrow">Legacy canonical · source-linked</p><h1>{legacy.name}</h1><p className="lead">{legacy.summary}</p>
         <div className="tagRow"><StatusBadge state="source-linked" />{legacy.categories.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
         <p><a className="button" href={legacy.sourceUrl}>First-party source ↗</a></p>
@@ -52,8 +57,9 @@ export default async function Page({ params }: P) {
   const receipts = getEvidence(entity.id);
   return <div className="shell detail">
     <div className="breadcrumbs"><Link href="/">Home</Link> / <Link href="/agents">Agents</Link> / {entity.name}</div>
-    <JsonLd data={{ "@type": "WebPage", name: entity.name, url: `${SITE.url}/agents/${entity.slug}`, description: entity.summary, about: { "@type": "SoftwareApplication", name: entity.name } }} />
+    <JsonLd data={{ "@type": "WebPage", name: entity.name, url: `${SITE.url}/agents/${entity.slug}`, description: entity.summary, about: { "@type": "SoftwareApplication", name: entity.name, url: entity.sourceUrl }, breadcrumb: { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE.url }, { "@type": "ListItem", position: 2, name: "Agents", item: `${SITE.url}/agents` }, { "@type": "ListItem", position: 3, name: entity.name, item: `${SITE.url}/agents/${entity.slug}` }] } }} />
     <section className="detailHero">
+      <EntityLogo name={entity.name} sourceUrl={entity.sourceUrl} developer={entity.developer} size={56} />
       <p className="eyebrow">Agent · verified identity</p><h1>{entity.name}</h1><p className="lead">{entity.summary}</p>
       <div className="tagRow"><StatusBadge state={entity.verification} />{entity.categories.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
       <p><a className="button" href={entity.sourceUrl}>Official upstream ↗</a></p>

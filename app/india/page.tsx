@@ -69,6 +69,16 @@ export default function Page(){
       </details>
     </section>
 
+    <section className="section">
+      <div className="sectionHead"><div><p className="eyebrow">Definitions</p><h2>What &quot;India-relevant&quot; actually means here</h2><p>Three distinct facts get collapsed into one badge on lower-rigor sites. This hub keeps them separate.</p></div></div>
+      <div className="grid">
+        <article className="card"><div className="categoryIcon">◉</div><h3>Indian-developed</h3><p>The publisher or lab is headquartered or primarily operating in India — a fact about the organization, not the model&apos;s language capability or deployment location.</p></article>
+        <article className="card"><div className="categoryIcon">◈</div><h3>Indic-capable</h3><p>The model has documented training or evaluation on one or more Indian languages — a fact about the model&apos;s scope, independent of who built it or where it runs.</p></article>
+        <article className="card"><div className="categoryIcon">◆</div><h3>India-deployable</h3><p>Inference can run on infrastructure located in India, or the vendor offers an India region — a fact about deployment options, not a compliance guarantee on its own.</p></article>
+      </div>
+      <p className="prose" style={{marginTop:16}}>A model can be Indian-developed without being Indic-capable (trained primarily on English data), Indic-capable without being Indian-developed (a foreign lab that added Hindi training data), or India-deployable without either (a global model offered through an India-region cloud endpoint). Treating these as one badge — as many product pages do — hides which specific fact is actually true, which is precisely the kind of collapse this hub&apos;s evidence gate is designed to prevent.</p>
+    </section>
+
     <section className="section sectionAlt" style={{marginInline:"calc(50% - 50vw)",paddingInline:"calc(50vw - 50%)"}}>
       <div className="sectionHead"><div><p className="eyebrow">Resources</p><h2>Developer resources for India</h2><p>Datasets, APIs, tutorials, and community resources for Indian AI developers.</p></div></div>
       <div className="grid">

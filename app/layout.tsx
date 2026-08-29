@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,5 +16,30 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
-  return <html lang="en-IN"><body><a href="#main" className="srOnly">Skip to content</a><Header /><main id="main">{children}</main><Footer /></body></html>;
+  return <html lang="en-IN"><body>
+    <a href="#main" className="srOnly">Skip to content</a>
+    <JsonLd data={[
+      {
+        "@type": "Organization",
+        "@id": `${SITE.url}/#organization`,
+        name: SITE.name,
+        url: SITE.url,
+        description: SITE.description
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE.url}/#website`,
+        name: SITE.name,
+        url: SITE.url,
+        description: SITE.description,
+        publisher: { "@id": `${SITE.url}/#organization` },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: { "@type": "EntryPoint", urlTemplate: `${SITE.url}/search?q={search_term_string}` },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]} />
+    <Header /><main id="main">{children}</main><Footer />
+  </body></html>;
 }

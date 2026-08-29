@@ -23,11 +23,14 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
   if (!entity && !legacy) return { title: "Not found", robots: { index: false, follow: true } };
   const name = entity?.name ?? legacy!.name;
   const summary = entity?.summary ?? legacy!.summary;
+  const title = `${name} — framework evidence`;
   return {
-    title: `${name} — framework evidence`,
+    title,
     description: summary,
     alternates: { canonical: `/frameworks/${slug}` },
-    robots: { index: Boolean(entity?.verification === "verified"), follow: true }
+    robots: { index: Boolean(entity?.verification === "verified"), follow: true },
+    openGraph: { title, description: summary, url: `/frameworks/${slug}`, type: "article" },
+    twitter: { card: "summary_large_image", title, description: summary }
   };
 }
 
@@ -40,7 +43,7 @@ export default async function Page({ params }: P) {
     if (!legacy) return notFound();
     return <div className="shell detail">
       <div className="breadcrumbs"><Link href="/">Home</Link> / <Link href="/frameworks">Frameworks</Link> / {legacy.name}</div>
-      <JsonLd data={{ "@type": "WebPage", name: legacy.name, url: `${SITE.url}/frameworks/${legacy.slug}`, about: { "@type": "Thing", name: legacy.name } }} />
+      <JsonLd data={{ "@type": "WebPage", name: legacy.name, url: `${SITE.url}/frameworks/${legacy.slug}`, about: { "@type": "SoftwareApplication", name: legacy.name, url: legacy.sourceUrl }, breadcrumb: { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE.url }, { "@type": "ListItem", position: 2, name: "Frameworks", item: `${SITE.url}/frameworks` }, { "@type": "ListItem", position: 3, name: legacy.name, item: `${SITE.url}/frameworks/${legacy.slug}` }] } }} />
       <section className="detailHero">
         <p className="eyebrow">Framework · imported, unverified</p><h1>{legacy.name}</h1><p className="lead">{legacy.summary}</p>
         <div className="tagRow"><StatusBadge state="unknown" />{legacy.categories.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>

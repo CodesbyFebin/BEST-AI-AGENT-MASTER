@@ -31,6 +31,12 @@ export default function IntegrationsPage() {
       <h2>Why integration matters</h2>
       <p>Model Context Protocol (MCP) provides a standardized way to connect agents to external systems — databases, APIs, file services, and enterprise tools — enabling workflows that combine AI reasoning with real-world data and actions.</p>
       <p>For Indian deployments, integration must also address data residency requirements under the DPDP Act. When integrating with services that process personal data of Indian residents, ensure data does not leave Indian jurisdictions without explicit consent.</p>
+      <h2>Before you start any of these guides</h2>
+      <p>Every guide below assumes an MCP-compatible client is already installed and running — the steps cover connecting that client to a specific server, not installing the client itself. If a step references a config file path (like <code>~/.cline_mcp_settings.json</code>), confirm the current path against that client&apos;s own documentation first: client config locations change across versions more often than the underlying MCP connection steps do.</p>
+      <h2>Read-only first, write access second</h2>
+      <p>Where a guide below touches a database, a payment system, or a code repository, start with the most restrictive access mode available — read-only database credentials, a scoped-down GitHub token, sandbox-mode payment keys — before granting write access. An agent that can only read cannot accidentally execute a destructive query, merge an unreviewed pull request, or trigger a real payment; expand scope only after you have watched the agent operate correctly under the restrictive mode.</p>
+      <h2>Common failure points</h2>
+      <p>Most first-time MCP integration failures fall into a small number of categories: a transport mismatch (client configured for stdio while the server expects Streamable HTTP, or vice versa), a credential with the wrong scope (a GitHub token missing the <code>repo</code> scope, a database user without <code>SELECT</code> on the target schema), or a firewall/network boundary blocking a remote server the client expects to reach directly. When a connection fails, check these three before assuming the server itself is broken — most MCP servers log a clear error for exactly this class of misconfiguration.</p>
     </div>
 
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
