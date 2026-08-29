@@ -1,5 +1,4 @@
 # BestAIAgent.in
-
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)
 ![Static catalog](https://img.shields.io/badge/type-static%20catalog-22c55e)
@@ -20,9 +19,7 @@ What it covers:
 - **Frameworks** — orchestration, RAG, fine-tuning and inference infrastructure
 - **MCP servers** — cataloged by source-link status, not capability claims
 - **Comparisons** — evidence-ready only when both sides are independently verified
-
 ## Production
-
 - Canonical domain: `https://bestaiagent.in`
 - WWW: `https://www.bestaiagent.in`
 - Vercel project: `bestaiagent-master` (team `projects555`)
@@ -80,7 +77,6 @@ python3 scripts/validate-jsonld.py   # validates every JSON-LD block in the buil
 | `/api/health`, `/api/search`, `/api/catalog` | JSON | — |
 
 ## Contributing
-
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) — it covers the two-tier verification model, exactly how to promote an entity from imported to verified with a real evidence hash, and what gets rejected on review (fabricated schema data, gate-lowering changes, unverifiable claims).
 
 ## License
