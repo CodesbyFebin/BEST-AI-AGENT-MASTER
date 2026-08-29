@@ -14,3 +14,4 @@ reports/generated/
 .aws/
 account
 .next/
+__pycache__/
