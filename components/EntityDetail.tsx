@@ -13,6 +13,7 @@ const schemaTypeForEntity: Record<Entity["type"], string> = {
   model: "SoftwareApplication",
   framework: "SoftwareApplication",
   provider: "Organization",
+  "mcp-server": "SoftwareApplication",
 };
 
 export function EntityDetail({ entity, label, parentHref, parentLabel }: { entity: Entity; label: string; parentHref: string; parentLabel: string }) {

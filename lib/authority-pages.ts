@@ -10726,5 +10726,187 @@ export const authorityPages: Record<string, AuthorityPage> = {
     ],
     index: true,
     lastReviewed: "2026-08-29"
-  }
+  },
+  "mcp-best-practices": {
+    title: "MCP Best Practices: Building and Deploying Servers Safely",
+    description: "Practical guidance for building or deploying a Model Context Protocol server, grounded in the protocol's own design goals rather than vendor marketing.",
+    directAnswer: "The core MCP best practices are: scope every tool to the narrowest permission it actually needs, write tool descriptions precise enough that a model won't guess wrong, require explicit human confirmation before any destructive or irreversible action, and keep resources (read-only context) separate from tools (actions) so a model can't accidentally trigger a side effect while just trying to read something.",
+    sections: [
+      { heading: "Least-privilege tool scoping", paragraphs: ["An MCP server should expose the smallest set of capabilities that accomplishes its purpose. A database server that only needs to answer read queries should not also expose a generic \"execute arbitrary SQL\" tool \u2014 that turns a narrow integration into an unbounded attack surface the moment a model is tricked (by a prompt injection in retrieved content, or by its own reasoning error) into misusing it."] },
+      { heading: "Separate resources, tools, and prompts", paragraphs: ["MCP distinguishes resources (context a client can read), tools (actions a model can invoke), and prompts (reusable templates). Collapsing these \u2014 for example, exposing a \"read file\" operation as a tool when it could be a resource \u2014 makes it harder for a client to reason about which operations are safe to call automatically versus which need confirmation."] },
+      { heading: "Human confirmation for irreversible actions", paragraphs: ["Sending an email, deleting a record, or pushing to a remote branch should not be a single unconfirmed tool call in most deployments. Servers that wrap destructive operations should design for a client-side confirmation step rather than assuming the calling model will always decide correctly \u2014 models can be wrong, and they can be manipulated by content they read during the same session."] },
+      { heading: "Transport and credential handling", bullets: ["Local stdio transport for tools that only need to run on the user's own machine, avoiding unnecessary network exposure.", "Authenticated HTTP transport (not bare stdio) for anything reachable over a network, with credentials scoped per-deployment rather than a single shared key.", "Never pass long-lived, broad-scope credentials to a server when a short-lived or narrowly-scoped token is available instead."] },
+      { heading: "Clear, specific tool descriptions", paragraphs: ["A model chooses which tool to call based on the description text alone. Vague descriptions (\"manage data\") produce unpredictable tool selection; specific descriptions (\"append a single row to the orders table; does not update or delete existing rows\") let a model \u2014 and a human reviewing the integration \u2014 reason correctly about what will actually happen."] }
+    ],
+    relatedLinks: [{ href: "/mcp", label: "MCP hub" }, { href: "/mcp/servers", label: "MCP server directory" }, { href: "/mcp-performance-optimization", label: "MCP performance optimization" }, { href: "/mcp-logging", label: "MCP server logging" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "mcp-database-server": {
+    title: "MCP Database Servers: What They Do and How to Deploy One Safely",
+    description: "What a database-oriented MCP server actually exposes to a model, and the guardrails worth putting in place before connecting one to production data.",
+    directAnswer: "A database MCP server exposes a database's schema and query capability to an MCP client as a set of tools and resources \u2014 typically \"list tables,\" \"describe schema,\" and a scoped query tool \u2014 so a model can answer questions about the data without a human writing SQL by hand. The important design decision is how far that query tool's permissions extend: a read-only, row-limited query tool is a very different risk profile from an unrestricted SQL execution tool.",
+    sections: [
+      { heading: "What a typical database MCP server exposes", bullets: ["Schema introspection \u2014 table and column names, types, and relationships, as read-only resources.", "A scoped query tool \u2014 usually read-only by default, sometimes with a row-count cap and a query timeout.", "In some implementations, a separate (and usually more carefully gated) write/mutation tool, distinct from the read path."] },
+      { heading: "Guardrails worth setting before production use", paragraphs: ["Connect with a database role that only has the privileges the integration actually needs \u2014 read-only for an analytics assistant, never a superuser or owner role. Set a statement timeout and a maximum row limit at the database connection level, not just in the tool's own logic, so a runaway or adversarial query can't consume unbounded resources. If the server supports write operations at all, keep them behind an explicit, separately-scoped tool rather than folding them into the same query interface used for reads."] },
+      { heading: "Where to find one", paragraphs: ["This site's MCP directory lists several database-oriented servers by source-link status, including Postgres, SQLite, Snowflake, and BigQuery integrations. Capability and security-posture claims for any specific server are not inferred from the fact that it's listed \u2014 check the upstream repository directly before connecting it to real data."] }
+    ],
+    relatedLinks: [{ href: "/mcp-best-practices", label: "MCP best practices" }, { href: "/mcp/servers", label: "MCP server directory" }, { href: "/mcp-performance-optimization", label: "MCP performance optimization" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "mcp-logging": {
+    title: "MCP Server Logging: What to Log and What to Redact",
+    description: "Logging guidance specific to MCP servers \u2014 a different risk profile from typical application logging, because every logged call may include model-generated arguments.",
+    directAnswer: "An MCP server should log which tool was called, when, by which session, and whether it succeeded or failed \u2014 but should redact or omit the actual argument and response payloads by default, since those routinely contain the full content a model was reasoning over, which can include secrets, personal data, or proprietary text the operator never intended to persist in a log file.",
+    sections: [
+      { heading: "What's worth logging", bullets: ["Tool name, timestamp, and session/correlation ID for every call.", "Success/failure status and error class (not full error payloads, which can leak internal details).", "Latency per call, useful for diagnosing which tool is the bottleneck in a slow agent session."] },
+      { heading: "What to redact or omit by default", paragraphs: ["Full tool arguments and responses are the highest-risk thing to log verbatim. A model's tool call can legitimately include API keys it was asked to use, personal data it retrieved from a resource, or proprietary source code it's editing. Logging all of that by default turns an operational log into a second, less-protected copy of sensitive data. Log a redacted summary (argument keys and lengths, not values) unless a specific field is explicitly whitelisted as safe to persist."] },
+      { heading: "Correlating logs across a multi-step agent session", paragraphs: ["A single user request often triggers many tool calls in sequence. A consistent session or trace ID across all of them \u2014 not just a per-call request ID \u2014 is what makes it possible to reconstruct what an agent actually did during an incident, rather than seeing an unordered pile of individually-correct-looking calls."] }
+    ],
+    relatedLinks: [{ href: "/mcp-best-practices", label: "MCP best practices" }, { href: "/mcp-performance-optimization", label: "MCP performance optimization" }, { href: "/mcp/servers", label: "MCP server directory" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "mcp-notion-integration": {
+    title: "Notion MCP Integration: How It Works and What to Check First",
+    description: "What the Notion MCP server exposes to an AI client, and what to verify before pointing it at a real Notion workspace.",
+    directAnswer: "The Notion MCP server exposes Notion pages, databases, and blocks to MCP-compatible clients as tools and resources, so a model can search, read, and (depending on the granted permissions) create or edit Notion content on a connected workspace's behalf. Because it can write to a real workspace, the integration token's scope \u2014 not just the server's code \u2014 determines the actual blast radius of a mistake or a manipulated tool call.",
+    sections: [
+      { heading: "What it typically exposes", bullets: ["Search across a connected Notion workspace.", "Read page and database content as structured blocks.", "Create, update, or append content \u2014 where the integration token has write access."] },
+      { heading: "Before connecting it to a real workspace", paragraphs: ["Create a dedicated Notion internal integration (rather than reusing a personal one) and share only the specific pages or databases it actually needs access to \u2014 Notion integrations are opt-in per page/database by default, and that scoping is the main safety control here, not anything the MCP server itself enforces. Review whether the integration needs write access at all; a read-only connection is sufficient for most \"ask questions about our docs\" use cases."] },
+      { heading: "Where to verify the current implementation", paragraphs: ["This site's MCP directory links the source-linked Notion MCP server entry directly to its upstream repository. Tool list, exact permission model, and maintenance status can change between releases \u2014 check the repository itself rather than relying on a cached description before deploying against production Notion content."] }
+    ],
+    relatedLinks: [{ href: "/mcp/servers/notion", label: "Notion MCP \u2014 source-linked entry" }, { href: "/mcp-best-practices", label: "MCP best practices" }, { href: "/mcp/servers", label: "MCP server directory" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "mcp-performance-optimization": {
+    title: "MCP Performance Optimization: Avoiding Slow Agent Sessions",
+    description: "Where MCP-based agent sessions typically lose time, and the concrete changes that address each cause.",
+    directAnswer: "The most common cause of a slow MCP-based agent session is not the model itself but excessive round trips \u2014 calling a tool once per item in a loop instead of once with a batch, or re-fetching a resource that hasn't changed since the last call. Reducing the number of tool calls per task, not just making each call faster, is usually the higher-leverage fix.",
+    sections: [
+      { heading: "Batch instead of looping", paragraphs: ["A tool that only accepts one ID per call forces a model into an N-call loop for any task touching N items. Where the underlying operation supports it, a batch-capable variant of the same tool (accepting a list of IDs, or a filter) turns an O(N) round-trip cost into O(1) for the same task."] },
+      { heading: "Cache read-heavy resources", paragraphs: ["Resources that change rarely (a schema, a static configuration, a reference document) don't need to be re-fetched on every session if the server can cache them with a reasonable TTL. This matters more for MCP than for a typical API client because a single agent session can re-request the same resource many times across a multi-step task."] },
+      { heading: "Paginate large result sets", paragraphs: ["Returning an entire large table or document as one tool response both increases latency and consumes a disproportionate amount of the model's context window on a single call. A tool that supports cursor-based pagination lets the model \u2014 or the client orchestrating it \u2014 pull only what's actually needed for the current step."] },
+      { heading: "Measure before optimizing", paragraphs: ["Per-tool latency logging (see MCP server logging) is what turns \"the agent feels slow\" into an actionable finding \u2014 usually one or two tools account for most of the wall-clock time in a session, and optimizing those first has far more effect than broadly tuning everything."] }
+    ],
+    relatedLinks: [{ href: "/mcp-logging", label: "MCP server logging" }, { href: "/mcp-best-practices", label: "MCP best practices" }, { href: "/mcp-database-server", label: "MCP database servers" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "what-is-swe-bench": {
+    title: "What Is SWE-bench? The GitHub-Issue Benchmark, Explained",
+    description: "How SWE-bench and its hand-validated Verified subset actually evaluate a model, and what a high score does and doesn't tell you.",
+    directAnswer: "SWE-bench is a benchmark that evaluates a model's ability to resolve real, historical GitHub issues from popular open-source Python repositories. The model is given the issue description and the full repository, and must produce a code patch; the patch is scored by whether the repository's real test suite passes afterward \u2014 the same way a human contributor's pull request would be judged. SWE-bench Verified is a 500-instance, human-validated subset of the original benchmark, filtered to remove issues where the description was ambiguous or the grading was unreliable.",
+    sections: [
+      { heading: "How a single task works", paragraphs: ["Each SWE-bench instance pairs a real GitHub issue with the pull request that actually resolved it in the source repository. The evaluated model receives the issue text and a snapshot of the repository at the commit just before the fix, and must output a diff. That diff is applied to the repository and the project's own test suite is run \u2014 the task counts as solved only if the relevant tests now pass and nothing else breaks."] },
+      { heading: "Why the Verified subset exists", paragraphs: ["The original SWE-bench (2,294 instances across 12 Python repositories) included some issues with under-specified descriptions or test patches that could reject a genuinely correct fix. SWE-bench Verified is a 500-instance subset where human annotators confirmed both that the issue description contained enough information to solve it and that the test patch was a fair check of the fix, addressing those known grading problems."] },
+      { heading: "What a score does and doesn't tell you", paragraphs: ["A high SWE-bench Verified score indicates real capability at a specific, narrow task: resolving a well-specified bug or feature request in a large, unfamiliar, real-world Python codebase, verified by an existing automated test suite. It does not directly measure performance on languages other than Python, on codebases without good test coverage, on genuinely ambiguous or under-specified requests, or on much larger multi-file architectural changes than a typical bug-fix PR."] }
+    ],
+    relatedLinks: [{ href: "/what-is-an-ai-agent", label: "What is an AI agent?" }, { href: "/ai-agent-benchmarks", label: "AI agent benchmarks" }, { href: "/agents", label: "AI agents directory" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "how-much-do-ai-agents-cost": {
+    title: "How Much Do AI Agents Cost? A Framework, Not a Single Number",
+    description: "There's no single price for \"an AI agent\" \u2014 cost depends on which pricing model applies and how the tool is actually used. This breaks down the real cost components.",
+    directAnswer: "AI agent cost has no single answer because it depends on the pricing model (flat subscription, usage-metered, or a mix of both), how heavily the tool is actually used, and whether any engineering integration time is required beyond a subscription. The honest way to estimate cost is to identify which of these components apply to the specific tool being considered, not to look for one universal number.",
+    sections: [
+      { heading: "The real cost components", bullets: ["Subscription tier \u2014 a flat monthly or per-seat fee, common for coding agents and assistants sold directly to individuals or teams.", "Usage-metered costs \u2014 charges tied to actual consumption (requests, tokens, or compute time), which can make the same nominal subscription cost very different for a light user versus a heavy one.", "Underlying model/API costs \u2014 if the agent is built on a pay-per-token API rather than a bundled subscription, that cost scales directly with usage and is separate from any platform fee.", "Integration and engineering time \u2014 for anything beyond an off-the-shelf assistant, the time to connect the agent to real systems (and to review a security/permission model, per MCP best practices) is a real cost that a subscription price doesn't capture."] },
+      { heading: "Why usage-metered pricing surprises people", paragraphs: ["Several coding agents moved from flat request caps to usage-metered pricing over the past two years, and the same nominal plan price can now produce very different real costs depending on how large the codebases being worked on are and how many requests a workflow generates. Check the current, specific pricing page for a tool being seriously considered \u2014 see this site's dated pricing pages for GitHub Copilot and Claude Code as an example of what a first-party pricing check looks like \u2014 rather than relying on a remembered flat number."] },
+      { heading: "Self-hosted and open-source options", paragraphs: ["An open-source agent or framework has no license fee, but is not free to operate: it still needs compute (self-hosted or via an API), and it needs the engineering time to deploy, secure, and maintain it. For a small team, that operational cost can exceed a comparable managed subscription; for a large-scale deployment, it can be cheaper. This is a genuine build-vs-buy tradeoff, not a case where one option is categorically cheaper."] }
+    ],
+    relatedLinks: [{ href: "/github-copilot-pricing", label: "GitHub Copilot pricing" }, { href: "/claude-code-pricing", label: "Claude Code pricing" }, { href: "/cursor-pricing", label: "Cursor pricing" }, { href: "/best-ai-agents-for-startups", label: "Best AI agents for startups" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "best-ai-agent-for-vue": {
+    title: "Best AI Agent for Vue.js: What Actually Matters",
+    description: "Vue.js isn't a special case for most general-purpose coding agents \u2014 what matters more is how well the agent handles Single-File Components and the Composition API.",
+    directAnswer: "Most general-purpose AI coding agents are not framework-locked, so the more useful question for Vue isn't \"which agent supports Vue\" but \"which agent correctly parses .vue Single-File Components and the Composition API's reactivity patterns\" \u2014 a distinction that matters because a Vue SFC mixes template, script, and style in one file in a way plain JavaScript/TypeScript tooling doesn't always handle cleanly.",
+    sections: [
+      { heading: "What to actually check for a Vue codebase", bullets: ["Correct parsing of .vue Single-File Components \u2014 does the agent's codebase indexing understand the three-block structure, or does it treat the file as opaque text?", "Composition API awareness \u2014 ref/reactive/computed patterns behave differently from Options API state, and an agent trained mostly on Options-API-era examples can suggest outdated patterns.", "TypeScript support inside .vue files specifically, which has historically lagged plain .ts support in some tooling.", "Whether the agent respects the project's existing component structure and naming conventions rather than defaulting to React-flavored idioms."] },
+      { heading: "Why this site doesn't publish a ranked \"best\" list here", paragraphs: ["Framework-specific quality (how well an agent actually handles Vue SFCs versus how well its marketing claims it does) is not something that resolves from a verified repository identity \u2014 it requires hands-on testing against a real codebase, which this site's evidence gate doesn't currently automate. See the AI agents directory for verified-identity entries, and evaluate framework fit directly against your own codebase before committing."] }
+    ],
+    relatedLinks: [{ href: "/agents", label: "AI agents directory" }, { href: "/best-ai-agent-for-coding", label: "Best AI agent for coding" }, { href: "/best-ai-agents", label: "Best AI agents \u2014 selection framework" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "best-ai-agents": {
+    title: "Best AI Agents: A Selection Framework, Not a Ranked List",
+    description: "There's no single \"best\" AI agent independent of the task \u2014 this is the framework for picking the right one for a specific job.",
+    directAnswer: "The best AI agent is the one that fits a specific, well-defined task at an acceptable cost and risk level \u2014 not a fixed leaderboard winner. The right selection process starts with naming the task narrowly (coding, research, customer support, voice), then filtering by the constraints that actually matter for that task (cost model, data residency, integration effort), rather than starting from a general-purpose \"top agents\" ranking.",
+    sections: [
+      { heading: "Start with the task, not the category", paragraphs: ["\"AI agent\" spans coding assistants, autonomous research tools, customer-support bots, and voice agents \u2014 tools built for genuinely different jobs that don't compete with each other on the same axis. Naming the specific task narrowly (\"resolve GitHub issues in a Python monorepo,\" not \"coding\") is what makes the rest of the selection process tractable."] },
+      { heading: "Filter by real constraints before capability", bullets: ["Cost model \u2014 flat subscription versus usage-metered can change the real cost by an order of magnitude depending on usage volume; see how much do AI agents cost.", "Data residency and compliance \u2014 relevant for regulated industries or India-specific DPDP considerations; verify this directly rather than assuming.", "Integration effort \u2014 an agent that requires weeks of engineering work to connect to existing systems is a different proposition than one that works out of the box.", "Team size and ops maturity \u2014 a small team benefits from fast time-to-value over maximum configurability; see best AI agents for startups."] },
+      { heading: "Why this site doesn't publish a single ranked list", paragraphs: ["A ranked \"best AI agents\" list implies a scoring methodology precise enough to order dissimilar tools against each other, which this site's evidence gate deliberately does not attempt \u2014 repository identity verification tells you a tool is real and actively maintained, not that it's the right fit for your specific task. Use the AI agents directory to see verified-identity entries, and the category-specific selection guides linked below for narrower guidance."] }
+    ],
+    relatedLinks: [{ href: "/agents", label: "AI agents directory" }, { href: "/best-ai-agents-for-startups", label: "Best AI agents for startups" }, { href: "/best-ai-agents-for-enterprises", label: "Best AI agents for enterprises" }, { href: "/best-ai-agent-builders", label: "Best AI agent builders" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "best-ai-voice-agent": {
+    title: "Best AI Voice Agent: What to Evaluate Before Choosing One",
+    description: "Voice agents live or die on latency and language coverage in a way text agents don't \u2014 this is what to actually check.",
+    directAnswer: "The right AI voice agent depends heavily on latency tolerance (a phone call has a much lower acceptable delay than a chat message) and language/accent coverage for the specific population it needs to serve \u2014 for an India-focused deployment, that means checking Hindi, Hinglish, and regional-language support explicitly rather than assuming English-only benchmarks transfer.",
+    sections: [
+      { heading: "Latency is the defining constraint", paragraphs: ["A voice conversation breaks down noticeably above roughly 500ms-1s of response latency \u2014 a delay that reads as barely noticeable in a text chat interface feels like a stalled phone call in voice. This means the full pipeline (speech-to-text, model inference, text-to-speech) needs to be evaluated end-to-end, not just the underlying language model's benchmark scores in isolation."] },
+      { heading: "Language and accent coverage", paragraphs: ["For deployments serving Indian users, verify Hindi and Hinglish (code-switched Hindi-English) handling specifically \u2014 a voice agent benchmarked only on standard American English can perform noticeably worse on code-switched speech or regional accents, and that gap doesn't show up unless it's tested directly against representative real calls."] },
+      { heading: "Telephony and interruption handling", bullets: ["Can the agent handle a caller interrupting mid-response (barge-in), or does it talk over them?", "Does it integrate with existing telephony infrastructure (SIP trunking, existing IVR systems) or require a full replacement?", "How does it handle background noise and imperfect audio, which is the norm for real phone calls rather than a studio-quality test set?"] }
+    ],
+    relatedLinks: [{ href: "/best-ai-voice-agent-platform", label: "Best AI voice agent platform" }, { href: "/agents", label: "AI agents directory" }, { href: "/best-ai-agents", label: "Best AI agents \u2014 selection framework" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "best-ai-voice-agent-platform": {
+    title: "Best AI Voice Agent Platform: Build vs. Buy Considerations",
+    description: "Choosing a voice agent platform is a different decision than choosing a single voice agent \u2014 this covers the platform-level tradeoffs.",
+    directAnswer: "A voice agent platform (as opposed to a single pre-built voice agent) is a build-vs-buy decision: a platform gives you the underlying speech, orchestration, and telephony infrastructure to build a custom voice agent, at the cost of needing real engineering effort to configure and maintain it \u2014 the right choice depends on whether an off-the-shelf voice agent already covers the specific use case, or whether the requirements are specific enough to need custom orchestration.",
+    sections: [
+      { heading: "When a platform makes sense over a pre-built agent", bullets: ["The use case requires custom business logic mid-conversation (checking a real-time inventory system, applying account-specific rules) that a generic pre-built agent doesn't support.", "Multiple voice agents need to share the same underlying infrastructure, telephony numbers, or customer data layer.", "Data residency or self-hosting requirements rule out a fully managed third-party agent."] },
+      { heading: "What a platform decision actually depends on", paragraphs: ["Speech-to-text and text-to-speech quality for the specific languages/accents needed (see best AI voice agent for the latency and language considerations that carry over directly here), how the platform handles orchestration and interruption, and how much telephony integration work is required versus already built in. These vary enough between platforms that a direct proof-of-concept against real representative calls is worth more than a features comparison table."] }
+    ],
+    relatedLinks: [{ href: "/best-ai-voice-agent", label: "Best AI voice agent" }, { href: "/best-ai-agent-builders", label: "Best AI agent builders" }, { href: "/agents", label: "AI agents directory" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "best-ai-agent-reddit": {
+    title: "What Reddit Actually Says About AI Coding Agents",
+    description: "A grounded look at recurring themes in Reddit discussion of AI coding agents \u2014 patterns, not a scraped statistic.",
+    directAnswer: "Recurring Reddit discussion of AI coding agents clusters around a consistent set of themes regardless of which specific tool is being discussed: genuine productivity gains on well-scoped tasks, frustration with usage-metered pricing changes that made costs harder to predict, performance complaints on large files or codebases, and skepticism toward vendor-reported productivity statistics that aren't independently reproducible.",
+    sections: [
+      { heading: "What gets consistent praise", bullets: ["Multi-file, codebase-aware editing \u2014 being able to reference and modify several related files in one request, rather than working file-by-file.", "Context-aware suggestions that reflect the actual project's conventions rather than generic boilerplate.", "Genuine time savings on repetitive, well-specified tasks (boilerplate, refactors with a clear pattern, test scaffolding)."] },
+      { heading: "What gets consistent criticism", bullets: ["Usage-metered pricing changes \u2014 several tools moved from flat request caps to consumption-based billing, and threads about unexpectedly high usage bills are a recurring pattern across tools, not specific to one.", "Performance degradation on large files or codebases \u2014 lag, increased crash reports, and slower responses are commonly reported once a project grows past a certain size.", "Inconsistent output quality \u2014 the same tool praised for a clean refactor in one thread is criticized for a confidently wrong suggestion in another, which is itself a commonly-discussed pattern (variance, not just average quality)."] },
+      { heading: "How to read this kind of discussion", paragraphs: ["Reddit sentiment is a useful signal for what real users encounter in practice, including failure modes vendors don't advertise \u2014 but it's self-selected (people are more likely to post about a problem than a routine success) and not a controlled comparison. Treat it as a source of specific, checkable claims to verify yourself, not as a substitute for testing a tool against your own codebase."] }
+    ],
+    relatedLinks: [{ href: "/cursor-ai-reddit-review", label: "Cursor: what Reddit says specifically" }, { href: "/best-ai-agents", label: "Best AI agents \u2014 selection framework" }, { href: "/agents", label: "AI agents directory" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "cursor-ai-reddit-review": {
+    title: "Cursor AI: What Reddit Actually Says (2026)",
+    description: "A grounded summary of recurring Reddit discussion about Cursor specifically \u2014 praise, complaints, and what changed with pricing.",
+    directAnswer: "Reddit discussion of Cursor consistently praises its context-aware, multi-file editing and codebase-wide refactoring, while the most consistent complaint is pricing: a mid-2025 change from a flat per-plan request allowance to usage-metered billing on its Pro tier drew significant criticism for making costs harder to predict, alongside recurring reports of performance lag on very large files and friction from being locked into Cursor's own VS Code-based environment rather than an existing editor setup.",
+    sections: [
+      { heading: "What gets praised", bullets: ["Context-aware suggestions that reflect the actual project rather than generic completions.", "Multi-file editing and refactoring across a codebase in a single request, rather than file-by-file.", "For many users, a genuine, noticeable reduction in time spent on repetitive coding tasks."] },
+      { heading: "What gets criticized", bullets: ["The July 2025 shift on the $20 Pro plan from a flat request allowance to usage-metered billing, which produced a wave of complaints about unexpectedly high or unpredictable costs for heavy users.", "Performance issues on large files (commonly cited around the 500-line mark) and on large projects generally \u2014 lag, occasional crashes, and memory pressure during long sessions.", "IDE lock-in \u2014 adopting Cursor generally means adopting its VS Code-based environment specifically, which is friction for developers already invested in JetBrains, Vim, Neovim, or Emacs workflows."] },
+      { heading: "How to weigh this", paragraphs: ["These are recurring, independently-corroborated patterns across multiple discussion threads, not a single anecdote \u2014 but they're not a substitute for checking Cursor's current, specific pricing (which has changed before and can change again) against your own expected usage before committing. See Cursor pricing on this site for a dated, sourced pricing check."] }
+    ],
+    relatedLinks: [{ href: "/cursor-pricing", label: "Cursor pricing" }, { href: "/best-ai-agent-reddit", label: "What Reddit says about AI coding agents generally" }, { href: "/agents", label: "AI agents directory" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
+  "reddit": {
+    title: "AI Agents on Reddit: Where the Real Discussion Happens",
+    description: "The specific, active subreddits worth checking for grounded, non-marketing discussion of AI agents, models, and coding tools.",
+    directAnswer: "The most active, substantive Reddit communities for AI agent discussion are r/LocalLLaMA (local/open-weight models and self-hosted tooling), r/ChatGPTCoding (AI coding assistants and agents specifically), r/cursor (Cursor-specific discussion), and r/artificial and r/singularity for broader AI industry discussion \u2014 each with a different focus worth matching to what you're actually trying to learn.",
+    sections: [
+      { heading: "Where to look, by topic", bullets: ["r/LocalLLaMA \u2014 open-weight models, self-hosting, quantization, and hardware discussion; the most technically grounded community for local inference specifically.", "r/ChatGPTCoding \u2014 AI coding assistants and agents across vendors, including comparisons and real usage reports.", "r/cursor \u2014 Cursor-specific discussion, including pricing changes and version-specific bugs.", "r/artificial and r/singularity \u2014 broader AI industry news and discussion, less tool-specific and more oriented toward general developments."] },
+      { heading: "How to read agent-related Reddit discussion", paragraphs: ["Community discussion is a useful source of specific, checkable claims and failure modes vendors don't advertise \u2014 but it's self-selected toward people motivated enough to post, which skews toward strong opinions (both praise and complaints) rather than a representative average experience. Treat a recurring pattern across many independent threads as more reliable than any single post, and verify specific factual claims (pricing, capability, benchmark numbers) against a first-party source before acting on them."] }
+    ],
+    relatedLinks: [{ href: "/best-ai-agent-reddit", label: "What Reddit says about AI coding agents" }, { href: "/cursor-ai-reddit-review", label: "Cursor: what Reddit says specifically" }, { href: "/agents", label: "AI agents directory" }],
+    index: true,
+    lastReviewed: "2026-08-30"
+  },
 };

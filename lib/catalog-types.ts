@@ -1,4 +1,4 @@
-export type EntityType = "agent" | "model" | "framework" | "provider";
+export type EntityType = "agent" | "model" | "framework" | "provider" | "mcp-server";
 export type VerificationState = "verified" | "source-linked" | "pending" | "unknown";
 export type EvidenceAuthority = "primary" | "secondary";
 
