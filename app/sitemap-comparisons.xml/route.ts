@@ -1,1 +1,0 @@
-import { publicComparisons } from "@/lib/comparisons";import { SITE } from "@/lib/site";import { xmlResponse } from "@/lib/xml";export const dynamic="force-static";export async function GET(){return xmlResponse([`${SITE.url}/compare`,...publicComparisons.map((item)=>`${SITE.url}/compare/${item.slug}`)])}

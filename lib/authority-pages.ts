@@ -443,7 +443,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
   "api-docs": {
     title: "BestAIAgent.in API and machine-readable data",
     description: "Public JSON, XML and text endpoints for the BestAIAgent.in evidence graph — no key required for read access.",
-    directAnswer: "BestAIAgent.in publishes its verified entity graph as public, unauthenticated JSON endpoints (/api/catalog, /agents.json, /models.json, /frameworks.json, /providers.json), a search endpoint (/api/search?q=), a health check (/api/health), segmented XML sitemaps, and LLM-crawler-oriented text indexes (/llms.txt, /llms-full.txt).",
+    directAnswer: "BestAIAgent.in publishes its verified entity graph as public, unauthenticated JSON endpoints (/api/catalog, /agents.json, /models.json, /frameworks.json, /providers.json), a search endpoint (/api/search?q=), a health check (/api/health), an XML sitemap, and LLM-crawler-oriented text indexes (/llms.txt, /llms-full.txt).",
     sections: [
       {
         heading: "Catalog endpoints",
@@ -463,8 +463,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       {
         heading: "Sitemaps and crawler indexes",
         bullets: [
-          "/sitemap.xml — sitemap index referencing segmented child sitemaps.",
-          "/sitemap-agents.xml, /sitemap-categories.xml, /sitemap-comparisons.xml, /sitemap-mcp.xml, /sitemap-pages.xml, /sitemap-research.xml — segmented sitemaps by content type.",
+          "/sitemap.xml — the single canonical sitemap covering every indexable URL on the site.",
           "/llms.txt and /llms-full.txt — plain-text summaries of the site structure and publication rule, aimed at LLM and agent crawlers.",
           "/robots.txt — crawler access rules."
         ]

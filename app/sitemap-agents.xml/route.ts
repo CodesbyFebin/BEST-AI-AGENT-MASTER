@@ -1,1 +1,0 @@
-import { entitiesByType } from "@/lib/catalog";import { SITE } from "@/lib/site";import { xmlResponse } from "@/lib/xml";export const dynamic="force-static";export async function GET(){return xmlResponse(entitiesByType("agent").map((e)=>`${SITE.url}/agents/${e.slug}`))}
