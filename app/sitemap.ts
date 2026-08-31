@@ -5,6 +5,7 @@ import { authorityPages } from "@/lib/authority-pages";
 import { legacyPages, categories } from "@/lib/legacy";
 import { glossaryTerms } from "@/lib/glossary";
 import { trustPages } from "@/lib/trust";
+import { blogPosts } from "@/lib/blog-posts";
 import { SITE } from "@/lib/site";
 
 const FALLBACK_LAST_MODIFIED = "2026-08-29";
@@ -16,9 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const authorityEntries = Object.entries(authorityPages).filter(([, page]) => page.index);
   const authorityPaths = authorityEntries.map(([slug]) => `/${slug}`);
-  const lastModifiedByPath = new Map<string, string>(
-    authorityEntries.map(([slug, page]) => [`/${slug}`, page.lastReviewed])
-  );
+  const lastModifiedByPath = new Map<string, string>([
+    ...authorityEntries.map(([slug, page]): [string, string] => [`/${slug}`, page.lastReviewed]),
+    ...blogPosts.map((post): [string, string] => [`/blog/${post.category}/${post.subcategory}/${post.slug}`, post.date])
+  ]);
 
   // MCP server detail pages are intentionally noindex until a canonical upstream
   // and hashed evidence pass the publication gate — never list a noindex URL in
@@ -52,7 +54,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...glossaryTerms.map((term) => `/glossary/${term.slug}`),
     ...Object.keys(trustPages).map((slug) => `/trust/${slug}`),
     ...publicEntities.map((entity) => entity.type === "mcp-server" ? `/mcp/servers/${entity.slug}` : `/${entity.type}s/${entity.slug}`),
-    ...publicComparisons.map((comparison) => `/compare/${comparison.slug}`)
+    ...publicComparisons.map((comparison) => `/compare/${comparison.slug}`),
+    ...blogPosts.map((post) => `/blog/${post.category}/${post.subcategory}/${post.slug}`)
   ]);
 
   return [...paths].map((path) => ({
