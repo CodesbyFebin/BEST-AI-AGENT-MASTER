@@ -51,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categories.map(([slug]) => `/categories/${slug}`),
     ...glossaryTerms.map((term) => `/glossary/${term.slug}`),
     ...Object.keys(trustPages).map((slug) => `/trust/${slug}`),
-    ...publicEntities.map((entity) => `/${entity.type}s/${entity.slug}`),
+    ...publicEntities.map((entity) => entity.type === "mcp-server" ? `/mcp/servers/${entity.slug}` : `/${entity.type}s/${entity.slug}`),
     ...publicComparisons.map((comparison) => `/compare/${comparison.slug}`)
   ]);
 
