@@ -21,6 +21,16 @@ Publication rule: discovery is not verification. Public entity detail pages requ
 - ${SITE.url}/india
 - ${SITE.url}/mcp
 
+## Topic clusters
+- ${SITE.url}/best-ai-agents
+- ${SITE.url}/best-ai-agents/coding
+- ${SITE.url}/coding-agents
+- ${SITE.url}/coding-agents/open-source
+- ${SITE.url}/coding-agents/cli
+- ${SITE.url}/coding-agents/ide
+- ${SITE.url}/coding-agents/local
+- ${SITE.url}/coding-agents/self-hosted
+
 ## High-intent authority guides
 - ${SITE.url}/cursor-pricing
 - ${SITE.url}/github-copilot-pricing

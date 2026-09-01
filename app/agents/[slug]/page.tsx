@@ -66,5 +66,22 @@ export default async function Page({ params }: P) {
     </section>
     <section className="evidence"><h2>Evidence receipts</h2>{receipts.map((receipt) => <div key={receipt.id}><p><strong>{receipt.field}</strong> · {receipt.status}</p><p className="muted">Retrieved {receipt.retrievedAt}</p><code>{receipt.contentHash}</code></div>)}</section>
     <div className="prose"><h2>Interpretation</h2><p>The repository identity is verified. Capability, pricing, compliance and benchmark fields are not automatically inherited from that identity and remain unknown unless separately evidenced.</p></div>
+    {entity.categories.some((c) => /coding|developer|code/i.test(c)) ? (
+      <div className="prose">
+        <h2>Coding cluster context</h2>
+        <p>
+          This agent belongs to the coding-agent topic cluster. Browse it
+          through the evidence-first pillars and deployment surfaces that
+          apply to the same identity:
+        </p>
+        <ul>
+          <li><Link href="/best-ai-agents/coding">Best AI coding agents</Link> — the coding authority pillar.</li>
+          <li><Link href="/coding-agents">Coding agents by deployment</Link> — IDE / CLI / open-source / local / self-hosted sub-clusters.</li>
+          {entity.categories.includes("cli") ? <li><Link href="/coding-agents/cli">CLI coding agents</Link> — terminal-first peers and evidence.</li> : null}
+          {entity.categories.includes("ide") ? <li><Link href="/coding-agents/ide">IDE coding agents</Link> — editor-integrated peers and dated pricing guides.</li> : null}
+          {entity.categories.includes("research") || entity.categories.includes("software-engineering") ? <li><Link href="/coding-agents/open-source">Open-source coding agents</Link> — repository-identity peers.</li> : null}
+        </ul>
+      </div>
+    ) : null}
   </div>;
 }

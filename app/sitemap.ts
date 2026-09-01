@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-import { publicEntities } from "@/lib/catalog";
-import { publicComparisons } from "@/lib/comparisons";
+import { publicEntities, publicIndexableComparisons, getPublicEntityPath } from "@/lib/catalog";
 import { authorityPages } from "@/lib/authority-pages";
 import { legacyPages, categories } from "@/lib/legacy";
 import { glossaryTerms } from "@/lib/glossary";
@@ -25,6 +24,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // MCP server detail pages are intentionally noindex until a canonical upstream
   // and hashed evidence pass the publication gate — never list a noindex URL in
   // the sitemap, since that's flagged by Search Console as a submission error.
+  // Same rule applies to /archive, /compare/research and /compare/archive —
+  // they're preserved at 200 for continuity but excluded here on purpose.
+  const topicClusterPaths = [
+    "/best-ai-agents",
+    "/best-ai-agents/coding",
+    "/coding-agents",
+    "/coding-agents/open-source",
+    "/coding-agents/cli",
+    "/coding-agents/ide",
+    "/coding-agents/local",
+    "/coding-agents/self-hosted"
+  ];
+
   const paths = new Set<string>([
     "/",
     "/agents",
@@ -48,13 +60,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/press",
     "/tools",
     "/trust",
+    ...topicClusterPaths,
     ...legacyPaths,
     ...authorityPaths,
     ...categories.map(([slug]) => `/categories/${slug}`),
     ...glossaryTerms.map((term) => `/glossary/${term.slug}`),
     ...Object.keys(trustPages).map((slug) => `/trust/${slug}`),
-    ...publicEntities.map((entity) => entity.type === "mcp-server" ? `/mcp/servers/${entity.slug}` : `/${entity.type}s/${entity.slug}`),
-    ...publicComparisons.map((comparison) => `/compare/${comparison.slug}`),
+    ...publicEntities.map(getPublicEntityPath),
+    ...publicIndexableComparisons.map((comparison) => `/compare/${comparison.slug}`),
     ...blogPosts.map((post) => `/blog/${post.category}/${post.subcategory}/${post.slug}`)
   ]);
 

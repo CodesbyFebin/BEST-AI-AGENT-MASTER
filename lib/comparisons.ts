@@ -1,4 +1,4 @@
-import { getPublicEntity } from "./catalog";
+import type { Entity } from "@/lib/catalog-types";
 
 export type Comparison = {
   slug: string;
@@ -219,12 +219,26 @@ export const comparisons: Comparison[] = [
   { slug: "poolside-vs-magic", a: { type: "agent", slug: "poolside-ai" }, b: { type: "agent", slug: "magic-dev" }, title: "Poolside vs Magic", status: "refreshing", notes: ["Both are AI labs building foundation models specialized for software engineering, with a first-party source on record but have not cleared this site's field-level evidence gate.", "No capability winner is asserted until reproducible evidence exists for both sides."] },
   { slug: "reflection-vs-imbue", a: { type: "agent", slug: "reflection-ai" }, b: { type: "agent", slug: "imbue-ai" }, title: "Reflection AI vs Imbue", status: "refreshing", notes: ["Both are AI research labs focused on autonomous reasoning and coding agents, with a first-party source on record but have not cleared this site's field-level evidence gate.", "No capability winner is asserted until reproducible evidence exists for both sides."] },
   { slug: "clay-vs-apollo", a: { type: "agent", slug: "clay-run" }, b: { type: "agent", slug: "apollo-io" }, title: "Clay vs Apollo.io", status: "evidence-ready", notes: ["Both products' official identity is verified directly from their own homepages: Clay positions itself as data-enrichment and agentic-workflow infrastructure for go-to-market teams, while Apollo.io positions itself as a unified AI sales platform combining B2B contact data, outbound automation and deal execution.", "The two overlap on data enrichment and outbound automation but differ in scope — Apollo bundles a large first-party contact database, while Clay is built to orchestrate and enrich data from many external sources. No capability, accuracy or ROI winner is asserted; that requires field-level evidence this site does not yet have for either product."] },
-  { slug: "github-copilot-vs-windsurf", a: { type: "agent", slug: "github-copilot" }, b: { type: "agent", slug: "windsurf" }, title: "GitHub Copilot vs Windsurf (now Devin Desktop)", status: "evidence-ready", notes: ["Windsurf was an independent agentic IDE until Cognition acquired its IP, product, trademark and brand on July 14, 2025, and rebranded it to Devin Desktop on June 2, 2026 — windsurf.com now permanently redirects to devin.ai/desktop. This comparison is kept under the original URL for continuity, but 'Windsurf' as an independently-branded product no longer exists; readers evaluating it today are evaluating Devin Desktop.", "GitHub Copilot's identity is verified directly from its own feature page (\"Your AI pair programmer\"). No capability or benchmark winner is asserted between the two; that requires field-level evidence this site does not yet have for either product."] }
+  { slug: "github-copilot-vs-windsurf", a: { type: "agent", slug: "github-copilot" }, b: { type: "agent", slug: "windsurf" }, title: "GitHub Copilot vs Windsurf (now Devin Desktop)", status: "evidence-ready", notes: ["Windsurf was an independent agentic IDE until Cognition acquired its IP, product, trademark and brand on July 14, 2025, and rebranded it to Devin Desktop on June 2, 2026 — windsurf.com now permanently redirects to devin.ai/desktop. This comparison is kept under the original URL for continuity, but 'Windsurf' as an independently-branded product no longer exists; readers evaluating it today are evaluating Devin Desktop.", "GitHub Copilot's identity is verified directly from its own feature page (\"Your AI pair programmer\"). No capability or benchmark winner is asserted between the two; that requires field-level evidence this site does not yet have for either product."] },
+  { slug: "aider-vs-cline", a: { type: "agent", slug: "aider" }, b: { type: "agent", slug: "cline" }, title: "Aider vs Cline", status: "evidence-ready", notes: ["Both upstream repositories are verified public, non-archived identities in the evidence snapshot.", "Aider is terminal-first and Cline is editor-integrated, which is itself a deployment-surface distinction that should drive evaluation rather than a benchmark score.", "No capability, accuracy or speed winner is asserted; that requires field-level evidence this site does not yet have for either project."] },
+  { slug: "gemini-cli-vs-qwen-code", a: { type: "agent", slug: "gemini-cli" }, b: { type: "agent", slug: "qwen-code" }, title: "Gemini CLI vs Qwen Code", status: "evidence-ready", notes: ["Both upstream repositories are verified public, non-archived identities in the evidence snapshot.", "Both projects are terminal-first, but their model provenance, license and default tool permissions differ — evaluation must come from the project documentation, not a generic CLI leaderboard.", "No speed, accuracy or cost winner is asserted until reproducible evidence exists for both."] },
+  { slug: "openhands-vs-swe-agent", a: { type: "agent", slug: "openhands" }, b: { type: "agent", slug: "swe-agent" }, title: "OpenHands vs SWE-agent", status: "evidence-ready", notes: ["Both upstream repositories are verified public, non-archived identities in the evidence snapshot.", "Both are software-engineering agents, but OpenHands is a generalist autonomous coding project while SWE-agent originates as a research benchmark driver — these are different surfaces and are not collapsed into a single capability winner.", "No benchmark, accuracy or latency winner is asserted; comparison requires field-level evidence this site does not yet have."] },
+  { slug: "github-copilot-vs-cline", a: { type: "agent", slug: "github-copilot" }, b: { type: "agent", slug: "cline" }, title: "GitHub Copilot vs Cline", status: "evidence-ready", notes: ["GitHub Copilot's identity is verified directly from its own feature page; Cline's upstream repository is a verified public, non-archived identity in the evidence snapshot.", "GitHub Copilot is a hosted IDE-integrated assistant with a first-party pricing surface; Cline is an open-source editor-integrated project — those deployment and licensing distinctions are themselves the answer for many teams.", "No capability, suggestion quality or completion-accuracy winner is asserted until reproducible evidence exists for both."] }
 ];
 
-export const publicComparisons = comparisons.filter((comparison) => {
-  if (comparison.status !== "evidence-ready") return false;
-  return Boolean(getPublicEntity(comparison.a.type, comparison.a.slug) && getPublicEntity(comparison.b.type, comparison.b.slug));
-});
+/**
+ * Comparisons whose status alone qualifies them for the public indexable
+ * surface. Both sides must additionally resolve to verified entities through
+ * `getPublicEntity` for HTML/sitemap emission; consumers that import from
+ * `@/lib/catalog` get that stricter filter via `publicComparisons` re-exported
+ * from there.
+ */
+export const publicComparisons = comparisons.filter((comparison) => comparison.status === "evidence-ready");
 
 export const findComparison = (slug: string) => comparisons.find((item) => item.slug === slug) ?? null;
+
+/**
+ * Re-export entity shape so consumers don't need a separate catalog-types
+ * import only to type narrowed comparison lookups.
+ */
+export type { Entity };

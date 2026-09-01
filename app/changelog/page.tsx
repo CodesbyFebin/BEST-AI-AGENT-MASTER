@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "/changelog" }
 };
 
+/**
+ * Entries published before the current evidence-first rebuild describe
+ * inventory and scoring systems that were later retired or re-verified.
+ * The global disclosure below makes that clear. Per-entry annotations are
+ * added on top of that for entries whose specific claims could be mistaken
+ * for a current capability.
+ */
+const globalDisclosure =
+  "Historical release notes may reference inventory, scoring, or publication systems that were later retired or re-verified under BestAIAgent.in's current evidence-first methodology. Current product claims are governed by the live methodology and public evidence registry.";
+
 const entries = [
   {
     date: "August 2026", version: "3.1", changes: [
@@ -15,7 +25,8 @@ const entries = [
     ]
   },
   {
-    date: "August 2026", version: "3.0", changes: [
+    date: "August 2026", version: "3.0", annotation: "Historical scoring and inventory systems described below were retired in the evidence-first rebuild; the India Fit composite score, profile scoring rationale, and confidence scoring fields are no longer published.",
+    changes: [
       "Added comprehensive India Fit scoring with sub-dimensions: INR pricing, Indic language support, deployment options, and DPDP compliance.",
       "Expanded agent profiles with scoring rationale, India Fit breakdown, and deployment guidance sections.",
       "Added MCP integration guides and troubleshooting documentation.",
@@ -37,7 +48,8 @@ const entries = [
     ]
   },
   {
-    date: "June 2026", version: "2.0", changes: [
+    date: "June 2026", version: "2.0", annotation: "Historical scoring methodology and the 30/32 inventory counts described below were superseded by the current evidence-first publication gate; the counts do not describe the current directory.",
+    changes: [
       "Launched evidence-backed scoring methodology with five weighted dimensions.",
       "Added India-specific content hub with DPDP Act compliance guides.",
       "Expanded model directory to 30 foundational language models.",
@@ -74,6 +86,7 @@ export default function ChangelogPage() {
       <h1>Changelog</h1>
       <p className="lead">Notable changes to the BestAIAgent.in directory, evidence graph, and public API. Per-entity fact updates are timestamped on each entity&apos;s own evidence receipts, not tracked here.</p>
     </section>
+    <p className="warning" style={{ marginBottom: 18 }}>{globalDisclosure}</p>
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       {entries.map((entry) => (
         <section className="card" key={entry.version}>
@@ -81,6 +94,7 @@ export default function ChangelogPage() {
             <span className="tag">v{entry.version}</span>
             <span className="muted">{entry.date}</span>
           </div>
+          {entry.annotation && <p className="muted" style={{ fontSize: "12px", marginTop: 8 }}>{entry.annotation}</p>}
           <ul>
             {entry.changes.map((c, i) => <li key={i}>{c}</li>)}
           </ul>

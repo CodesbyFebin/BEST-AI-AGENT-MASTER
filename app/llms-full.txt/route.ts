@@ -1,7 +1,6 @@
 import { authorityPages } from "@/lib/authority-pages";
 import { getAuthorityEvidence } from "@/lib/authority-evidence";
-import { publicEntities } from "@/lib/catalog";
-import { publicComparisons } from "@/lib/comparisons";
+import { publicEntities, publicIndexableComparisons } from "@/lib/catalog";
 import { glossaryTerms } from "@/lib/glossary";
 import { trustPages } from "@/lib/trust";
 import { SITE } from "@/lib/site";
@@ -24,7 +23,7 @@ export async function GET() {
     `- ${term.term} (glossary, ${term.category}) — ${SITE.url}/glossary/${term.slug}`
   );
 
-  const comparisonLines = publicComparisons.map((comparison) =>
+  const comparisonLines = publicIndexableComparisons.map((comparison) =>
     `- ${comparison.title} (comparison) — ${SITE.url}/compare/${comparison.slug}`
   );
 

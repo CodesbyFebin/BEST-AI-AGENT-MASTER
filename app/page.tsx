@@ -4,9 +4,8 @@ import { EntityCard } from "@/components/EntityCard";
 import { JsonLd } from "@/components/JsonLd";
 import { SearchBox } from "@/components/SearchBox";
 import { authorityEvidence } from "@/lib/authority-evidence";
-import { evidence, entitiesByType, publicEntities, isEvidenceVerified } from "@/lib/catalog";
+import { entitiesByType, publicEntities, getPublicCatalogStats } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
-import { publicComparisons } from "@/lib/comparisons";
 import { categories } from "@/lib/legacy";
 
 export const metadata: Metadata = {
@@ -15,11 +14,13 @@ export const metadata: Metadata = {
 };
 
 const authorityEntryPoints = [
+  ["Best AI agents", "/best-ai-agents", "Evidence-first authority hub for AI agents across coding, voice, research, automation and business surfaces.", "★"],
+  ["Best AI coding agents", "/best-ai-agents/coding", "Coding-agent identities and primary-source evidence across IDE, CLI, open-source, local and self-hosted surfaces.", "</>"],
   ["Cursor pricing in India", "/cursor-pricing", "Current first-party plan evidence, including the India-only Start plan.", "₹"],
   ["What is MCP?", "/what-is-mcp", "Protocol definition, architecture and evidence policy for MCP servers.", "◇"],
   ["AI agent benchmarks", "/ai-agent-benchmarks", "A reproducible benchmark checklist instead of synthetic leaderboard scores.", "▥"],
-  ["Coding agents hub", "/coding-agents-hub", "Verified coding-agent identities, frameworks and adoption questions.", "</>"],
-  ["AI agent market map", "/ai-agent-market-map", "A taxonomy of agents, frameworks, models, providers and MCP infrastructure.", "⌘"],
+  ["Coding agents hub", "/coding-agents-hub", "Verified coding-agent identities, frameworks and adoption questions.", "⌘"],
+  ["AI agent market map", "/ai-agent-market-map", "A taxonomy of agents, frameworks, models, providers and MCP infrastructure.", "▤"],
   ["AI agent glossary", "/glossary-hub", "Canonical definitions for the entity and evidence terms used across the site.", "Aa"]
 ] as const;
 
@@ -32,8 +33,8 @@ export default function Home() {
   const agents = entitiesByType("agent");
   const models = entitiesByType("model");
   const frameworks = entitiesByType("framework");
-  const verifiedEvidence = evidence.filter(isEvidenceVerified);
-  const totalVerifiedReceipts = verifiedEvidence.length + authorityEvidence.filter((item) => item.status === "verified").length;
+  const stats = getPublicCatalogStats();
+  const totalVerifiedReceipts = stats.evidenceReceipts + authorityEvidence.filter((item) => item.status === "verified").length;
 
   return (
     <>
@@ -47,8 +48,8 @@ export default function Home() {
           <div className="heroCopy">
             <div className="heroBadge"><span>🇮🇳</span> India-built AI discovery platform</div>
             <p className="kicker">Discover · compare · verify</p>
-            <h1>Find AI agents <span className="gradient">backed by evidence.</span></h1>
-            <p className="lead">Search a curated authority graph of agents, models, frameworks, providers and MCP infrastructure. Every public entity has a source trail; volatile facts such as pricing are dated; unsupported fields stay unknown.</p>
+            <h1>Find and Compare AI Agents <span className="gradient">Backed by Evidence</span></h1>
+            <p className="lead">Discover coding, research, automation, voice and business AI agents using verified primary-source evidence, transparent unknowns and dated comparisons.</p>
             <div className="trustChips"><span>✓ Primary-source receipts</span><span>✓ No pay-to-rank</span><span>✓ Canonical URLs</span><span>✓ India / Indic coverage</span></div>
             <div className="ctaRow"><Link className="button buttonPrimary" href="/agents">Explore AI agents</Link><Link className="button" href="/compare">Compare evidence</Link></div>
             <div className="heroSearch"><SearchBox /></div>
@@ -68,10 +69,10 @@ export default function Home() {
         </div>
 
         <div className="shell metricStrip">
-          <div><b>{publicEntities.length}</b><span>Verified public entities</span></div>
+          <div><b>{stats.entities}</b><span>Verified public entities</span></div>
           <div><b>{totalVerifiedReceipts}</b><span>Valid evidence receipts</span></div>
-          <div><b>{models.length}</b><span>Verified model cards</span></div>
-          <div><b>{publicComparisons.length}</b><span>Evidence-ready comparisons</span></div>
+          <div><b>{stats.models}</b><span>Verified model cards</span></div>
+          <div><b>{stats.comparisons}</b><span>Evidence-ready comparisons</span></div>
         </div>
       </section>
 
