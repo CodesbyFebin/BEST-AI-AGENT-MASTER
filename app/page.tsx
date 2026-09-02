@@ -95,6 +95,18 @@ export default function Home() {
         <div className="grid">{frameworks.slice(0,5).map((entity)=><EntityCard key={entity.id} entity={entity}/>)}<article className="card"><div className="categoryIcon">◇</div><p className="eyebrow">Protocol hub</p><h3><Link href="/mcp">Model Context Protocol</Link></h3><p>Source-led MCP guidance. Legacy server detail routes stay noindex until canonical upstream and primary evidence qualify them.</p><div className="tagRow"><span className="tag">tools</span><span className="tag">resources</span><span className="tag">prompts</span></div></article></div>
       </div></section>
 
+      <section className="section"><div className="shell">
+        <div className="sectionHead"><div><p className="eyebrow">Machine-readable data</p><h2>The same evidence, for humans and agents</h2><p>Every export below is filtered through the same publication gate as the HTML pages — nothing appears here that isn&apos;t also indexable on the site.</p></div></div>
+        <div className="grid">
+          <a className="card" href="/catalog.json"><div className="cardTop"><div className="glyph">{"{}"}</div><h3>/catalog.json</h3></div><p>The full public catalog — every verified entity across agents, models, frameworks, providers and MCP servers.</p></a>
+          <a className="card" href="/agents.json"><div className="cardTop"><div className="glyph">◧</div><h3>/agents.json · /models.json · /frameworks.json · /providers.json</h3></div><p>Per-type slices of the same gated catalog data.</p></a>
+          <a className="card" href="/llms.txt"><div className="cardTop"><div className="glyph">Ai</div><h3>/llms.txt · /llms-full.txt</h3></div><p>Plain-text discovery surfaces built for AI crawlers, listing only indexable pages.</p></a>
+          <Link className="card" href="/api/search"><div className="cardTop"><div className="glyph">⌕</div><h3>/api/search</h3></div><p>Search the same verified entity graph shown on the site, as JSON.</p></Link>
+          <a className="card" href="/sitemap.xml"><div className="cardTop"><div className="glyph">◫</div><h3>/sitemap.xml</h3></div><p>The single canonical sitemap — every URL here is indexable; nothing noindex is ever listed.</p></a>
+          <Link className="card" href="/methodology"><div className="cardTop"><div className="glyph">✓</div><h3>How the gate works</h3></div><p>The publication rule these exports and the HTML site both obey, explained.</p></Link>
+        </div>
+      </div></section>
+
       <section className="section sectionAlt"><div className="shell"><div className="discoveryBand"><div className="discoveryBandGrid"><div><p className="eyebrow">Trust layer</p><h2>Evidence decides what becomes indexable.</h2><p>Discovery → normalization → evidence → verification → publication. Donor keywords and old URLs are useful research inputs, but unresolved candidates remain quarantined.</p></div><div className="ctaRow"><Link className="button buttonPrimary" href="/methodology">Read methodology</Link><Link className="button" href="/editorial-policy">Editorial policy</Link></div></div></div></div></section>
     </>
   );
