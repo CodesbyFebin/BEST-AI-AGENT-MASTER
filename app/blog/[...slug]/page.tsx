@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
     title: post.title,
     description: post.description,
     alternates: { canonical: url },
-    robots: { index: true, follow: true },
+    robots: { index: false, follow: true },
     openGraph: { title: post.title, description: post.description, url, type: "article" },
     twitter: { card: "summary_large_image", title: post.title, description: post.description }
   };
@@ -73,6 +73,7 @@ export default async function Page({ params }: P) {
       <h1 style={{ fontSize: "44px" }}>{post.title}</h1>
       <p className="lead">{post.description}</p>
       <p className="muted">Published {post.date} · {post.readTime} read</p>
+      <p className="warning">Editorial draft: this article remains noindex until its material claims are mapped to page-level source receipts and reviewed.</p>
 
       <section className="evidence" aria-labelledby="direct-answer-heading">
         <h2 id="direct-answer-heading">Direct answer</h2>

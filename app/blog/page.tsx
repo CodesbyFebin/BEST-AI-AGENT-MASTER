@@ -7,7 +7,8 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Blog — AI Agent Insights, Analysis & Updates",
   description: "Insights, analysis, and updates on AI agents, MCP infrastructure, and India-first compliance.",
-  alternates: { canonical: "/blog" }
+  alternates: { canonical: "/blog" },
+  robots: { index: false, follow: true }
 };
 
 export default function BlogPage() {

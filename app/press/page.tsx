@@ -69,13 +69,7 @@ export default function PressPage() {
 
     <div className="prose">
       <h2>Brand assets</h2>
-      <p>
-        Logo (SVG/PNG, full color and monochrome) and high-resolution
-        screenshots of key pages are available on request. No license has
-        been formally granted for these assets yet — contact us before
-        reusing them, the same as with the rest of this project (see the
-        README&apos;s License section).
-      </p>
+      <p>No downloadable press-asset package is currently published. Do not infer a reuse license from this page; review the repository&apos;s current license notice before reusing source or artwork.</p>
 
       <h2>Brand guidelines</h2>
       <ul>
@@ -117,26 +111,10 @@ export default function PressPage() {
       </p>
 
       <h2>Media contact</h2>
-      <p>
-        Email: <a href="mailto:press@bestaiagent.in">press@bestaiagent.in</a>
-        <br />
-        GitHub:{" "}
-        <a href="https://github.com/CodesbyFebin/bestaiagent.in">
-          github.com/CodesbyFebin/bestaiagent.in
-        </a>
-        <br />
-        Response time: within 48 hours
-      </p>
+      <p>Use the public <a href="https://github.com/CodesbyFebin/BESTAIAGENT-MASTER/issues">BESTAIAGENT-MASTER issue tracker</a>. No response-time commitment is published.</p>
 
       <h2>Spokesperson</h2>
-      <p>
-        Our editorial team is available for interviews and commentary on AI
-        agent evaluation methodology, MCP infrastructure, the evidence-first
-        publication doctrine, and India AI ecosystem developments. Topics we
-        can comment on include agent identity verification, MCP server
-        source-led cataloguing, primary-source evidence hashing, and
-        evidence-first directory architecture.
-      </p>
+      <p>No named spokesperson is currently listed. Requests can be submitted through the public issue tracker and should not be treated as accepted until explicitly confirmed.</p>
     </div>
   </div>;
 }

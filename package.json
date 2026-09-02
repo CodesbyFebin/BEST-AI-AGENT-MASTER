@@ -16,7 +16,8 @@
     "verify:crawl-graph": "node scripts/verify-crawl-graph.mjs",
     "verify:gsc": "node scripts/verify-gsc-migration.mjs",
     "verify:quarantine": "node scripts/verify-quarantine.mjs",
-    "verify": "npm run verify:catalog && npm run verify:crawl-graph && npm run verify:gsc && npm run verify:quarantine && npm run typecheck && npm run lint && npm run build"
+    "verify:publication": "node scripts/verify-publication-integrity.mjs",
+    "verify": "npm run verify:catalog && npm run verify:crawl-graph && npm run verify:gsc && npm run verify:quarantine && npm run verify:publication && npm run typecheck && npm run lint && npm run build && python3 scripts/validate-jsonld.py"
   },
   "dependencies": {
     "next": "^16.3.3",

@@ -1,24 +1,23 @@
 import type { MetadataRoute } from "next";
 import { publicEntities, publicIndexableComparisons, getPublicEntityPath } from "@/lib/catalog";
 import { authorityPages } from "@/lib/authority-pages";
+import { isAuthorityPageEvidenceReady } from "@/lib/authority-evidence";
 import { legacyPages, categories } from "@/lib/legacy";
 import { glossaryTerms } from "@/lib/glossary";
 import { trustPages } from "@/lib/trust";
-import { blogPosts } from "@/lib/blog-posts";
 import { SITE } from "@/lib/site";
-
-const FALLBACK_LAST_MODIFIED = "2026-08-29";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const legacyPaths = Object.entries(legacyPages)
     .filter(([slug, page]) => page.index && slug !== "rankings")
     .map(([slug]) => `/${slug}`);
 
-  const authorityEntries = Object.entries(authorityPages).filter(([, page]) => page.index);
+  const authorityEntries = Object.entries(authorityPages).filter(([slug, page]) =>
+    page.index && isAuthorityPageEvidenceReady(slug, page.evidenceIds)
+  );
   const authorityPaths = authorityEntries.map(([slug]) => `/${slug}`);
   const lastModifiedByPath = new Map<string, string>([
-    ...authorityEntries.map(([slug, page]): [string, string] => [`/${slug}`, page.lastReviewed]),
-    ...blogPosts.map((post): [string, string] => [`/blog/${post.category}/${post.subcategory}/${post.slug}`, post.date])
+    ...authorityEntries.map(([slug, page]): [string, string] => [`/${slug}`, page.lastReviewed])
   ]);
 
   // MCP server detail pages are intentionally noindex until a canonical upstream
@@ -49,14 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/mcp/servers",
     "/india",
     "/research",
-    "/blog",
-    "/changelog",
-    "/events",
     "/glossary",
     "/guides",
-    "/integrations",
-    "/learning",
-    "/newsletter",
     "/press",
     "/tools",
     "/trust",
@@ -67,12 +60,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...glossaryTerms.map((term) => `/glossary/${term.slug}`),
     ...Object.keys(trustPages).map((slug) => `/trust/${slug}`),
     ...publicEntities.map(getPublicEntityPath),
-    ...publicIndexableComparisons.map((comparison) => `/compare/${comparison.slug}`),
-    ...blogPosts.map((post) => `/blog/${post.category}/${post.subcategory}/${post.slug}`)
+    ...publicIndexableComparisons.map((comparison) => `/compare/${comparison.slug}`)
   ]);
 
-  return [...paths].map((path) => ({
-    url: `${SITE.url}${path}`,
-    lastModified: lastModifiedByPath.get(path) ?? FALLBACK_LAST_MODIFIED
-  }));
+  return [...paths].map((path) => {
+    const lastModified = lastModifiedByPath.get(path);
+    return {
+      url: `${SITE.url}${path}`,
+      ...(lastModified ? { lastModified } : {})
+    };
+  });
 }

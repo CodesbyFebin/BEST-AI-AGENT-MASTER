@@ -13,8 +13,10 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm run verify:catalog
+      - run: npm run verify:crawl-graph
       - run: npm run verify:gsc
       - run: npm run verify:quarantine
+      - run: npm run verify:publication
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run build

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EntityCard } from "@/components/EntityCard";
-import { JsonLd } from "@/components/JsonLd";
 import { SearchBox } from "@/components/SearchBox";
 import { authorityEvidence } from "@/lib/authority-evidence";
 import { entitiesByType, publicEntities, getPublicCatalogStats } from "@/lib/catalog";
@@ -38,11 +37,6 @@ export default function Home() {
 
   return (
     <>
-      <JsonLd data={[
-        { "@type":"Organization", "@id":`${SITE.url}/#org`, name:SITE.name, url:SITE.url },
-        { "@type":"WebSite", "@id":`${SITE.url}/#site`, name:SITE.name, url:SITE.url, publisher:{ "@id":`${SITE.url}/#org` }, inLanguage:"en-IN", potentialAction:{ "@type":"SearchAction", target:`${SITE.url}/search?q={search_term_string}`, "query-input":"required name=search_term_string" } }
-      ]} />
-
       <section className="hero discoveryHero">
         <div className="shell heroGrid">
           <div className="heroCopy">

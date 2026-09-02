@@ -4,7 +4,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Changelog — Updates to BestAIAgent.in Directory & Methodology",
   description: "Track updates to the BestAIAgent.in AI agent directory — new listings, score changes, methodology updates, and platform improvements.",
-  alternates: { canonical: "/changelog" }
+  alternates: { canonical: "/changelog" },
+  robots: { index: false, follow: true }
 };
 
 /**

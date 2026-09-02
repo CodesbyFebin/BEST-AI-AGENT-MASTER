@@ -30,25 +30,13 @@ function findCatalogIcon(candidates: Array<string | null | undefined>): string |
   return null;
 }
 
-function domainFromUrl(url: string): string | null {
-  try {
-    return new URL(url).hostname.replace(/^www\./, "");
-  } catch {
-    return null;
-  }
-}
-
 /**
- * Renders a real favicon fetched live from the entity's own source domain via
- * Google's public favicon service (no API key, no hosting, no scraping — it's
- * the same mechanism a browser tab icon uses). If that fails to load (a
- * domain with no favicon, a dead link, etc.), falls back to a neutral catalog
- * icon when the entity/developer name matches one; if neither is available,
- * falls back to a text-initials glyph — never a broken image.
+ * Renders a first-party neutral catalog icon where one exists, otherwise a
+ * deterministic initials glyph. Avoiding a live third-party favicon proxy
+ * removes an external request, a privacy dependency, and layout variability.
  */
 export function EntityLogo({
   name,
-  sourceUrl,
   developer,
   size = 40,
 }: {
@@ -57,26 +45,8 @@ export function EntityLogo({
   developer?: string | null;
   size?: number;
 }) {
-  const [liveFailed, setLiveFailed] = useState(false);
   const [catalogFailed, setCatalogFailed] = useState(false);
-  const domain = sourceUrl ? domainFromUrl(sourceUrl) : null;
   const catalogIcon = findCatalogIcon([name, developer]);
-
-  if (!liveFailed && domain) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        className="glyph"
-        src={`https://www.google.com/s2/favicons?domain=${domain}&sz=${size * 2}`}
-        alt=""
-        aria-hidden="true"
-        width={size}
-        height={size}
-        style={{ objectFit: "contain", background: "#fff", padding: 4 }}
-        onError={() => setLiveFailed(true)}
-      />
-    );
-  }
 
   if (!catalogFailed && catalogIcon) {
     return (

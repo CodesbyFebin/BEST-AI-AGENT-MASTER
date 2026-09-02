@@ -1,5 +1,5 @@
 import { authorityPages } from "@/lib/authority-pages";
-import { getAuthorityEvidence } from "@/lib/authority-evidence";
+import { getAuthorityEvidence, isAuthorityPageEvidenceReady } from "@/lib/authority-evidence";
 import { publicEntities, publicIndexableComparisons } from "@/lib/catalog";
 import { glossaryTerms } from "@/lib/glossary";
 import { trustPages } from "@/lib/trust";
@@ -13,7 +13,7 @@ export async function GET() {
   );
 
   const authorityLines = Object.entries(authorityPages)
-    .filter(([, page]) => page.index)
+    .filter(([slug, page]) => page.index && isAuthorityPageEvidenceReady(slug, page.evidenceIds))
     .map(([slug, page]) => {
       const sources = getAuthorityEvidence(slug).map((record) => record.sourceUrl);
       return `- ${page.title} (authority page) — ${SITE.url}/${slug} — reviewed: ${page.lastReviewed}${sources.length ? ` — sources: ${sources.join(", ")}` : ""}`;

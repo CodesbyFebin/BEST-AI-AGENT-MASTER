@@ -77,7 +77,7 @@ export default function ToolsPage() {
 
     <div className="prose">
       <h2>Submitting a tool</h2>
-      <p>If you have built an AI tool relevant to this directory, submit it through our <a href="https://github.com/CodesbyFebin/bestaiagent.in">GitHub repository</a> with the tool name, official website, category, and description. Please include supporting evidence — documentation, pricing, feature lists, and India-specific capabilities.</p>
+      <p>If you have built an AI tool relevant to this directory, submit it through the <a href="https://github.com/CodesbyFebin/BESTAIAGENT-MASTER/issues">BESTAIAGENT-MASTER issue tracker</a> with the tool name, official website, category, and description. Please include supporting evidence — documentation, pricing, feature lists, and India-specific capabilities.</p>
     </div>
   </div>;
 }

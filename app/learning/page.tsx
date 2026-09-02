@@ -4,7 +4,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "AI Learning Resources — Tutorials, Courses & Guides for India",
   description: "Tutorials, courses, and guides for AI agent development, MCP, and India-specific AI deployment.",
-  alternates: { canonical: "/learning" }
+  alternates: { canonical: "/learning" },
+  robots: { index: false, follow: true }
 };
 
 const paths = [
