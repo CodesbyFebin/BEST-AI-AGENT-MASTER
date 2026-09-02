@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { authorityPages } from "@/lib/authority-pages";
-import { getAuthorityEvidence } from "@/lib/authority-evidence";
+import { getAuthorityEvidence, isAuthorityPageEvidenceReady } from "@/lib/authority-evidence";
 import { legacyPages } from "@/lib/legacy";
 import { clusterPages } from "@/lib/clusters";
 import { ContentBlocks } from "@/components/ContentBlocks";
@@ -33,11 +33,14 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
   const page = authority ?? legacy ?? cluster;
   if (!page) return { title: "Not found", robots: { index: false, follow: true } };
 
+  const authorityIndexable = authority
+    ? authority.index && isAuthorityPageEvidenceReady(slug, authority.evidenceIds)
+    : false;
   return {
     title: page.title,
     description: page.description,
     alternates: { canonical: `/${slug}` },
-    robots: { index: cluster ? false : (page as { index?: boolean }).index !== false, follow: true },
+    robots: { index: authority ? authorityIndexable : cluster ? false : (page as { index?: boolean }).index !== false, follow: true },
     openGraph: { title: page.title, description: page.description, url: `/${slug}`, type: "article" },
     twitter: { card: "summary_large_image", title: page.title, description: page.description }
   };
@@ -112,6 +115,9 @@ export default async function Page({ params }: P) {
         <p>{authority.directAnswer}</p>
         <p className="muted">Last reviewed {authority.lastReviewed}</p>
       </section>
+
+      {!isAuthorityPageEvidenceReady(slug, authority.evidenceIds) &&
+        <p className="warning">This page remains noindex while its page-level source receipts are completed and verified. It is available for review, not presented as publication-ready authority.</p>}
 
       <div className="prose">
         {authority.sections.map((section) => <section key={section.heading}>

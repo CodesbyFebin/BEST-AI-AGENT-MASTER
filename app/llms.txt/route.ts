@@ -47,10 +47,6 @@ Publication rule: discovery is not verification. Public entity detail pages requ
 - ${SITE.url}/tools
 - ${SITE.url}/api-docs
 - ${SITE.url}/verify
-- ${SITE.url}/blog
-- ${SITE.url}/learning
-- ${SITE.url}/integrations
-- ${SITE.url}/changelog
 
 ## Trust and methodology
 - ${SITE.url}/methodology

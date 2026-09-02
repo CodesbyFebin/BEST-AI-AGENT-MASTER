@@ -4,7 +4,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "AI Integration Guides — MCP, Databases, APIs & Enterprise Tools",
   description: "Step-by-step integration guides for connecting AI agents to databases, APIs, and enterprise tools via MCP.",
-  alternates: { canonical: "/integrations" }
+  alternates: { canonical: "/integrations" },
+  robots: { index: false, follow: true }
 };
 
 const guides = [
@@ -30,7 +31,8 @@ export default function IntegrationsPage() {
     <div className="prose">
       <h2>Why integration matters</h2>
       <p>Model Context Protocol (MCP) provides a standardized way to connect agents to external systems — databases, APIs, file services, and enterprise tools — enabling workflows that combine AI reasoning with real-world data and actions.</p>
-      <p>For Indian deployments, integration must also address data residency requirements under the DPDP Act. When integrating with services that process personal data of Indian residents, ensure data does not leave Indian jurisdictions without explicit consent.</p>
+      <p>For Indian deployments, determine whether personal data is processed and review the current DPDP Act, rules, government notifications, contracts, and security controls with qualified counsel. This page does not infer a blanket India-only data-residency rule or treat consent as the sole basis for every cross-border transfer.</p>
+      <p className="warning">These integration outlines are review checklists, not tested copy-paste procedures. They remain noindex until each client, server, configuration path, and security step is checked against current first-party documentation.</p>
       <h2>Before you start any of these guides</h2>
       <p>Every guide below assumes an MCP-compatible client is already installed and running — the steps cover connecting that client to a specific server, not installing the client itself. If a step references a config file path (like <code>~/.cline_mcp_settings.json</code>), confirm the current path against that client&apos;s own documentation first: client config locations change across versions more often than the underlying MCP connection steps do.</p>
       <h2>Read-only first, write access second</h2>

@@ -4,14 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "AI Events India — Conferences, Meetups & Workshops",
   description: "AI events, conferences, and meetups in India — AI agent developments, MCP workshops, and India AI ecosystem events.",
-  alternates: { canonical: "/events" }
+  alternates: { canonical: "/events" },
+  robots: { index: false, follow: true }
 };
-
-const events = [
-  { type: "Conference", date: "September 15-17, 2026", location: "Bengaluru, Karnataka", title: "India AI Summit 2026", desc: "India's largest AI conference bringing together researchers, developers, and enterprises. Features tracks on AI agents, MCP infrastructure, and sovereign AI deployment. Over 2000 attendees expected.", tags: ["AI Agents", "MCP", "Sovereign AI", "Indic Models"] },
-  { type: "Workshop", date: "October 5, 2026", location: "Hyderabad, Telangana", title: "MCP Developer Workshop", desc: "Hands-on workshop for building and deploying MCP servers. Learn transport configuration, security best practices, and enterprise integration patterns.", tags: ["MCP Servers", "Security", "Enterprise Integration"] },
-  { type: "Seminar", date: "October 20, 2026", location: "Mumbai, Maharashtra", title: "DPDP Compliance for AI", desc: "Expert seminar on implementing DPDP Act compliance for AI systems. Covers data residency, consent management, and audit requirements.", tags: ["DPDP Act", "Data Residency", "Consent Management"] }
-];
 
 export default function EventsPage() {
   return <div className="shell detail">
@@ -23,27 +18,16 @@ export default function EventsPage() {
     </section>
 
     <div className="prose">
-      <h2>Upcoming events</h2>
-    </div>
-    <div className="grid" style={{ gridTemplateColumns: "1fr", marginBottom: 24 }}>
-      {events.map((e) => (
-        <article className="card" key={e.title}>
-          <div className="cardTop">
-            <span className="tag">{e.type}</span>
-            <span className="muted">{e.date} · {e.location}</span>
-          </div>
-          <h3>{e.title}</h3>
-          <p>{e.desc}</p>
-          <div className="tagRow">{e.tags.map((t) => <span className="tag" key={t}>{t}</span>)}</div>
-        </article>
-      ))}
-    </div>
-
-    <div className="prose">
-      <h2>Online events</h2>
-      <p>Many AI events offer online or hybrid attendance options. We indicate which listed events offer online attendance where that information is available.</p>
+      <p className="warning">No event currently has a verified first-party listing in the publication registry. This page remains noindex until an event name, organizer, venue, date, registration URL, and retrieval date are captured from the organizer&apos;s own page.</p>
+      <h2>What an event listing must include</h2>
+      <ul>
+        <li>A first-party organizer or venue URL, not an unsourced calendar copy.</li>
+        <li>The published date, timezone, location or online-attendance status.</li>
+        <li>A retrieval date and a recheck before the event is surfaced publicly.</li>
+        <li>No attendance estimate or superlative unless the organizer publishes it.</li>
+      </ul>
       <h2>Submitting an event</h2>
-      <p>If you are organizing an AI event in India relevant to this community, submit it through our <a href="https://github.com/CodesbyFebin/bestaiagent.in">GitHub repository</a> — include the event name, date, location, description and topics covered. Please submit at least two weeks in advance.</p>
+      <p>Submit a proposed listing through the <a href="https://github.com/CodesbyFebin/BESTAIAGENT-MASTER/issues">project&apos;s GitHub issues</a> with the organizer&apos;s source URL and the fields above. Submission does not guarantee publication.</p>
     </div>
   </div>;
 }
