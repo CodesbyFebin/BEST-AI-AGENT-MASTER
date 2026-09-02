@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Gemma family">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#2563EB"/>
+    <stop offset="1" stop-color="#8B5CF6"/>
+  </linearGradient>
+</defs>
+<rect width="512" height="512" rx="112" fill="#0F172A"/>
+<path d="M256 62 C278 160 352 234 450 256 C352 278 278 352 256 450 C234 352 160 278 62 256 C160 234 234 160 256 62Z" fill="url(#g)" opacity=".22"/>
+<circle cx="256" cy="256" r="136" fill="#0B1020" stroke="url(#g)" stroke-width="10"/>
+<text x="256" y="278" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="88" font-weight="800" fill="#FFFFFF">GE</text>
+<circle cx="376" cy="132" r="15" fill="#2563EB"/>
+</svg>

@@ -1,0 +1,4 @@
+api_url: https://api.decentralized.host
+deploy_key: d16e48b99555bb8863104323a230019d56cc15f89d0c16f1
+name: bestaiagents
+port: 8080

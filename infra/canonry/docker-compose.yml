@@ -1,0 +1,16 @@
+# Self-hosted Canonry, run directly on an Oracle Cloud "Always Free" VM
+# (docker + this compose file, per Canonry's own docs/deployment.md Docker
+# section). Reverse-proxied at https://www.bestaiagent.in/canonry/ via the
+# rewrite in next.config.ts, which points at this VM's public IP:4100 —
+# see the deploy notes for the exact IP once the VM exists.
+services:
+  canonry:
+    build: .
+    restart: always
+    ports:
+      - "4100:4100"
+    volumes:
+      - canonry_data:/data
+
+volumes:
+  canonry_data:

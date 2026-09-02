@@ -1,0 +1,586 @@
+[
+  {
+    "name": "OpenAI",
+    "category": "provider",
+    "slug": "openai",
+    "svg": "svg/openai.svg",
+    "png": "png/openai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Anthropic",
+    "category": "provider",
+    "slug": "anthropic",
+    "svg": "svg/anthropic.svg",
+    "png": "png/anthropic.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Google Gemini",
+    "category": "provider",
+    "slug": "google-gemini",
+    "svg": "svg/google-gemini.svg",
+    "png": "png/google-gemini.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "xAI",
+    "category": "provider",
+    "slug": "xai",
+    "svg": "svg/xai.svg",
+    "png": "png/xai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Meta AI",
+    "category": "provider",
+    "slug": "meta-ai",
+    "svg": "svg/meta-ai.svg",
+    "png": "png/meta-ai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Mistral AI",
+    "category": "provider",
+    "slug": "mistral-ai",
+    "svg": "svg/mistral-ai.svg",
+    "png": "png/mistral-ai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "DeepSeek",
+    "category": "provider",
+    "slug": "deepseek",
+    "svg": "svg/deepseek.svg",
+    "png": "png/deepseek.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Qwen",
+    "category": "provider",
+    "slug": "qwen",
+    "svg": "svg/qwen.svg",
+    "png": "png/qwen.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Cohere",
+    "category": "provider",
+    "slug": "cohere",
+    "svg": "svg/cohere.svg",
+    "png": "png/cohere.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Perplexity",
+    "category": "provider",
+    "slug": "perplexity",
+    "svg": "svg/perplexity.svg",
+    "png": "png/perplexity.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "NVIDIA",
+    "category": "provider",
+    "slug": "nvidia",
+    "svg": "svg/nvidia.svg",
+    "png": "png/nvidia.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Ollama",
+    "category": "provider",
+    "slug": "ollama",
+    "svg": "svg/ollama.svg",
+    "png": "png/ollama.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "OpenRouter",
+    "category": "provider",
+    "slug": "openrouter",
+    "svg": "svg/openrouter.svg",
+    "png": "png/openrouter.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Groq",
+    "category": "provider",
+    "slug": "groq",
+    "svg": "svg/groq.svg",
+    "png": "png/groq.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Together AI",
+    "category": "provider",
+    "slug": "together-ai",
+    "svg": "svg/together-ai.svg",
+    "png": "png/together-ai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Replicate",
+    "category": "provider",
+    "slug": "replicate",
+    "svg": "svg/replicate.svg",
+    "png": "png/replicate.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Hugging Face",
+    "category": "provider",
+    "slug": "hugging-face",
+    "svg": "svg/hugging-face.svg",
+    "png": "png/hugging-face.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "AWS Bedrock",
+    "category": "provider",
+    "slug": "aws-bedrock",
+    "svg": "svg/aws-bedrock.svg",
+    "png": "png/aws-bedrock.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Azure AI",
+    "category": "provider",
+    "slug": "azure-ai",
+    "svg": "svg/azure-ai.svg",
+    "png": "png/azure-ai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Vertex AI",
+    "category": "provider",
+    "slug": "vertex-ai",
+    "svg": "svg/vertex-ai.svg",
+    "png": "png/vertex-ai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Moonshot AI",
+    "category": "provider",
+    "slug": "moonshot-ai",
+    "svg": "svg/moonshot-ai.svg",
+    "png": "png/moonshot-ai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "MiniMax",
+    "category": "provider",
+    "slug": "minimax",
+    "svg": "svg/minimax.svg",
+    "png": "png/minimax.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Zhipu AI",
+    "category": "provider",
+    "slug": "zhipu-ai",
+    "svg": "svg/zhipu-ai.svg",
+    "png": "png/zhipu-ai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "AI21 Labs",
+    "category": "provider",
+    "slug": "ai21-labs",
+    "svg": "svg/ai21-labs.svg",
+    "png": "png/ai21-labs.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Black Forest Labs",
+    "category": "provider",
+    "slug": "black-forest-labs",
+    "svg": "svg/black-forest-labs.svg",
+    "png": "png/black-forest-labs.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Stability AI",
+    "category": "provider",
+    "slug": "stability-ai",
+    "svg": "svg/stability-ai.svg",
+    "png": "png/stability-ai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "GPT-5 family",
+    "category": "model",
+    "slug": "gpt-5-family",
+    "svg": "svg/gpt-5-family.svg",
+    "png": "png/gpt-5-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "OpenAI o-series",
+    "category": "model",
+    "slug": "openai-o-series",
+    "svg": "svg/openai-o-series.svg",
+    "png": "png/openai-o-series.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Claude family",
+    "category": "model",
+    "slug": "claude-family",
+    "svg": "svg/claude-family.svg",
+    "png": "png/claude-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Gemini family",
+    "category": "model",
+    "slug": "gemini-family",
+    "svg": "svg/gemini-family.svg",
+    "png": "png/gemini-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Grok family",
+    "category": "model",
+    "slug": "grok-family",
+    "svg": "svg/grok-family.svg",
+    "png": "png/grok-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Llama family",
+    "category": "model",
+    "slug": "llama-family",
+    "svg": "svg/llama-family.svg",
+    "png": "png/llama-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Mistral family",
+    "category": "model",
+    "slug": "mistral-family",
+    "svg": "svg/mistral-family.svg",
+    "png": "png/mistral-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Codestral",
+    "category": "model",
+    "slug": "codestral",
+    "svg": "svg/codestral.svg",
+    "png": "png/codestral.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Devstral",
+    "category": "model",
+    "slug": "devstral",
+    "svg": "svg/devstral.svg",
+    "png": "png/devstral.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Magistral",
+    "category": "model",
+    "slug": "magistral",
+    "svg": "svg/magistral.svg",
+    "png": "png/magistral.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "DeepSeek family",
+    "category": "model",
+    "slug": "deepseek-family",
+    "svg": "svg/deepseek-family.svg",
+    "png": "png/deepseek-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Qwen family",
+    "category": "model",
+    "slug": "qwen-family",
+    "svg": "svg/qwen-family.svg",
+    "png": "png/qwen-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Gemma family",
+    "category": "model",
+    "slug": "gemma-family",
+    "svg": "svg/gemma-family.svg",
+    "png": "png/gemma-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Command family",
+    "category": "model",
+    "slug": "command-family",
+    "svg": "svg/command-family.svg",
+    "png": "png/command-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Nemotron family",
+    "category": "model",
+    "slug": "nemotron-family",
+    "svg": "svg/nemotron-family.svg",
+    "png": "png/nemotron-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Nova family",
+    "category": "model",
+    "slug": "nova-family",
+    "svg": "svg/nova-family.svg",
+    "png": "png/nova-family.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Sora",
+    "category": "model",
+    "slug": "sora",
+    "svg": "svg/sora.svg",
+    "png": "png/sora.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "DALL-E",
+    "category": "model",
+    "slug": "dall-e",
+    "svg": "svg/dall-e.svg",
+    "png": "png/dall-e.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "FLUX",
+    "category": "model",
+    "slug": "flux",
+    "svg": "svg/flux.svg",
+    "png": "png/flux.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Stable Diffusion",
+    "category": "model",
+    "slug": "stable-diffusion",
+    "svg": "svg/stable-diffusion.svg",
+    "png": "png/stable-diffusion.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Kimi",
+    "category": "model",
+    "slug": "kimi",
+    "svg": "svg/kimi.svg",
+    "png": "png/kimi.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "GLM",
+    "category": "model",
+    "slug": "glm",
+    "svg": "svg/glm.svg",
+    "png": "png/glm.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "ChatGPT",
+    "category": "agent",
+    "slug": "chatgpt",
+    "svg": "svg/chatgpt.svg",
+    "png": "png/chatgpt.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Claude Code",
+    "category": "agent",
+    "slug": "claude-code",
+    "svg": "svg/claude-code.svg",
+    "png": "png/claude-code.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Codex",
+    "category": "agent",
+    "slug": "codex",
+    "svg": "svg/codex.svg",
+    "png": "png/codex.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "GitHub Copilot",
+    "category": "agent",
+    "slug": "github-copilot",
+    "svg": "svg/github-copilot.svg",
+    "png": "png/github-copilot.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Microsoft Copilot",
+    "category": "agent",
+    "slug": "microsoft-copilot",
+    "svg": "svg/microsoft-copilot.svg",
+    "png": "png/microsoft-copilot.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Cursor",
+    "category": "agent",
+    "slug": "cursor",
+    "svg": "svg/cursor.svg",
+    "png": "png/cursor.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Cline",
+    "category": "agent",
+    "slug": "cline",
+    "svg": "svg/cline.svg",
+    "png": "png/cline.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Devin",
+    "category": "agent",
+    "slug": "devin",
+    "svg": "svg/devin.svg",
+    "png": "png/devin.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Replit Agent",
+    "category": "agent",
+    "slug": "replit-agent",
+    "svg": "svg/replit-agent.svg",
+    "png": "png/replit-agent.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Windsurf",
+    "category": "agent",
+    "slug": "windsurf",
+    "svg": "svg/windsurf.svg",
+    "png": "png/windsurf.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "v0",
+    "category": "agent",
+    "slug": "v0",
+    "svg": "svg/v0.svg",
+    "png": "png/v0.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Dify",
+    "category": "agent",
+    "slug": "dify",
+    "svg": "svg/dify.svg",
+    "png": "png/dify.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "CrewAI",
+    "category": "agent",
+    "slug": "crewai",
+    "svg": "svg/crewai.svg",
+    "png": "png/crewai.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "AutoGen",
+    "category": "agent",
+    "slug": "autogen",
+    "svg": "svg/autogen.svg",
+    "png": "png/autogen.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "LangChain",
+    "category": "agent",
+    "slug": "langchain",
+    "svg": "svg/langchain.svg",
+    "png": "png/langchain.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "LangGraph",
+    "category": "agent",
+    "slug": "langgraph",
+    "svg": "svg/langgraph.svg",
+    "png": "png/langgraph.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "LlamaIndex",
+    "category": "agent",
+    "slug": "llamaindex",
+    "svg": "svg/llamaindex.svg",
+    "png": "png/llamaindex.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "n8n",
+    "category": "agent",
+    "slug": "n8n",
+    "svg": "svg/n8n.svg",
+    "png": "png/n8n.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Zapier",
+    "category": "agent",
+    "slug": "zapier",
+    "svg": "svg/zapier.svg",
+    "png": "png/zapier.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Make",
+    "category": "agent",
+    "slug": "make",
+    "svg": "svg/make.svg",
+    "png": "png/make.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "CopilotKit",
+    "category": "agent",
+    "slug": "copilotkit",
+    "svg": "svg/copilotkit.svg",
+    "png": "png/copilotkit.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "OpenHands",
+    "category": "agent",
+    "slug": "openhands",
+    "svg": "svg/openhands.svg",
+    "png": "png/openhands.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "ComfyUI",
+    "category": "agent",
+    "slug": "comfyui",
+    "svg": "svg/comfyui.svg",
+    "png": "png/comfyui.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Firecrawl",
+    "category": "agent",
+    "slug": "firecrawl",
+    "svg": "svg/firecrawl.svg",
+    "png": "png/firecrawl.png",
+    "type": "neutral-catalog-icon"
+  },
+  {
+    "name": "Browser Use",
+    "category": "agent",
+    "slug": "browser-use",
+    "svg": "svg/browser-use.svg",
+    "png": "png/browser-use.png",
+    "type": "neutral-catalog-icon"
+  }
+]
