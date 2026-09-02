@@ -68,31 +68,24 @@ for (const route of criticalLegacyRoutes) {
   assert(inAuthority || inRedirects, `critical historical route has no protected disposition: ${route}`);
 }
 
-const historicalSitemaps = [
-  "/blog-sitemap.xml",
-  "/image-sitemap.xml",
-  "/free-sitemap.xml",
-  "/coding-sitemap.xml",
-  "/research-sitemap.xml",
-  "/reddit-sitemap.xml",
-  "/industry-sitemap.xml",
-  "/longtail-sitemap.xml",
-  "/entity-sitemap.xml",
-  "/calculators-sitemap.xml",
-  "/hub-sitemap.xml",
-  "/author-sitemap.xml",
-  "/mcp-sitemap.xml",
-  "/glossary-sitemap.xml",
-  "/tutorials-sitemap.xml",
-  "/alternatives-sitemap.xml",
-  "/pricing-sitemap.xml",
-  "/comparison-sitemap.xml",
-  "/tool-sitemap.xml",
-  "/ai-agent-sitemap.xml"
+// This project used to require ~20 "compatibility" sitemap-alias rewrites
+// (e.g. /reddit-sitemap.xml -> /sitemap-pages.xml) here. They were removed
+// from next.config.ts deliberately: Google independently discovered one of
+// them (/alternatives-sitemap.xml) and started treating it as a second,
+// competing sitemap, producing real duplicate-canonical confusion in Search
+// Console. /sitemap.xml (app/sitemap.ts) is the single canonical sitemap;
+// asserting those aliases must exist would just reintroduce the bug this
+// verifier is supposed to help prevent. See next.config.ts's own comment
+// at the same spot for the other half of this decision.
+const retiredSitemapAliases = [
+  "/blog-sitemap.xml", "/image-sitemap.xml", "/free-sitemap.xml", "/coding-sitemap.xml",
+  "/research-sitemap.xml", "/reddit-sitemap.xml", "/industry-sitemap.xml", "/longtail-sitemap.xml",
+  "/entity-sitemap.xml", "/calculators-sitemap.xml", "/hub-sitemap.xml", "/author-sitemap.xml",
+  "/mcp-sitemap.xml", "/glossary-sitemap.xml", "/tutorials-sitemap.xml", "/alternatives-sitemap.xml",
+  "/pricing-sitemap.xml", "/comparison-sitemap.xml", "/tool-sitemap.xml", "/ai-agent-sitemap.xml"
 ];
-
-for (const sitemap of historicalSitemaps) {
-  assert(nextConfig.includes(`source: \"${sitemap}\"`), `historical sitemap compatibility rewrite missing: ${sitemap}`);
+for (const sitemap of retiredSitemapAliases) {
+  assert(!nextConfig.includes(`source: \"${sitemap}\"`), `next.config.ts should not reintroduce the retired sitemap-alias rewrite: ${sitemap}`);
 }
 
 assert(nextConfig.includes('import legacyRedirects from "./data/legacy-redirects.json"'), "next.config.ts must consume the canonical redirect registry");
@@ -108,5 +101,5 @@ console.log(`- historical raw URLs: ${policy.inputs.rawObservedUrlCount}`);
 console.log(`- normalized paths: ${policy.inputs.normalizedPathCount}`);
 console.log(`- permanent redirect rules: ${sourcePaths.length}`);
 console.log(`- implemented authority pages: ${policy.implementedAuthorityPages.length}`);
-console.log(`- historical sitemap aliases: ${historicalSitemaps.length}`);
+console.log(`- historical sitemap aliases: 0 (deliberately removed — see comment in this script)`);
 console.log(`- default disposition: ${policy.defaultDisposition}`);

@@ -24,8 +24,8 @@ What it covers:
 - **MCP servers** — cataloged by source-link status, not capability claims
 - **Comparisons** — evidence-ready only when both sides are independently verified
 ## Production
-- Canonical domain: `https://bestaiagent.in`
-- WWW: `https://www.bestaiagent.in`
+- Canonical domain: `https://www.bestaiagent.in` (all metadata, sitemaps and machine feeds are built around this host — see `lib/site.ts`)
+- Apex: `https://bestaiagent.in` permanently redirects (308) to the canonical `www` host
 - Vercel project: `bestaiagent-master` (team `projects555`)
 - Production repository: `CodesbyFebin/BESTAIAGENT-MASTER`
 

@@ -38,7 +38,6 @@ for (const dirName of ["app", "lib", "components"]) {
 
 for (const publicSurface of [
   "app/sitemap.ts",
-  "app/sitemap-pages.xml/route.ts",
   "app/llms.txt/route.ts",
   "app/llms-full.txt/route.ts",
   "app/api/catalog/route.ts",

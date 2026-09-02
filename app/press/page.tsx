@@ -71,8 +71,10 @@ export default function PressPage() {
       <h2>Brand assets</h2>
       <p>
         Logo (SVG/PNG, full color and monochrome) and high-resolution
-        screenshots of key pages are available under Creative Commons
-        Attribution-ShareAlike 4.0 International License.
+        screenshots of key pages are available on request. No license has
+        been formally granted for these assets yet — contact us before
+        reusing them, the same as with the rest of this project (see the
+        README&apos;s License section).
       </p>
 
       <h2>Brand guidelines</h2>
