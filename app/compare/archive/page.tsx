@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { allComparisons, publicIndexableComparisons } from "@/lib/catalog";
 
 export const metadata: Metadata = {
   title: "Comparison archive — preserved legacy routes",
@@ -10,6 +11,15 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const legacyCount = allComparisons.length - publicIndexableComparisons.length;
+  const preservedByStatus = allComparisons.reduce(
+    (acc, item) => {
+      acc[item.status] = (acc[item.status] ?? 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>
+  );
+
   return <div className="shell detail">
     <section className="directoryHero">
       <p className="eyebrow">Archive / comparisons</p>
@@ -28,10 +38,33 @@ export default function Page() {
     </section>
     <div className="prose">
       <p>
-        Looking for a verified comparison? Browse the{" "}
-        <Link href="/compare">public comparison hub</Link> — entries there
-        pass the field-level evidence gate on both sides.
+        BestAIAgent.in preserved older comparison URLs so that external links
+        do not break. During the evidence-first rebuild, comparisons that did
+        not clear the field-level evidence gate were removed from the public
+        graph and moved to this archive route. No synthetic winner scores or
+        benchmark leaderboard content was carried forward; only the URL
+        structure is retained for continuity.
       </p>
+      <div className="dlGrid">
+        <div>
+          <p className="eyebrow">Preserved by status</p>
+          <ul>
+            {Object.entries(preservedByStatus).map(([status, count]) => (
+              <li key={status}>
+                <code>{status}</code>: {count}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="eyebrow">Evidence-ready in public graph</p>
+          <p>{publicIndexableComparisons.length}</p>
+        </div>
+        <div>
+          <p className="eyebrow">Total legacy comparisons archived</p>
+          <p>{legacyCount}</p>
+        </div>
+      </div>
       <p className="muted">
         In-progress entries are listed separately under{" "}
         <Link href="/compare/research">active research</Link>.

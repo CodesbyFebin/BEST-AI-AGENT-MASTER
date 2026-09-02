@@ -12,6 +12,14 @@ export const metadata: Metadata = {
 
 export default function Page() {
   const research = allComparisons.filter((item) => !isPublicIndexableComparison(item));
+  const byStatus = research.reduce(
+    (acc, item) => {
+      acc[item.status] = (acc[item.status] ?? 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>
+  );
+
   return <div className="shell detail">
     <section className="directoryHero">
       <p className="eyebrow">Research / verification in progress</p>
@@ -35,9 +43,30 @@ export default function Page() {
         original slug so external links stay reachable, but the underlying
         evidence chain must clear the same gate as the public comparison
         graph before the comparison is promoted to <Link href="/compare">the
-        public comparison hub</Link> ({publicIndexableComparisons.length}
+        public comparison hub</Link> ({publicIndexableComparisons.length}{" "}
         currently evidence-ready).
       </p>
+      <p>
+        Comparisons remain in research status when one or both sides have
+        incomplete field-level evidence, ambiguous benchmark methodology, or
+        pricing that requires a dated evidence receipt. The comparison is not
+        promoted until both entities carry verified identities and every
+        compared field has a primary-source receipt attached.
+      </p>
+      <div className="dlGrid">
+        <div>
+          <p className="eyebrow">Preservation by status</p>
+          <ul>
+            {Object.entries(byStatus).map(([status, count]) => (
+              <li key={status}><code>{status}</code>: {count}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="eyebrow">Evidence-ready in public graph</p>
+          <p>{publicIndexableComparisons.length}</p>
+        </div>
+      </div>
     </div>
     <div className="clusterGrid">
       {research.map((item) => (
