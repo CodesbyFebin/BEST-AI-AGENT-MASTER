@@ -10908,4 +10908,146 @@ export const authorityPages: Record<string, AuthorityPage> = {
     index: true,
     lastReviewed: "2026-08-30"
   },
+
+  "academic-research-ai": {
+    title: "AI Agents for Academic Research",
+    description: "Where AI agents help academic research workflows, and why literature interpretation and methodology design still need a researcher's judgment.",
+    directAnswer: "AI agents help academic research with literature search, paper summarization, and citation extraction across large corpora — they are not a substitute for a researcher's judgment on methodology, novelty, or interpretation, and summarized papers should be checked against the original text before being cited or relied on.",
+    sections: [
+      {
+        heading: "Where automation adds real speed",
+        bullets: [
+          "Searching and filtering large paper corpora by topic, method, or keyword.",
+          "Summarizing individual papers' stated methods, findings, and limitations for faster triage.",
+          "Extracting and formatting citations from a reading list."
+        ]
+      },
+      {
+        heading: "Where it falls short",
+        paragraphs: [
+          "A summarization agent can misrepresent a paper's actual claims, especially around statistical significance, effect size, or stated limitations — always verify a summary against the source before citing it. Judging a paper's methodological soundness, its novelty relative to prior work, and how a finding should inform a new research question remain a researcher's responsibility; an agent has no way to independently assess whether a study's design actually supports its conclusions."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/ai-agents-for-market-research", label: "AI agents for market research" },
+      { href: "/how-to-reduce-ai-hallucinations", label: "How to reduce AI hallucinations" },
+      { href: "/hybrid-search-explained", label: "Hybrid search explained" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "financial-modeling-ai": {
+    title: "AI Agents for Financial Modeling",
+    description: "Where AI agents help build and check financial models, and why assumption-setting and final projections still need a finance professional's judgment.",
+    directAnswer: "AI agents help financial modeling with spreadsheet formula generation, historical-data aggregation, and flagging internal inconsistencies in a model — setting the underlying assumptions (growth rates, discount rates, market sizing) and standing behind a final projection remain the responsibility of the person building the model, since an agent has no way to verify which assumptions are actually defensible for a given business.",
+    sections: [
+      {
+        heading: "Where automation adds real speed",
+        bullets: [
+          "Generating and checking spreadsheet formulas for consistency across a model.",
+          "Aggregating historical financial data from filings or exports into a usable format.",
+          "Flagging circular references, broken links, or internal inconsistencies in an existing model."
+        ]
+      },
+      {
+        heading: "Where it falls short",
+        paragraphs: [
+          "A model is only as sound as its assumptions, and an agent cannot independently judge whether a growth rate, discount rate, or market-sizing figure is realistic for a specific business — that requires domain judgment and, for anything used externally, sign-off from a qualified finance professional. Treat agent output as a drafting and error-checking aid, not as a source of the assumptions themselves."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/expense-report-accounting-ai", label: "AI for expense reports and accounting" },
+      { href: "/roi-calculator-ai-automation", label: "ROI calculator for AI automation" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "data-visualization-ai": {
+    title: "AI Agents for Data Visualization",
+    description: "Where AI agents help turn raw data into charts and dashboards, and why choosing what to measure and how to present it still needs a human decision.",
+    directAnswer: "AI agents help data visualization with generating charts from a dataset, building dashboard layouts, and suggesting chart types for a given data shape — deciding which metrics actually matter for a given audience and question, and avoiding a chart that misleads through axis scaling or selective framing, remain a human responsibility.",
+    sections: [
+      {
+        heading: "Where automation adds real speed",
+        bullets: [
+          "Generating a first-pass chart or dashboard directly from a spreadsheet or database export.",
+          "Suggesting an appropriate chart type (bar, line, scatter) for a given data shape.",
+          "Reformatting an existing chart for a different audience or output format."
+        ]
+      },
+      {
+        heading: "Where it falls short",
+        paragraphs: [
+          "Choosing which metric actually answers the question a viewer is asking, and presenting it without a misleading axis, scale, or selective time window, requires understanding the underlying decision the chart is meant to support — something an agent has no visibility into unless it's explicitly specified. Review agent-generated charts for framing choices before sharing them externally."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/ai-agents-for-market-research", label: "AI agents for market research" },
+      { href: "/graphic-design-marketing-assets-ai", label: "AI for graphic design and marketing assets" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "scientific-research-ai": {
+    title: "AI Agents for Scientific Research",
+    description: "Where AI agents help scientific research workflows, and why hypothesis validity and experimental rigor still need a scientist's judgment.",
+    directAnswer: "AI agents help scientific research with literature synthesis, drafting candidate hypotheses for a researcher to evaluate, and processing large datasets for pattern-flagging — they cannot independently validate whether a hypothesis is scientifically sound or whether an experimental design actually isolates the variable it claims to, which remain a researcher's and peer-review process's responsibility.",
+    sections: [
+      {
+        heading: "Where automation adds real speed",
+        bullets: [
+          "Synthesizing findings across a large body of prior literature on a topic.",
+          "Drafting candidate hypotheses or experimental angles for a researcher to evaluate and refine.",
+          "Processing large datasets to flag statistical patterns worth a closer look."
+        ]
+      },
+      {
+        heading: "Where it falls short",
+        paragraphs: [
+          "A pattern an agent flags in a dataset is not evidence of a real effect until it survives proper statistical testing and, ideally, replication — agents have no mechanism for judging confounds, sample bias, or whether a study design actually supports causal claims. Peer review and a researcher's domain expertise remain the check on scientific validity; agent output here is a starting point for investigation, not a finding."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/academic-research-ai", label: "AI agents for academic research" },
+      { href: "/how-to-reduce-ai-hallucinations", label: "How to reduce AI hallucinations" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "compliance-tracking-ai": {
+    title: "AI Agents for Compliance Tracking",
+    description: "Where AI agents help track regulatory obligations and deadlines, and why a final compliance determination still needs a qualified compliance professional.",
+    directAnswer: "AI agents help compliance tracking by monitoring for regulatory updates, flagging upcoming filing or renewal deadlines, and cross-referencing internal policies against a checklist — they cannot make a binding determination that an organization is actually compliant with a given regulation, which requires a qualified compliance officer or legal counsel reviewing the specific facts.",
+    sections: [
+      {
+        heading: "Where automation adds real speed",
+        bullets: [
+          "Monitoring published regulatory sources for changes relevant to a tracked jurisdiction or industry.",
+          "Flagging upcoming filing, renewal, or audit deadlines from a maintained calendar.",
+          "Cross-referencing internal policy documents against a compliance checklist to surface gaps for review."
+        ]
+      },
+      {
+        heading: "Why this isn't a substitute for a compliance determination",
+        paragraphs: [
+          "Whether a specific organization actually meets a specific regulatory requirement depends on facts an agent cannot independently verify — how data is actually handled in practice, not just what a policy document says, and how a regulator would interpret an edge case. See the DPDP-compliant and SOC 2-certified agent directories for how this site handles compliance-status claims about specific products: only with a primary source, never inferred from a policy document alone."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/dpdp-compliant-ai-agents", label: "DPDP-compliant AI agents" },
+      { href: "/soc2-certified-ai-agents", label: "SOC 2-certified AI agents" },
+      { href: "/enterprise-ai-agent-governance", label: "Enterprise AI agent governance" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
 };
