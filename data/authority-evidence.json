@@ -63,5 +63,33 @@
       "description": "Open protocol for connecting AI applications or agents with external data sources, tools, and apps",
       "serverPrimitives": ["prompts", "resources", "tools"]
     }
+  },
+  {
+    "id": "ev-page-vapi-pricing-2026-09-06",
+    "pageSlug": "vapi-pricing",
+    "field": "current-plan-pricing",
+    "sourceUrl": "https://vapi.ai/pricing",
+    "publisher": "Vapi",
+    "retrievedAt": "2026-09-06",
+    "contentHash": "sha256:b8eb4aa06e8f7e285c8373ab06df95e66f8e9ed3e9d7eb144f878b0ee2e6d2df",
+    "status": "verified",
+    "snapshot": {
+      "build": {
+        "model": "usage-based, pay as you go",
+        "minutesIncluded": "60+ minutes included",
+        "callCost": "$0.05/min",
+        "smsChatCost": "$0.005/msg",
+        "callConcurrencyIncluded": 10,
+        "callConcurrencyOverage": "$10/line/month",
+        "hipaaAddOn": "$2,000/month",
+        "zeroDataRetentionAddOn": "$1,000/month"
+      },
+      "scale": {
+        "model": "annual contract, custom pricing (contact sales)",
+        "fixedPlatformFee": true,
+        "hipaaAddOn": "$2,000/month",
+        "zeroDataRetentionAddOn": "$1,000/month"
+      }
+    }
   }
 ]

@@ -11050,4 +11050,377 @@ export const authorityPages: Record<string, AuthorityPage> = {
     index: true,
     lastReviewed: "2026-09-06"
   },
+
+  "ai-agents-for-finance": {
+    title: "AI Agents for Finance",
+    description: "Where AI agents help finance-team workflows, and why final financial statements and judgment calls still need a qualified finance professional.",
+    directAnswer: "AI agents help finance teams with transaction categorization, reconciliation drafts, and first-pass variance reporting — final financial statements, judgment calls on accruals or estimates, and anything filed externally still need review and sign-off from a qualified finance professional, since an agent has no accountability for the result.",
+    sections: [
+      {
+        heading: "Where automation adds real speed",
+        bullets: [
+          "Categorizing transactions and flagging ones that don't match an existing pattern.",
+          "Drafting a first-pass account reconciliation for a human to check.",
+          "Summarizing period-over-period variance for a faster initial review."
+        ]
+      },
+      {
+        heading: "Where it falls short",
+        paragraphs: [
+          "Judgment calls on accruals, estimates, or how to treat an ambiguous transaction require accounting expertise and accountability an agent doesn't have. See AI for expense reports and accounting and AI agents with GST billing for two narrower, already-covered workflows within finance."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/expense-report-accounting-ai", label: "AI for expense reports and accounting" },
+      { href: "/ai-agents-with-gst-billing", label: "AI agents with GST billing" },
+      { href: "/financial-modeling-ai", label: "AI agents for financial modeling" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "cursor-alternatives": {
+    title: "Cursor Alternatives: What to Actually Compare",
+    description: "What actually differentiates Cursor alternatives beyond a feature checklist, when evaluating AI coding tools.",
+    directAnswer: "When comparing Cursor to alternatives, prioritize model routing flexibility (which models you can actually use and switch between), how deeply the tool integrates with your existing editor and codebase, and total cost at your actual usage volume — over a marketing feature list, since these three factors determine day-to-day fit more than any single headline feature.",
+    sections: [
+      {
+        heading: "Test against your own codebase, not a demo",
+        paragraphs: [
+          "A coding tool's demo video is optimized to look good on a small, clean example — the only reliable comparison is running candidate tools against your actual codebase's size, language mix, and existing conventions."
+        ]
+      },
+      {
+        heading: "Where alternatives tend to differ",
+        bullets: [
+          "Model routing: whether you can choose or switch the underlying model, and at what cost.",
+          "Editor integration depth: a full IDE fork versus an extension into an existing editor.",
+          "Context handling: how well the tool handles a large, real codebase versus a small example."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/cursor-pricing", label: "Cursor pricing" },
+      { href: "/pricing-comparison-coding-agents", label: "Pricing comparison: coding agents" },
+      { href: "/best-free-ai-coding-agents", label: "Best free AI coding agents" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "ai-agents-for-security": {
+    title: "AI Agents for Security",
+    description: "Where AI agents help security team workflows, and why containment, remediation, and severity decisions still need a qualified security professional.",
+    directAnswer: "AI agents help security teams with alert triage, log deduplication, and drafting an initial incident timeline from raw log data — decisions on severity classification, containment, and remediation should be made by a qualified security professional, since an agent has no way to weigh the full operational and business context of a live incident.",
+    sections: [
+      {
+        heading: "Where automation adds real speed",
+        bullets: [
+          "Triaging and deduplicating high-volume alerts down to a smaller set worth human attention.",
+          "Drafting an initial timeline of events from raw logs across multiple systems.",
+          "Summarizing a vulnerability scan's findings for faster prioritization review."
+        ]
+      },
+      {
+        heading: "Where it falls short",
+        paragraphs: [
+          "Deciding how severe an incident actually is, and what containment or remediation action to take, requires weighing business context and risk tolerance an agent isn't positioned to judge — treat agent output as an input to a security professional's decision, not the decision itself."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/how-to-secure-ai-agents", label: "How to secure AI agents" },
+      { href: "/ai-agent-security-checklist", label: "AI agent security checklist" },
+      { href: "/ai-red-teaming", label: "AI red teaming" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "ai-agents-for-business": {
+    title: "AI Agents for Business",
+    description: "A starting point for business AI-agent use cases, pointing to the specific function-level page rather than a generic recommendation.",
+    directAnswer: "\"Best AI agent for business\" depends entirely on which business function needs it — sales, support, HR, finance, and procurement each have different requirements and different agents suited to them, so the useful next step is the function-specific page rather than a single general answer.",
+    sections: [
+      {
+        heading: "Find your function",
+        bullets: [
+          "Customer support — see how to automate customer support with AI.",
+          "Sales outreach and CRM — see AI for sales outreach and CRM automation.",
+          "HR and recruiting — see AI for HR and recruiting.",
+          "Finance — see AI agents for finance.",
+          "Procurement — see AI agents for procurement."
+        ]
+      },
+      {
+        heading: "Why this page doesn't recommend a single agent",
+        paragraphs: [
+          "A generic \"best business AI agent\" answer would have to average across functions with genuinely different requirements (a support agent's needs are not a procurement agent's needs), producing a recommendation specific enough to be useless — the function-level pages below give an actually applicable answer."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" },
+      { href: "/sales-outreach-crm-ai", label: "AI for sales outreach and CRM" },
+      { href: "/ai-agents-for-hr-recruiting", label: "AI agents for HR and recruiting" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "cursor-vs-codex": {
+    title: "Cursor vs Codex: What Actually Differs",
+    description: "What meaningfully differs between Cursor and Codex, without declaring an unqualified winner neither product's evidence supports.",
+    directAnswer: "Cursor and Codex differ most in product surface: Cursor is an IDE-first product built around inline editing and chat inside a familiar editor, while Codex is offered more as a CLI/agent and API surface for automating coding tasks — which one fits better depends on whether the work is editor-centric, interactive editing or task-based, delegate-and-check automation, and that's worth testing directly against your own workflow rather than inferring from a benchmark score.",
+    sections: [
+      {
+        heading: "Why there's no single 'better' answer here",
+        paragraphs: [
+          "Public benchmark scores for coding tools rarely reflect a specific team's actual codebase, language mix, and workflow — a tool that scores well on a generic benchmark can still be the worse fit for a particular integration style. See AI agent rankings for why this site doesn't publish a single cross-tool winner without a defined, reproducible evaluation."
+        ]
+      },
+      {
+        heading: "What to actually test",
+        bullets: [
+          "Run both against a real task in your own repository, not a toy example.",
+          "Check editor/workflow fit: interactive inline editing versus a delegate-a-task-and-review model.",
+          "Compare pricing at your actual usage volume, not the advertised starting tier."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/ai-agent-rankings", label: "AI agent rankings: evidence-first evaluation" },
+      { href: "/cursor-pricing", label: "Cursor pricing" },
+      { href: "/pricing-comparison-coding-agents", label: "Pricing comparison: coding agents" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "best-ai-agent-no-code-platform": {
+    title: "Best AI Agent No-Code Platform: What to Evaluate",
+    description: "A no-code agent platform is a different decision than a single pre-built agent — the build-vs-buy and lock-in tradeoffs to actually check.",
+    directAnswer: "The right no-code AI agent platform depends on how much custom logic you need beyond what its visual builder supports, how easily your workflow can be exported or migrated off the platform later, and whether its integration library actually covers the specific tools you use — a longer feature list matters less than these three checks against your real requirements.",
+    sections: [
+      {
+        heading: "What to check before committing",
+        bullets: [
+          "Lock-in: can you export your workflow definition, or does it only exist inside the platform?",
+          "Integration depth: does it connect to the specific tools you use, not just popular ones in general?",
+          "Ceiling: what happens when a workflow needs logic the visual builder doesn't support — is there a code-level escape hatch?"
+        ]
+      },
+      {
+        heading: "When a no-code platform is the wrong fit",
+        paragraphs: [
+          "If the use case needs custom business logic mid-workflow, or has to share infrastructure with other systems in ways the platform doesn't support, a code-first framework may fit better despite the higher setup cost. See AI agent build vs. buy for the broader version of this decision."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/no-code-agent-builder-comparison", label: "No-code agent builder comparison" },
+      { href: "/ai-agent-build-vs-buy", label: "AI agent build vs. buy" },
+      { href: "/ai-workflow-builders-comparison", label: "AI workflow builders comparison" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "claude-code-alternatives": {
+    title: "Claude Code Alternatives: What to Actually Compare",
+    description: "What actually differentiates terminal-first coding agents like Claude Code from their alternatives, beyond a feature checklist.",
+    directAnswer: "When comparing Claude Code to alternatives, prioritize how well the tool handles a large, real codebase's context, how much autonomy it's given before requiring a check-in, and pricing at your actual usage volume — a terminal-first coding agent's real differentiator is how it behaves across a long, multi-step task, which a short demo doesn't show.",
+    sections: [
+      {
+        heading: "What tends to actually differ",
+        bullets: [
+          "Context handling for a large, real repository versus a small example.",
+          "How much autonomy the agent takes before pausing for human review, and whether that's configurable.",
+          "Underlying model choice and whether it can be changed."
+        ]
+      },
+      {
+        heading: "Test it on a real task first",
+        paragraphs: [
+          "Run a candidate tool against an actual multi-step task in your own repository before deciding — a terminal-first agent's behavior over a long task is the part a short demo can't show you."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/claude-code-pricing", label: "Claude Code pricing" },
+      { href: "/pricing-comparison-coding-agents", label: "Pricing comparison: coding agents" },
+      { href: "/on-premise-coding-agents", label: "On-premise coding agents" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "vapi-pricing": {
+    title: "Vapi pricing (2026): Build and Scale plan costs",
+    description: "Current Vapi voice-AI platform pricing from its first-party pricing page, with dated evidence.",
+    directAnswer: "Vapi's official pricing page lists a usage-based \"Build\" plan (pay as you go, no fixed fee) at $0.05 per call minute and $0.005 per SMS/chat message, with 10 call-concurrency lines included and additional lines at $10/line/month; a \"Scale\" plan is sold as an annual contract with a fixed platform fee and custom pricing. HIPAA and Zero Data Retention are paid add-ons on both plans, at $2,000/month and $1,000/month respectively. Pricing was checked on 6 September 2026.",
+    sections: [
+      {
+        heading: "Build plan (usage-based)",
+        bullets: [
+          "Calls: $0.05/min, volume-based, with model-provider costs passed through unless you bring your own API key.",
+          "SMS/Chat: $0.005/message, volume-based.",
+          "10 call-concurrency lines included; additional lines at $10/line/month.",
+          "HIPAA add-on: $2,000/month. Zero Data Retention add-on: $1,000/month."
+        ]
+      },
+      {
+        heading: "Scale plan (annual contract)",
+        paragraphs: [
+          "The Scale plan is sold as a custom annual contract with a fixed platform fee rather than published per-unit rates — pricing requires contacting sales directly. The same HIPAA ($2,000/month) and Zero Data Retention ($1,000/month) add-on costs apply on top of the contract."
+        ]
+      }
+    ],
+    evidenceIds: ["ev-page-vapi-pricing-2026-09-06"],
+    relatedLinks: [
+      { href: "/vapi-voice-ai-alternatives", label: "Voice AI platform alternatives: what to compare" },
+      { href: "/best-ai-voice-agent-platform", label: "Best AI voice agent platform" },
+      { href: "/sub-second-latency-voice-ai", label: "Sub-second latency voice AI" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "best-ai-agent-libraries": {
+    title: "Best AI Agent Libraries and Frameworks: What to Evaluate",
+    description: "What actually determines fit between AI agent frameworks and libraries, rather than a single ranked recommendation.",
+    directAnswer: "The right AI agent library or framework depends on your language ecosystem, whether you need graph-based state management for complex multi-step workflows or a simpler chain-based structure is enough, and the framework's actual maintenance activity and community size — check the verified frameworks directory for identity-checked framework entries rather than relying on a single ranked \"best\" list.",
+    sections: [
+      {
+        heading: "What actually determines fit",
+        bullets: [
+          "Language ecosystem: does it match your team's primary stack?",
+          "Orchestration model: simple sequential chains versus graph-based state machines for complex branching logic.",
+          "Maintenance signal: recent commit activity and how quickly issues get addressed, checkable directly on the upstream repository."
+        ]
+      },
+      {
+        heading: "Why this page doesn't rank frameworks",
+        paragraphs: [
+          "A numeric ranking across frameworks with different design philosophies (chain-based versus graph-based, for example) would compress genuinely different tools into a single score that hides the tradeoff that actually matters for a given project. See the frameworks directory for verified framework identities and their upstream repositories."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/frameworks", label: "AI agent frameworks directory" },
+      { href: "/langchain-vs-llamaindex", label: "LangChain vs LlamaIndex" },
+      { href: "/ai-agent-orchestration", label: "AI agent orchestration" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "ai-agents-for-healthcare": {
+    title: "AI Agents for Healthcare",
+    description: "An overview of where AI agents fit in healthcare workflows, pointing to the specific, already-covered slice rather than duplicating them.",
+    directAnswer: "AI agents in healthcare are covered here by specific workflow rather than as one general topic — administrative and scheduling automation for clinics, insurance-claims processing, and telehealth administrative support each have their own page — because the safe scope of automation, and the firm line against clinical or diagnostic use, differs by workflow.",
+    sections: [
+      {
+        heading: "Find your workflow",
+        bullets: [
+          "Clinic scheduling and administrative automation — see AI agents for healthcare clinics.",
+          "Insurance claims processing — see AI agents for insurance claims.",
+          "Telehealth administrative support — see AI agents for telehealth admin."
+        ]
+      },
+      {
+        heading: "The line that applies across all of them",
+        paragraphs: [
+          "None of these pages evaluate or recommend AI tools for triage, diagnosis, or any task requiring clinical judgment — that line applies across every healthcare workflow this site covers, not just clinic administration specifically."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/ai-agents-for-healthcare-clinics", label: "AI agents for healthcare clinics" },
+      { href: "/ai-agents-for-insurance-claims", label: "AI agents for insurance claims" },
+      { href: "/ai-agents-for-telehealth-admin", label: "AI agents for telehealth admin" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "ai-agent-tools": {
+    title: "AI Agent Tools: What \"Tools\" Actually Means in Agent Architecture",
+    description: "The specific technical meaning of \"tools\" in AI agent architecture, distinct from its looser use as a synonym for AI software products.",
+    directAnswer: "In AI agent architecture, a \"tool\" has a specific technical meaning: a function or API an agent can invoke mid-task, with a defined schema the model uses to decide when and how to call it — this is distinct from the looser, marketing use of \"AI tools\" to mean AI software products in general, and the distinction matters when evaluating what an agent can actually do versus what it merely talks about.",
+    sections: [
+      {
+        heading: "The technical definition",
+        paragraphs: [
+          "A tool, in this sense, is registered with a name, a description, and a parameter schema; the model decides during a task whether to call it, and the calling application executes it and returns the result. See AI agent tool calling for how this mechanism actually works, and what is a tool registry for how tools are organized and exposed to an agent."
+        ]
+      },
+      {
+        heading: "Why the distinction matters",
+        bullets: [
+          "\"This agent has 50+ tools\" is a checkable, specific claim about registered functions — verify it against the product's actual documentation rather than a marketing page.",
+          "\"AI tools for X\" used as a category label (as in \"best AI tools for marketing\") is a different, much looser usage and isn't the same claim."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/ai-agent-tool-calling", label: "AI agent tool calling" },
+      { href: "/what-is-a-tool-registry", label: "What is a tool registry?" },
+      { href: "/function-calling-vs-tool-use", label: "Function calling vs. tool use" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "chatgpt-vs-perplexity": {
+    title: "ChatGPT vs Perplexity: What Actually Differs",
+    description: "What meaningfully differs between ChatGPT and Perplexity by design, without declaring an unqualified winner.",
+    directAnswer: "ChatGPT and Perplexity differ most in core design intent: ChatGPT is a general-purpose assistant where web browsing is one capability among many, while Perplexity is built around live web search and inline citations as the default interaction — the practical choice depends on whether citation-backed, source-linked answers are the primary need, or a broader general-purpose assistant is, and that's worth testing against your own actual queries rather than a benchmark comparison.",
+    sections: [
+      {
+        heading: "Where the design actually differs",
+        bullets: [
+          "Perplexity surfaces cited sources as a core, default part of its answers; ChatGPT's browsing is an invoked capability rather than the default mode.",
+          "ChatGPT covers a broader range of tasks (writing, coding, analysis) beyond search-style queries.",
+          "Both change frequently enough that a specific capability comparison from months ago may already be outdated — check each product's current documentation directly."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/ai-agent-rankings", label: "AI agent rankings: evidence-first evaluation" },
+      { href: "/hybrid-search-explained", label: "Hybrid search explained" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
+
+  "flowise-alternatives": {
+    title: "Flowise Alternatives: What to Actually Compare",
+    description: "What to check when comparing Flowise's visual, no-code agent builder against code-first or other visual alternatives.",
+    directAnswer: "Flowise is a visual, no-code agent-building tool, so the meaningful comparison against alternatives is self-hosting support, the breadth of its pre-built integration nodes, and where its visual builder's ceiling is — specifically, whether a workflow that outgrows the visual builder has a code-level escape hatch, since that gap is what typically forces a migration later.",
+    sections: [
+      {
+        heading: "What to check",
+        bullets: [
+          "Self-hosting: can it run entirely on your own infrastructure, or is it cloud-only?",
+          "Integration breadth: does its node library cover the specific tools you actually use?",
+          "Ceiling: what happens when a workflow needs logic beyond what the visual canvas supports?"
+        ]
+      },
+      {
+        heading: "Visual builder versus code-first framework",
+        paragraphs: [
+          "A visual, no-code tool trades some flexibility for faster initial setup; a code-first framework trades setup speed for a higher ceiling on custom logic. Which one fits depends on how far your actual workflow is likely to grow — see AI agent build vs. buy for that broader tradeoff."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/no-code-agent-builder-comparison", label: "No-code agent builder comparison" },
+      { href: "/ai-agent-build-vs-buy", label: "AI agent build vs. buy" },
+      { href: "/frameworks", label: "AI agent frameworks directory" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-06"
+  },
 };
