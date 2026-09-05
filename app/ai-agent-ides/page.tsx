@@ -27,13 +27,13 @@ export default function Page() {
     "AI agent IDEs and extensions are categorized by function (editing, prompting, terminal, code review, autonomous coding). No product is labeled verified unless the catalog state permits it. Unsupported best IDE conclusions are avoided.";
 
   const limitations =
-    "Vendor feature sets change frequently. Products are not labeled verified unless the catalog explicitly permits it. Best IDE conclusions are unsupported and avoided. Unsupported latency, accuracy or cost-saving claims are not made."
+    "Vendor feature sets change frequently. Products are not labeled verified unless the catalog explicitly permits it. Best IDE conclusions are unsupported and avoided. Unsupported latency, accuracy or cost-saving claims are not made.";
 
   const privacySecurity =
-    "No personal data is collected or processed. All content is publicly observable product documentation. No telemetry or tracking is embedded."
+    "No personal data is collected or processed. All content is publicly observable product documentation. No telemetry or tracking is embedded.";
 
   const complianceCaveats =
-    "No regulatory compliance claims are made. Adoption in regulated industries requires primary evidence from the deploying organization. Do not claim RBI approval, banking suitability or regulatory compliance without authoritative support."
+    "No regulatory compliance claims are made. Adoption in regulated industries requires primary evidence from the deploying organization. Do not claim RBI approval, banking suitability or regulatory compliance without authoritative support.";
 
   const evaluationCriteria =
     "Function coverage: does the product support the target function (editing, prompting, terminal, code review, autonomous coding)? Evidence support: are cited sources primary (official docs) or secondary (reviews, blogs)? Freshness: how recently was the product's feature set observed? Catalog state: does the current catalog verification status permit labeling the product verified?";
@@ -102,12 +102,38 @@ export default function Page() {
           catalog state permits it. The following functional categories are
           described with primary-source documentation where available:
         </p>
+        <p>
+          <strong>Editing agents</strong>: support code editing, refactoring,
+          inline completions and syntax-aware transformations. Documentation
+          from vendor sources where available.
+        </p>
+        <p>
+          <strong>Prompting extensions</strong>: provide prompt templates,
+          chain-of-thought scaffolding and context-aware suggestion. Observable
+          feature sets from official documentation.
+        </p>
+        <p>
+          <strong>Terminal agents</strong>: operate within command-line
+          environments, supporting batch automation, script orchestration and
+          pipeline integration. Documentation from observed installations.
+        </p>
+        <p>
+          <strong>Code review agents</strong>: analyze pull requests, comment on
+          style issues, suggest improvements and summarize changes. Observed
+          integration patterns with GitHub, GitLab and Bitbucket.
+        </p>
+        <p>
+          <strong>Autonomous coding agents</strong>: write function bodies, run
+          tests and refactor code with minimal human intervention. Observable
+          capabilities from recent official releases; feature freshness
+          acknowledged as moderate risk.
+        </p>
       </section>
 
       <section className="prose">
         <h2>Scope and audience</h2>
         <p>
-          This page is intended for technical readers who need an
+          This page is intended for technical readers who need a
           non-evaluative overview of AI agent IDEs and extensions. It is not a
           ranking, a capability comparison, or a product recommendation.
         </p>
@@ -128,15 +154,22 @@ export default function Page() {
         <p>{privacySecurity}</p>
       </section>
 
+      {complianceCaveats && (
+        <section className="prose">
+          <h2>Compliance caveats</h2>
+          <p>{complianceCaveats}</p>
+        </section>
+      )}
+
       <section className="prose">
-        <h2>Lifecycle state</h2>
-        <p>
-          This page is noindex pending evidence. It contains no unsupported
-          factual, commercial, comparative, performance, pricing, compliance or
-          best claims. No evidence receipts are attached solely to satisfy a
-          counter. The moderate vendor-capability and freshness risk is
-          explicitly acknowledged.
-        </p>
+        <h2>FAQs</h2>
+        <ul>
+          {faqs.map((f, i) => (
+            <li key={i}>
+              <strong>{f.q}</strong> {f.a}
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="prose">
@@ -168,10 +201,10 @@ export default function Page() {
       <section className="prose">
         <h2>Source attribution</h2>
         <p>
-          Product observations are from publicly observable documentation.
-          No synthetic generation or vendor pay-to-place is involved. Specific
-          product inclusion does not imply verification or endorsement. Verification
-          status is determined by the catalog's publication predicate.
+          Product observations are from publicly observable documentation. No
+          synthetic generation or vendor pay-to-place is involved. Specific
+          product inclusion does not imply verification or endorsement.
+          Verification status is determined by the catalog publication predicate.
         </p>
       </section>
     </div>
