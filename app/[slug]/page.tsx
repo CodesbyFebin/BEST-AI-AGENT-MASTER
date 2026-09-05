@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { authorityPages } from "@/lib/authority-pages";
-import { getAuthorityEvidence, isAuthorityPageEvidenceReady } from "@/lib/authority-evidence";
+import { getAuthorityEvidence, isAuthorityPageEvidenceReady, isMethodologyPageReady } from "@/lib/authority-evidence";
 import { legacyPages } from "@/lib/legacy";
 import { clusterPages } from "@/lib/clusters";
 import { ContentBlocks } from "@/components/ContentBlocks";
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
   if (!page) return { title: "Not found", robots: { index: false, follow: true } };
 
   const authorityIndexable = authority
-    ? authority.index && isAuthorityPageEvidenceReady(slug, authority.evidenceIds)
+    ? authority.index && (isAuthorityPageEvidenceReady(slug, authority.evidenceIds) || isMethodologyPageReady(authority))
     : false;
   return {
     title: page.title,
@@ -116,8 +116,14 @@ export default async function Page({ params }: P) {
         <p className="muted">Last reviewed {authority.lastReviewed}</p>
       </section>
 
-      {!isAuthorityPageEvidenceReady(slug, authority.evidenceIds) &&
+      {!isAuthorityPageEvidenceReady(slug, authority.evidenceIds) && !authority.methodologyReview &&
         <p className="warning">This page remains noindex while its page-level source receipts are completed and verified. It is available for review, not presented as publication-ready authority.</p>}
+
+      {authority.methodologyReview && !isMethodologyPageReady(authority) &&
+        <p className="warning">This page makes no externally-verifiable claim, so it publishes through the methodology-only review path rather than a source receipt — it remains noindex until that named editorial review is complete.</p>}
+
+      {authority.methodologyReview && isMethodologyPageReady(authority) &&
+        <p className="muted">Reviewed by {authority.methodologyReview.reviewedBy} on {authority.methodologyReview.reviewedAt} under the methodology-only publication path: this page makes no externally-verifiable factual or comparative claim, so it is reviewed for originality and disclosed limitations rather than sourced against a primary receipt.</p>}
 
       <div className="prose">
         {authority.sections.map((section) => <section key={section.heading}>

@@ -1,4 +1,5 @@
 import records from "@/data/authority-evidence.json";
+import type { AuthorityPage } from "@/lib/authority-pages";
 
 export type AuthorityEvidenceRecord = {
   id: string;
@@ -37,4 +38,25 @@ export function isAuthorityPageEvidenceReady(pageSlug: string, evidenceIds?: str
       validSha256(record.contentHash)
     );
   });
+}
+
+/**
+ * Fail-closed publication predicate for pages with no external factual claim
+ * to attach an evidence receipt to. Requires a named reviewer (not blank) and
+ * every attestation explicitly true — a missing or partial review does not
+ * qualify. Mutually exclusive with the evidence path: a page carrying
+ * evidenceIds must clear isAuthorityPageEvidenceReady instead, never this gate.
+ */
+export function isMethodologyPageReady(page: Pick<AuthorityPage, "evidenceIds" | "methodologyReview">) {
+  if (page.evidenceIds?.length) return false;
+  const review = page.methodologyReview;
+  if (!review) return false;
+  return Boolean(
+    review.reviewedBy.trim().length > 0 &&
+    review.reviewedAt.trim().length > 0 &&
+    review.noUnsupportedClaims === true &&
+    review.limitationsDisclosed === true &&
+    review.originalityChecked === true &&
+    review.noUnsupportedSuperlatives === true
+  );
 }
