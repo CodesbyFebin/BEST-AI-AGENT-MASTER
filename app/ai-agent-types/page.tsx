@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "AI Agent Types and Architectures — Evidence-First Classifications",
@@ -25,19 +24,19 @@ export const metadata: Metadata = {
 
 export default function Page() {
   const directAnswer =
-    "AI agents are classified by architecture, autonomy, interaction and orchestration dimensions. No single taxonomy is settled fact; classifications are explained as framing devices.";
+    "AI agents are classified by architecture, autonomy, interaction and orchestration dimensions. No single taxonomy is settled fact; classifications are explained as framing devices."
 
   const scopeNote =
-    "This page does not recommend one taxonomy over another. It frames common classification dimensions and highlights where evidence is settled, volatile, or unresolved. Claims about capability, pricing, compliance or performance are not made.";
+    "This page does not recommend one taxonomy over another. It frames common classification dimensions and highlights where evidence is settled, volatile, or unresolved. Claims about capability, pricing, compliance or performance are not made."
 
   const limitations =
-    "Inability to distinguish autonomous capability from prompted behavior. Volatility in vendor feature changes. Lack of settled definitions for autonomy levels. No published benchmark suite for cross-taxonomy comparison.";
+    "Inability to distinguish autonomous capability from prompted behavior. Volatility in vendor feature changes. Lack of settled definitions for autonomy levels. No published benchmark suite for cross-taxonomy comparison."
 
   const privacySecurity =
-    "No personal data is collected or processed. All content is publicly observable framework documentation. No telemetry or tracking is embedded.";
+    "No personal data is collected or processed. All content is publicly observable framework documentation. No telemetry or tracking is embedded."
 
   const complianceCaveats =
-    "No regulatory compliance claims are made. Adoption in regulated industries requires primary evidence from the deploying organization.";
+    "No regulatory compliance claims are made. Adoption in regulated industries requires primary evidence from the deploying organization."
 
   const evaluationCriteria =
     "Classification accuracy: does the framework map the agent's observed behavior? Evidence support: are cited sources primary or secondary? Volatility: does the framework accommodate feature changes? Boundary clarity: are category edges defined?";
@@ -68,6 +67,11 @@ export default function Page() {
       a:
         "Choose the framework that aligns with your research question. This page does not prescribe one taxonomy over another. Evaluate each on its fit for your question, not on claims of superiority.",
     },
+    {
+      q: "How do autonomy dimensions differ across frameworks?",
+      a:
+        "Autonomy is described along commonly cited dimensions (reactive, delibative, hybrid; low, medium, high; narrow, general). No settled definition is presented; each framework's autonomy dimension is explained as a classification pattern.",
+    },
   ];
 
   const structuredData = {
@@ -95,9 +99,7 @@ export default function Page() {
       <h1>AI Agent Types and Architectures</h1>
 
       <p className="lead">
-        AI agents are classified by architecture, autonomy, interaction and
-        orchestration dimensions. No single taxonomy is settled fact;
-        classifications are explained as framing devices.
+        {directAnswer}
       </p>
 
       <section className="prose">
@@ -107,20 +109,50 @@ export default function Page() {
 
       <section className="prose">
         <h2>Classification dimensions</h2>
-        <ul>
-          <li>
-            <strong>Architecture</strong>: the structural composition of the agent (reactive, deliberative, hybrid). Frameworks are explained without presenting one as settled fact.
-          </li>
-          <li>
-            <strong>Autonomy</strong>: the degree of independent operation. No settled definition is presented; autonomy dimensions are explained as commonly cited patterns.
-          </li>
-          <li>
-            <strong>Interaction</strong>: how the agent communicates with users and other agents. Documented interaction patterns are explained.
-          </li>
-          <li>
-            <strong>Orchestration</strong>: how multiple agents coordinate. Orchestration frameworks are explained as structural patterns, not verified solutions.
-          </li>
-        </ul>
+        <p>
+          AI agents are commonly classified across four principal dimensions.
+          Each dimension is explained as a framing device, not a settled taxonomy.
+        </p>
+        <dl>
+          <dt>
+            <strong>Architecture</strong>
+          </dt>
+          <dd>
+            The structural composition of the agent. Reactive architectures
+            respond to immediate stimuli; deliberative architectures maintain
+            internal world models; hybrid architectures combine both. Frameworks
+            are explained as common patterns without presenting one as settled
+            fact.
+          </dd>
+          <dt>
+            <strong>Autonomy</strong>
+          </dt>
+          <dd>
+            The degree of independent operation. No settled definition is
+            presented. Commonly cited dimensions include reactive vs. proactive
+            behavior, the degree of environmental awareness, and the extent of
+            goal self-setting. Volatility: vendor feature changes can shift
+            observed autonomy levels.
+          </dd>
+          <dt>
+            <strong>Interaction</strong>
+          </dt>
+          <dd>
+            How the agent communicates with users and other agents. Documented
+            interaction patterns are explained: natural language dialogue,
+            command-line interfaces, API-driven interactions, multimodal
+            inputs. No single interaction model is presented as settled fact.
+          </dd>
+          <dt>
+            <strong>Orchestration</strong>
+          </dt>
+          <dd>
+            How multiple agents coordinate. Orchestration frameworks are explained
+            as structural patterns (sequential, parallel, hierarchical,
+            mesh-like). No orchestration framework is presented as a verified
+            solution for all agent types.
+          </dd>
+        </dl>
       </section>
 
       <section className="prose">
@@ -182,7 +214,7 @@ export default function Page() {
           </li>
           <li>
             <Link href="/methodology">Publication methodology</Link>
-              &mdash; the doctrine that gates every entry on this hub
+              — the doctrine that gates every entry on this hub
           </li>
           <li>
             <Link href="/glossary-hub">Glossary</Link>
@@ -203,9 +235,11 @@ export default function Page() {
       <section className="prose">
         <h2>Lifecycle state</h2>
         <p>
-          This page is noindex pending evidence. It contains no unsupported factual, commercial,
-          comparative, performance, pricing, compliance or best claims. No
-          evidence receipts are attached solely to satisfy a counter.
+          This page is noindex pending evidence. It contains no unsupported
+          factual, commercial, comparative, performance, pricing, compliance or
+          best claims. No evidence receipts are attached solely to satisfy a
+          counter. The page explains classification dimensions as framing
+          devices, not settled taxonomies.
         </p>
       </section>
     </div>
