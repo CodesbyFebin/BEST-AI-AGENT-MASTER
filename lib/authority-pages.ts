@@ -4,12 +4,35 @@ export type AuthoritySection = {
   bullets?: string[];
 };
 
+/**
+ * Attestation for the methodology-only publication path: for a page that makes
+ * no externally-verifiable factual or comparative claim, so there is no source
+ * to attach an evidenceIds receipt to. This is not a substitute for evidence —
+ * it is a narrower, named-reviewer gate for pages where evidence doesn't apply.
+ * A page with methodologyReview must not also carry evidenceIds; a page that
+ * makes any externally-checkable claim belongs on the evidence path instead.
+ */
+export type MethodologyReview = {
+  /** The real person who reviewed this page. Never a placeholder or invented title. */
+  reviewedBy: string;
+  reviewedAt: string;
+  /** Attests the page makes zero unsupported factual or comparative claims. */
+  noUnsupportedClaims: boolean;
+  /** Attests the page discloses its own methodology and limitations. */
+  limitationsDisclosed: boolean;
+  /** Attests an originality/cannibalization pass against existing site content. */
+  originalityChecked: boolean;
+  /** Attests no "best", ranking, pricing, compliance, or performance claim appears without evidence. */
+  noUnsupportedSuperlatives: boolean;
+};
+
 export type AuthorityPage = {
   title: string;
   description: string;
   directAnswer: string;
   sections: AuthoritySection[];
   evidenceIds?: string[];
+  methodologyReview?: MethodologyReview;
   relatedLinks: { href: string; label: string }[];
   index: boolean;
   lastReviewed: string;
