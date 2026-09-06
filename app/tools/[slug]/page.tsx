@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
-import { tools } from "@/lib/tools";
+import { tools, isToolIndexable } from "@/lib/tools";
 import { SITE } from "@/lib/site";
 
 type P = { params: Promise<{ slug: string }> };
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
     title: `${tool.name} — tool profile`,
     description: tool.summary,
     alternates: { canonical: `/tools/${slug}` },
-    robots: { index: tool.index, follow: true },
+    robots: { index: isToolIndexable(slug), follow: true },
     openGraph: { title: tool.name, description: tool.summary, url: `/tools/${slug}`, type: "article" },
     twitter: { card: "summary_large_image", title: tool.name, description: tool.summary }
   };
@@ -29,6 +29,9 @@ export default async function Page({ params }: P) {
   const { slug } = await params;
   const tool = tools[slug];
   if (!tool) notFound();
+
+  const receipts = tool.evidenceReceipts ?? [];
+  const allVerified = receipts.length > 0 && receipts.every((r) => r.status === "verified" && r.sha256Hash !== null);
 
   return (
     <div className="shell detail">
@@ -55,6 +58,30 @@ export default async function Page({ params }: P) {
         <div className="tagRow">{tool.categories.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
         <p><a className="button" href={tool.sourceUrl}>{tool.sourceLabel} ↗</a></p>
       </section>
+
+      {receipts.length > 0 && (
+        <section className="evidence" aria-labelledby="tool-evidence-heading">
+          <h2 id="tool-evidence-heading">Evidence receipts</h2>
+          {receipts.map((receipt, i) => (
+            <div key={`${slug}-receipt-${i}`} style={{ marginBottom: "20px" }}>
+              <p><strong>{receipt.claim}</strong></p>
+              <p className="muted">Status: {receipt.status} · <a href={receipt.sourceUrl}>Open primary source ↗</a></p>
+              {receipt.sha256Hash
+                ? <code>{receipt.sha256Hash}</code>
+                : <code>hash pending capture — run scripts/verify-tool-evidence.mjs</code>}
+            </div>
+          ))}
+          {!allVerified && (
+            <p className="warning">
+              This profile is evidence-gated: it stays noindex until every receipt&apos;s
+              primary source is captured and hashed, and the verification is reviewed.
+              No capability, pricing, or compliance claim on this page is asserted as
+              verified before then.
+            </p>
+          )}
+        </section>
+      )}
+
       <p className="muted">Last reviewed {tool.lastReviewed}. Positioning and capability can change between releases — check the source repository directly before making a decision based on this summary.</p>
     </div>
   );
