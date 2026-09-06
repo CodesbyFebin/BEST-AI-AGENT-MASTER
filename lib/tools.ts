@@ -220,8 +220,8 @@ export const tools: Record<string, ToolProfile> = {
         sha256Hash: null, verifiedAt: null, status: "pending_review"
       },
       {
-        claim: "The official documentation describes Fin's deployment inside the Intercom workspace.",
-        sourceUrl: "https://www.intercom.com/help/en/articles/10603438-getting-started-with-fin",
+        claim: "Intercom's official help center documents Fin's setup and deployment inside the Intercom workspace.",
+        sourceUrl: "https://www.intercom.com/help",
         sha256Hash: null, verifiedAt: null, status: "pending_review"
       },
       {
@@ -261,7 +261,7 @@ export const tools: Record<string, ToolProfile> = {
   n8n: {
     name: "n8n",
     developer: "n8n GmbH",
-    summary: "n8n is a fair-code workflow-automation platform with native AI/agent nodes and self-hosted or cloud deployment. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
+    summary: "n8n is a workflow-automation platform with native AI/agent nodes, deployable self-hosted or via cloud. Licensing classification and pricing figures are not asserted here until the primary sources are captured and verified.",
     sourceUrl: "https://n8n.io",
     sourceLabel: "Official website",
     categories: ["workflow-automation", "agent-builders", "self-hosted"],
@@ -287,27 +287,22 @@ export const tools: Record<string, ToolProfile> = {
   },
   windsurf: {
     name: "Windsurf",
-    developer: "Windsurf (formerly Codeium)",
-    summary: "Windsurf is an AI-native IDE (formerly Codeium) combining editor, agent flows, and completion features. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
-    sourceUrl: "https://windsurf.com",
-    sourceLabel: "Official website",
+    developer: "Cognition",
+    summary: "Windsurf was an independent AI-native IDE (formerly Codeium) until Cognition acquired its IP, product, trademark and brand on July 14, 2025, and rebranded the product to Devin Desktop on June 2, 2026. This profile defers to the site's verified continuity record; pricing and capability claims are not inherited and remain unknown unless separately evidenced.",
+    sourceUrl: "https://devin.ai/desktop",
+    sourceLabel: "Current official product page (post-rebrand)",
     categories: ["ide", "coding-agents", "developer-tools"],
     index: false,
     lastReviewed: "2026-09-06",
     evidenceReceipts: [
       {
-        claim: "Windsurf (formerly Codeium) develops the Windsurf AI-native IDE, per its official website.",
-        sourceUrl: "https://windsurf.com",
+        claim: "Cognition acquired Windsurf's product and brand (July 14, 2025) and rebranded it to Devin Desktop (June 2, 2026); windsurf.com redirects to devin.ai/desktop. Matches the catalog's verified windsurf entity record.",
+        sourceUrl: "https://devin.ai/desktop",
         sha256Hash: null, verifiedAt: null, status: "pending_review"
       },
       {
-        claim: "The official documentation describes Cascade agent flows and editor features.",
-        sourceUrl: "https://docs.windsurf.com/",
-        sha256Hash: null, verifiedAt: null, status: "pending_review"
-      },
-      {
-        claim: "Current pricing tiers are published on the official pricing page (figures asserted only after capture).",
-        sourceUrl: "https://windsurf.com/pricing",
+        claim: "The site's verified continuity record for this identity is /agents/windsurf; this profile links to it rather than duplicating its evidence.",
+        sourceUrl: "/agents/windsurf",
         sha256Hash: null, verifiedAt: null, status: "pending_review"
       }
     ]

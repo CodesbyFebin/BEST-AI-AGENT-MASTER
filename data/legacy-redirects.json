@@ -5,11 +5,9 @@
   "/best-ai-agent-frameworks": "/frameworks",
   "/rankings": "/ai-agent-rankings",
   "/cursor-ai": "/agents/cursor",
-
   "/agents/crewai": "/frameworks/crewai",
   "/agents/langgraph": "/frameworks/langgraph",
   "/agents/autogen": "/frameworks/autogen",
-
   "/tools/cursor": "/agents/cursor",
   "/tools/cursor-ai": "/agents/cursor",
   "/tools/claude-code": "/agents/claude-code",
@@ -28,28 +26,23 @@
   "/tools/autogen": "/frameworks/autogen",
   "/tools/windsurf": "/agents/windsurf",
   "/tools/retell-ai": "/agents/retell-ai",
-
   "/a/best-ai-agent/reviews/chatgpt": "/agents/chatgpt",
   "/a/best-ai-agent/reviews/claude": "/agents/claude",
   "/a/best-ai-agent/reviews/cursor": "/agents/cursor",
   "/a/best-ai-agent/reviews/vapi": "/agents/vapi",
   "/a/best-ai-agent/reviews/crewai": "/frameworks/crewai",
-
   "/notion-server": "/mcp/servers/notion",
   "/excel-server": "/mcp/servers/excel",
   "/shopify-server": "/mcp/servers/shopify",
-
   "/best-ai-agent-for-crm": "/categories/crm",
   "/ai-agents-for-crm": "/categories/crm",
   "/best-ai-agent-for-sales": "/categories/sales",
   "/ai-agents-for-sales": "/categories/sales",
   "/best-ai-agent-for-marketing": "/categories/marketing",
   "/ai-agents-for-marketing": "/categories/marketing",
-
   "/pricing-hub": "/pricing",
   "/pricing-intelligence": "/pricing",
   "/glossary": "/glossary-hub",
-
   "/langgraph-vs-crewai": "/compare/langgraph-vs-crewai",
   "/crewai-vs-langgraph": "/compare/langgraph-vs-crewai",
   "/autogen-vs-crewai": "/compare/crewai-vs-autogen",
@@ -57,5 +50,6 @@
   "/cursor-vs-copilot": "/compare/cursor-vs-copilot",
   "/chatgpt-vs-claude": "/compare/chatgpt-vs-claude",
   "/vapi-vs-retell": "/compare/vapi-vs-retell",
-  "/flowise-vs-dify": "/compare/flowise-vs-dify"
+  "/flowise-vs-dify": "/compare/flowise-vs-dify",
+  "/cursor-vs-windsurf": "/compare/cursor-vs-windsurf"
 }
