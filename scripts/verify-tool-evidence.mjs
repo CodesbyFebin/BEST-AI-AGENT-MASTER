@@ -36,6 +36,10 @@ for (const { slug, body } of blocks) {
   if (unique.length === 0) continue;
   console.log(`\n== ${slug} ==`);
   for (const url of unique) {
+    if (!url.startsWith("http")) {
+      console.log(`  internal   ${url}  (site link — not hashable)`);
+      continue;
+    }
     try {
       const res = await fetch(url, { redirect: "follow", headers: { "User-Agent": "BestAIAgent-evidence-bot/1.0" } });
       if (!res.ok) {
