@@ -75,6 +75,8 @@ export default function Page() {
     inLanguage: "en-US",
     "about": {
       "@type": "WebPage",
+      "name": "AI Agent IDEs and Extensions",
+      "url": "/ai-agent-ides",
       description:
         "Overview of AI agent IDEs and extensions. Products are distinguished without labeling verified unless the current catalog state permits it."
     }

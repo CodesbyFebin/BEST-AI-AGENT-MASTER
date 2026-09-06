@@ -83,6 +83,8 @@ export default function Page() {
     inLanguage: "en-US",
     "about": {
       "@type": "WebPage",
+      "name": "AI Agent Types and Architectures",
+      "url": "/ai-agent-types",
       "description":
         "Overview of AI agent types and architecture dimensions. Classifications are explained without presenting one universal taxonomy as settled fact."
     }
