@@ -17,6 +17,29 @@ function getLegacyPage(slug: string): LegacyAuthorityPage | undefined {
   return legacyPages[slug];
 }
 
+// Extract FAQ question/answer pairs from a cluster's content blocks. The pairs
+// already exist as editorial content (h3 question + p answer under the
+// "Frequently asked questions" h2); this only re-serializes them for machines.
+function extractClusterFaqs(blocks: { type: string; text?: string }[]): { question: string; answer: string }[] {
+  const faqs: { question: string; answer: string }[] = [];
+  let inFaqSection = false;
+  let currentQuestion: string | null = null;
+  for (const block of blocks) {
+    if (block.type === "h2") {
+      inFaqSection = /frequently asked questions/i.test(block.text ?? "");
+      continue;
+    }
+    if (!inFaqSection) continue;
+    if (block.type === "h3") {
+      currentQuestion = block.text ?? null;
+    } else if (block.type === "p" && currentQuestion) {
+      faqs.push({ question: currentQuestion, answer: block.text ?? "" });
+      currentQuestion = null;
+    }
+  }
+  return faqs;
+}
+
 export function generateStaticParams() {
   return [...new Set([
     ...Object.keys(legacyPages).filter((slug) => !slug.includes("/")),
@@ -52,15 +75,27 @@ export default async function Page({ params }: P) {
 
   if (cluster) {
     const url = `${SITE.url}/${slug}`;
+    const faqs = extractClusterFaqs(cluster.blocks);
     return <div className="shell detail">
       <div className="breadcrumbs"><Link href="/">Home</Link> / {cluster.title}</div>
-      <JsonLd data={{
-        "@type": "WebPage",
-        name: cluster.title,
-        url,
-        description: cluster.description,
-        isPartOf: { "@type": "WebSite", name: "BestAIAgent.in", url: SITE.url }
-      }} />
+      <JsonLd data={[
+        {
+          "@type": "WebPage",
+          name: cluster.title,
+          url,
+          description: cluster.description,
+          isPartOf: { "@type": "WebSite", name: "BestAIAgent.in", url: SITE.url }
+        },
+        ...(faqs.length > 0 ? [{
+          "@type": "FAQPage",
+          url,
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer }
+          }))
+        }] : [])
+      ]} />
       <p className="eyebrow">{cluster.pageType === "pillar" ? "Pillar guide" : "Guide"} · in review</p>
       <h1 style={{ fontSize: "48px" }}>{cluster.title}</h1>
       <p className="lead">{cluster.description}</p>
