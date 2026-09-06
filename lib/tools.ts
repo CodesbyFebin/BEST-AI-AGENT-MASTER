@@ -68,6 +68,249 @@ export const tools: Record<string, ToolProfile> = {
         status: "pending_review"
       }
     ]
+  },
+  flowise: {
+    name: "Flowise",
+    developer: "FlowiseAI Inc.",
+    summary: "Flowise is an open-source generative-AI development platform for building LLM apps and agent flows with a visual builder and chatbot/agent deployment targets. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
+    sourceUrl: "https://github.com/FlowiseAI/Flowise",
+    sourceLabel: "Official upstream repository",
+    categories: ["low-code", "llm-apps", "agent-builders"],
+    index: false,
+    lastReviewed: "2026-09-06",
+    evidenceReceipts: [
+      {
+        claim: "FlowiseAI develops Flowise, and the official source repository is github.com/FlowiseAI/Flowise.",
+        sourceUrl: "https://github.com/FlowiseAI/Flowise",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "The official documentation describes building LLM apps and agents via a visual interface.",
+        sourceUrl: "https://docs.flowiseai.com/",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "Current pricing tiers are published on the official pricing page (figures asserted only after capture).",
+        sourceUrl: "https://flowiseai.com/pricing",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      }
+    ]
+  },
+  "cursor-ai": {
+    name: "Cursor",
+    developer: "Anysphere",
+    summary: "Cursor is an AI-first code editor built on VS Code, developed by Anysphere, with repository-aware agent and tab-completion features. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
+    sourceUrl: "https://cursor.com",
+    sourceLabel: "Official website",
+    categories: ["ide", "coding-agents", "developer-tools"],
+    index: false,
+    lastReviewed: "2026-09-06",
+    evidenceReceipts: [
+      {
+        claim: "Anysphere develops Cursor, an AI-first code editor, per its official website.",
+        sourceUrl: "https://cursor.com",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "The official documentation describes agent and completion features.",
+        sourceUrl: "https://docs.cursor.com/",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "Current pricing tiers are published on the official pricing page (figures asserted only after capture; see also the site's dated cursor-pricing evidence page).",
+        sourceUrl: "https://cursor.com/pricing",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      }
+    ]
+  },
+  "yellow-ai": {
+    name: "Yellow.ai",
+    developer: "Yellow.ai",
+    summary: "Yellow.ai is an enterprise conversational-AI platform for customer support automation across chat and voice channels. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
+    sourceUrl: "https://yellow.ai",
+    sourceLabel: "Official website",
+    categories: ["conversational-ai", "customer-support", "enterprise"],
+    index: false,
+    lastReviewed: "2026-09-06",
+    evidenceReceipts: [
+      {
+        claim: "Yellow.ai is an enterprise conversational-AI platform, per its official website.",
+        sourceUrl: "https://yellow.ai",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "The official documentation describes chat and voice automation capabilities.",
+        sourceUrl: "https://docs.yellow.ai/",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "Enterprise pricing is handled via sales contact rather than a public pricing page (assertion to be confirmed at capture).",
+        sourceUrl: "https://yellow.ai/contact-us",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      }
+    ]
+  },
+  "vapi-ai": {
+    name: "Vapi",
+    developer: "Vapi, Inc.",
+    summary: "Vapi is a developer platform for building, testing, and deploying voice AI agents over phone and web channels. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
+    sourceUrl: "https://vapi.ai",
+    sourceLabel: "Official website",
+    categories: ["voice-ai", "developer-tools", "api"],
+    index: false,
+    lastReviewed: "2026-09-06",
+    evidenceReceipts: [
+      {
+        claim: "Vapi, Inc. develops Vapi, a voice-AI developer platform, per its official website.",
+        sourceUrl: "https://vapi.ai",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "The official documentation describes the voice-agent API and deployment model.",
+        sourceUrl: "https://docs.vapi.ai/",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "Usage-based pricing is published on the official pricing page (figures asserted only after capture).",
+        sourceUrl: "https://vapi.ai/pricing",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      }
+    ]
+  },
+  "retell-ai": {
+    name: "Retell AI",
+    developer: "Retell AI",
+    summary: "Retell AI is a developer platform for building voice AI agents with low-latency speech pipelines for phone and web calls. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
+    sourceUrl: "https://www.retellai.com",
+    sourceLabel: "Official website",
+    categories: ["voice-ai", "developer-tools", "api"],
+    index: false,
+    lastReviewed: "2026-09-06",
+    evidenceReceipts: [
+      {
+        claim: "Retell AI develops a voice-AI agent platform, per its official website.",
+        sourceUrl: "https://www.retellai.com",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "The official documentation describes the voice-agent API and call lifecycle.",
+        sourceUrl: "https://docs.retellai.com/",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "Usage-based pricing is published on the official pricing page (figures asserted only after capture).",
+        sourceUrl: "https://www.retellai.com/pricing",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      }
+    ]
+  },
+  "intercom-ai": {
+    name: "Intercom Fin",
+    developer: "Intercom",
+    summary: "Fin is Intercom's AI customer-service agent, resolving support queries inside the Intercom platform with per-resolution pricing. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
+    sourceUrl: "https://www.intercom.com/fin",
+    sourceLabel: "Official product page",
+    categories: ["customer-support", "conversational-ai", "enterprise"],
+    index: false,
+    lastReviewed: "2026-09-06",
+    evidenceReceipts: [
+      {
+        claim: "Intercom offers Fin, an AI customer-service agent, per its official product page.",
+        sourceUrl: "https://www.intercom.com/fin",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "The official documentation describes Fin's deployment inside the Intercom workspace.",
+        sourceUrl: "https://www.intercom.com/help/en/articles/10603438-getting-started-with-fin",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "Per-resolution pricing is published on the official pricing page (figures asserted only after capture).",
+        sourceUrl: "https://www.intercom.com/pricing",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      }
+    ]
+  },
+  "github-copilot": {
+    name: "GitHub Copilot",
+    developer: "GitHub (Microsoft)",
+    summary: "GitHub Copilot is an AI coding assistant integrated into IDEs and github.com, with individual, business, and enterprise plans. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
+    sourceUrl: "https://github.com/features/copilot",
+    sourceLabel: "Official product page",
+    categories: ["coding-agents", "ide", "developer-tools"],
+    index: false,
+    lastReviewed: "2026-09-06",
+    evidenceReceipts: [
+      {
+        claim: "GitHub develops Copilot, an AI coding assistant, per its official product page.",
+        sourceUrl: "https://github.com/features/copilot",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "The official documentation describes Copilot's plans and IDE integrations.",
+        sourceUrl: "https://docs.github.com/en/copilot",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "Plan pricing is published on the official plans page (figures asserted only after capture; see also the site's dated github-copilot-pricing evidence page).",
+        sourceUrl: "https://github.com/features/copilot/plans",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      }
+    ]
+  },
+  n8n: {
+    name: "n8n",
+    developer: "n8n GmbH",
+    summary: "n8n is a fair-code workflow-automation platform with native AI/agent nodes and self-hosted or cloud deployment. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
+    sourceUrl: "https://n8n.io",
+    sourceLabel: "Official website",
+    categories: ["workflow-automation", "agent-builders", "self-hosted"],
+    index: false,
+    lastReviewed: "2026-09-06",
+    evidenceReceipts: [
+      {
+        claim: "n8n GmbH develops n8n, a workflow-automation platform with AI agent nodes, per its official website.",
+        sourceUrl: "https://n8n.io",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "The official documentation describes AI agent nodes and self-hosted deployment.",
+        sourceUrl: "https://docs.n8n.io/",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "Cloud pricing tiers are published on the official pricing page (figures asserted only after capture).",
+        sourceUrl: "https://n8n.io/pricing/",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      }
+    ]
+  },
+  windsurf: {
+    name: "Windsurf",
+    developer: "Windsurf (formerly Codeium)",
+    summary: "Windsurf is an AI-native IDE (formerly Codeium) combining editor, agent flows, and completion features. This profile is being rebuilt from primary sources and stays noindex until its evidence receipts are verified.",
+    sourceUrl: "https://windsurf.com",
+    sourceLabel: "Official website",
+    categories: ["ide", "coding-agents", "developer-tools"],
+    index: false,
+    lastReviewed: "2026-09-06",
+    evidenceReceipts: [
+      {
+        claim: "Windsurf (formerly Codeium) develops the Windsurf AI-native IDE, per its official website.",
+        sourceUrl: "https://windsurf.com",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "The official documentation describes Cascade agent flows and editor features.",
+        sourceUrl: "https://docs.windsurf.com/",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      },
+      {
+        claim: "Current pricing tiers are published on the official pricing page (figures asserted only after capture).",
+        sourceUrl: "https://windsurf.com/pricing",
+        sha256Hash: null, verifiedAt: null, status: "pending_review"
+      }
+    ]
   }
 };
 
