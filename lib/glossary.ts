@@ -1749,5 +1749,45 @@ const glossaryTermsBatch15: typeof glossaryTerms = [
 
 glossaryTerms.push(...glossaryTermsBatch15);
 
+const glossaryTermsBatch16: typeof glossaryTerms = [
+  {
+    term: "Tool Registry",
+    slug: "tool-registry",
+    category: "Infrastructure",
+    definition: "A centralized catalog of available tools, APIs, and data sources that an AI agent can discover and invoke, typically described using standardized schemas (e.g., MCP function schemas) to ensure consistent tool calling across different implementations.",
+    related: [{ href: "/glossary/function-calling", label: "Function calling" }, { href: "/glossary/mcp", label: "Model Context Protocol (MCP)" }]
+  },
+  {
+    term: "Agent Versioning",
+    slug: "agent-versioning",
+    category: "Model Training",
+    definition: "The practice of managing distinct versions of an AI agent, including its system prompt, tool set, model configuration, and associated evidence receipts, enabling rollback, A/B testing, and controlled feature rollouts without disrupting active deployments.",
+    related: [{ href: "/glossary/canary-rollout", label: "Canary rollout" }, { href: "/glossary/feature-flag-ai", label: "Feature flag (AI)" }]
+  },
+  {
+    term: "Publication Workflow",
+    slug: "publication-workflow",
+    category: "Methodology",
+    definition: "The standardized end-to-end process on BestAIAgent.in that routes an entity or comparison through evidence collection, verification grading, publication state checks, and final indexing — ensuring only evidence-backed content enters the public catalog and search index.",
+    related: [{ href: "/trust/evidence-methodology", label: "Evidence methodology" }, { href: "/trust/how-to-verify", label: "How to verify a claim" }]
+  },
+  {
+    term: "Verification Receipt",
+    slug: "verification-receipt",
+    category: "Verification",
+    definition: "A machine-readable receipt (typically SHA-256 hashed) that records the source, field, retrieval timestamp, and content hash of evidence evaluated for an agent entity or comparison, serving as the primary-source receipt required for publication gate passage.",
+    related: [{ href: "/glossary/sha-256-hash", label: "SHA-256 hash" }, { href: "/glossary/evidence-backed-evaluation", label: "Evidence-backed evaluation" }]
+  },
+  {
+    term: "Agent Skill",
+    slug: "agent-skill",
+    category: "Architecture",
+    definition: "A modular, self-contained capability (a prompt template, tool configuration, or sub-workflow) that an agent can load and execute, allowing new abilities to be added without modifying the agent's core logic or rebuilding the entire system.",
+    related: [{ href: "/glossary/reusable-agent-component", label: "Reusable agent component" }, { href: "/glossary/prompt-library", label: "Prompt library" }]
+  }
+];
+
+glossaryTerms.push(...glossaryTermsBatch16);
+
 export const glossaryBySlug = new Map(glossaryTerms.map((t) => [t.slug, t]));
 export const glossaryCategories = [...new Set(glossaryTerms.map((t) => t.category))];
