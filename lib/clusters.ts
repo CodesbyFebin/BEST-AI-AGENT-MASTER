@@ -387,9 +387,9 @@ export const clusterPages: Record<string, ClusterPage> = {
       { type: "ul", items: ["[AI agents pillar](/ai-agents)", "[Agentic workflows](/agentic-workflows)", "[Memory](/ai-agent-memory)", "[Privacy and DPDP editorial policy](/trust/privacy-dpdp-editorial-policy)", "[Tool calling](/ai-agent-tool-calling)"] },
       { type: "h2", text: "Frequently asked questions" },
       { type: "h3", text: "Does a larger context window make an agent smarter?" },
-      { type: "p", text: "Not necessarily. A larger window gives the agent more room to accumulate history, but reasoning quality depends on the model, the retrieval quality, and the freshness policy — not just the token budget.", "If the window is large but stale, the agent reasons from outdated information; if the window is small but fresh, the agent has current, relevant data." },
+      { type: "p", text: "Not necessarily. A larger window gives the agent more room to accumulate history, but reasoning quality depends on the model, the retrieval quality, and the freshness policy — not just the token budget. If the window is large but stale, the agent reasons from outdated information; if the window is small but fresh, the agent has current, relevant data." },
       { type: "h3", text: "Can I store entire conversation histories in the context window?" },
-      { type: "p", text: "No. The context window is a runtime constraint, not a persistent store. Every invocation starts with a fresh context; only what you explicitly persist (via episodic memory, a vector database, or a structured profile) survives across invocations.", "Storing entire histories in the context window is the fastest path to overflow and the slowest path to freshness." },
+      { type: "p", text: "No. The context window is a runtime constraint, not a persistent store. Every invocation starts with a fresh context; only what you explicitly persist (via episodic memory, a vector database, or a structured profile) survives across invocations. Storing entire histories in the context window is the fastest path to overflow and the slowest path to freshness." },
       { type: "h3", text: "What happens when the context window overflows?" },
       { type: "p", text: "The model rejects the request or truncates input. The workflow's overflow handler decides what to do: summarize prior turns, drop the oldest turns, or escalate to a human. Engineering control: define the overflow strategy before deployment; do not rely on the model to recover." },
       { type: "h2", text: "Source receipts" },
@@ -420,7 +420,7 @@ export const clusterPages: Record<string, ClusterPage> = {
       { type: "h3", text: "How many prompt versions should I keep?" },
       { type: "p", text: "Keep the last 3–5 versions in rotation. Older versions can be archived but should not be the default; the most recent stable version should always be the default, and canary versions are transient." },
       { type: "h3", text: "Can I version prompts in a Git repository?" },
-      { type: "p", text: "Yes. Treat prompt files like source code: each commit is a version, the commit message is the change log, and the branch name is the feature context. This is the pattern this site recommends.", "The advantage is diff‑friendly history; the disadvantage is that Git alone does not surface the behavioural impact — you still need trajectory comparison." },
+      { type: "p", text: "Yes. Treat prompt files like source code: each commit is a version, the commit message is the change log, and the branch name is the feature context. This is the pattern this site recommends. The advantage is diff-friendly history; the disadvantage is that Git alone does not surface the behavioural impact — you still need trajectory comparison." },
       { type: "h3", text: "What if a prompt change breaks a production agent?" },
       { type: "p", text: "Roll back to the previous default version immediately. Use the audit log to identify the change that caused the regression, and apply the lessons to the next version cycle." },
       { type: "h2", text: "Source receipts" },
@@ -462,8 +462,8 @@ export const clusterPages: Record<string, ClusterPage> = {
       { type: "h2", text: "Last reviewed" },
       { type: "ul", items: ["Page last reviewed: 2026-08-22", "Next scheduled review: 2027-02-22", "Reviewer: BestAIAgent.in editorial board"] },
     ]
-  }
-};
+  },
+  "ai-agents-vs-chatbots": {
     title: "AI Agents vs. Chatbots — What's Actually Different",
     description: "Evidence-backed comparison of AI agents and chatbots: definitions, the tool-calling primitive that separates them, and a decision rule for which to use.",
     pageType: "cluster",
