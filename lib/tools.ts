@@ -39,7 +39,7 @@ export const tools: Record<string, ToolProfile> = {
       {
         claim: "Superagent AI develops Superagent, an open-source security layer for AI applications, per its official upstream repository.",
         sourceUrl: "https://github.com/superagent-ai/superagent",
-        sha256Hash: "73192f210d5d38bee975a1e8355f4f0807b9d14bf2d9d5e9e084b26ec0a0d326",
+        sha256Hash: "6baabc85879e12368b3c67bcfd16c6f0e4181f2e56ebc795eb343c3a8a01fdad",
         verifiedAt: "2026-09-08",
         status: "verified"
       }
@@ -58,21 +58,21 @@ crewai: {
       {
         claim: "CrewAI Inc. develops CrewAI, and the official source repository is github.com/crewAIInc/crewAI.",
         sourceUrl: "https://github.com/crewAIInc/crewAI",
-        sha256Hash: "21b937613738522710b165a655af94cc12903a24971d82aeb4989f8786c5a81a",
+        sha256Hash: "969406d59302b25cf677a409254f0dbb9f0bedde8061abf5f05ada45012f29f2",
         verifiedAt: "2026-09-08",
         status: "verified"
       },
       {
         claim: "The official documentation describes role-playing multi-agent crews with task delegation.",
         sourceUrl: "https://docs.crewai.com/",
-        sha256Hash: "7aea120bfb2725bfb4e017b2de4aa98213c8830f89b6d08c00f621ea9a8dd77e",
+        sha256Hash: "7896956478b144d5033f69d0b89114dd4e0d7b11b1d85d48db7a1416ff64afe2",
         verifiedAt: "2026-09-08",
         status: "verified"
       },
       {
         claim: "Current pricing tiers are published on the official pricing page (figures asserted only after capture; none are inherited from third parties).",
         sourceUrl: "https://www.crewai.com/pricing",
-        sha256Hash: "be6e35b2f51c7212dac33a10a7028e5ad6ec65f1b6d274abeedd208e166a9c4f",
+        sha256Hash: "952512d3609d74bf79badffc77dbf440513852a822112a8310ace47fed5cf603",
         verifiedAt: "2026-09-08",
         status: "verified"
       }
@@ -91,7 +91,7 @@ crewai: {
       {
         claim: "FlowiseAI develops Flowise, and the official source repository is github.com/FlowiseAI/Flowise.",
         sourceUrl: "https://github.com/FlowiseAI/Flowise",
-        sha256Hash: "6e808cc5db66367bf3b7a37888f70b287dbfcbf909380d8dce6089ad0c880685",
+        sha256Hash: "c17a18dc266a6341201e04c5388b1c15bcbf184b1e86a9a6c1609ae87f7842be",
         verifiedAt: "2026-09-08",
         status: "verified"
       },
@@ -118,29 +118,29 @@ crewai: {
     sourceUrl: "https://cursor.com",
     sourceLabel: "Official website",
     categories: ["ide", "coding-agents", "developer-tools"],
-    index: false,
-    lastReviewed: "2026-09-07",
+    index: true,
+    lastReviewed: "2026-09-08",
     evidenceReceipts: [
       {
         claim: "Anysphere develops Cursor, an AI-first code editor, per its official website.",
         sourceUrl: "https://cursor.com",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "2fc1f73d16f3e6a7b3b7d2405c4d661f95539f55b65e0c38d1171988914306ab",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "The official documentation describes agent and completion features.",
         sourceUrl: "https://docs.cursor.com/",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "b71a4e9a337185d3b3cbacf47bd6653b94a80fded1f8d9350ba50544289b0fac",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "Current pricing tiers are published on the official pricing page (figures asserted only after capture; see also the site's dated cursor-pricing evidence page).",
         sourceUrl: "https://cursor.com/pricing",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "f4b30589ec3c0156b53519169bba1303521be17515e2a16efccf8d4fee42ee43",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       }
     ]
   },
@@ -151,29 +151,29 @@ crewai: {
     sourceUrl: "https://yellow.ai",
     sourceLabel: "Official website",
     categories: ["conversational-ai", "customer-support", "enterprise"],
-    index: false,
-    lastReviewed: "2026-09-07",
+    index: true,
+    lastReviewed: "2026-09-08",
     evidenceReceipts: [
       {
         claim: "Yellow.ai is an enterprise conversational-AI platform, per its official website.",
         sourceUrl: "https://yellow.ai",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "142eea448955fe070975f3b91bdbab52c1a05338c4b44273d63fed4b5cbd3099",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "The official documentation describes chat and voice automation capabilities.",
         sourceUrl: "https://docs.yellow.ai/",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "2c203f23b814bd4b0c49eea3abbedbf6039639a6d67ff9df328ae4e347f605f9",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "Enterprise pricing is handled via sales contact rather than a public pricing page (assertion to be confirmed at capture).",
         sourceUrl: "https://yellow.ai/contact-us",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "97441424cfd0e096d9bd3cbd64b53a5009ff7fdd0357e3aa39a3f05d34d22f25",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       }
     ]
   },
@@ -184,29 +184,29 @@ crewai: {
     sourceUrl: "https://vapi.ai",
     sourceLabel: "Official website",
     categories: ["voice-ai", "developer-tools", "api"],
-    index: false,
-    lastReviewed: "2026-09-07",
+    index: true,
+    lastReviewed: "2026-09-08",
     evidenceReceipts: [
       {
         claim: "Vapi, Inc. develops Vapi, a voice-AI developer platform, per its official website.",
         sourceUrl: "https://vapi.ai",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "1cb0d9bb638a8a498b0be6f68a765c2c069b7b75befda34b9f248570768d9c67",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "The official documentation describes the voice-agent API and deployment model.",
         sourceUrl: "https://docs.vapi.ai/",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "dee89aacfb6f56545ce673234a27abc9a650de9b7edb6f435664cc9b2a78227a",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "Usage-based pricing is published on the official pricing page (figures asserted only after capture).",
         sourceUrl: "https://vapi.ai/pricing",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "422f95e711aacc417711d48870d36f5d389544222d1bc7711ebda4d76e46b273",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       }
     ]
   },
@@ -217,29 +217,29 @@ crewai: {
     sourceUrl: "https://www.retellai.com",
     sourceLabel: "Official website",
     categories: ["voice-ai", "developer-tools", "api"],
-    index: false,
-    lastReviewed: "2026-09-07",
+    index: true,
+    lastReviewed: "2026-09-08",
     evidenceReceipts: [
       {
         claim: "Retell AI develops a voice-AI agent platform, per its official website.",
         sourceUrl: "https://www.retellai.com",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "a11188e8d3447c9feea5d427e79df3ca786f0de934573b98c260d9cd7496f94f",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "The official documentation describes the voice-agent API and call lifecycle.",
         sourceUrl: "https://docs.retellai.com/",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "7888ad56d649405bdbc2667f69bdded0c361848acd34e9c8d0007c674cb9d98b",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "Usage-based pricing is published on the official pricing page (figures asserted only after capture).",
         sourceUrl: "https://www.retellai.com/pricing",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "28dd63dc6b48a3220e0928939a636f0016843dfb8717d223724d2b88de321dff",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       }
     ]
   },
@@ -250,29 +250,29 @@ crewai: {
     sourceUrl: "https://www.intercom.com/fin",
     sourceLabel: "Official product page",
     categories: ["customer-support", "conversational-ai", "enterprise"],
-    index: false,
-    lastReviewed: "2026-09-07",
+    index: true,
+    lastReviewed: "2026-09-08",
     evidenceReceipts: [
       {
         claim: "Intercom offers Fin, an AI customer-service agent, per its official product page.",
         sourceUrl: "https://www.intercom.com/fin",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "dcc744a6f82bfc12ab789327eb6abec7df04f17a57106874d1e102897d559cd9",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "Intercom's official help center documents Fin's setup and deployment inside the Intercom workspace.",
         sourceUrl: "https://www.intercom.com/help",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "e868ade5c833bf9896324ba85182b952f721399d8176fbffdb622ffd11bbdaa1",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "Per-resolution pricing is published on the official pricing page (figures asserted only after capture).",
         sourceUrl: "https://www.intercom.com/pricing",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "8101ce295dd7c6ca91f9bd34ac61562de9321cb6b81c125751943bb7514933f4",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       }
     ]
   },
@@ -283,29 +283,29 @@ crewai: {
     sourceUrl: "https://github.com/features/copilot",
     sourceLabel: "Official product page",
     categories: ["coding-agents", "ide", "developer-tools"],
-    index: false,
-    lastReviewed: "2026-09-07",
+    index: true,
+    lastReviewed: "2026-09-08",
     evidenceReceipts: [
       {
         claim: "GitHub develops Copilot, an AI coding assistant, per its official product page.",
         sourceUrl: "https://github.com/features/copilot",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "e7a4fcc48e2d7bc5f4b3b46a354abbd55d68b9a9e025d8a4728efaa76c7eb764",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "The official documentation describes Copilot's plans and IDE integrations.",
         sourceUrl: "https://docs.github.com/en/copilot",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "78489017b9500457e60e78a769a5c95c1f6385ae83d3beaddc8252a3544755bd",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       },
       {
         claim: "Plan pricing is published on the official plans page (figures asserted only after capture; see also the site's dated github-copilot-pricing evidence page).",
         sourceUrl: "https://github.com/features/copilot/plans",
-        sha256Hash: null,
-        verifiedAt: null,
-        status: "pending_review"
+        sha256Hash: "294d1fe36a21f5e5e27eed241608be4446b09bbbe8a4fb17a734ad51c8734f23",
+        verifiedAt: "2026-09-08",
+        status: "verified"
       }
     ]
   },
@@ -350,7 +350,7 @@ crewai: {
     sourceLabel: "Current official product page (post-rebrand)",
     categories: ["ide", "coding-agents", "developer-tools"],
     index: false,
-    lastReviewed: "2026-09-06",
+    lastReviewed: "2026-09-08",
     evidenceReceipts: [
       {
         claim: "Cognition acquired Windsurf's product and brand (July 14, 2025) and rebranded it to Devin Desktop (June 2, 2026); windsurf.com redirects to devin.ai/desktop. Matches the catalog's verified windsurf entity record.",

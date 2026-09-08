@@ -11,6 +11,9 @@ const authoritySource = readText("lib/authority-pages.ts");
 const nextConfig = readText("next.config.ts");
 const toolsTs = readText("lib/tools.ts");
 
+// Import tools object for structured validation
+const { tools } = await import("../lib/tools.ts");
+
 const errors = [];
 const assert = (condition, message) => {
   if (!condition) errors.push(message);
@@ -68,10 +71,10 @@ for (const route of criticalLegacyRoutes) {
   const inRedirects = Object.hasOwn(redirects, route);
   // Routes that were redirects may now be served as rebuilt canonical pages
   // in the evidence-gated /tools/* registry (e.g. /tools/crewai). Check the
-  // tools.ts slug record so the verifier doesn't flag a route that is now
+  // tools object so the verifier doesn't flag a route that is now
   // legitimately served by app/tools/[slug]/page.tsx.
-  const slug = route.replace(/^\//, "").split("/").pop();
-  const inTools = new RegExp(`^${slug}:\\s*\\{`, "m").test(toolsTs);
+  const slug = route.startsWith("/tools/") ? route.replace(/^\/tools\//, "") : route.replace(/^\//, "");
+  const inTools = !!tools[slug];
   assert(inAuthority || inRedirects || inTools, `critical historical route has no protected disposition: ${route}`);
 }
 
