@@ -11446,4 +11446,124 @@ export const authorityPages: Record<string, AuthorityPage> = {
     index: true,
     lastReviewed: "2026-09-06"
   },
+
+  "ai-agents-for-banking": {
+    title: "AI Agents for Banking",
+    description: "Where AI agents can safely assist banking workflows, and the firm line against credit, KYC/AML, and fraud-confirmation decisions that must stay with licensed staff and existing compliance controls.",
+    directAnswer: "AI agents help banking operations with fraud-alert triage, routine customer-service query deflection (balance checks, transaction lookups), and document or statement summarization for staff review — credit decisions, KYC/AML determinations, confirmed-fraud account actions, and final regulatory compliance sign-off must stay with licensed banking staff and existing controls. No product on this site is described as RBI-approved or regulatorily compliant without a primary source verifying that specific claim.",
+    sections: [
+      {
+        heading: "Where automation genuinely helps",
+        bullets: [
+          "Triaging and deduplicating high-volume fraud alerts down to a smaller set for analyst review.",
+          "Deflecting routine customer queries — balance checks, transaction history, branch/ATM locations — that don't require account-changing authority.",
+          "Summarizing statements or documents for faster staff review, not as a substitute for the staff review itself."
+        ]
+      },
+      {
+        heading: "Where it must not replace human and regulatory judgment",
+        paragraphs: [
+          "Credit approval, KYC/AML determinations, and confirming fraud before acting on an account are decisions with direct regulatory and customer-harm consequences — an agent can surface information faster, but the determination and accountability stay with licensed staff and the bank's existing compliance controls. See AI agents for compliance tracking for how this site treats compliance-status claims generally: only with a primary source, never inferred from a policy document or vendor marketing alone."
+        ]
+      },
+      {
+        heading: "Regulatory and data-handling considerations",
+        bullets: [
+          "No product is described here as RBI-approved, DPDP-compliant, or suitable for regulated deployment without a citable primary source for that specific claim — see the DPDP-compliant AI agents directory for how this site handles that class of claim.",
+          "Data residency and retention for financial data carry their own regulatory requirements independent of any AI-agent vendor's general privacy claims.",
+          "An audit trail for every automated decision or escalation is a baseline expectation in a regulated environment, not an optional feature."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/dpdp-compliant-ai-agents", label: "DPDP-compliant AI agents" },
+      { href: "/compliance-tracking-ai", label: "AI agents for compliance tracking" },
+      { href: "/indian-banking-mcps", label: "Indian banking MCPs" },
+      { href: "/enterprise-ai-agent-governance", label: "Enterprise AI agent governance" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-16"
+  },
+
+  "ai-call-center-agents": {
+    title: "AI Call Center Agents",
+    description: "Where AI agents fit in call-center operations, the consent and data-retention obligations that come with call recording, and why complex or distressed calls still need a clean handoff to a human.",
+    directAnswer: "AI call center agents help with IVR replacement and call routing, live transcription, routine query handling, and post-call quality monitoring — they should escalate cleanly to a human for complaints, emotionally difficult calls, and anything with legal or financial stakes, and any call recording or transcription carries its own consent and data-retention obligations independent of the agent vendor's own claims.",
+    sections: [
+      {
+        heading: "Where automation adds real capacity",
+        bullets: [
+          "Replacing or augmenting IVR menus and routing calls to the right queue or agent.",
+          "Live transcription of calls for compliance records or faster human agent context.",
+          "Handling high-volume routine queries (order status, appointment scheduling, FAQ-style questions) at scale.",
+          "Post-call quality monitoring and flagging calls that need review."
+        ]
+      },
+      {
+        heading: "Where escalation to a human must stay clean",
+        paragraphs: [
+          "Complaints, calls involving distressed or frustrated customers, and anything with legal or financial consequences should hand off to a human agent without the caller having to repeat themselves or navigate a broken transfer — a smooth escalation path is a core requirement, not an edge case to handle later. No specific latency, transcription-accuracy, or cost-savings figure is asserted here for any vendor without a primary source."
+        ]
+      },
+      {
+        heading: "Consent, recording, and data retention",
+        bullets: [
+          "Call recording and transcription require their own consent notice under applicable law — this is independent of whatever privacy claims an AI vendor makes about its own product.",
+          "Data retention periods for call recordings and transcripts should be set deliberately, not left at a vendor's default.",
+          "Telephony integration (SIP trunking, existing phone systems) is frequently the part of a deployment that takes longest — see voice AI platform alternatives for what to test before committing to a platform."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/best-ai-voice-agent", label: "Best AI voice agent: what to evaluate" },
+      { href: "/vapi-voice-ai-alternatives", label: "Voice AI platform alternatives: what to compare" },
+      { href: "/sub-second-latency-voice-ai", label: "Sub-second latency voice AI" },
+      { href: "/how-to-secure-ai-agents", label: "How to secure AI agents" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-16"
+  },
+
+  "alternatives-hub": {
+    title: "AI Agent Alternatives & Comparisons Hub",
+    description: "A navigational index of this site's product-alternative and technical-comparison pages — not a ranking, and not a recommendation of one product over another.",
+    directAnswer: "This page is a directory to this site's existing alternatives and comparison pages, organized by what you're actually trying to answer — finding an alternative to a specific product, comparing two named products, or understanding a technical tradeoff between two approaches — rather than a ranked list or a declared winner. The linked pages below (under Continue researching) are the actual directory; the sections here just explain how they're organized.",
+    sections: [
+      {
+        heading: "Three ways to use this hub",
+        paragraphs: [
+          "If you already use a product and want to know what else to consider, look for its \"alternatives\" page — these focus on what to actually test yourself (model routing, integration depth, real usage cost) rather than naming a winner.",
+          "If you're deciding between two specific named products, look for a \"X vs Y\" page — these explain where the products genuinely differ in design, not which one scores higher.",
+          "If the question is really about two technical approaches rather than two products (chatbot vs. agent, RAG vs. fine-tuning), look for the conceptual comparison pages — these explain the tradeoff itself, independent of any specific vendor."
+        ]
+      },
+      {
+        heading: "Why this page doesn't rank anything",
+        paragraphs: [
+          "Every page linked below evaluates products or approaches on their own terms rather than compressing them into a single score — see AI agent rankings for why this site doesn't publish a cross-product winner without a defined, reproducible evaluation. This hub exists to make the right page easy to find, not to add a new opinion on top of them."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/cursor-alternatives", label: "Cursor alternatives" },
+      { href: "/claude-code-alternatives", label: "Claude Code alternatives" },
+      { href: "/flowise-alternatives", label: "Flowise alternatives" },
+      { href: "/vapi-voice-ai-alternatives", label: "Voice AI platform alternatives" },
+      { href: "/how-to-use-github-copilot-alternatives", label: "GitHub Copilot alternatives" },
+      { href: "/workflow-automation-zapier-alternatives", label: "Workflow automation: Zapier alternatives" },
+      { href: "/cursor-vs-codex", label: "Cursor vs Codex" },
+      { href: "/chatgpt-vs-perplexity", label: "ChatGPT vs Perplexity" },
+      { href: "/langchain-vs-llamaindex", label: "LangChain vs LlamaIndex" },
+      { href: "/chatbot-vs-agent", label: "Chatbot vs agent" },
+      { href: "/agents-vs-workflows", label: "Agents vs workflows" },
+      { href: "/ai-copilot-vs-ai-agent", label: "AI copilot vs AI agent" },
+      { href: "/mcp-vs-function-calling", label: "MCP vs function calling" },
+      { href: "/mcp-vs-rag", label: "MCP vs RAG" },
+      { href: "/rag-vs-fine-tuning", label: "RAG vs fine-tuning" },
+      { href: "/agent-memory-vs-rag", label: "Agent memory vs RAG" },
+      { href: "/ai-agent-rankings", label: "AI agent rankings: evidence-first evaluation" }
+    ],
+    index: true,
+    lastReviewed: "2026-09-16"
+  },
 };
