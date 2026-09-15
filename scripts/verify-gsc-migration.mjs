@@ -69,13 +69,26 @@ const criticalLegacyRoutes = [
 for (const route of criticalLegacyRoutes) {
   const inAuthority = policy.implementedAuthorityPages.includes(route);
   const inRedirects = Object.hasOwn(redirects, route);
-  // Routes that were redirects may now be served as rebuilt canonical pages
-  // in the evidence-gated /tools/* registry (e.g. /tools/crewai). Check the
-  // tools object so the verifier doesn't flag a route that is now
-  // legitimately served by app/tools/[slug]/page.tsx.
-  const slug = route.startsWith("/tools/") ? route.replace(/^\/tools\//, "") : route.replace(/^\//, "");
-  const inTools = !!tools[slug];
-  assert(inAuthority || inRedirects || inTools, `critical historical route has no protected disposition: ${route}`);
+  // Check if the route is a tools route and if the tool is indexable according to evidence rules
+  let inToolsAndIndexable = false;
+  if (route.startsWith("/tools/")) {
+    const slug = route.replace(/^\/tools\//, "");
+    const tool = tools[slug];
+    if (tool) {
+      // Replicate isToolIndexable logic from lib/tools.ts
+      if (tool.index) {
+        if (!tool.evidenceReceipts) {
+          // Legacy entry without receipts: indexable if index flag is true
+          inToolsAndIndexable = true;
+        } else {
+          // Evidence-gated entry: indexable if all receipts are verified with hashes
+          inToolsAndIndexable = tool.evidenceReceipts.length > 0 &&
+            tool.evidenceReceipts.every(r => r.status === "verified" && r.sha256Hash !== null);
+        }
+      }
+    }
+  }
+  assert(inAuthority || inRedirects || inToolsAndIndexable, `critical historical route has no protected disposition: ${route}`);
 }
 
 // This project used to require ~20 "compatibility" sitemap-alias rewrites
