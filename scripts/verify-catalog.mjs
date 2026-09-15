@@ -65,4 +65,45 @@ for (const forbidden of ["1,250+", "450+ Independent Reviews", "9.7/10", "100% V
   if (corpus.includes(forbidden)) throw new Error(`Forbidden synthetic authority claim found: ${forbidden}`);
 }
 
-console.log(`catalog verification PASS: ${hashes.length} entity evidence hashes + ${authorityEvidence.length} recomputed authority evidence hashes`);
+// Tool evidence receipts (lib/tools.ts) use the same curated-snapshot hash
+// convention as authority evidence, recomputed and checked the same way —
+// raw fetched-HTML hashing was tried first and found non-reproducible (the
+// same GitHub repo page returns a different byte-for-byte response on every
+// request), so a "verified" receipt must be backed by a small extracted
+// snapshot whose hash is actually reproducible.
+const toolsSource = fs.readFileSync(new URL("../lib/tools.ts", import.meta.url), "utf8");
+const toolsMarker = "export const tools: Record<string, ToolProfile> = ";
+const toolsStart = toolsSource.indexOf(toolsMarker);
+const toolsEnd = toolsSource.indexOf("\nexport function isToolIndexable", toolsStart);
+if (toolsStart === -1 || toolsEnd === -1) throw new Error("Could not locate tools registry export bounds in lib/tools.ts");
+const toolsChunk = toolsSource.slice(toolsStart + toolsMarker.length, toolsEnd);
+const objectCloseIdx = toolsChunk.lastIndexOf("};");
+if (objectCloseIdx === -1) throw new Error("Could not find the closing brace of the tools registry object in lib/tools.ts");
+const toolsLiteral = toolsChunk.slice(0, objectCloseIdx + 1);
+const tools = (0, eval)(`(${toolsLiteral})`);
+
+let recomputedToolReceipts = 0;
+for (const [slug, tool] of Object.entries(tools)) {
+  for (const receipt of tool.evidenceReceipts ?? []) {
+    if (receipt.status !== "verified") continue;
+    recomputedToolReceipts++;
+
+    if (receipt.snapshot === null || receipt.snapshot === undefined) {
+      throw new Error(`Tool evidence for ${slug} (${receipt.sourceUrl}) is "verified" with no snapshot — a verified receipt must carry the facts it was hashed from.`);
+    }
+    if (!receipt.verifiedAt) {
+      throw new Error(`Tool evidence for ${slug} (${receipt.sourceUrl}) is "verified" with no verifiedAt date.`);
+    }
+    if (!/^sha256:[0-9a-f]{64}$/.test(receipt.sha256Hash ?? "")) {
+      throw new Error(`Malformed tool evidence hash for ${slug} (${receipt.sourceUrl})`);
+    }
+
+    const hashInput = { sourceUrl: receipt.sourceUrl, retrievedAt: receipt.verifiedAt, facts: receipt.snapshot };
+    const computed = `sha256:${crypto.createHash("sha256").update(stableStringify(hashInput)).digest("hex")}`;
+    if (computed !== receipt.sha256Hash) {
+      throw new Error(`Tool evidence hash mismatch for ${slug} (${receipt.sourceUrl}): expected ${receipt.sha256Hash}, computed ${computed}`);
+    }
+  }
+}
+
+console.log(`catalog verification PASS: ${hashes.length} entity evidence hashes + ${authorityEvidence.length} recomputed authority evidence hashes + ${recomputedToolReceipts} recomputed tool evidence hashes`);
