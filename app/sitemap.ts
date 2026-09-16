@@ -1,11 +1,22 @@
 import type { MetadataRoute } from "next";
-import { publicEntities, publicIndexableComparisons, getPublicEntityPath } from "@/lib/catalog";
+import { publicEntities, publicIndexableComparisons, getPublicEntityPath, getEvidence } from "@/lib/catalog";
 import { authorityPages } from "@/lib/authority-pages";
 import { isAuthorityPageEvidenceReady } from "@/lib/authority-evidence";
 import { legacyPages, categories } from "@/lib/legacy";
 import { glossaryTerms } from "@/lib/glossary";
 import { trustPages } from "@/lib/trust";
 import { SITE } from "@/lib/site";
+
+// Most recent verified evidence retrievedAt for an entity, as a genuine
+// lastmod source — not a fabricated "just updated" timestamp. Entities
+// with no evidence records (shouldn't happen for a publicly-indexable
+// entity, but checked rather than assumed) get no lastmod, same as any
+// other path this file can't source a real date for.
+function latestEvidenceDate(entityId: string): string | undefined {
+  const dates = getEvidence(entityId).map((record) => record.retrievedAt).filter(Boolean);
+  if (!dates.length) return undefined;
+  return dates.reduce((latest, current) => (current > latest ? current : latest));
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const legacyPaths = Object.entries(legacyPages)
@@ -17,7 +28,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   const authorityPaths = authorityEntries.map(([slug]) => `/${slug}`);
   const lastModifiedByPath = new Map<string, string>([
-    ...authorityEntries.map(([slug, page]): [string, string] => [`/${slug}`, page.lastReviewed])
+    ...authorityEntries.map(([slug, page]): [string, string] => [`/${slug}`, page.lastReviewed]),
+    ...publicEntities
+      .map((entity): [string, string | undefined] => [getPublicEntityPath(entity), latestEvidenceDate(entity.id)])
+      .filter((entry): entry is [string, string] => Boolean(entry[1]))
   ]);
 
   // MCP server detail pages are intentionally noindex until a canonical upstream
