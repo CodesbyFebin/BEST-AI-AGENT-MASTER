@@ -7674,6 +7674,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Drafting post-visit care instructions for veterinarian review before sending to pet owners.",
           "Insurance claim and billing status automation."
         ]
+      },
+      {
+        heading: "Where veterinary automation actually differs from human healthcare administration",
+        paragraphs: [
+          "Multi-pet, multi-species households complicate scheduling and record-keeping in a way single-patient human medical scheduling doesn't — an agent handling client communication needs to track which reminder applies to which animal, and a client with three pets on different vaccination schedules is a normal case, not an edge case.",
+          "Veterinary records in most jurisdictions are not covered by the same health-information privacy statutes as human medical records (in the US, HIPAA applies to human patients, not animal patients) — client contact information and payment data still need ordinary data-protection care, but the specific regulatory framework a clinic operates under is different from what a human healthcare provider follows, and a vendor's claim of \"HIPAA-compliant\" is describing a standard that doesn't actually apply to veterinary patient records in the first place."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the practice-management software the clinic already uses has an integration path, rather than requiring a parallel system that staff have to update twice.",
+          "How the agent handles urgent-sounding messages from clients (a pet not eating, possible poisoning) — these need a fast human escalation path, not a scheduling queue.",
+          "Whether reminder cadence is configurable per species and per treatment type, since a generic monthly-reminder template doesn't fit every vaccination or medication schedule."
+        ]
       }
     ],
     relatedLinks: [
@@ -7681,7 +7696,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-fitness-wellness": {
@@ -7771,6 +7786,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Summarizing post-event feedback surveys to identify recurring issues.",
           "Tracking vendor confirmation status across a checklist."
         ]
+      },
+      {
+        heading: "Why event logistics resist full automation more than most services",
+        paragraphs: [
+          "An event has a fixed date that can't slip the way a service appointment can — a scheduling or coordination error that would just get rebooked in another business context instead compounds under a deadline that doesn't move, with vendors, venue, and attendees all locked to the same date.",
+          "Capacity and safety figures (fire-code occupancy limits, catering headcounts, accessibility accommodations) carry legal and liability weight that a planner needs to personally confirm rather than delegate to an automated summary, even when the underlying data came from an agent-assisted RSVP count."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the tool integrates with the specific RSVP/registration platform already in use, rather than requiring attendees to interact with a second system.",
+          "How last-minute changes (a vendor cancellation, a venue capacity change) propagate to already-notified attendees — a delayed or missed update here has real consequences.",
+          "Whether vendor-coordination tracking is visible to the whole planning team, not just accessible through the agent's own interface."
+        ]
       }
     ],
     relatedLinks: [
@@ -7778,7 +7808,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-hospitality", label: "AI agents for hospitality" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-hr-recruiting": {
@@ -8081,6 +8111,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Insurance eligibility verification before a visit.",
           "Post-procedure care instruction drafts for dentist review before sending to patients."
         ]
+      },
+      {
+        heading: "Recall scheduling is the highest-leverage automation in this vertical",
+        paragraphs: [
+          "Dental practices depend heavily on recurring six-month recall visits for revenue predictability, and recall no-shows are a chronic, measurable problem for most practices — an agent that reliably tracks who's due, sends a reminder, and handles simple rescheduling by text or chat addresses a real, recurring operational cost rather than a hypothetical efficiency gain.",
+          "Insurance verification before a visit is worth automating specifically because dental insurance (unlike most medical insurance) commonly has annual maximums and waiting periods that vary significantly plan to plan — front-desk staff manually checking this for every patient is slow and error-prone in exactly the way a structured lookup handles well, though the verification result should still be double-checked for anything unusual (a lapsed plan, a recent employer change) before a patient is billed based on it."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether it integrates with the practice's existing dental practice-management software (patient records, scheduling, billing usually live in one system already) rather than requiring parallel data entry.",
+          "How post-procedure instruction drafts are reviewed — these should be checked against the specific procedure performed, not sent from a generic template that doesn't reflect what was actually done that visit.",
+          "Whether the system flags emergency-sounding patient messages (persistent bleeding, severe pain) for immediate human attention rather than routing them into a standard scheduling queue."
+        ]
       }
     ],
     relatedLinks: [
@@ -8088,7 +8133,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-healthcare-clinics", label: "AI agents for clinics" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-optometry": {
@@ -8103,6 +8148,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Insurance verification before a visit.",
           "Patient intake form processing."
         ]
+      },
+      {
+        heading: "Two distinct product categories get confused in this space",
+        paragraphs: [
+          "\"AI for optometry\" spans two genuinely different things: administrative agents (scheduling, reminders, intake — the scope of this page) and AI-assisted diagnostic imaging analysis for conditions like diabetic retinopathy, which is a clinical decision-support category requiring its own regulatory clearance and clinical validation, not a general-purpose automation feature. A vendor demo that blends both under one \"AI-powered\" pitch is worth separating out explicitly before evaluating either.",
+          "Eyewear and contact lens reorder reminders are a genuinely well-suited automation target because they're tied to a predictable, prescription-based cycle (typically annual for glasses, more frequent for contacts) rather than requiring clinical judgment to time correctly."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the reorder-reminder cadence is driven by the patient's actual prescription and lens type, not a fixed calendar interval that doesn't match contact lens replacement schedules (daily, biweekly, monthly wear all differ).",
+          "If diagnostic-imaging AI is part of the pitch, ask specifically what regulatory clearance it holds and for which conditions — don't accept \"AI-powered\" as a substitute for that answer.",
+          "Whether patient intake form data flows directly into the practice-management record, avoiding a second manual transcription step that introduces errors."
+        ]
       }
     ],
     relatedLinks: [
@@ -8110,7 +8170,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/multimodal-vision-ai-agents", label: "Multimodal vision & OCR AI agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-physical-therapy": {
@@ -8125,6 +8185,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Insurance authorization and visit-limit tracking.",
           "Sending therapist-approved home exercise reminders between visits."
         ]
+      },
+      {
+        heading: "Visit-limit tracking is a genuinely underserved automation target",
+        paragraphs: [
+          "Many insurance plans cap physical therapy at a fixed number of visits per year or per injury, and tracking a patient's remaining authorized visits across an active caseload is exactly the kind of structured, rule-based task automation handles well — a clinic running this manually risks either under-treating (stopping early out of caution) or a denied claim (continuing past the authorized limit without a new authorization).",
+          "Home exercise program reminders work because the program itself was already designed by the therapist during the visit — the agent's job is reinforcing adherence to an existing plan, not creating or adjusting the plan itself. Sending a reminder is different from re-assessing whether the exercises are still appropriate, which requires the therapist to see how the patient is actually responding."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether visit-limit tracking pulls real authorization data from the payer, not just counts visits against an assumed cap that may not match the patient's actual plan.",
+          "Whether exercise reminders link back to the specific program the therapist prescribed (with video or images from that plan), not a generic exercise library that might not match what was actually assigned.",
+          "How the system handles a patient reporting increased pain between visits — this needs a path to the therapist, not just a logged data point reviewed at the next scheduled appointment."
+        ]
       }
     ],
     relatedLinks: [
@@ -8132,7 +8207,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-fitness-wellness", label: "AI agents for fitness & wellness businesses" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-daycare-childcare": {
@@ -8175,6 +8250,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Parts lookup and ordering automation.",
           "Automated service-due reminders based on mileage or elapsed time."
         ]
+      },
+      {
+        heading: "Bay-capacity scheduling is a harder problem than a typical calendar",
+        paragraphs: [
+          "A repair bay isn't a fungible time slot the way a salon chair or meeting room is — a shop needs to know which bay has the right lift type, which technician has the right certification for a given job (an EV battery job and an oil change aren't interchangeable), and how long a job will realistically take, which varies a lot more than a fixed-duration appointment model assumes. An agent that just books against open calendar time without those constraints will create scheduling conflicts a human dispatcher would have caught.",
+          "Parts lookup automation is genuinely valuable because a repair estimate is often blocked on parts availability and lead time — surfacing that during the initial scheduling conversation, rather than after the car is already on the lift, avoids a common source of shop-floor delay."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the scheduling logic actually accounts for bay type, lift capability, and technician specialization, not just open/closed time slots.",
+          "Whether service-due reminders are based on the vehicle's real service history and manufacturer intervals, not a generic mileage rule that doesn't match the specific make and model.",
+          "How the system communicates diagnostic findings to customers — an AI-drafted summary of what the technician found should be reviewed for accuracy before it goes out, since customers make repair-authorization decisions based on it."
+        ]
       }
     ],
     relatedLinks: [
@@ -8182,7 +8272,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-supply-chain", label: "AI agents for supply chain" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-car-dealerships": {
@@ -8197,6 +8287,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Service appointment scheduling and reminder automation.",
           "Qualifying leads before handing off to a sales representative."
         ]
+      },
+      {
+        heading: "Why financing and pricing stay off-limits for automation here",
+        paragraphs: [
+          "Vehicle financing involves disclosure requirements (APR, total cost of financing, add-on products) governed by consumer-lending regulation that varies by jurisdiction — an agent quoting or negotiating financing terms without a licensed professional in the loop creates real regulatory exposure for the dealership, not just a quality-control risk.",
+          "Lead qualification is a good automation fit specifically because it's an information-gathering step (budget range, timeline, trade-in details) rather than a decision — the actual sales conversation, where a buyer's specific circumstances and negotiating room matter, is where a salesperson's judgment adds real value over a scripted flow."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether inventory search reflects real-time lot availability, not a stale feed that quotes a vehicle that already sold.",
+          "Whether the agent clearly hands off to a human before any financing-specific numbers are discussed, rather than blurring the line between \"estimated payment\" and an actual offer.",
+          "How service scheduling handles recall and warranty work, which often has different documentation and parts-ordering requirements than routine maintenance."
+        ]
       }
     ],
     relatedLinks: [
@@ -8204,7 +8309,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-real-estate", label: "AI agents for real estate" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-moving-companies": {
@@ -8241,6 +8346,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Route optimization for crews covering multiple jobs per day.",
           "Post-service follow-up requests for feedback."
         ]
+      },
+      {
+        heading: "Route optimization matters more here than in most service businesses",
+        paragraphs: [
+          "A cleaning business's margin is largely determined by how many jobs a crew completes per day, and drive time between jobs is pure overhead — this makes route optimization a genuinely high-leverage automation target rather than a nice-to-have, especially for businesses covering a spread-out service area rather than a dense single neighborhood.",
+          "Recurring-client scheduling (weekly, biweekly, monthly cleans) adds a constraint most generic scheduling tools don't handle well: a missed or rescheduled recurring slot needs to reflow into the crew's route for that day, not just get pushed to the next open slot on the calendar."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether route optimization actually reflows around cancellations and add-ons in real time, or just plans the day once each morning.",
+          "How access instructions (lockboxes, gate codes, pet warnings) are stored and surfaced to the crew — this is sensitive information that needs careful handling, not just a free-text notes field.",
+          "Whether a client complaint routes to a human quickly, since a same-day response often determines whether a recurring client stays or cancels."
+        ]
       }
     ],
     relatedLinks: [
@@ -8248,7 +8368,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-logistics", label: "AI agents for logistics" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-landscaping": {
@@ -8263,6 +8383,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Weather-based rescheduling suggestions for outdoor work.",
           "Initial customer inquiry triage before a sales visit."
         ]
+      },
+      {
+        heading: "Weather dependency makes scheduling automation genuinely useful here",
+        paragraphs: [
+          "Outdoor work getting rained out is routine, not exceptional, and manually rescheduling a full day's route when weather turns is real dispatcher overhead — an agent that proactively suggests rescheduling based on a real forecast, and reflows the affected crew's remaining stops, addresses a recurring cost rather than a hypothetical one.",
+          "Seasonal reminder timing (spring fertilization, fall cleanup, irrigation winterization) is regionally specific — a template built around one climate zone's calendar will send fall-cleanup reminders at the wrong time for a client in a different growing zone, so the reminder logic needs real regional calibration, not a single fixed schedule."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether weather-based rescheduling actually checks a real forecast for the job site's specific location, not a generic regional average.",
+          "Whether seasonal reminders are calibrated to the client's actual growing zone and property type, not a one-size-schedule.",
+          "How large-project inquiries (a full landscape redesign vs. routine mowing) are routed — these genuinely need an in-person site visit before a quote, and an agent that promises a firm price from photos alone sets a bad expectation."
+        ]
       }
     ],
     relatedLinks: [
@@ -8270,7 +8405,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-cleaning-services", label: "AI agents for cleaning services" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-uptime-sla": {
@@ -8446,6 +8581,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Dynamic pricing based on real-time occupancy data.",
           "Flagging likely violations for a human enforcement officer to confirm."
         ]
+      },
+      {
+        heading: "Why enforcement stays a human decision",
+        paragraphs: [
+          "License-plate recognition accuracy is high but not perfect — misreads happen with damaged, obscured, or unusually formatted plates, and a citation or boot order issued directly from a misread creates real financial and legal exposure for the operator, not just an inconvenienced driver. Routing flagged violations to a human for confirmation before any enforcement action catches exactly this failure mode.",
+          "Dynamic pricing based on occupancy is a genuinely well-suited automation target since it's a continuous optimization problem (adjust price as occupancy changes) rather than a one-time judgment call — the main thing to get right is making sure pricing changes are visible to drivers before they commit to entering, not applied retroactively."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "What the system's actual plate-recognition accuracy rate is under real conditions (rain, low light, dirty plates), not just a vendor's lab-tested figure.",
+          "Whether dynamic pricing is disclosed to drivers before entry, avoiding a bait-and-switch experience that generates complaints and chargebacks.",
+          "Whether flagged violations include enough context (photo, timestamp, plate read confidence) for a human reviewer to confirm quickly rather than needing to re-investigate from scratch."
+        ]
       }
     ],
     relatedLinks: [
@@ -8453,7 +8603,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-real-estate", label: "AI agents for real estate" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-fleet-management": {
@@ -8468,6 +8618,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Predictive maintenance alerts flagged from telematics data for a mechanic to inspect.",
           "Driver schedule and hours-of-service tracking."
         ]
+      },
+      {
+        heading: "Predictive maintenance is an alert system, not a diagnosis",
+        paragraphs: [
+          "Telematics-based predictive maintenance works by flagging statistical anomalies (unusual engine temperature trends, brake-wear rate deviations) that correlate with future failure risk — this is a genuinely useful early-warning signal, but it's a probability flag, not a confirmed diagnosis, and treating it as one risks either unnecessary downtime (pulling a vehicle for a false positive) or false confidence (assuming a vehicle without an alert is fully sound).",
+          "Hours-of-service tracking is worth automating specifically because the compliance rules are numeric and rule-based (maximum driving hours, required rest periods) in a way that's genuinely well-suited to automated tracking — the risk is a system that tracks the rule correctly but doesn't reconcile cleanly with how dispatchers actually build schedules, creating a compliance report that doesn't match the schedule drivers are actually working."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether predictive-maintenance alerts include the underlying telematics data a mechanic can actually inspect, not just a black-box risk score.",
+          "Whether route optimization accounts for vehicle-specific constraints (weight limits, height restrictions for certain routes) rather than treating the fleet as interchangeable.",
+          "How the system handles a driver going out of hours-of-service compliance mid-route — this needs a real-time alert to dispatch, not a report reviewed after the fact."
+        ]
       }
     ],
     relatedLinks: [
@@ -8475,7 +8640,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-warehouse-operations", label: "AI agents for warehouse operations" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-utility-companies": {
@@ -8490,6 +8655,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Automated outage status updates to affected customers.",
           "Flagging unusual usage patterns that may indicate a leak or meter fault for a technician to check."
         ]
+      },
+      {
+        heading: "Why this differs from ordinary customer-support automation",
+        paragraphs: [
+          "A utility is often a monopoly or near-monopoly provider for its service area, which changes the stakes of a bad automated interaction — a frustrated customer with a competing utility can switch providers; a frustrated utility customer usually can't, which is a real reason to keep escalation paths visibly easy rather than optimizing purely for deflection rate.",
+          "During a widespread outage, message volume spikes exactly when customers are most anxious and least tolerant of a bad automated experience — an outage-communication agent needs to handle that surge gracefully (accurate, specific status updates, not a generic \"we're aware of the issue\" loop) rather than being tuned only for a normal day's volume."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether outage status updates pull from real, current grid data, rather than a stale estimate that erodes trust when it doesn't match what customers actually observe.",
+          "How usage-anomaly flags are triaged — a suspected gas leak needs a different urgency path than a suspected billing-meter error, and treating them identically risks a genuinely dangerous situation sitting in a normal queue.",
+          "Whether the system is load-tested for outage-scale message volume, not just typical day-to-day support volume."
+        ]
       }
     ],
     relatedLinks: [
@@ -8497,7 +8677,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-security-checklist", label: "AI agent security checklist" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-telehealth-admin": {
@@ -8512,6 +8692,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Insurance eligibility verification before a visit.",
           "Technical troubleshooting support for video-visit software issues."
         ]
+      },
+      {
+        heading: "Technical support is a bigger share of telehealth admin than in-person practices",
+        paragraphs: [
+          "A telehealth visit has a failure mode in-person care doesn't: the patient can't connect, or the connection drops mid-visit — first-line troubleshooting (camera/microphone permissions, bandwidth checks, browser compatibility) is a genuinely good automation target because it's the same handful of issues repeatedly, and resolving them quickly protects the actual appointment slot from being wasted.",
+          "Cross-timezone scheduling matters more here than for a physical clinic because telehealth removes the geographic constraint that would otherwise put patient and provider in the same timezone by default — a scheduling system that displays only one party's local time creates real no-show risk from timezone confusion alone."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether technical troubleshooting actually resolves the visit-blocking issue in time for the appointment, or just logs it for later review after the slot is already missed.",
+          "Whether scheduling confirmations show the time in both the patient's and provider's local timezone explicitly, not just one.",
+          "Whether insurance eligibility checks account for telehealth-specific coverage rules, which in some plans differ from in-person visit coverage."
+        ]
       }
     ],
     relatedLinks: [
@@ -8519,7 +8714,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-healthcare-clinics", label: "AI agents for clinics" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-coworking-spaces": {
@@ -8534,6 +8729,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Automated visitor check-in and access management.",
           "Billing and membership renewal reminders."
         ]
+      },
+      {
+        heading: "The tension between automation and the actual product being sold",
+        paragraphs: [
+          "A coworking membership's real value proposition is often community and networking, not just desk access — over-automating the member experience (no human staff presence, purely app-mediated interactions) can undercut the thing members are actually paying for, even while making day-to-day logistics smoother.",
+          "Meeting-room booking automation is worth getting right specifically because room conflicts are a visible, immediate friction point for members — a double-booked room in a shared space creates an awkward in-person situation in a way a missed reminder in most other contexts doesn't."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether booking automation prevents double-booking in real time, not just on a batch-synced calendar that can drift out of date.",
+          "Whether visitor check-in integrates with building access control, so a checked-in guest can actually get through the door without separate staff intervention.",
+          "Whether community-facing communication (events, introductions) stays distinct from purely transactional messages (invoices, access codes), so members don't tune out all automated messages as noise."
+        ]
       }
     ],
     relatedLinks: [
@@ -8541,7 +8751,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-real-estate", label: "AI agents for real estate" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-cost-allocation-chargeback": {
@@ -8577,6 +8787,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Automated due-date, hold-ready and fine notifications.",
           "Answering common policy and hours questions."
         ]
+      },
+      {
+        heading: "Where the line sits between lookup and reference work",
+        paragraphs: [
+          "Catalog search (\"do you have this book,\" \"where is it shelved\") is a genuinely good automation fit because it's a structured lookup against known metadata. Reference and research assistance is a different task — helping a patron find and evaluate sources for a research question requires judgment about source credibility and relevance that a librarian develops through training, and an agent that confidently answers a research question instead of directing the patron to a librarian risks presenting a plausible-sounding but uncritically-sourced answer as settled.",
+          "Academic libraries specifically should be cautious about agents that generate citations or bibliography entries without verification — a fabricated or malformed citation in student work has real academic consequences, and this is a well-documented failure mode for general-purpose language models asked to produce citations from memory rather than from a verified source."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether catalog search results link to real, verifiable holdings records, not a generated summary that might not reflect actual availability.",
+          "Whether the agent clearly redirects research-quality questions to a librarian rather than attempting a full literature-style answer on its own.",
+          "How the system handles multilingual patrons and accessibility needs, since public libraries in particular serve a broad demographic a narrowly-tested chat interface may not serve well by default."
+        ]
       }
     ],
     relatedLinks: [
@@ -8584,7 +8809,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-museums": {
@@ -8599,6 +8824,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Multilingual exhibit information for international visitors.",
           "Answering common logistical questions (hours, accessibility, amenities)."
         ]
+      },
+      {
+        heading: "Curatorial accuracy is a different risk category than logistics",
+        paragraphs: [
+          "A wrong answer about opening hours is a minor inconvenience; a wrong or misleading answer about the historical or cultural context of an exhibit is a different kind of error — cultural and historical interpretation is frequently contested or nuanced in ways a general-purpose model's training data doesn't reliably capture, and an unreviewed AI-generated exhibit description risks presenting a confident but inaccurate or culturally insensitive account as institutional fact.",
+          "Multilingual delivery is a genuinely strong use case specifically because a museum's core content (exhibit descriptions, wayfinding) is usually static enough to translate once and verify, rather than requiring real-time generation for every visitor interaction — a reviewed, pre-translated set of materials is safer than live translation of curatorial text."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether any exhibit-content-facing text was reviewed by curatorial staff before publication, not generated and published directly.",
+          "Whether timed-entry and group booking actually reflects real capacity constraints (gallery space, conservation limits) rather than a generic slot count.",
+          "How the system handles accessibility questions specifically — accurate, current accessibility information matters more to the visitors asking than general logistics do."
+        ]
       }
     ],
     relatedLinks: [
@@ -8606,7 +8846,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-content-marketing-agents", label: "AI content & marketing agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "what-is-agent-to-agent-protocol": {
@@ -8814,6 +9054,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Client gallery-ready notifications once photos are processed.",
           "Initial inquiry response and package information for prospective clients."
         ]
+      },
+      {
+        heading: "AI-assisted culling is a real, distinct capability worth naming precisely",
+        paragraphs: [
+          "\"AI-assisted editing\" for a photography business usually means one of two different things: culling (sorting through hundreds of shots to flag the best candidates, based on focus, exposure, and closed eyes) and generative editing (altering image content). Culling assistance is a genuinely mature, low-risk time-saver most working photographers already use in some form; treating it as equivalent to a tool that alters the photograph's actual content is a meaningfully different claim, and studios should be precise about which one a vendor is actually offering.",
+          "Client-facing package and pricing questions are a reasonable automation target because they're usually static, published information — the risk is a system that quotes outdated pricing after a photographer has updated rates elsewhere, so the source of truth needs to be a single place both the agent and the studio's own materials read from."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the tool marketed as \"AI editing\" is culling assistance, generative alteration, or both — these have very different implications for what the photographer is actually delivering.",
+          "Whether gallery-ready notifications trigger only after the photographer's actual review and edit pass, not automatically when raw files are uploaded.",
+          "How client image data and galleries are stored and for how long, since these are personal photos clients reasonably expect to be handled carefully."
+        ]
       }
     ],
     relatedLinks: [
@@ -8821,7 +9076,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/multimodal-vision-ai-agents", label: "Multimodal vision & OCR AI agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-catering": {
@@ -8864,6 +9119,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Order-ahead queue management to reduce wait times.",
           "Inventory reorder suggestions based on recent sales patterns."
         ]
+      },
+      {
+        heading: "Location communication is the single highest-stakes automation here",
+        paragraphs: [
+          "A food truck's core discoverability problem — where will it be, and when — is entirely solved by reliable, timely posting, which makes this the highest-leverage automation target in the vertical rather than a minor convenience. A stale or wrong location post directly costs sales in a way it wouldn't for a fixed-location restaurant.",
+          "Order-ahead queue management needs to reflect the truck's real, current capacity (a single small kitchen, limited staff) rather than treating throughput as elastic — an order-ahead system that accepts more orders than the truck can realistically prepare in a reasonable window creates the exact wait-time problem it was meant to solve."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether location posts update automatically from the truck's actual GPS/schedule data, rather than requiring a manual post that can be forgotten on a busy day.",
+          "Whether order-ahead queue limits are set realistically for the specific truck's kitchen size and staffing, not a generic default.",
+          "Whether inventory reorder suggestions account for perishability — food trucks generally can't carry the buffer stock a fixed restaurant might, so over-ordering has a real spoilage cost."
+        ]
       }
     ],
     relatedLinks: [
@@ -8871,7 +9141,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-food-restaurants", label: "AI agents for restaurants" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-breweries": {
@@ -8886,6 +9156,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Distributor and retailer order coordination.",
           "Inventory tracking across brewing, packaging and distribution stages."
         ]
+      },
+      {
+        heading: "Inventory tracking spans a longer, more variable timeline than most retail",
+        paragraphs: [
+          "Brewing has a production cycle measured in weeks, not the near-instant restock most retail inventory automation assumes — a demand forecast needs to account for the fact that a shortfall today can't be fixed by reordering tomorrow, only by a brew that was started weeks earlier, which changes what \"just in time\" inventory management actually looks like here.",
+          "Distributor and retailer order coordination benefits from automation specifically because it involves recurring, structured relationships (the same accounts ordering on a roughly predictable cadence) rather than one-off transactions — but a brewery still needs a human relationship for account-specific terms and priority allocation during a genuine shortage."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether inventory tracking accounts for the multi-week production lead time, not just current stock on hand.",
+          "Whether distributor order coordination reflects actual allocation priorities during a shortage, rather than treating every account identically.",
+          "How taproom event scheduling handles capacity and licensing constraints (occupancy limits, alcohol-service hours), which carry real regulatory consequences if mishandled."
+        ]
       }
     ],
     relatedLinks: [
@@ -8893,7 +9178,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-supply-chain", label: "AI agents for supply chain" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-salons-spas": {
@@ -8908,6 +9193,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Rebooking reminders timed to typical service cycles (color touch-ups, facials).",
           "Retail product reorder suggestions based on purchase history."
         ]
+      },
+      {
+        heading: "Stylist-specific booking is harder than generic appointment scheduling",
+        paragraphs: [
+          "Unlike many service businesses where any available staff member can take an appointment, salon clients frequently book a specific stylist or therapist by name and stay loyal to that relationship for years — booking automation needs to respect that constraint rather than optimizing purely for the earliest open slot with any available staff member, or it will actively work against client retention.",
+          "Rebooking reminders timed to service cycles are a strong fit because color and chemical service intervals are fairly predictable (roughly every 4-8 weeks depending on service), making this one of the few verticals where a lifecycle-based reminder genuinely outperforms a fixed calendar reminder."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether booking automation lets clients request a specific stylist rather than defaulting to next-available.",
+          "Whether rebooking cadence is calibrated per service type (color vs. a haircut vs. a facial have different natural cycles), not one blanket interval.",
+          "How product reorder suggestions handle clients with allergies or sensitivities — a reorder prompt shouldn't repeat a purchase the client has since flagged an issue with."
+        ]
       }
     ],
     relatedLinks: [
@@ -8915,7 +9215,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-driving-schools": {
@@ -8930,6 +9230,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Delivering study material and practice tests for the written exam.",
           "Progress tracking across a student's lesson history."
         ]
+      },
+      {
+        heading: "Why instruction itself is a firm boundary, not a gray area",
+        paragraphs: [
+          "Written-exam study material (traffic law, road signs) is factual, testable content well suited to an automated practice-test format. Behind-the-wheel readiness is fundamentally different: it's an in-person judgment about a specific student's actual physical control of a vehicle in real traffic, which has no remote or automated substitute — this isn't a case of automation eventually catching up to human judgment, it's a category of assessment that requires physical presence by definition.",
+          "Progress tracking across lesson history is useful specifically because instructors often need to hand off a student to a different instructor for scheduling reasons, and a clear record of what's been covered and what still needs work prevents the new instructor from either repeating covered ground or skipping something the student hasn't actually mastered."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether practice-test content is kept current with the actual, jurisdiction-specific driving test and traffic-law updates, not a generic set that may not match local requirements.",
+          "Whether progress tracking captures specific skills (parallel parking, highway merging) rather than just hours logged, since hours alone don't indicate readiness.",
+          "How test-date reminders account for real scheduling volatility (test-center rescheduling, weather cancellations) rather than assuming a fixed date holds."
+        ]
       }
     ],
     relatedLinks: [
@@ -8937,7 +9252,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-pest-control": {
@@ -8952,6 +9267,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Automated recurring-treatment and follow-up reminders.",
           "Initial inquiry triage before dispatching a technician."
         ]
+      },
+      {
+        heading: "Inquiry triage needs to distinguish urgency levels, not just route requests",
+        paragraphs: [
+          "A routine quarterly treatment reminder and \"I found what might be a wasp nest near my door\" are both technically \"pest control inquiries,\" but they don't belong in the same queue — an agent that treats every inbound message with identical priority will leave a genuinely urgent (and sometimes safety-relevant, for stinging-insect or rodent-infestation cases) request sitting alongside routine scheduling.",
+          "Route optimization for technicians is a strong automation fit because pest control is fundamentally a scheduled-visit business with a service area — the same routing logic that helps HVAC or cleaning businesses applies directly here, with the added wrinkle that recurring-treatment cadence (monthly, quarterly) needs to feed into route planning, not just one-off jobs."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether inquiry triage flags genuinely urgent situations (stinging insects, suspected rodent entry points near food-service areas) for faster response than routine bookings.",
+          "Whether treatment reminders reflect the specific pest and method used previously, not a generic recurring-service template.",
+          "How the system documents treatment history for properties with specific compliance needs (restaurants, food-handling facilities often have pest-control documentation requirements from health inspectors)."
+        ]
       }
     ],
     relatedLinks: [
@@ -8959,7 +9289,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-fleet-management", label: "AI agents for fleet management" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-security-guard-services": {
@@ -9030,6 +9360,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Seasonal maintenance reminders (spring AC checks, fall furnace checks).",
           "Initial troubleshooting triage to determine urgency before dispatch."
         ]
+      },
+      {
+        heading: "Triage severity has real seasonal stakes",
+        paragraphs: [
+          "A no-heat call in freezing weather and a routine annual tune-up are not the same priority, and the gap matters more in HVAC than in most home-service verticals because a heating or cooling failure during extreme weather is a genuine safety issue for vulnerable occupants, not just a comfort complaint — triage logic needs to weight current weather conditions and the nature of the complaint, not just first-come-first-served queue position.",
+          "Seasonal maintenance reminders are a strong fit because HVAC systems genuinely benefit from twice-yearly service ahead of peak heating and cooling seasons, and this is exactly the kind of predictable, calendar-driven prompt that reduces emergency call volume later by catching small issues before they become no-heat or no-cool emergencies."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether triage explicitly escalates no-heat/no-cool calls during extreme weather ahead of routine scheduling requests.",
+          "Whether dispatch routing accounts for technician certification level — some repairs (refrigerant handling, gas line work) require specific licensing that not every technician on staff holds.",
+          "Whether seasonal reminders are timed to the local climate, not a fixed national calendar that doesn't match when a specific region actually needs pre-season service."
+        ]
       }
     ],
     relatedLinks: [
@@ -9037,7 +9382,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-fleet-management", label: "AI agents for fleet management" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-blue-green-deployment": {
@@ -9398,6 +9743,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Automated transcription and captioning for video course content.",
           "Progress-based nudge messaging to improve course completion rates."
         ]
+      },
+      {
+        heading: "Completion nudges need to distinguish disengagement from difficulty",
+        paragraphs: [
+          "A learner who stalls on a course module might have lost interest, or might be genuinely stuck on a concept they haven't grasped — a generic \"come back and finish your course\" nudge treats both cases identically, when the second case actually calls for pointing the learner back to the specific lesson or a support resource, not just encouragement to return.",
+          "Transcription and captioning automation is a strong, low-risk fit because it's a well-defined transformation of already-created content, but accuracy still matters for accessibility compliance and for the credibility of technical or specialized terminology — a mis-transcribed technical term in a captioned lecture is a real quality defect, not a cosmetic one."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether completion nudges are triggered by specific stall points (which module, how long stalled) rather than a blanket time-based reminder.",
+          "Whether transcription accuracy has been checked against the platform's actual subject matter, especially for technical or specialized vocabulary that general transcription models often get wrong.",
+          "Whether learner support chat correctly distinguishes platform/technical questions (which it can handle) from course-content questions (which usually need instructor input)."
+        ]
       }
     ],
     relatedLinks: [
@@ -9405,7 +9765,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-libraries", label: "AI agents for public & academic libraries" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-language-schools": {
@@ -9420,6 +9780,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Objective-format placement test scoring.",
           "AI conversation-practice tools for students to use between live sessions."
         ]
+      },
+      {
+        heading: "Why conversation practice is genuinely additive rather than a substitute",
+        paragraphs: [
+          "AI conversation-practice tools give students extra low-stakes speaking repetition between classes — this is a real, useful function, but it's a different thing from live instruction because pronunciation correction and cultural/contextual nuance (idiom, register, when a phrase is appropriate versus awkward) are areas where current speech-recognition and feedback quality still lag a trained instructor's ear, especially for less commonly taught languages with less training data behind the underlying models.",
+          "Placement testing splits cleanly: grammar and vocabulary sections with a single correct answer score well automatically, while speaking and open-ended writing sections need an instructor's judgment call on actual proficiency level — treating an AI-scored speaking assessment as equivalent to a human-scored one risks placing a student in the wrong level class."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the conversation-practice tool has documented accuracy for the specific language taught — quality varies significantly by language, and a tool strong in widely-spoken languages may perform noticeably worse for less commonly taught ones.",
+          "Whether placement testing routes speaking/writing sections to instructor review rather than fully automated scoring.",
+          "Whether the school is transparent with students about which parts of their learning experience involve an AI tool versus a live instructor."
+        ]
       }
     ],
     relatedLinks: [
@@ -9427,7 +9802,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/indic-language-ai-models", label: "Indic language AI models" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-test-prep": {
@@ -9492,6 +9867,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Routing form submissions to the right team based on answer content.",
           "Triggering personalized follow-up based on specific form responses."
         ]
+      },
+      {
+        heading: "Why this integration is genuinely low-risk to grant broad access to",
+        paragraphs: [
+          "A Typeform MCP server is almost entirely read-oriented — an agent pulling response data to summarize or route it isn't mutating anything in the source form, which puts it in a fundamentally lower-risk category than an MCP integration that can edit records or trigger payments. The main thing worth restricting is scope: give the agent access to the specific forms it needs to work with, not blanket access to every form in the account, since response data can include personal information the agent has no actual need to see.",
+          "Open-ended response summarization is the highest-value use case specifically because reading through hundreds of free-text survey answers by hand doesn't scale, and a summarization pass that surfaces recurring themes turns an otherwise-ignored data source into something a team actually acts on."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the integration is scoped to specific forms/workspaces rather than the entire account.",
+          "How response data is handled if the agent's summaries are logged or cached — personal information in open-text fields shouldn't linger in a log longer than necessary.",
+          "Whether routing rules based on form answers are reviewed periodically, since a routing rule written for one form version can silently misfire after the form is edited."
+        ]
       }
     ],
     relatedLinks: [
@@ -9499,7 +9889,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-calendly": {
@@ -9514,6 +9904,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Rescheduling or canceling meetings on request.",
           "Coordinating meeting times across multiple calendars."
         ]
+      },
+      {
+        heading: "Why \"easily reversible\" is the right frame, but not an unconditional one",
+        paragraphs: [
+          "Booking a meeting through an agent is low-risk in the sense that most scheduling mistakes are cheap to fix — a wrong time can be rescheduled. That reversibility argument gets weaker for meetings with real coordination cost behind them (a multi-participant call where several people have already blocked time, an external client meeting), where a booking or cancellation made without checking wastes other people's time even if it's technically undoable.",
+          "Cross-calendar coordination is the case where this integration earns its keep over a plain scheduling link — finding a slot that actually works across several people's calendars is exactly the kind of constraint-satisfaction task an agent handles well, compared to a human manually cross-referencing several calendars over an email thread."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the agent confirms with the user before finalizing a booking involving external participants, rather than auto-confirming on their behalf.",
+          "Whether cancellation requires the same confirmation step as booking — an agent that cancels too eagerly on an ambiguous request creates real disruption.",
+          "How the integration is scoped if used across a team — one person's calendar access shouldn't implicitly extend to booking on a colleague's calendar without their own authorization."
+        ]
       }
     ],
     relatedLinks: [
@@ -9521,7 +9926,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-onboarding-checklist", label: "AI agent user onboarding checklist" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-1password": {
@@ -9668,6 +10073,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Dynamic pricing recommendations based on demand and seasonality data.",
           "Cleaning and turnover scheduling between bookings."
         ]
+      },
+      {
+        heading: "Guest messaging response time is measurably tied to booking platform performance",
+        paragraphs: [
+          "Major booking platforms factor host response time and rate into search ranking and Superhost-style status programs, which makes fast, accurate guest messaging a business-critical function rather than just a service nicety — an agent that reliably handles the high-volume, repetitive share of guest questions (Wi-Fi password, checkout time, parking) directly supports the metrics that determine how visible a listing is.",
+          "The local-knowledge gap is the real limitation: a generic AI answer about \"nearby restaurants\" or \"how to get to the property\" can be confidently wrong about a specific closure, seasonal road closure, or construction detour that a host would know from being there recently — this isn't a hypothetical edge case in a vacation-rental context, it's a routine one, since local conditions change faster than any static knowledge base is kept updated."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether local recommendations are reviewed/updated by the host periodically, rather than generated fresh each time from general web knowledge that may be outdated.",
+          "Whether dynamic pricing suggestions are presented as recommendations for host approval, not auto-applied changes to a live listing.",
+          "How turnover scheduling handles same-day back-to-back bookings, which need tighter cleaning-crew coordination than a multi-day gap between guests."
+        ]
       }
     ],
     relatedLinks: [
@@ -9675,7 +10095,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-real-estate", label: "AI agents for real estate" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-storage-facilities": {
@@ -9690,6 +10110,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Automated payment and late-fee reminders.",
           "Access-code provisioning and revocation tied to payment status."
         ]
+      },
+      {
+        heading: "Why lien and auction procedures are a firm line, not just a caution",
+        paragraphs: [
+          "Most jurisdictions impose specific statutory notice requirements before a self-storage facility can auction off the contents of a delinquent unit — missed or improperly executed notice steps can void the auction and expose the facility to legal liability, which makes this exactly the kind of process that needs a human following a documented legal procedure, not an automated workflow optimizing for delinquency resolution speed.",
+          "Access-code management tied to payment status is a genuinely strong automation fit because it's a clean, binary rule (current on payment = access; delinquent past a defined grace period = access suspended) that removes the awkward manual step of staff having to personally cut off a renter's access."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the system explicitly excludes lien/auction initiation from its automated scope, routing those cases to a human following the jurisdiction's actual legal notice requirements.",
+          "Whether access suspension includes a configurable grace period and a clear renter-facing notice before it takes effect, rather than an abrupt cutoff.",
+          "How unit availability search handles unit-size and climate-control filtering accurately, since a mismatched unit size is a common source of reservation cancellations."
+        ]
       }
     ],
     relatedLinks: [
@@ -9697,7 +10132,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-real-estate", label: "AI agents for real estate" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-equipment-rental": {
@@ -9712,6 +10147,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Automated return-due reminders and late-fee notifications.",
           "Maintenance scheduling based on usage hours or elapsed time."
         ]
+      },
+      {
+        heading: "Safety inspection is the boundary, and it's a liability issue, not just a quality one",
+        paragraphs: [
+          "Renting out equipment with an undetected mechanical fault (a ladder with a hairline crack, a power tool with worn insulation) creates direct liability exposure if it causes an injury — this makes pre-rental safety inspection a task that needs a trained person physically checking the equipment, not a checklist an agent marks complete based on usage-hour thresholds alone.",
+          "Usage-based maintenance scheduling is still valuable specifically as a trigger for that human inspection — flagging \"this unit is due for inspection based on hours used\" is a good automation task; actually clearing the unit as safe to rent is not."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether maintenance-due flags require an actual completed inspection record before a unit is marked available again, rather than auto-clearing after a set time.",
+          "Whether return reminders account for real-world return friction (weekend/holiday hours, transport logistics for large equipment) rather than assuming return is always as easy as pickup.",
+          "How damage disputes at return are handled — this needs photo documentation and a clear human-reviewed process, not an automated damage assessment."
+        ]
       }
     ],
     relatedLinks: [
@@ -9719,7 +10169,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-event-venues": {
@@ -9734,6 +10184,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Vendor confirmation checklist tracking for each booked event.",
           "Automated logistics reminders in the lead-up to an event date."
         ]
+      },
+      {
+        heading: "Capacity and safety figures are the one place precision can't slip",
+        paragraphs: [
+          "Fire-code occupancy limits are a hard legal ceiling, not a target to approach — a venue's booking system quoting a capacity figure that doesn't match the actual permitted occupancy (because it was pulled from an outdated internal document, or rounded up to make a sale) creates real safety and legal exposure that only shows up when something goes wrong, which is exactly the kind of low-frequency, high-severity risk automation should not be allowed to quietly introduce.",
+          "Initial inquiry response is a strong automation fit precisely because most inquiries are about the same handful of facts (capacity, date availability, base pricing) that don't require the venue manager's personal judgment — the manager's time is better spent on the contract and logistics conversation that follows once a date is actually being seriously considered."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the capacity figures the system quotes are sourced from the venue's actual current fire-code certificate, not a marketing figure or an outdated internal number.",
+          "Whether vendor checklist tracking is visible to all parties involved (venue, planner, vendors), not siloed inside one party's own tool.",
+          "How the system handles date-hold requests versus confirmed bookings — these need to be clearly distinguished so two prospective clients aren't both led to believe they've secured the same date."
+        ]
       }
     ],
     relatedLinks: [
@@ -9741,7 +10206,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-hospitality", label: "AI agents for hospitality" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-wedding-planners": {
@@ -9756,6 +10221,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Budget and timeline tracking across the planning process.",
           "Automated logistics reminders for both clients and vendors."
         ]
+      },
+      {
+        heading: "Why this is one of the clearest cases for keeping automation firmly in the background",
+        paragraphs: [
+          "Clients hire a wedding planner specifically for judgment, taste, and personal attention during a high-stakes, emotionally significant event — over-automating client-facing communication risks signaling the opposite of what the client is paying for, even if the underlying logistics are handled competently. The right use of automation here is making the planner more responsive and organized, not replacing the planner's presence in the relationship.",
+          "Budget tracking across dozens of vendor line items (venue, catering, florals, photography, attire) is a genuinely tedious manual task where automation adds real value without touching the client relationship at all — this is the clearest case in this vertical of automation freeing up time for the higher-value parts of the job."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether client-facing messages are clearly from the planner (reviewed/sent personally) versus visibly automated, since the perception of personal attention matters as much as the actual logistics quality.",
+          "Whether budget tracking flags overruns early enough to actually act on them, not just at a final reconciliation after the event.",
+          "Whether vendor coordination checklists are shared in a format vendors can actually use, since many small wedding vendors don't operate on the same software the planner does."
+        ]
       }
     ],
     relatedLinks: [
@@ -9763,7 +10243,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-catering", label: "AI agents for catering businesses" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-personal-trainers": {
@@ -9778,6 +10258,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Workout log tracking and progress visualization for clients.",
           "Automated check-in reminders between sessions."
         ]
+      },
+      {
+        heading: "Why programming stays personal even as logistics automate",
+        paragraphs: [
+          "An independent trainer's actual value is built on knowing a specific client's injury history, movement limitations, and how they're responding week to week from direct observation — a generic AI-generated workout plan applied without that context risks recommending an exercise that's actually contraindicated for a client's specific injury history, which a template-based program has no way to know about.",
+          "Between-session check-in reminders are a strong fit because they reinforce accountability on something the trainer already prescribed, without requiring judgment — the risk is a check-in system that starts making its own recommendations (\"try adding an extra set\") rather than just reinforcing what the trainer actually set."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether workout log tracking flags concerning patterns (reported pain, missed sessions) for the trainer's attention rather than just archiving the data.",
+          "Whether check-in messages stick to reinforcing the trainer's actual program, not generating independent fitness advice.",
+          "Whether client billing handles package/session-count tracking accurately, since a miscounted package balance is a common source of client disputes."
+        ]
       }
     ],
     relatedLinks: [
@@ -9785,7 +10280,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-therapists-counselors": {
@@ -9918,6 +10413,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Automated shipment tracking updates to clients.",
           "Rate comparison and carrier selection support."
         ]
+      },
+      {
+        heading: "Why customs classification specifically stays outside automated scope",
+        paragraphs: [
+          "Tariff classification determines the duty rate applied to a shipment, and misclassification carries real regulatory penalties in most jurisdictions — this isn't a case where an AI system extracting plausible-looking data is good enough, because the classification decision has direct financial and legal consequences that fall on the forwarder and importer, not on whatever tool assisted the paperwork. Document data extraction (pulling fields off a bill of lading) is a fundamentally different, lower-stakes task than deciding which tariff code those goods fall under.",
+          "Shipment tracking automation is a strong fit because it's aggregating and relaying status data that already exists across carrier systems — the value is in presenting a consolidated, timely view to clients, not in making any judgment call about the shipment itself."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether document extraction output is reviewed by a person before it feeds into a customs filing, rather than flowing straight through.",
+          "Whether rate comparison reflects real, current carrier rates and surcharges, not a stale rate card that doesn't account for fuel surcharges or seasonal capacity pricing.",
+          "How the system handles exception cases (a shipment held at customs, a damaged container) — these need fast human visibility, not just a status field that says \"delayed\" without detail."
+        ]
       }
     ],
     relatedLinks: [
@@ -9925,7 +10435,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-freight-brokers", label: "AI agents for freight brokers" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-customs-brokers": {
@@ -9962,6 +10472,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Routing order exceptions to the right team faster.",
           "Demand forecasting to inform warehouse staffing decisions."
         ]
+      },
+      {
+        heading: "Multi-tenant complexity is what actually distinguishes a 3PL from a single-warehouse operation",
+        paragraphs: [
+          "A 3PL runs one physical operation (or network of warehouses) on behalf of many distinct client brands simultaneously, each with its own inventory, SLAs, and reporting expectations — automation here needs strict data segregation between clients (one client's inventory data or order volume shouldn't leak into another's reports or forecasts) in a way a single-brand warehouse's tooling doesn't need to worry about.",
+          "Demand forecasting for staffing is genuinely valuable specifically because a 3PL's labor needs swing with the combined, and often uncorrelated, demand patterns of many client brands at once — a forecast that only looks at one client's history misses the aggregate picture that actually drives how many pickers and packers are needed on a given day."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether client data is strictly partitioned in the reporting and forecasting layer, with no cross-client data leakage even in aggregate views.",
+          "Whether order-exception routing reflects each client's specific SLA terms, since a delay that's within tolerance for one contract may be a breach for another.",
+          "Whether account managers retain visibility into automated exception handling for their specific clients, so they're not blindsided by an issue the client already knows about."
+        ]
       }
     ],
     relatedLinks: [
@@ -9969,7 +10494,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-supply-chain", label: "AI agents for supply chain" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-webflow": {
@@ -9984,6 +10509,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Drafting new blog or content entries for editorial review before publishing.",
           "Auditing site content for outdated information."
         ]
+      },
+      {
+        heading: "Why a publish-time review gate matters more here than for internal tools",
+        paragraphs: [
+          "A website's content is immediately, publicly visible the moment it's published — there's no internal-only staging audience the way there might be for an agent working inside a private tool, which means a factual error or formatting mistake from an agent-drafted CMS entry is visible to every site visitor from the moment it goes live. This is the specific reason draft-then-review, rather than agent-direct-publish, is the right default for this integration.",
+          "Bulk collection updates are the highest-value use case because they solve a real scaling problem — manually editing dozens or hundreds of CMS items one at a time for a systematic change (a pricing update across every product page, a rebrand touching every author bio) is exactly the kind of repetitive, structured task an agent handles faster and more consistently than a person clicking through each entry."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the integration is scoped to draft/unpublished changes by default, with a separate explicit step to publish.",
+          "Whether bulk-update operations can be previewed as a batch before applying, so an error in the update logic doesn't propagate across every item before anyone notices.",
+          "How the integration handles Webflow's own reference fields and collection relationships — a bulk edit that doesn't account for linked collections can break references elsewhere on the site."
+        ]
       }
     ],
     relatedLinks: [
@@ -9991,7 +10531,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-content-marketing-agents", label: "AI content & marketing agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-squarespace": {
@@ -10260,6 +10800,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Interview scheduling and coordination across candidates and clients.",
           "Placement and timesheet tracking for temporary and contract staff."
         ]
+      },
+      {
+        heading: "Automated employment screening carries its own regulatory scrutiny",
+        paragraphs: [
+          "Several jurisdictions have specifically regulated automated employment-decision tools in recent years, requiring disclosure to candidates and, in some cases, independent bias auditing before an automated screening tool can be used in hiring decisions — a staffing agency evaluating a resume-screening product needs to check what regulatory obligations apply in the jurisdictions where it operates, not just evaluate the tool's accuracy in isolation.",
+          "Timesheet and placement tracking is a comparatively low-risk automation target because it's tracking factual, already-agreed data (hours worked, placement dates) rather than making a judgment call — the main failure mode to watch for is a tracking error that causes a temp worker to be paid incorrectly, which circles back to the same verification discipline payroll processing needs."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the resume-screening tool's use has been checked against applicable automated-employment-decision disclosure and audit requirements in your jurisdiction.",
+          "Whether candidate-matching suggestions are presented as a starting point for recruiter judgment, not an automatic pass/fail filter that removes candidates from consideration without human review.",
+          "How the system handles candidates who don't fit standard categories (career changers, non-traditional backgrounds) — a purely keyword-matching approach systematically disadvantages exactly these candidates."
+        ]
       }
     ],
     relatedLinks: [
@@ -10267,7 +10822,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-payroll-companies": {
@@ -10302,6 +10857,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Claims status tracking and document submission support.",
           "Automated enrollment deadline reminders."
         ]
+      },
+      {
+        heading: "Why coverage answers need a hard grounding requirement",
+        paragraphs: [
+          "Plan comparison and coverage questions have specific, checkable correct answers written into the actual plan documents — an agent answering from general knowledge about how health insurance \"typically\" works, rather than from the specific plan document an employee is enrolled in, risks giving a plausible-sounding but wrong answer that leaves an employee financially exposed. This is a case where the agent's answers should be strictly grounded in the actual plan documents, not general training knowledge about benefits plans.",
+          "Enrollment deadline reminders are one of the highest-value, lowest-risk automations available here because missing an open-enrollment window has real financial consequences for an employee, and a well-timed reminder sequence addresses a purely logistical failure mode that has nothing to do with coverage judgment."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the agent's answers are grounded in and cite the actual plan documents rather than general knowledge about how benefits plans commonly work.",
+          "Whether the system clearly states when a question needs to go to the carrier or plan administrator rather than attempting an answer it isn't certain of.",
+          "Whether claims status tracking pulls real-time data from the carrier, not a stale internal record that can lag the carrier's actual status."
+        ]
       }
     ],
     relatedLinks: [
@@ -10309,7 +10879,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-hr-recruiting", label: "AI agents for HR & recruiting" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-workers-comp": {
@@ -10324,6 +10894,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Automated status updates to claimants and employers.",
           "Scheduling required independent medical evaluations."
         ]
+      },
+      {
+        heading: "Why claim determinations are held to a stricter standard than most administrative decisions",
+        paragraphs: [
+          "A workers' compensation claim determination affects an injured worker's income and medical coverage during a period when they may be unable to work — this is a domain where an incorrect automated denial or delay has serious, sometimes irreversible consequences for someone in a vulnerable position, which is why claim adjudication itself (not just the paperwork supporting it) needs to stay with a licensed adjuster accountable under the applicable workers' comp regulatory framework.",
+          "Document organization across a claim's lifecycle is a strong automation fit because workers' comp claims typically involve documents from multiple sources (employer incident report, medical records, wage statements) arriving at different times — keeping these organized and complete for the adjuster's review is a real administrative burden automation genuinely reduces."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the system clearly separates document/status automation from any claim-decision functionality — these should never be blurred into a single \"claims AI\" pitch.",
+          "Whether status updates to claimants are accurate and don't inadvertently imply a decision has been made before the adjuster has actually made one.",
+          "Whether medical evaluation scheduling accounts for claimant accessibility needs (transportation, mobility limitations) that a purely calendar-driven scheduler might not consider."
+        ]
       }
     ],
     relatedLinks: [
@@ -10331,7 +10916,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-security-checklist", label: "AI agent security checklist" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "how-much-does-an-ai-agent-cost": {
@@ -10404,6 +10989,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Researching and organizing grant opportunities against an organization's mission fit.",
           "Automated donation receipt and follow-up processing."
         ]
+      },
+      {
+        heading: "Donor segmentation is where automation adds the most real value",
+        paragraphs: [
+          "Most nonprofits have a large base of smaller, recurring donors alongside a small number of major donors who account for a disproportionate share of total giving — automated communication is well suited to the first group (timely thank-you messages, tax-receipt processing, general updates) precisely because personal outreach doesn't scale to hundreds or thousands of small donors, while major-donor cultivation genuinely needs the relationship-building a person provides.",
+          "Grant research automation is valuable specifically as a filtering and organization tool — surfacing funding opportunities that match an organization's mission and eligibility criteria out of a large, constantly-changing landscape of grant programs — but the actual application narrative still needs a person who can speak authentically to the organization's specific impact and story."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the system flags major or high-potential donors for personal outreach rather than routing everyone through the same automated communication track.",
+          "Whether donor communications are reviewed before sending, particularly acknowledgment messages that reference specific gift amounts or purposes.",
+          "Whether grant research results are checked against actual eligibility criteria, not just keyword-matched against the funder's stated focus area."
+        ]
       }
     ],
     relatedLinks: [
@@ -10411,7 +11011,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-content-marketing-agents", label: "AI content & marketing agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-community-centers": {
@@ -10426,6 +11026,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Facility and room booking coordination.",
           "Automated event and program reminders for members."
         ]
+      },
+      {
+        heading: "Community centers serve a wider demographic range than most service businesses",
+        paragraphs: [
+          "A single community center's users can range from young children's programs to senior services to public-meeting-space rentals, often within the same building on the same day — an automation system needs to handle this range without assuming a single typical user profile, including accessibility for older adults or non-native speakers who make up a meaningful share of most community centers' actual membership.",
+          "Waitlist management is a genuinely useful automation target because popular programs (youth sports, popular fitness classes) routinely have more demand than capacity, and automatically notifying the next waitlisted person the moment a spot opens is both fairer and faster than manual list-checking."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether registration and communication interfaces are genuinely accessible (screen-reader compatible, available in the languages the community actually speaks), not just functional for a typical tech-comfortable user.",
+          "Whether facility booking prevents conflicts between recurring program use and one-off private rentals of the same space.",
+          "Whether program design and outreach decisions stay with staff who understand the specific neighborhood's needs, rather than defaulting to generic program templates."
+        ]
       }
     ],
     relatedLinks: [
@@ -10433,7 +11048,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-alumni-associations": {
@@ -10448,6 +11063,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Segmented update communication based on graduation year, program, or location.",
           "Donation processing and acknowledgment follow-up."
         ]
+      },
+      {
+        heading: "Segmentation quality determines whether alumni communication feels relevant or generic",
+        paragraphs: [
+          "An alumni base spans decades of graduating classes with genuinely different interests and life stages — a single newsletter sent identically to a recent graduate and someone who graduated forty years ago tends to feel irrelevant to both, which makes segmentation by graduation year, program, and location a real quality lever, not just a nice-to-have personalization feature.",
+          "This vertical shares the same donor-tier logic as nonprofit fundraising broadly: high-volume, lower-touch communication automates well for the general alumni base, while significant donors and especially prominent alumni (notable career achievements, long history of engagement) warrant personal outreach that automation shouldn't attempt to replace."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether segmentation data (graduation year, program, location, engagement history) is accurate and kept current, since stale segmentation produces exactly the generic-feeling communication it's meant to avoid.",
+          "Whether major-donor and high-profile alumni records are flagged for personal outreach rather than folding into the general communication automation.",
+          "Whether event registration handles capacity limits and waitlists cleanly for popular reunions or events, avoiding overbooking a physical venue."
+        ]
       }
     ],
     relatedLinks: [
@@ -10455,7 +11085,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-content-marketing-agents", label: "AI content & marketing agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-woocommerce": {
@@ -10470,6 +11100,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Low-inventory alerts for restocking decisions.",
           "Drafting product descriptions for merchant review before publishing."
         ]
+      },
+      {
+        heading: "Why pricing and catalog writes deserve more caution than order-status reads",
+        paragraphs: [
+          "WooCommerce, as a self-hosted WordPress plugin rather than a fully managed platform, means store configuration and data quality vary more between installations than on a hosted platform — an MCP integration should be scoped conservatively at first (read access to orders and inventory) and only extended to catalog-editing operations once the specific store's data structure and any custom fields or plugins have been accounted for.",
+          "Order-status lookups are a strong, low-risk starting point because they're read-only against data that's already accurate by definition — the risk profile changes materially once the integration can write product descriptions, prices, or stock levels that customers see directly."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the integration's write scope is limited to draft/unpublished changes for pricing and catalog data, with a separate human publish step.",
+          "How the integration interacts with other WooCommerce plugins already installed (many stores run several interdependent extensions) — a change made via the agent should not silently conflict with logic another plugin depends on.",
+          "Whether inventory alerts reflect real-time stock, accounting for reservations from in-progress checkouts, not a snapshot that can be briefly out of date during high traffic."
+        ]
       }
     ],
     relatedLinks: [
@@ -10477,7 +11122,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-ecommerce", label: "AI agents for e-commerce" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-shopify-admin": {
@@ -10492,6 +11137,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Inventory level monitoring and low-stock alerts.",
           "Draft product listing creation for merchant review."
         ]
+      },
+      {
+        heading: "Don't confuse merchant-side automation with the customer-facing assistant",
+        paragraphs: [
+          "Shopify Admin MCP and Shopify Sidekick solve different problems for different audiences: Sidekick is Shopify's own customer/merchant-facing assistant built into the Shopify admin interface, while an Admin MCP server is a protocol-level integration point that lets a third-party or custom agent read and act on store data programmatically. A merchant evaluating \"AI for my Shopify store\" should be clear about which of these — or both — a given vendor is actually offering.",
+          "Fulfillment tracking automation is a genuinely strong use case because order status is one of the highest-volume, lowest-judgment customer service questions any e-commerce store gets — resolving it automatically from real order data frees support time for the questions that actually need a person's judgment (returns disputes, damaged-item claims)."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether product-listing and pricing writes go through a draft state reviewed by the merchant before publishing, given the direct revenue impact of a pricing error going live.",
+          "What scopes the integration's API credentials actually grant — Shopify's permission model allows fairly granular scoping, and an integration should request no more access than its actual function needs.",
+          "Whether inventory alerts account for multi-channel selling if the store also sells through other channels (marketplaces, POS) that share the same underlying stock."
+        ]
       }
     ],
     relatedLinks: [
@@ -10499,7 +11159,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/agents/shopify-sidekick", label: "Shopify Sidekick" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-bigcommerce": {
