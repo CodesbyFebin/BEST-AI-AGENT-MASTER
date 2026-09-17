@@ -274,6 +274,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Filesystem, terminal and network permissions.",
           "Human review before commits, deployments or destructive commands."
         ]
+      },
+      {
+        heading: "Why \"free\" needs its own definition here",
+        paragraphs: [
+          "\"Free\" coding agent tools split into at least two distinct categories worth separating explicitly: open-source software you self-host (the code itself costs nothing, but you still pay for whatever model API it calls), and a hosted product's free tier (usage-limited access to a fully managed service). These carry very different long-term cost trajectories — a self-hosted open-source tool's real cost scales with your own usage of the underlying model, while a free tier's limits are set by the vendor and can change.",
+          "License terms matter beyond cost, too: some open-source coding-agent projects use licenses with commercial-use restrictions or copyleft requirements that affect how you can use generated code in a commercial product — check the actual license, not just the fact that the source is publicly visible."
+        ]
       }
     ],
     relatedLinks: [
@@ -282,7 +289,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/compare", label: "Evidence-ready comparisons" }
     ],
     index: true,
-    lastReviewed: "2026-08-23"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-benchmarks": {
@@ -340,6 +347,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Where does human approval occur before commits, pull requests or deployments?",
           "Can the workflow be reproduced and audited after execution?"
         ]
+      },
+      {
+        heading: "Why execution surface is the right first filter",
+        paragraphs: [
+          "A terminal-first coding agent, an IDE-integrated assistant, and a repository-scale autonomous engineering agent solve genuinely different problems even when they share the same underlying model — the execution surface determines what kind of task actually fits (a quick inline suggestion versus a multi-file, multi-commit change) more than any single capability comparison does, which is why starting from your actual workflow rather than a feature checklist produces a more useful shortlist.",
+          "This site's own catalog only lists a coding agent's identity as verified against its official upstream — verified identity is not the same claim as verified capability or performance, so treat the tools linked here as a starting point for your own evaluation against the questions above, not a pre-ranked recommendation."
+        ]
       }
     ],
     relatedLinks: [
@@ -348,7 +362,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/best-free-ai-coding-agents", label: "Free/open coding agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-23"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-market-map": {
@@ -4167,6 +4181,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Verify a sample of generated timestamps against the actual audio — a summarization pass can introduce small timing drift, and listeners clicking a wrong timestamp is a poor experience worth catching before publishing rather than after."
         ]
+      },
+      {
+        heading: "Why speaker attribution is the other common failure point",
+        paragraphs: [
+          "Beyond timestamp drift, multi-speaker episodes are where automated transcription is most likely to misattribute a line to the wrong speaker, especially during fast back-and-forth exchanges or when two speakers have similar-sounding voices — a show-notes summary built on a misattributed transcript can put words in the wrong host's or guest's mouth, which is a more consequential error than a timing mismatch and worth checking specifically on any episode with more than one speaker.",
+          "Show notes intended for SEO (episode descriptions, blog-style recaps) benefit from a human pass beyond accuracy checking too — a purely mechanical summary often misses the actual hook or most interesting moment of an episode that a producer familiar with the content would know to highlight."
+        ]
       }
     ],
     relatedLinks: [
@@ -4175,7 +4196,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-youtube-creators", label: "AI agents for YouTube creators" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "brand-voice-consistency-ai": {
@@ -6085,6 +6106,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Financial statements and tax filings carry legal and compliance weight — an automation error that goes uncaught has consequences beyond a typical software bug. Use automation to accelerate the mechanical work and free up an accountant's time for the judgment calls and final review that actually require their expertise."
         ]
+      },
+      {
+        heading: "Why transaction categorization is the strongest starting point",
+        paragraphs: [
+          "Categorization is well-suited to automation because it's fundamentally pattern-matching against historical precedent (this vendor's charges are usually categorized this way) with a clear, checkable right answer most of the time — the failure mode to watch for is a genuinely novel or ambiguous transaction that doesn't match any historical pattern, which needs to be flagged for a human rather than force-categorized into the closest existing bucket.",
+          "Invoice-to-purchase-order matching is similarly strong because it's comparing structured data fields (amounts, quantities, vendor names) for consistency — the value is in surfacing the exceptions (a mismatch) for human review quickly, not in eliminating human review of the exceptions themselves."
+        ]
       }
     ],
     relatedLinks: [
@@ -6093,7 +6121,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-with-gst-billing", label: "AI agents with GST billing" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-procurement": {
@@ -6114,14 +6142,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Vendor selection often depends on qualitative factors — relationship history, strategic alignment, risk tolerance — that aren't fully captured in a structured quote comparison. Use agent-assisted research to inform the decision faster, not to make the decision itself."
         ]
+      },
+      {
+        heading: "Contract summarization needs a specific kind of scrutiny",
+        paragraphs: [
+          "Flagging \"unusual\" contract terms requires a working definition of what's actually usual for your organization's standard terms — a general-purpose summarization tool without that baseline may flag genuinely standard clauses as unusual, or miss a real deviation, since it has no organization-specific reference point unless one is deliberately built in. This is a case where the tool's usefulness depends heavily on what it's calibrated against, not just its general summarization quality.",
+          "Multi-step approval workflow tracking is a strong fit because it's status tracking against a known process, not a judgment call — surfacing where a request is stuck and who needs to act next is exactly the kind of visibility automation reliably improves."
+        ]
       }
     ],
     relatedLinks: [
-      { href: "/ai-agents-for-procurement", label: "Enterprise AI procurement & SLA checklist" },
+      { href: "/ai-agent-uptime-sla", label: "AI agent uptime & SLA commitments" },
       { href: "/legal-document-contract-review-ai", label: "Legal document & contract review AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-workflow-builders-comparison": {
@@ -6724,6 +6759,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A meeting recording or transcript can contain anything discussed in that call — confirm participants are aware recordings may be processed by an AI system, and apply the same retention and access-control scrutiny as any other sensitive audio or text data."
         ]
+      },
+      {
+        heading: "Why recording consent is a jurisdiction-specific legal question, not just a courtesy",
+        paragraphs: [
+          "Several jurisdictions have two-party or all-party consent requirements for recording conversations, meaning every participant must be notified (and in some cases affirmatively consent) before a call is recorded — an AI agent that automatically processes meeting recordings needs this consent question answered at the meeting-scheduling and recording-initiation level, not assumed to be someone else's problem, since the legal obligation applies regardless of what tool ultimately processes the recording.",
+          "Scheduling automation carries essentially none of this risk since it deals with metadata (when, who, which meeting link) rather than the substance of what's discussed — that's the practical reason to treat these two capabilities under very different review standards even though they're part of the same integration."
+        ]
       }
     ],
     relatedLinks: [
@@ -6878,6 +6920,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Spotify's OAuth scopes separate read access (listening history, saved tracks) from write access (modifying playlists, controlling playback) — a music-recommendation agent needs only read scopes, while a voice-controlled playback agent needs the playback-control scope specifically; request only what the actual use case needs."
         ]
+      },
+      {
+        heading: "Playlist-modification scope deserves extra caution",
+        paragraphs: [
+          "A user's playlists often represent years of personal curation, and an agent with playlist-write access that misinterprets a request (\"clean up my playlist\" is genuinely ambiguous — remove duplicates, or remove songs the agent judges as not fitting?) can cause changes that are annoying at best and genuinely upsetting at worst if it removes something the user actually wanted kept.",
+          "Playback control is comparatively lower-stakes since its effects are immediate and easily reversible (skip, pause, resume) — the real design consideration there is making sure voice or chat commands map unambiguously to the intended action, since a misheard or misparsed command just changes what's playing rather than permanently altering saved data."
+        ]
       }
     ],
     relatedLinks: [
@@ -6885,7 +6934,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-integrate-custom-tools-ai", label: "How to integrate custom tools" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-travel-agencies": {
@@ -6933,6 +6982,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         heading: "Dynamic pricing transparency",
         paragraphs: [
           "Algorithmic dynamic pricing is common in hospitality, but disclosure expectations and regulatory scrutiny around automated pricing have increased in several jurisdictions — check applicable requirements for your market rather than assuming existing dynamic pricing practices carry no disclosure obligation."
+        ]
+      },
+      {
+        heading: "Guest inquiry automation has an unusually broad question surface",
+        paragraphs: [
+          "A hotel guest's questions span logistics (check-in, parking), amenities (pool hours, gym access), and genuinely local knowledge (restaurant recommendations, transit options) — the local-knowledge category is the part most likely to go stale, since a recommended restaurant can close or a transit schedule can change without the property's own information systems being updated to reflect it. Reviewing and refreshing local-recommendation content on a real schedule matters more here than it might seem.",
+          "Review sentiment aggregation is a strong automation fit because manually reading through reviews across multiple platforms (a direct site, several OTAs, review aggregators) to spot recurring themes is genuinely time-consuming — surfacing a repeated complaint (a specific amenity issue, a recurring service gap) faster than manual review would is real, actionable value."
         ]
       }
     ],
@@ -7309,6 +7365,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "An agent action that affects live network infrastructure (rerouting, restarting equipment) has a blast radius potentially affecting thousands of customers simultaneously — apply the same production-infrastructure caution described for DevOps & Kubernetes automation, arguably with even more conservatism given the service-continuity stakes."
         ]
+      },
+      {
+        heading: "Why the scale differential between the two categories matters so much",
+        paragraphs: [
+          "A telecom customer-support error affects one customer's specific interaction; a network-operations error can affect every customer connected through the impacted infrastructure simultaneously, in real time, with no easy way to individually notify or compensate everyone affected — this asymmetry in blast radius is the actual justification for treating these two automation categories under completely different approval regimes rather than a single company-wide \"AI policy.\"",
+          "Anomaly detection specifically is a strong automation fit on the network side precisely because it's a detection task, not an action task — flagging an unusual traffic pattern or equipment metric for a network engineer to investigate carries none of the risk that automatically acting on that flag would."
+        ]
       }
     ],
     relatedLinks: [
@@ -7316,7 +7379,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/devops-kubernetes-ai-agents", label: "DevOps & Kubernetes automation AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-multilingual-support": {
@@ -7419,6 +7482,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "The same transcription, clip-extraction, and audio-cleanup tools discussed for individual podcasters apply here — the difference is orchestrating them consistently across many shows rather than the tools themselves."
         ]
+      },
+      {
+        heading: "Why sponsorship tracking specifically justifies network-level tooling",
+        paragraphs: [
+          "Sponsor obligations (a specific ad read appearing in a specific number of episodes, within a defined window) are contractual commitments a network is accountable for delivering, and verifying that every show actually included the required read — not just that it was scripted — is a real compliance task at network scale that's error-prone to track manually across dozens of shows and hosts with their own recording habits.",
+          "Cross-show audience analytics aggregation is valuable for a different reason: it lets a network make catalog-wide decisions (which show formats or topics perform best, where to invest production resources) that a single-show creator doesn't need, since a network's programming and advertising strategy operates at the portfolio level, not the individual-episode level."
+        ]
       }
     ],
     relatedLinks: [
@@ -7467,6 +7537,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Auto-filing a draft issue from a bug report or support ticket for a human to review and confirm.",
           "Cross-referencing a pull request against its linked Linear issue."
         ]
+      },
+      {
+        heading: "Why draft-then-confirm matters more for issue creation than status reads",
+        paragraphs: [
+          "Auto-filing an issue directly from a bug report or support ticket is genuinely useful because it removes the manual transcription step between where a problem was reported and where engineering tracks it — but an agent working from an ambiguous or incomplete report can create a duplicate of an existing issue, or file it against the wrong team, which adds triage noise rather than saving time. A draft-then-confirm step catches this before it clutters the backlog.",
+          "Cross-referencing pull requests against linked issues is a strong, low-risk automation because it's verifying an already-established link, not creating new state — flagging a PR that's missing its issue link, for instance, is exactly the kind of process-hygiene task automation handles well."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether draft issue creation checks for likely duplicates against existing open issues before filing a new one.",
+          "Whether write access is scoped to specific teams the integration is actually meant to serve, not the whole workspace.",
+          "How the integration handles Linear's cycle and project structures, since an issue filed without the right cycle/project assignment can effectively become invisible to the team's actual planning view."
+        ]
       }
     ],
     relatedLinks: [
@@ -7474,7 +7559,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/mcp/servers/linear-mcp", label: "Linear MCP" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-confluence": {
@@ -7487,6 +7572,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Before connecting an agent to a company wiki, verify explicitly whether the MCP server's Confluence access token inherits the same space and page restrictions as a normal user account — an overly broad service-account token could let the agent surface content the requesting user shouldn't see."
         ]
+      },
+      {
+        heading: "Why this matters more for internal wikis than most integrations",
+        paragraphs: [
+          "A company wiki is often where the most sensitive internal information accumulates over time — HR policy drafts, incident postmortems, compensation discussions, unreleased product plans — specifically because it's treated as an internal-only space with access controls that took years of gradual permissioning to get right. An agent integration that flattens those restrictions into a single broad search index undoes that access model in one step, which is a materially different risk than most other MCP integrations on this site carry.",
+          "The safest default is per-user authentication (the agent searches with the requesting user's own actual Confluence permissions) rather than a single shared service account with broad access — this preserves the existing permission model instead of creating a new, wider access surface alongside it."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the integration authenticates as the requesting user (respecting their actual permissions) or as a broad shared service account.",
+          "Whether restricted or archived spaces are explicitly excluded from the agent's search index, not just deprioritized.",
+          "How search results handle outdated or superseded pages — a stale wiki page surfaced as current can mislead just as much as a permission leak, in a quieter way."
+        ]
       }
     ],
     relatedLinks: [
@@ -7494,7 +7594,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/enterprise-ai-agent-governance", label: "Enterprise AI agent governance" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-legal-research": {
@@ -7519,7 +7619,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
     ],
     relatedLinks: [
       { href: "/how-to-reduce-ai-hallucinations", label: "AI hallucination reduction techniques" },
-      { href: "/ai-agents-for-legal-research", label: "AI agents for legal teams" }
+      { href: "/legal-document-contract-review-ai", label: "Legal document & contract review AI" }
     ],
     index: true,
     lastReviewed: "2026-08-29"
@@ -7568,6 +7668,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         heading: "Where professional responsibility limits automation",
         paragraphs: [
           "Construction documents and code-compliance determinations require the professional judgment and legal accountability of a licensed architect — an AI tool can assist the drafting process, but cannot substitute for the stamped, professionally liable review that regulations require."
+        ]
+      },
+      {
+        heading: "Concept visualization is genuinely useful precisely because it's not the final deliverable",
+        paragraphs: [
+          "Early-stage concept visualization exists specifically to facilitate a client conversation about direction and feel before real design investment begins — this is a lower-stakes context than construction documentation, since the output isn't relied upon for anything beyond initial discussion, which is exactly why generative tools have found real traction here faster than in later, liability-bearing project stages.",
+          "The professional stamp requirement isn't a formality that automation might eventually route around — it's a legal accountability structure tying a specific licensed individual to the safety and code-compliance of what gets built, and no tool, however capable, changes who is legally answerable if something goes wrong."
         ]
       }
     ],
@@ -7652,6 +7759,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Flagging and routing order exceptions (damaged item reports, address mismatches) for faster human resolution.",
           "Forecasting demand spikes to inform stock placement and staffing ahead of time."
         ]
+      },
+      {
+        heading: "Why the software/hardware distinction matters when evaluating vendors",
+        paragraphs: [
+          "A vendor pitching \"AI-powered warehouse automation\" may be selling planning software, physical robotics, or a bundled combination of both — these are genuinely different purchases with different evaluation criteria (software: integration with your existing WMS, forecast accuracy; hardware: safety certification, physical facility requirements, a much longer and more capital-intensive deployment timeline), and conflating them during evaluation risks comparing incomparable offerings against each other.",
+          "Demand forecasting is a strong software fit because warehouse stock placement genuinely benefits from anticipating where inventory will be needed before an order arrives — the cost of a wrong forecast (suboptimal placement, understaffing) is real but recoverable, unlike a physical robotics safety failure, which is part of why software-only automation is the lower-risk starting point for most warehouses."
+        ]
       }
     ],
     relatedLinks: [
@@ -7659,7 +7773,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-supply-chain", label: "AI agents for supply chain" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-veterinary-clinics": {
@@ -7716,6 +7830,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Individualized workout or nutrition programming should be reviewed by a certified professional who knows the client's injury history and medical conditions — a generic AI-generated program carries real injury risk if applied without that context."
         ]
+      },
+      {
+        heading: "Why fitness advice is a higher-stakes category than most business content",
+        paragraphs: [
+          "An exercise recommendation that's fine for most people can be genuinely harmful for someone with a specific pre-existing condition (a heart condition, a joint injury, pregnancy) — and a general-purpose AI system generating a program from a short text description has no way to know about conditions the client hasn't explicitly disclosed, let alone assess them the way an in-person certified professional's intake process would. This is a real, physical-safety consideration, not just a liability formality.",
+          "Marketing content drafting is comfortably lower-risk because it doesn't carry the same direct physical consequence — the main thing to watch there is not letting generated content make unverified health or results claims (specific weight-loss numbers, guaranteed outcomes) that could create both legal and credibility problems for the business."
+        ]
       }
     ],
     relatedLinks: [
@@ -7723,7 +7844,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-content-marketing-agents", label: "AI content & marketing agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-latency-budgets": {
@@ -7764,6 +7885,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Unlike most other MCP integrations discussed on this site, an incorrect Stripe write action has a direct financial consequence for a real customer or the business itself — this is one of the clearest cases where human-in-the-loop approval belongs on every write action, not just high-value ones."
         ]
+      },
+      {
+        heading: "\"Routine-looking\" is not the same as low-risk for a payment action",
+        paragraphs: [
+          "A refund for a small, typical amount can feel low-stakes enough to auto-approve, but the actual risk isn't the size of any single transaction — it's that a bug or misinterpreted instruction in the automation can repeat the same mistake across many transactions before anyone notices, since nothing about a payment API distinguishes a single well-reasoned refund from the same action executed incorrectly at scale. This is why the approval gate should apply uniformly rather than being calibrated by transaction size alone.",
+          "Read access (summarizing revenue, checking a subscription's status) is a genuinely different risk category and can reasonably be granted more freely — the clear dividing line for this integration is whether the specific tool call can move money or change a customer's billing state, not whether the overall integration is broadly useful."
+        ]
       }
     ],
     relatedLinks: [
@@ -7771,7 +7899,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/human-in-the-loop", label: "Human-in-the-loop (HITL)" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-event-planning": {
@@ -7829,6 +7957,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Drafting (not sending) candidate communication for recruiter review.",
           "Summarizing interview panel notes into a structured format."
         ]
+      },
+      {
+        heading: "Why resume-screening automation deserves closer scrutiny than scheduling",
+        paragraphs: [
+          "Resume-screening tools that filter or rank candidates are making, or heavily influencing, an actual employment decision — this is meaningfully different from scheduling automation, which just coordinates logistics around a decision humans still make. If a screening tool systematically disadvantages candidates from a particular background due to patterns in its training data or scoring criteria, that's a real legal and ethical exposure, which is exactly why audit and disclosure requirements in several jurisdictions specifically target this category rather than HR automation broadly.",
+          "Interview panel note summarization is a comparatively safe automation target because it's organizing information humans already generated and will still review — it doesn't introduce a new decision point, just makes an existing one easier to act on with a clearer summary."
+        ]
       }
     ],
     relatedLinks: [
@@ -7851,14 +7986,29 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Monitoring competitor product pages, pricing, and public statements for changes.",
           "Transcribing and tagging qualitative user interviews for a researcher's analysis."
         ]
+      },
+      {
+        heading: "Why interpretation is where the real research skill lives",
+        paragraphs: [
+          "Summarizing what respondents said is a text-processing task; deciding what a finding actually means for a product or business decision requires connecting it to context an agent doesn't have — prior research history, internal strategic priorities, and knowledge of which respondent segments matter most for a given decision. Two research teams looking at the identical summarized data can reasonably draw different strategic conclusions, which is exactly the kind of judgment call that stays human.",
+          "Competitive monitoring is a strong automation fit because it's fundamentally a change-detection task at scale (did a competitor's pricing page change, did they announce a new feature) — the researcher's time is better spent interpreting what a detected change means competitively than manually re-checking competitor websites on a schedule."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether survey summarization preserves enough of the original respondent language for a researcher to verify the theme extraction against real quotes, not just an abstracted summary.",
+          "Whether competitive monitoring distinguishes a substantive change (new pricing tier, new feature) from cosmetic website updates that don't actually matter.",
+          "How interview transcription handles multiple speakers and cross-talk, which materially affects whether the resulting transcript is actually usable for analysis."
+        ]
       }
     ],
     relatedLinks: [
       { href: "/ai-content-marketing-agents", label: "AI content & marketing agents" },
-      { href: "/ai-agents-for-market-research", label: "Competitor analysis AI agents" }
+      { href: "/social-sentiment-monitoring-ai", label: "Social sentiment monitoring AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-hoa-property-management": {
@@ -7873,6 +8023,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Answering common questions about rules, amenities, and payment schedules from a documented knowledge base.",
           "Automated rent or dues payment reminders."
         ]
+      },
+      {
+        heading: "Why fee disputes and rule enforcement stay a human decision",
+        paragraphs: [
+          "HOA governing documents (CC&Rs, bylaws) are legal instruments, and enforcement decisions — whether a resident actually violated a rule, whether a fee or fine is warranted — carry real legal and financial consequences for residents, plus board liability if handled incorrectly. An agent citing the wrong version of a rule, or answering a nuanced question about an exception, creates a real dispute risk that property management staff and, when relevant, the association's counsel need to own.",
+          "Maintenance request routing is a strong fit because it's a logistics problem (get the right request to the right vendor quickly) with a clear correct answer, unlike fee or rule questions where the correct answer often depends on specific circumstances a general knowledge-base lookup won't capture."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the agent cites the actual current governing documents for the specific property/association, not generic HOA rules that may not match this community's actual bylaws.",
+          "Whether ambiguous or dispute-adjacent questions (a fine appeal, an exception request) route to a human rather than getting an automated answer.",
+          "How urgent maintenance issues (water leak, no heat) are distinguished from routine requests in the routing logic, since a delayed urgent repair carries real property-damage and liability risk."
+        ]
       }
     ],
     relatedLinks: [
@@ -7880,7 +8045,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-tool-selection-accuracy": {
@@ -7923,6 +8088,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Extracting structured data from bills of lading and rate confirmation documents.",
           "Surfacing candidate carrier matches for a load based on lane history and availability."
         ]
+      },
+      {
+        heading: "Why carrier vetting stays a broker's judgment call",
+        paragraphs: [
+          "A freight broker's core liability exposure comes from placing a load with a carrier that turns out to be unreliable, uninsured, or fraudulent — a match suggested purely from lane history and stated availability doesn't capture the reputational and relationship signals (how a carrier handled a past problem load, whether they've had recent authority issues) that an experienced broker weighs before committing a shipper's freight to someone new.",
+          "Automated carrier check-ins are a strong fit specifically because status updates are a repetitive, low-judgment task that still consumes real broker time — freeing that time is what lets a broker actually spend more attention on the vetting and relationship work that benefits from human judgment."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether carrier-matching suggestions surface authority and insurance status prominently, not just lane history and price.",
+          "Whether document extraction flags inconsistencies (mismatched weights, dates) between the rate confirmation and the bill of lading for a human to check before payment.",
+          "How the system handles a carrier going non-responsive mid-shipment — this needs a fast escalation path to a human, not just a repeated automated check-in."
+        ]
       }
     ],
     relatedLinks: [
@@ -7930,7 +8110,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-supply-chain", label: "AI agents for supply chain" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-tutoring-education": {
@@ -7953,7 +8133,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
     ],
     relatedLinks: [
       { href: "/how-to-reduce-ai-hallucinations", label: "AI hallucination reduction techniques" },
-      { href: "/ai-agents-for-tutoring-education", label: "AI agents for education" }
+      { href: "/ai-agents-for-test-prep", label: "AI agents for test prep companies" }
     ],
     index: true,
     lastReviewed: "2026-08-29"
@@ -7976,6 +8156,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         heading: "Where licensed professional judgment stays required",
         paragraphs: [
           "Structural engineering decisions, safety inspections, and code-compliance sign-offs remain the responsibility of licensed professionals — an AI tool can help organize the information they review, but cannot substitute for their legally required judgment."
+        ]
+      },
+      {
+        heading: "RFI and document organization is where the real time cost actually lives",
+        paragraphs: [
+          "Construction projects generate a large volume of interconnected documents (RFIs, submittals, change orders, drawing revisions) that reference each other and change over the project's lifecycle — manually keeping track of which RFI relates to which drawing revision, and which change orders resulted from it, is a genuinely tedious but consequential task, since a missed cross-reference can lead to work being done against an outdated drawing. This is exactly the kind of structured-but-voluminous task automation handles better than manual tracking at scale.",
+          "Progress-photo analysis is useful for documentation and dispute resolution (verifying what was actually built and when) but works best as a record-keeping aid rather than a substitute for an in-person inspection — a photo can confirm visible progress, but it can't verify what's inside a wall or beneath a poured slab, which is exactly where licensed inspection judgment remains necessary."
         ]
       }
     ],
@@ -8045,6 +8232,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Configure the agent to create posts in draft status rather than publishing directly — this preserves the automation's time savings on the writing and formatting work while keeping a human as the final publish gate, which matters most for anything touching claims, pricing, or dates."
         ]
+      },
+      {
+        heading: "WordPress's plugin ecosystem is a real complication for automated access",
+        paragraphs: [
+          "Unlike a closed platform, a WordPress site's actual behavior depends heavily on which plugins are installed — an SEO plugin, a caching layer, a page builder that stores content in a non-standard format can all mean that editing a post through the standard API doesn't fully account for what a human editor would normally also update (SEO metadata, cache invalidation, builder-specific fields). An agent integration that only touches the core post content can silently leave a site in an inconsistent state on sites with a heavier plugin stack.",
+          "Media library operations are comparatively lower-risk than post content changes because uploading or organizing media doesn't affect what's already publicly live — the risk profile shifts meaningfully once the integration can modify or replace existing published content."
+        ]
       }
     ],
     relatedLinks: [
@@ -8052,7 +8246,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/human-in-the-loop", label: "Human-in-the-loop (HITL)" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-quickbooks": {
@@ -8067,6 +8261,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Flagging transactions that don't match expected patterns for a bookkeeper to review.",
           "Drafting (not sending) invoice reminders for overdue accounts."
         ]
+      },
+      {
+        heading: "Why compounding errors are the specific risk to watch for",
+        paragraphs: [
+          "An accounting error rarely stays isolated — a transaction miscategorized in one period flows into every report and reconciliation built on top of it until someone catches and corrects it, which means the actual cost of an automation mistake here is proportional to how long it goes unnoticed, not just the size of the original error. This is the specific reason periodic human review of automated categorization matters more than it might for a lower-stakes, more easily-reversible task.",
+          "Report generation and discrepancy-flagging are the safer starting points precisely because they don't write anything to the ledger — they surface information for a person to act on, keeping a human as the actual decision-maker for anything that changes the books."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether any transaction-categorization automation is reviewed on a defined schedule, not left running unchecked indefinitely.",
+          "Whether invoice reminders stay in draft form for a human to send, rather than auto-sending to customers.",
+          "Whether the integration's access is scoped to the specific company file needed, particularly important for bookkeepers or accountants managing multiple clients' QuickBooks accounts."
+        ]
       }
     ],
     relatedLinks: [
@@ -8074,7 +8283,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-security-checklist", label: "AI agent security checklist" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-xero": {
@@ -8089,6 +8298,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Matching bank feed transactions to invoices and flagging unmatched ones for review.",
           "Drafting periodic financial summaries for a bookkeeper or accountant to finalize."
         ]
+      },
+      {
+        heading: "Why bank reconciliation is a good automation target with a real limit",
+        paragraphs: [
+          "Matching bank feed transactions to open invoices is a well-suited automation task because it's fundamentally pattern-matching against structured data (amounts, dates, reference numbers) with a checkable right answer — Xero's own bank-rules feature already does a version of this, and an agent-based approach adds the ability to explain and act on ambiguous or partial matches conversationally rather than requiring a bookkeeper to build a matching rule in advance.",
+          "The limit is closing the books: final categorization decisions for ambiguous transactions, and the actual period-close sign-off, carry real accounting and tax consequences — a bookkeeper or accountant needs to review and confirm these rather than treat an agent's categorization as automatically authoritative."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether transaction categorization suggestions are clearly marked as unconfirmed until a bookkeeper approves them, not silently applied to the ledger.",
+          "Whether the integration's access is scoped appropriately (read-only for reporting, limited write access for reconciliation) rather than full account access by default.",
+          "How the system handles multi-currency transactions if the business operates across currencies, since this is a common source of reconciliation errors."
+        ]
       }
     ],
     relatedLinks: [
@@ -8096,7 +8320,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-accounting", label: "AI agents for accounting" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-dental-practices": {
@@ -8228,6 +8452,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Because this domain involves communication about children's care and safety, keep a human reviewing any parent-facing message before it sends, and never treat an AI system as a substitute for required staff-to-child supervision ratios or safety protocols."
         ]
+      },
+      {
+        heading: "Why parent trust is especially sensitive to automation errors",
+        paragraphs: [
+          "A parent reading a daily activity summary is often their only window into a day they weren't present for, which makes accuracy matter more than it would for a typical business status update — a report describing the wrong child's nap time or meal, even from a simple data-mixing bug, can reasonably alarm a parent and damage trust in the facility well beyond the actual severity of the underlying mistake.",
+          "Regulatory requirements for childcare facilities (licensing, staff-to-child ratios, background-check and reporting obligations) are jurisdiction-specific and carry real consequences for non-compliance — an automation vendor's general claims about their product shouldn't be assumed to account for the specific regulatory regime your facility operates under."
+        ]
       }
     ],
     relatedLinks: [
@@ -8324,6 +8555,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Crew and truck scheduling across jobs.",
           "Automated reminders and checklists in the lead-up to move day."
         ]
+      },
+      {
+        heading: "Why binding quotes need a human in the loop",
+        paragraphs: [
+          "Moving-cost disputes are one of the most common sources of consumer complaints in this industry, usually because a final bill exceeded an initial estimate — details a self-service questionnaire routinely misses (a narrow stairwell, no elevator, limited street parking for the truck, an unusually heavy item) can materially change the actual labor and time required, which is why converting an automated ballpark estimate into a binding quote benefits from a human estimator's review or an in-person/video walkthrough before it's finalized.",
+          "Crew and truck scheduling is a strong automation fit because it's a resource-allocation problem (which crew, which truck size, which day) that benefits from optimization the same way it does in other logistics-heavy service businesses."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether the quote flow clearly distinguishes a non-binding estimate from a confirmed, binding quote, since consumer-protection rules in many jurisdictions treat these differently.",
+          "Whether the inventory questionnaire captures access constraints (stairs, elevators, parking distance) that materially affect labor time, not just item count.",
+          "How move-day schedule changes (weather, a delayed prior job) propagate to affected customers — a late crew with no warning is a common source of complaints."
+        ]
       }
     ],
     relatedLinks: [
@@ -8331,7 +8577,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-cleaning-services": {
@@ -8475,6 +8721,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "A guided first success — a suggested prompt or example task beats an empty input box for first-time users.",
           "A visible human-escalation path — users trust an agent more, not less, when they can see how to reach a person if needed."
         ]
+      },
+      {
+        heading: "Why over-promising in onboarding backfires specifically here",
+        paragraphs: [
+          "Marketing copy for AI features tends toward broad, capability-maximizing language, but a user whose first interaction falls outside the agent's actual scope — because onboarding implied broader capability than what's real — forms a negative impression that's hard to undo even if the agent performs well on tasks it actually handles. Accurate, even conservative, scope-setting during onboarding protects the user's first impression more reliably than impressive-sounding marketing framing does.",
+          "The escalation path matters as much for building initial trust as for actually being used — most users who see a visible \"talk to a person\" option never click it, but knowing it's there measurably reduces the anxiety of committing to try the automated option first, per general findings across human-computer interaction research on automation trust."
+        ]
       }
     ],
     relatedLinks: [
@@ -8482,7 +8735,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-deployment-checklist", label: "AI agent deployment checklist" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-vendor-lockin-risk": {
@@ -8517,6 +8770,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Raw logs containing personal information may need shorter retention for privacy compliance, while anonymized evaluation datasets used to improve the agent might reasonably be kept longer — treat these as separate retention decisions rather than one global setting."
         ]
+      },
+      {
+        heading: "The debugging-vs-privacy tension this policy actually has to resolve",
+        paragraphs: [
+          "Engineering teams generally want to keep detailed logs as long as possible, since a debugging investigation weeks after an incident is much harder without the original conversation trace — this pulls directly against privacy-minimization principles that favor deleting personal data as soon as it's no longer needed. A workable policy resolves this by separating what needs to be kept in full (recent, short-window raw logs for active debugging) from what can be anonymized or aggregated for longer-term analysis, rather than picking one extreme.",
+          "Retention decisions also need to account for data subject deletion requests where applicable — if a user can request their data be deleted, the retention policy needs a real mechanism to locate and remove their specific data across every place it's been copied to (logs, analytics, any fine-tuning datasets), not just the primary conversation store."
+        ]
       }
     ],
     relatedLinks: [
@@ -8524,7 +8784,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/data-sovereignty-ai-agents-india", label: "Data sovereignty for AI agents in India" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-audit-logging": {
@@ -8539,6 +8799,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "The model version used, since behavior can shift across model updates.",
           "Any intermediate reasoning steps, if the agent architecture exposes them."
         ]
+      },
+      {
+        heading: "Why request/response logging alone fails during an actual incident",
+        paragraphs: [
+          "When an agent takes an unexpected or harmful action, the question that actually needs answering is why — what information it had, what tool calls it made, and what led to the specific decision, not just what the final output was. A log that only captures input and output leaves a gap in the middle that makes root-causing a genuine incident far slower, and in some cases impossible to reconstruct after the fact.",
+          "Recording the specific model version matters because model providers routinely update models behind the same API endpoint or model name, and behavior can shift subtly between versions — an incident review that doesn't know which exact model version handled a request is working with an incomplete picture of what actually happened."
+        ]
+      },
+      {
+        heading: "What a usable audit log needs beyond just capturing data",
+        bullets: [
+          "Retention long enough to support investigation of an issue that surfaces weeks after the fact, not just the last few hours.",
+          "Searchability by user, session, or specific tool call, so an investigation doesn't require manually scanning raw logs.",
+          "Clear ownership of who can access the log, since it may contain sensitive information about what users asked and what data tools returned."
+        ]
       }
     ],
     relatedLinks: [
@@ -8546,7 +8821,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/system-fingerprint", label: "System fingerprint" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-collections-agencies": {
@@ -8559,6 +8834,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Debt collection communication is subject to specific legal requirements around frequency, disclosure language, and prohibited practices that don't apply to general customer support — involve compliance or legal review before deploying any AI-generated collections messaging, regardless of how routine it seems."
         ]
+      },
+      {
+        heading: "Why the regulatory bar here is unusually high",
+        paragraphs: [
+          "Consumer-protection collections regulation exists specifically because this communication category has a documented history of abusive practices, and enforcement bodies have shown willingness to act on violations even when the underlying intent wasn't malicious — an agent that sends a reminder at a prohibited hour, uses disclosure language that doesn't meet the required legal standard, or contacts a debtor with excessive frequency creates real regulatory exposure regardless of whether a human or an automated system generated the message.",
+          "This is also a domain where the debtor's financial and emotional state matters more than most customer interactions — messaging that would be perfectly normal in another support context can read as threatening or harassing in a collections context, which is a real reason to keep this scoped narrowly to already-agreed payment logistics rather than open-ended communication."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether every message template has been reviewed by compliance/legal against the specific jurisdiction's collections communication rules, not just a general tone review.",
+          "Whether contact frequency and timing are hard-enforced by the system, not left to configuration that could be misconfigured into a violation.",
+          "Whether the agent scope is limited to payment logistics for accounts already in an agreed plan, with anything more sensitive (disputes, hardship claims) routed to a trained human."
+        ]
       }
     ],
     relatedLinks: [
@@ -8566,7 +8856,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-security-checklist", label: "AI agent security checklist" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-parking-management": {
@@ -8764,6 +9054,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A provider's monthly bill shows total usage, not which team or feature drove it — without per-request tagging (a team ID, product ID, or customer ID attached to each call through an AI gateway), chargeback becomes an estimate rather than an accurate allocation."
         ]
+      },
+      {
+        heading: "Why retrofitting attribution later is expensive",
+        paragraphs: [
+          "Once a shared API key or gateway has been in use for months without per-request tagging, there's no way to reconstruct after the fact which team's usage drove which portion of the bill — the historical data simply doesn't contain that information, so \"we'll add attribution later\" effectively means accepting a permanent gap in cost visibility for everything that happened before the tagging was added. This is a strong argument for building attribution in from the first production request, even before chargeback is an active organizational priority.",
+          "A workable chargeback model also needs to handle shared or ambiguous usage (a request that serves multiple teams' features at once) with an explicit allocation rule, rather than leaving it unattributed — an unallocated cost bucket that grows over time undermines confidence in the whole chargeback system."
+        ]
       }
     ],
     relatedLinks: [
@@ -8772,7 +9069,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-latency-optimization", label: "AI agent cost & latency optimization" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-libraries": {
@@ -8928,6 +9225,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Flagging overdue items for a project manager's attention.",
           "Drafting status update items for review before posting."
         ]
+      },
+      {
+        heading: "Why board scope matters more here than in a simpler task tracker",
+        paragraphs: [
+          "monday.com workspaces commonly span many boards for different teams and functions at once, and an agent granted workspace-wide access can end up surfacing or summarizing data from boards well outside its intended purpose — scoping the integration to specific boards is less about preventing malicious action and more about avoiding an agent confidently reporting on project status it was never meant to have visibility into.",
+          "Status-update drafting is a genuinely useful automation because writing a clear, accurate status summary from raw board data (what moved, what's blocked, what's overdue) is a repetitive task most project managers do on a recurring cadence — having a draft ready to review and send saves real time without removing the manager's final say on what actually gets communicated."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the integration is scoped to specific boards relevant to its actual use case, not the entire workspace by default.",
+          "Whether automated status changes or item creation require review before affecting a live board other team members rely on.",
+          "How the system handles monday.com's automation recipes already configured on a board — an agent acting alongside existing automations should not create conflicting or duplicate actions."
+        ]
       }
     ],
     relatedLinks: [
@@ -8935,7 +9247,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/mcp-for-linear", label: "MCP for Linear" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-clickup": {
@@ -8948,6 +9260,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Teams using ClickUp as a single source of truth benefit most from an agent that can answer 'what's overdue' or 'what's assigned to me' questions instantly, without needing to open the app and filter manually."
         ]
+      },
+      {
+        heading: "ClickUp's flexibility is exactly what makes write-scoping matter",
+        paragraphs: [
+          "ClickUp is built around heavily customizable spaces, folders, lists and custom fields, which means the \"same\" task-creation action can mean very different things depending on which list it lands in and what custom fields it needs populated — an agent with broad write access risks creating tasks that are technically valid but missing the specific fields or placement a team's actual workflow depends on.",
+          "Time-tracking data access is a distinct, lower-risk read capability worth calling out specifically — summarizing logged time across a project for a status update or billing purpose is a good fit, separate from the higher-risk question of whether an agent should be creating or modifying tasks."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether automated task creation is scoped to a specific list/space with a known field structure, rather than granted broad workspace access.",
+          "Whether time-tracking summaries are used only for reporting, not fed into anything that affects billing without a human check.",
+          "How the agent handles ClickUp's custom statuses, which vary per list — a generic \"done\"/\"in progress\" assumption can miscategorize items in a team with a more elaborate workflow."
+        ]
       }
     ],
     relatedLinks: [
@@ -8955,7 +9282,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/mcp-for-jira", label: "MCP for Jira" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-perplexity": {
@@ -8968,6 +9295,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A model's training data has a cutoff date; connecting a live search tool lets an agent answer questions about recent events or current data it wasn't trained on, and the citations returned let a user verify the source directly rather than trusting the summary alone."
         ]
+      },
+      {
+        heading: "Citations are the actual value, not just a formality",
+        paragraphs: [
+          "The meaningful difference between a search-grounded answer and an ungrounded one isn't just that the information is more current — it's that a citation gives the user something to independently check, which matters because search grounding reduces but does not eliminate the chance of a wrong or outdated answer. A user who never clicks through to verify a surprising or consequential claim is trusting the summary anyway, citation or not.",
+          "This is a genuinely low-risk integration to grant broadly, since it only adds a read capability (searching the live web) rather than any ability to act on the agent's own — the main practical consideration is cost and latency at scale, since each search call has its own cost and response time layered on top of the underlying model call."
+        ]
       }
     ],
     relatedLinks: [
@@ -8975,7 +9309,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/agents/perplexity-ai", label: "Perplexity" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-google-analytics": {
@@ -8990,6 +9324,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Summarizing week-over-week or month-over-month trends on request.",
           "Flagging unusual traffic drops or spikes for a marketer to investigate."
         ]
+      },
+      {
+        heading: "GA4's data model is where an agent can quietly get things wrong",
+        paragraphs: [
+          "Google Analytics 4's event-based data model represents metrics like \"conversions\" and \"engaged sessions\" differently than the older Universal Analytics model did, and a poorly-configured GA4 property (events not properly marked as conversions, inconsistent parameter naming) will produce technically-correct-but-misleading answers when queried — an agent is only as accurate as the underlying property configuration, which is worth verifying before trusting its trend summaries.",
+          "Traffic-anomaly flagging is a strong fit because a sudden drop is objectively detectable in the data, but distinguishing a real problem (a broken tracking snippet, a site outage) from a benign explanation (a holiday, a seasonal pattern, a completed marketing campaign) still needs a marketer's context."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the GA4 property's events and conversions are configured correctly and consistently, since a query built on messy tracking data will misreport regardless of how the question was asked.",
+          "Whether the integration is read-only, which it should be for a reporting use case.",
+          "Whether anomaly flags include enough context (which metric, which segment, how large the deviation) for a marketer to triage quickly rather than needing to dig into GA directly anyway."
+        ]
       }
     ],
     relatedLinks: [
@@ -8997,7 +9346,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-market-research", label: "AI agents for market research" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-mixpanel": {
@@ -9012,6 +9361,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Summarizing usage trends for a specific user segment.",
           "Flagging a sudden drop in a key funnel step for a PM to investigate."
         ]
+      },
+      {
+        heading: "Why natural-language querying is genuinely useful here, with one real caveat",
+        paragraphs: [
+          "Mixpanel's own report-building interface has real depth, but building a custom funnel or segment report from scratch has a learning curve that keeps a lot of product data locked behind whoever on the team is comfortable with the tool — an agent that translates a plain-language question into the right query lowers that barrier meaningfully, letting more of the team ask their own questions directly.",
+          "The caveat: event tracking implementations vary a lot in quality and consistency between companies, and an agent answering confidently from incorrectly-instrumented or inconsistently-named events will produce a plausible-sounding but wrong answer — the agent is only as reliable as the underlying event data, which is worth auditing before trusting its analysis."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the underlying event taxonomy is clean and consistently named, since a query built against messy event data will silently produce misleading results.",
+          "Whether the integration is read-only, which it should be for an analytics use case — there's rarely a legitimate reason for an agent to need write access to Mixpanel.",
+          "How funnel-drop alerts are tuned for actual significance, not routine day-to-day variance that doesn't warrant investigation."
+        ]
       }
     ],
     relatedLinks: [
@@ -9019,7 +9383,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agents-for-market-research", label: "AI agents for market research" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-segment": {
@@ -9032,6 +9396,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A customer data platform is often the single place where data from many other systems converges — an overly broad agent connection here has a larger potential blast radius than a single-source integration, making access scoping especially important."
         ]
+      },
+      {
+        heading: "Why consent settings need to travel with the data, not be bypassed by it",
+        paragraphs: [
+          "Segment's role as an aggregation layer means it typically carries consent and data-processing preferences (marketing opt-outs, regional privacy settings) alongside the underlying event data — an agent that queries the raw event stream without also respecting those attached consent flags can act on data a customer explicitly opted out of a given use for, even though the data is technically present in the platform.",
+          "Because Segment sits upstream of many downstream tools (analytics, marketing platforms, warehouses), an access or consent mistake here doesn't stay contained — it propagates to whatever the agent's output feeds into next, which is the real argument for treating this integration's governance more carefully than a single standalone data source."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the agent's queries respect consent and suppression flags already configured in Segment, not just raw event presence.",
+          "Whether access is scoped to specific event sources or traits actually needed, rather than the full unified customer profile.",
+          "How the integration handles data from a source system that's since revoked consent for a given use — this needs to propagate, not linger as stale permitted data."
+        ]
       }
     ],
     relatedLinks: [
@@ -9039,7 +9418,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/enterprise-ai-agent-governance", label: "Enterprise AI agent governance" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-photography-studios": {
@@ -9096,6 +9475,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         heading: "Where extra care is warranted",
         paragraphs: [
           "Dietary restrictions and allergen information carry real health consequences if miscommunicated — confirm these details through direct human conversation rather than relying solely on an automated intake form's parsing."
+        ]
+      },
+      {
+        heading: "Why allergen handling is a stricter category than typical order customization",
+        paragraphs: [
+          "A missed dietary preference (someone who prefers less spice) is a quality issue; a missed allergen (a guest with a severe nut or shellfish allergy) is a genuine safety issue with potentially serious medical consequences — this asymmetry is why allergen information specifically warrants a direct confirmation step even when the rest of the order-taking process is comfortably automated. An intake form's free-text field parsed automatically can miss a critical detail phrased in an unexpected way.",
+          "Guest-count-based scaling for ingredients and staffing is a strong automation fit because it's a proportional calculation with a checkable right answer — the place it can go wrong is failing to account for event-specific factors (a buffet versus a plated dinner has very different staffing ratios) that a purely headcount-based formula doesn't capture on its own."
         ]
       }
     ],
@@ -9310,6 +9696,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "AI-assisted surveillance technology (facial recognition, behavior detection) carries significant privacy and regulatory considerations distinct from administrative automation — evaluate any such capability separately and specifically, rather than assuming it falls under general AI agent guidance."
         ]
+      },
+      {
+        heading: "Why incident reports need review, not just drafting assistance",
+        paragraphs: [
+          "An incident report can become evidence in a legal proceeding, an insurance claim, or an employment action — drafting one from a guard's raw notes is a genuinely useful time-saver, but the guard who witnessed the incident needs to confirm the draft accurately reflects what they observed before it's finalized, since an AI-introduced inaccuracy or omission in a legally significant document is a real liability, not just an editing error.",
+          "Facial recognition and behavior-detection surveillance tools deserve separate evaluation specifically because several jurisdictions have enacted or proposed dedicated regulation for biometric surveillance technology distinct from general AI or privacy law — a security firm evaluating a surveillance product should check that specific regulatory landscape rather than assuming standard data-privacy diligence covers it."
+        ]
       }
     ],
     relatedLinks: [
@@ -9338,6 +9731,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Confirming that a lockout request is legitimate (not an unauthorized access attempt) is a security-sensitive judgment call that should remain with a trained human dispatcher rather than being fully automated."
         ]
+      },
+      {
+        heading: "Why this vertical's security stakes differ from a typical service dispatch",
+        paragraphs: [
+          "A locksmith's core function is granting someone access to a secured space, which makes verifying that the requester actually has a legitimate right to that access fundamentally different from dispatching a plumber or electrician — a wrong call here doesn't just cost a wasted trip, it can facilitate an actual unauthorized entry. This is a genuinely higher-stakes verification problem than most home-service triage, and it's the specific reason identity confirmation stays a trained human's call rather than a scripted automated flow.",
+          "Emergency triage automation is still valuable within that constraint — distinguishing a routine \"I want a quote for new locks\" inquiry from an active lockout that needs immediate dispatch is a genuinely useful automated first pass, as long as anything flagged as urgent still gets a human verifying the request before a technician is sent."
+        ]
       }
     ],
     relatedLinks: [
@@ -9345,7 +9745,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-security-checklist", label: "AI agent security checklist" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-hvac-companies": {
@@ -9395,6 +9795,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Traditional blue-green deployment validates that the new version responds correctly to health checks. An AI agent additionally needs behavioral validation — running the golden dataset from regression testing against the green version before cutting over traffic, since 'the server responds' says nothing about whether responses are still correct."
         ]
+      },
+      {
+        heading: "Why instant full cutover is riskier for agents than for typical services",
+        paragraphs: [
+          "Traditional blue-green deployment's appeal is a clean, instant, fully-reversible switch — but an agent's behavioral regression may only surface on inputs the golden dataset didn't happen to cover, meaning a full cutover can expose every user to an undetected issue simultaneously. Pairing blue-green's clean rollback capability with a canary-style gradual traffic shift (a small percentage first, expanding only after monitoring confirms healthy behavior) captures the benefits of both approaches rather than betting entirely on pre-cutover testing catching everything.",
+          "Rollback speed matters as much as rollout speed here — the same infrastructure that lets you cut over to green quickly should let you cut back to blue just as quickly the moment a behavioral regression is detected in production, which is the actual safety net blue-green deployment is meant to provide."
+        ]
       }
     ],
     relatedLinks: [
@@ -9402,7 +9809,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/regression-testing-ai-agent", label: "Regression testing (AI agent)" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-load-testing": {
@@ -9445,6 +9852,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Rollback authority — who can revert a model version or system prompt change, and how quickly.",
           "Pre-written user communication for an agent outage, so no one is drafting messaging under pressure."
         ]
+      },
+      {
+        heading: "Why 'write it before, not during' is the actual point",
+        paragraphs: [
+          "An incident is exactly the wrong time to first figure out who has authority to roll back a change, or to draft a calm, accurate user-facing message — decision-making under pressure is measurably worse than the same decision made calmly in advance, which is why every element of this runbook is really about moving decisions out of the incident window and into a planning session where they can be made carefully.",
+          "The audit log built for normal operations (see AI agent audit logging) becomes the investigation tool during an incident — a runbook that assumes detailed tool-call and reasoning logs will be available for root-causing needs those logs to already exist before the incident happens, not to be added as a lesson learned afterward."
+        ]
       }
     ],
     relatedLinks: [
@@ -9452,7 +9866,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-audit-logging", label: "Audit logging for AI agent actions" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-third-party-risk-assessment": {
@@ -9489,6 +9903,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "A regression-testing process to validate the replacement model against the same golden dataset before switching.",
           "A migration timeline that starts well before the provider's actual cutoff date, not after."
         ]
+      },
+      {
+        heading: "Why this is a scheduled event, not a surprise, and treated as one anyway",
+        paragraphs: [
+          "Model providers typically publish deprecation dates months in advance, which makes an unplanned emergency migration a self-inflicted problem rather than an unavoidable one — the actual failure mode is usually organizational, not technical: no one owns tracking provider announcements, so the deprecation date arrives without anyone having started the migration work.",
+          "A replacement model, even from the same provider and same general capability tier, can behave differently enough on your specific prompts and tool-calling patterns to need real validation — this is why the regression-testing step matters as much as the migration itself; switching models without re-running your golden dataset risks a quiet behavioral regression that only surfaces once it's already affecting users."
+        ]
+      },
+      {
+        heading: "What to put in place before you need it",
+        bullets: [
+          "A named owner responsible for tracking deprecation announcements across every model provider currently in production use.",
+          "A standing golden dataset that's actually kept current with real production scenarios, not a one-time test set from initial launch.",
+          "A migration runbook written in advance, so the actual migration is executing a plan rather than improvising one under deadline pressure."
+        ]
       }
     ],
     relatedLinks: [
@@ -9496,7 +9925,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/regression-testing-ai-agent", label: "Regression testing (AI agent)" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-graceful-degradation": {
@@ -9509,6 +9938,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Map out each tool or data source an agent depends on and explicitly define what happens if that specific dependency is unavailable — a well-designed agent might answer with reduced confidence or scope rather than failing entirely, which is a meaningfully better experience for the end user."
         ]
+      },
+      {
+        heading: "The critical rule: degrade visibly, never silently",
+        paragraphs: [
+          "The difference between good and bad graceful degradation isn't whether the agent keeps working with reduced capability — it's whether the user knows that happened. An agent that silently falls back to general knowledge when a retrieval tool fails, without disclosing that it's no longer grounded in your actual data, can produce a confidently wrong answer that looks identical to a properly-grounded one — this is arguably worse than an outright error, since the user has no signal to be more skeptical of the response.",
+          "This means the degradation design isn't complete until it includes a user-facing disclosure step (\"I couldn't access the latest data, this answer is based on general knowledge\") for every dependency that can fail — treat the disclosure as a required part of the feature, not an optional nicety to add later."
+        ]
       }
     ],
     relatedLinks: [
@@ -9516,7 +9952,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-uptime-sla", label: "Understanding AI agent uptime & SLA commitments" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "rag-vs-fine-tuning": {
@@ -9579,6 +10015,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Ask whether the system can change something outside the conversation itself — book an appointment, update a record, send an email. If it can only describe or explain, it's functioning as a chatbot regardless of how sophisticated its language is; if it can act, it's functioning as an agent."
         ]
+      },
+      {
+        heading: "Why this distinction gets blurred in marketing more than in practice",
+        paragraphs: [
+          "\"Agent\" has become a popular label applied to products across a wide capability range, including some that are functionally chatbots with a more autonomous-sounding name — the practical test above (can it actually change something, or only describe how to) cuts through that labeling ambiguity better than trusting a product's own self-description.",
+          "The distinction also carries a real risk difference: a chatbot's worst-case failure is giving bad information, which a user can choose whether to act on; an agent's worst-case failure is taking a wrong action directly, which is why agent systems generally need more deliberate guardrails (approval steps, scoped permissions) than a purely conversational chatbot does."
+        ]
       }
     ],
     relatedLinks: [
@@ -9586,7 +10029,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/tool-calling", label: "Tool calling" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "copilot-vs-agent": {
@@ -9845,6 +10288,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Batch-generating social media assets for a content calendar.",
           "Exporting finished designs into required formats and sizes."
         ]
+      },
+      {
+        heading: "Why this works best as template population, not open-ended design generation",
+        paragraphs: [
+          "The strongest version of this integration keeps the actual creative decisions — layout, color palette, typography, brand consistency — locked into a template a designer already built, and limits the agent's role to populating variable fields (names, dates, product images) across many instances of that template. Asking an agent to make independent creative and layout decisions is a fundamentally less reliable use of the same integration, since brand consistency is exactly the kind of judgment a locked template exists to enforce.",
+          "Batch generation for a content calendar is the clearest high-value use case because it turns a repetitive, mechanical task (the same graphic format, different content, dozens of times a month) into a bulk operation, freeing designer time for the actual template and brand-system work that benefits from a human's eye."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the agent is restricted to populating existing, designer-approved templates rather than generating layouts freely.",
+          "Whether a human reviews the batch output before anything is published externally, since brand consistency errors across dozens of generated assets are harder to catch after the fact than one at a time.",
+          "Whether exported formats and dimensions match the actual target platforms' current specs, which change periodically and can silently break a batch export."
+        ]
       }
     ],
     relatedLinks: [
@@ -9852,7 +10310,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/graphic-design-marketing-assets-ai", label: "AI for graphic design & marketing assets" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-for-typeform": {
@@ -9939,6 +10397,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A credential manager MCP server, by design, provides access to the keys for many other systems — an overly broad connection here has a larger potential blast radius than almost any other integration on this site. Limit access to specific, named credentials the agent's task actually requires, and log every credential access explicitly."
         ]
+      },
+      {
+        heading: "Why prompt injection is the specific attack vector to design against here",
+        paragraphs: [
+          "The realistic risk isn't primarily a deliberately malicious operator — it's an agent that processes untrusted content (a webpage, an email, a document) containing hidden instructions designed to trick it into retrieving and exfiltrating credentials it has access to. This is precisely why the credential-retrieval capability needs to be isolated from any workflow that also processes untrusted external content, and why per-credential, per-use approval matters more here than in almost any other integration category.",
+          "A reasonable default posture is treating this integration as something to avoid granting to a general-purpose conversational agent at all, reserving it for narrowly-scoped automation with a fixed, auditable set of tasks — the more open-ended an agent's behavior, the harder it becomes to reason about what it might be tricked into doing with credential access."
+        ]
       }
     ],
     relatedLinks: [
@@ -9946,7 +10411,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/least-privilege-access", label: "Least-privilege access" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-multi-tenant-architecture": {
@@ -9959,6 +10424,20 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "In traditional multi-tenant software, a data leak is usually visible as an obvious bug (seeing another customer's record). In an AI agent, a subtle retrieval-index mixing issue might only surface as a slightly odd response, making it easy to miss during testing — test tenant isolation explicitly and adversarially, not just functionally."
         ]
+      },
+      {
+        heading: "Where isolation failures actually tend to originate",
+        bullets: [
+          "A shared vector index or retrieval store that doesn't correctly filter by tenant before returning results to the model.",
+          "Cached responses or embeddings reused across tenants when the underlying data was tenant-specific.",
+          "A shared fine-tuned or customized model instance where one tenant's training data influences another tenant's outputs."
+        ]
+      },
+      {
+        heading: "Why adversarial testing specifically matters here",
+        paragraphs: [
+          "Functional testing (does tenant A see tenant A's data) can pass cleanly while a subtler leak remains undetected — the more revealing test is adversarially prompting the system as tenant A specifically trying to surface tenant B's information, since that's closer to how a real isolation failure would actually be discovered or exploited in production."
+        ]
       }
     ],
     relatedLinks: [
@@ -9966,7 +10445,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-security-checklist", label: "AI agent security checklist" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-white-labeling": {
@@ -9979,6 +10458,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "An agent that responds with the underlying platform's name instead of the reseller's brand undermines the white-label relationship immediately — configure the system prompt explicitly to reflect the correct identity, and test this specific scenario before launch."
         ]
+      },
+      {
+        heading: "Identity leaks show up in more places than the obvious one",
+        paragraphs: [
+          "Beyond the direct \"who made you\" question, identity leaks happen in error messages, rate-limit notices, and any support-escalation text that references the underlying platform by name — these are easy to miss in initial testing because they only surface in less-common paths, but they're exactly the moments a user is most likely to notice and question who they're actually dealing with.",
+          "Some model providers' own usage terms restrict or require disclosure around white-labeling their models — this is worth checking directly in the provider's terms of service rather than assuming it's unrestricted, since it varies by provider and can affect what a reseller is actually allowed to represent about the product's underlying technology."
+        ]
+      },
+      {
+        heading: "What to test before launch",
+        bullets: [
+          "Every user-facing text surface (error messages, rate-limit notices, help text), not just the primary chat responses, for accidental platform-name leaks.",
+          "Whether the underlying model provider's terms of service place any restrictions or disclosure requirements on white-label use.",
+          "What happens when a user asks a pointed, adversarial question specifically designed to get the agent to reveal its underlying platform."
+        ]
       }
     ],
     relatedLinks: [
@@ -9986,7 +10480,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-vendor-lockin-risk", label: "Evaluating vendor lock-in risk for AI agent platforms" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-api-design": {
@@ -10023,6 +10517,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Idempotency — attach a unique event ID so a retried webhook delivery doesn't trigger duplicate agent actions.",
           "Retry policy — document how failures are retried, and design the agent's handler to be safe under at-least-once delivery."
         ]
+      },
+      {
+        heading: "Why 'at-least-once' delivery is the default assumption to design around",
+        paragraphs: [
+          "Most webhook systems guarantee at-least-once delivery, not exactly-once — meaning your agent's handler will eventually receive a duplicate delivery of the same event, whether from a sender's retry after a slow response or a genuine network hiccup. Designing the handler to be idempotent (safe to process the same event twice with no additional side effect) is the practical fix, and it's much easier to build this in from the start than to retrofit it after duplicate agent actions have already caused a real problem.",
+          "Payload completeness has a real tradeoff against payload size and the sensitivity of what's included — including enough data to act without a lookup call is good for reliability and latency, but it also means sensitive data now travels through the webhook delivery path (and often gets logged there), which is worth weighing against the convenience."
+        ]
       }
     ],
     relatedLinks: [
@@ -10030,7 +10531,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/idempotency-key", label: "Idempotency key" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-caching-strategy": {
@@ -10051,6 +10552,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Full generated responses to user queries are risky to cache broadly — even similar-looking questions can warrant different answers depending on context, and a stale cached response can look plausible while being wrong for the current situation."
         ]
+      },
+      {
+        heading: "Why prompt-prefix caching is the highest-value, lowest-risk optimization",
+        paragraphs: [
+          "A long, unchanging system prompt reprocessed on every single request is pure repeated computation — prompt caching (supported natively by several major model providers) lets that fixed prefix be processed once and reused, which is one of the few caching optimizations with essentially no correctness risk, since the cached content genuinely doesn't change between requests. This is worth implementing early, before more application-specific caching decisions, precisely because the risk/reward tradeoff is so favorable.",
+          "Cache invalidation is the part every caching strategy has to get right regardless of what's cached — a tool result cached as \"static\" that turns out to change more often than assumed will silently serve stale data until someone notices, which argues for conservative cache-duration defaults and explicit invalidation triggers over an optimistic \"this probably won't change\" assumption."
+        ]
       }
     ],
     relatedLinks: [
@@ -10058,7 +10566,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-latency-optimization", label: "AI agent cost & latency optimization" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-vacation-rentals": {
@@ -10321,6 +10829,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Traditional keyword search matches exact words; embedding-based search compares meaning, so a query for 'canine' can retrieve a document about 'dogs' because their embeddings are numerically close, even though the words themselves don't match."
         ]
+      },
+      {
+        heading: "What the numbers in an embedding actually represent",
+        paragraphs: [
+          "An embedding is typically a vector of several hundred to a few thousand floating-point numbers, where each dimension doesn't correspond to a single human-interpretable concept on its own — meaning emerges from the overall geometric position, not any one number in isolation. This is why embeddings from different models are generally not comparable to each other: the same piece of text embedded by two different models produces two different vector spaces, and comparing across them without a shared reference point produces meaningless results.",
+          "Embedding quality is model-dependent and improves with better training, which is why embedding models get updated and replaced over time — a system built on embeddings should account for the possibility of needing to re-embed its existing content when the underlying model changes."
+        ]
       }
     ],
     relatedLinks: [
@@ -10328,7 +10843,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/vector-database", label: "Vector database" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "what-is-a-token-limit": {
@@ -10341,6 +10856,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A model with a 128K token limit can't simply process an unlimited-length document in one call — applications working with long content need strategies like chunking, summarization, or a genuinely long-context model, and should handle the case where content still exceeds the limit gracefully rather than silently truncating."
         ]
+      },
+      {
+        heading: "The input-plus-output combination is easy to overlook",
+        paragraphs: [
+          "The limit applies to input and output tokens together, not input alone — a request that uses nearly all of its token budget on input context leaves little room for a full response, which can produce a response that's cut off mid-sentence rather than an outright error, depending on how the specific API surfaces this condition. This is a common source of confusing partial-output bugs when an application doesn't explicitly reserve headroom for the expected response length.",
+          "A larger advertised context window doesn't guarantee the model uses all of it equally well — some models show measurably worse recall for information placed in the middle of a very long context compared to the beginning or end, a pattern documented in independent long-context evaluations. A high token limit is a ceiling on what fits, not a guarantee of uniformly reliable comprehension across the entire window."
+        ]
       }
     ],
     relatedLinks: [
@@ -10348,7 +10870,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/context-window", label: "Context window" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "structured-output-vs-json-mode": {
@@ -10361,6 +10883,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "An application expecting a JSON object with specific fields (name, price, category) needs schema-constrained structured output, not just JSON mode — JSON mode alone could return valid JSON with the wrong fields entirely, which passes a JSON parser but still breaks the application's logic downstream."
         ]
+      },
+      {
+        heading: "Structured output constrains shape, not factual correctness",
+        paragraphs: [
+          "Neither JSON mode nor schema-constrained structured output does anything to guarantee the values inside the correctly-shaped output are actually true — a model can return a perfectly schema-valid object with a fabricated price or an invented product ID just as easily as a correct one. This is a common point of confusion: structured output solves a parsing reliability problem, not a factual accuracy problem, and the two need to be evaluated separately.",
+          "Not every provider's structured-output implementation offers the same strength of guarantee — some enforce the schema at the token-generation level (genuinely impossible to violate), while others are closer to a strong prompting convention the model usually but doesn't strictly follow. Check a specific provider's documentation for which kind you're actually getting before relying on it for a critical path."
+        ]
       }
     ],
     relatedLinks: [
@@ -10368,7 +10897,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/structured-output-generation", label: "Structured output generation" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "open-source-vs-closed-source-ai": {
@@ -10450,6 +10979,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Tracking shipment status through the customs clearance process.",
           "Flagging documentation inconsistencies for a broker to review before filing."
         ]
+      },
+      {
+        heading: "Why tariff classification sign-off can't be delegated",
+        paragraphs: [
+          "A customs broker is personally licensed and accountable for the declarations they file, and misclassifying goods under the wrong tariff code carries direct financial penalties (back duties, fines) and can trigger heightened scrutiny on future shipments — this accountability structure is exactly why classification itself needs to stay a licensed broker's sign-off rather than an automated best-guess, no matter how good the underlying document extraction is.",
+          "Document extraction and inconsistency-flagging are strong fits precisely because they're a different kind of task: pulling values off a form and checking they're internally consistent (matching weights, matching invoice totals) is objectively checkable, unlike classification, which requires judgment about the specific goods and applicable trade rules."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether tariff classification suggestions are presented as a starting reference for the broker, not an auto-filed determination.",
+          "Whether flagged inconsistencies include enough detail (which field, which document, what the discrepancy is) for a fast broker review rather than a re-investigation from scratch.",
+          "How the system stays current with tariff schedule and trade-agreement changes, since these change frequently and a stale reference is worse than no automated reference at all."
+        ]
       }
     ],
     relatedLinks: [
@@ -10457,7 +11001,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/multimodal-vision-ai-agents", label: "Multimodal vision & OCR AI agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-3pl-providers": {
@@ -10544,6 +11088,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Small business owners managing their own Squarespace site benefit from an agent that can draft blog posts or update product descriptions in bulk, reviewing the batch before publishing rather than editing each page manually."
         ]
+      },
+      {
+        heading: "Why the automation surface here is narrower than WordPress or Webflow",
+        paragraphs: [
+          "Squarespace is a deliberately closed, fully-hosted platform aimed at non-technical users, without WordPress's plugin ecosystem or Webflow's structured CMS-collection data model — this means an agent integration here has a genuinely smaller surface to work with: mainly page/blog content and product listings, rather than arbitrary custom fields or plugin-extended functionality. That's a real constraint worth knowing going in, not a shortcoming of any particular MCP implementation.",
+          "Bulk content drafting is the strongest use case precisely because it fits within that surface — generating a batch of on-brand blog posts or product descriptions from existing data doesn't require deep structural access to the site, just the ability to create and edit standard content types."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether the integration's actual scope matches what a Squarespace-hosted site allows (no custom plugin or deep structural access, by platform design), rather than assuming WordPress-level flexibility.",
+          "Whether draft content is reviewed before publishing, especially product descriptions that affect real purchase decisions.",
+          "Whether bulk edits preserve the site's existing SEO metadata and image alt text rather than overwriting it with defaults."
+        ]
       }
     ],
     relatedLinks: [
@@ -10551,7 +11110,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/mcp-for-wordpress", label: "MCP for WordPress" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-model-selection-guide": {
@@ -10594,6 +11153,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Benchmark contamination — verify the test set wasn't likely included in the model's training data.",
           "Accuracy without cost/latency context — a 2% accuracy gain isn't worth a 5x cost increase for most applications; report all three together."
         ]
+      },
+      {
+        heading: "A fourth pitfall: benchmarking against a task you don't actually have",
+        paragraphs: [
+          "A public leaderboard score measures performance on that leaderboard's specific task distribution, which may bear little resemblance to your actual use case — a model that scores well on general coding benchmarks isn't guaranteed to perform equally well on your specific codebase's conventions and patterns. The only benchmark result that reliably predicts your production performance is one built from your own representative tasks, not a borrowed public score, however impressive.",
+          "This is why this site treats a general benchmark leaderboard position as a weak proxy for agentic task performance specifically — tool-use accuracy and multi-step task completion vary more between models than general knowledge benchmarks capture, and a model's ranking on one doesn't reliably predict its ranking on the other."
+        ]
       }
     ],
     relatedLinks: [
@@ -10601,7 +11167,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-testing-evaluation-frameworks", label: "AI agent testing & evaluation frameworks" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "how-to-hire-ai-engineers": {
@@ -10616,6 +11182,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Practical evaluation-pipeline design — has this candidate built a golden dataset and used it to catch a regression?",
           "Comfort with the specific failure modes of LLM-based systems (hallucination, tool-selection errors, context management)."
         ]
+      },
+      {
+        heading: "Why research credentials are a weaker signal than they first appear",
+        paragraphs: [
+          "Building a production agent system and publishing ML research are genuinely different skill sets that happen to share some vocabulary — a strong research background demonstrates depth in model architecture and training, but says little about whether someone can debug why a production agent occasionally calls the wrong tool, design a regression test suite, or reason about cost and latency tradeoffs at real user volume. Weighting research pedigree heavily for what is fundamentally a systems-engineering role is a common and costly hiring mismatch.",
+          "A useful practical interview signal: ask a candidate to describe a time they debugged a failure that only reproduced intermittently, or to walk through how they'd design an evaluation set for a specific agent task — these questions surface the actual skills the role needs more reliably than credentials or a general ML-knowledge quiz."
+        ]
       }
     ],
     relatedLinks: [
@@ -10623,7 +11196,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-write-effective-agent-system-prompts", label: "How to write effective system prompts for AI agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-build-vs-buy": {
@@ -10668,6 +11241,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "An evaluation pipeline and golden dataset to catch regressions as the system evolves.",
           "A cost model validated at real production volume, not just a handful of demo queries."
         ]
+      },
+      {
+        heading: "Why demos systematically hide these gaps",
+        paragraphs: [
+          "A proof-of-concept demo is, almost by definition, run against curated inputs that showcase what the agent does well — real users ask ambiguous questions, hit tools that occasionally fail, and use the system at a volume and variety no demo session ever exercises. This isn't a flaw in how demos are built; it's the nature of a demo, which is exactly why treating a successful demo as evidence of production-readiness is the recurring mistake this gap describes.",
+          "Cost is a particularly common surprise because a demo's handful of queries doesn't reveal how token consumption scales with real conversation length and tool-call chains — a per-request cost that looked negligible in a demo can look very different multiplied across production traffic, especially for multi-step agentic tasks that consume far more tokens than a single simple prompt."
+        ]
       }
     ],
     relatedLinks: [
@@ -10675,7 +11255,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-cold-start-problem", label: "The AI agent cold-start problem" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "what-is-a-tool-registry": {
@@ -10688,6 +11268,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A single agent with three tools can manage tool definitions inline. An organization with dozens of agents sharing overlapping tool sets benefits from a centralized registry, so a tool update happens once rather than being duplicated across every agent that uses it."
         ]
+      },
+      {
+        heading: "The governance function a registry provides beyond convenience",
+        paragraphs: [
+          "A centralized registry does more than reduce duplicated tool definitions — it becomes the natural place to enforce access control (which agents or teams can use which tools), version tracking (which tool version is deployed where), and deprecation (retiring an old tool version across every consuming agent at once rather than hunting down each inline definition). Without a registry, these governance questions have to be answered per-agent, which scales poorly and tends to produce inconsistent answers across a growing agent fleet.",
+          "A registry entry typically needs more than just the function schema — a clear description of what the tool actually does and when to use it materially affects how reliably a model chooses to call it correctly, which is a real, model-facing design consideration, not just an internal documentation nicety."
+        ]
       }
     ],
     relatedLinks: [
@@ -10695,7 +11282,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/function-schema", label: "Function schema" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "mcp-registry-explained": {
@@ -10708,6 +11295,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "In MCP's early days, developers could track available servers informally through a handful of reference implementations. As the ecosystem grows into the hundreds of servers this site catalogs, a structured registry with consistent metadata becomes necessary for reliable discovery — this site's own MCP directory reflects the same underlying need at a smaller scale."
         ]
+      },
+      {
+        heading: "Discovery alone doesn't solve the trust problem",
+        paragraphs: [
+          "A registry making an MCP server easy to find says nothing about whether that server is trustworthy, actively maintained, or does what it claims — an ecosystem-wide directory listing hundreds of servers from many independent maintainers still leaves the actual vetting work (checking the source code, verifying the maintainer's identity, testing the server's actual behavior) to whoever is deciding to connect it to their agent. Registry presence and verified quality are two different claims, and conflating them is a real risk as the number of listed servers grows faster than any central authority could individually vet.",
+          "This is the same reason this site treats a catalog listing and a verified evidence record as distinct things for MCP servers, agents, and any other entity — being discoverable is not the same claim as being independently checked."
+        ]
       }
     ],
     relatedLinks: [
@@ -10715,7 +11309,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/what-is-a-tool-registry", label: "What is a tool registry?" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-context-engineering": {
@@ -10728,6 +11322,20 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A perfectly worded prompt still fails if the model doesn't have the right retrieved context, or if the conversation history has grown too long and diluted the relevant information. Context engineering treats the entire input — not just the instruction text — as something to deliberately design and manage."
         ]
+      },
+      {
+        heading: "The practical disciplines this actually involves",
+        bullets: [
+          "Retrieval quality — whether the documents pulled into context are actually the most relevant ones, not just the top result from a naive search.",
+          "Ordering and structure — where in the context critical information is placed, since models don't treat every position in a long context with equal reliability.",
+          "Pruning — actively removing stale or irrelevant conversation history rather than letting context grow unbounded until it dilutes what actually matters."
+        ]
+      },
+      {
+        heading: "Why this discipline emerged as agents became more complex",
+        paragraphs: [
+          "Early LLM applications were often a single prompt with a single response, where prompt wording genuinely was most of the engineering work — a multi-step agent pulling from several tools and carrying a long conversation history has a fundamentally larger and more dynamic input to manage, which is why the field developed a broader vocabulary and set of practices beyond just \"writing a good prompt.\""
+        ]
       }
     ],
     relatedLinks: [
@@ -10735,7 +11343,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-write-effective-agent-system-prompts", label: "How to write effective system prompts for AI agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-call-centers": {
@@ -10778,6 +11386,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Agent-assist tools that support human staff working across multiple client accounts.",
           "Quality monitoring and anomaly flagging across high call and ticket volumes."
         ]
+      },
+      {
+        heading: "Why multi-client contract terms are the real complexity here",
+        paragraphs: [
+          "A BPO operates on behalf of many client companies simultaneously, each with its own service-level agreements, escalation rules, and brand voice requirements — automation that treats all client accounts identically misses the fact that a process considered routine and safely automatable for one client's contract may require explicit human sign-off under another client's specific terms, which makes contract-aware configuration a real requirement, not a nice-to-have.",
+          "Agent-assist tools (suggesting responses, surfacing relevant account history for a human agent to use) tend to be a safer starting point than full automation in this vertical specifically because they keep a person accountable for the client-facing outcome while still capturing most of the speed benefit."
+        ]
+      },
+      {
+        heading: "What to evaluate before adopting an agent here",
+        bullets: [
+          "Whether automation rules and escalation thresholds are configurable per client contract, not applied uniformly across every account.",
+          "Whether quality monitoring flags are reviewed against each client's specific SLA definitions, since \"acceptable\" quality varies by contract.",
+          "How the system maintains brand-voice separation across clients — a shared automation layer that blurs brand distinctions between client accounts is a real risk in a multi-tenant BPO context."
+        ]
       }
     ],
     relatedLinks: [
@@ -10785,7 +11408,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-automate-customer-support-ai", label: "How to automate customer support with AI" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-staffing-agencies": {
@@ -10835,6 +11458,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A payroll error isn't an abstract risk — it means a real employee is paid incorrectly, which affects their ability to pay bills on time. This is a domain where the cost of an undetected automation error is unusually direct and immediate, justifying a mandatory human verification step even as automation handles more of the underlying data processing."
         ]
+      },
+      {
+        heading: "Tax withholding accuracy is a second, distinct risk category",
+        paragraphs: [
+          "Beyond the immediate pay-accuracy concern, payroll processing involves tax withholding calculations that carry their own regulatory compliance requirements — an error here doesn't just affect the employee's take-home pay, it can create a compliance problem for the employer that surfaces much later (at tax filing time) when it's harder and more costly to correct than an error caught in the same pay period.",
+          "Automated time-and-attendance data processing is a strong fit precisely because it's aggregating already-recorded facts (clock-in/clock-out times) rather than making a judgment call — the risk concentrates in the calculation and submission steps downstream of that data, which is why verification effort should focus there rather than being spread evenly across the whole pipeline."
+        ]
       }
     ],
     relatedLinks: [
@@ -10842,7 +11472,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/mcp-for-quickbooks", label: "MCP for QuickBooks" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-benefits-administration": {
@@ -11172,6 +11802,21 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Merchants running BigCommerce stores benefit from an agent that can answer order-status questions and flag low inventory instantly, without needing to open the admin dashboard for routine checks."
         ]
+      },
+      {
+        heading: "Why this integration looks different at BigCommerce's typical scale",
+        paragraphs: [
+          "BigCommerce is commonly used for larger, multi-storefront, and B2B-oriented catalogs than the smaller single-store setups WooCommerce and base-tier Shopify usually serve — an agent working against a BigCommerce catalog is more likely to encounter tiered B2B pricing, customer-group-specific catalogs, and multi-channel sync (the same product listed across several storefronts or sales channels), which changes what \"a simple price update\" actually touches compared to a single small store.",
+          "This scale difference is the main reason to treat catalog-write operations here with extra care: a bulk update that looks correct against one storefront's view can have unintended effects if the platform's multi-channel or B2B pricing rules aren't fully accounted for in how the change was scoped."
+        ]
+      },
+      {
+        heading: "What to check before connecting this",
+        bullets: [
+          "Whether catalog or pricing writes account for customer-group-specific pricing tiers, not just the default storefront price.",
+          "Whether changes propagate correctly across every connected storefront/channel the store actually uses, not just the primary one.",
+          "Whether the integration's credentials are scoped to only the storefronts and operations actually needed, given BigCommerce's more complex multi-store permission model."
+        ]
       }
     ],
     relatedLinks: [
@@ -11179,7 +11824,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/mcp-for-woocommerce", label: "MCP for WooCommerce" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-privacy-by-design": {
@@ -11194,6 +11839,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Building consent and opt-out controls into the initial architecture, not as a later compliance patch.",
           "Setting data retention limits as a default, not an afterthought configuration."
         ]
+      },
+      {
+        heading: "Why retrofitting privacy controls is genuinely harder than building them in",
+        paragraphs: [
+          "Once an agent's architecture has already grown around broad data access (every tool call pulling full records, every log capturing complete conversation payloads), adding minimization after the fact means auditing every existing code path to find where over-collection happens, then changing behavior that other parts of the system may have quietly come to depend on — it's a much bigger, riskier project than deciding these limits during initial design, when the architecture is still flexible.",
+          "This is also why privacy-by-design is a genuine architectural decision, not just a written policy — a policy document saying \"we minimize data collection\" doesn't change what the code actually does; the constraint has to be enforced in the system itself (scoped queries, redaction at the point of logging) to be real."
+        ]
       }
     ],
     relatedLinks: [
@@ -11201,7 +11853,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-data-retention-policy", label: "Setting a data retention policy for AI agent conversations" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-consent-management": {
@@ -11214,6 +11866,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A single 'I agree' checkbox covering data collection, model training use, and third-party sharing doesn't give a user meaningful choice over any one of those separately — regulations increasingly expect granular consent, and separating these categories is both more compliant and more transparent."
         ]
+      },
+      {
+        heading: "The third-party sharing category is the one teams most often overlook",
+        paragraphs: [
+          "An agent connected to external tools via integrations (a CRM, a calendar, a third-party search API) is, from the user's perspective, potentially sharing their data with each of those services — most consent flows focus on the primary product's own data use and never surface that a conversation might route through several third-party systems as part of normal operation. Making this visible, even briefly, is closer to what informed consent actually requires than a general privacy-policy link most users never read.",
+          "Consent also isn't static — if a new tool integration is added later that changes where data flows, that's a material change that arguably needs fresh consent, not an assumption that the original blanket agreement already covers it."
+        ]
       }
     ],
     relatedLinks: [
@@ -11221,7 +11880,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/ai-agent-privacy-by-design", label: "Privacy by design for AI agents" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agent-data-minimization": {
@@ -11236,6 +11895,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
           "Avoid including full conversation history in context when a summary would suffice.",
           "Apply the same minimization discipline to logs as to live requests — don't log more than needed for debugging and audit purposes."
         ]
+      },
+      {
+        heading: "Minimization also improves the agent's own output quality",
+        paragraphs: [
+          "Data minimization is usually framed purely as a privacy and compliance practice, but it has a practical model-quality benefit too — models can be distracted by irrelevant information included in their context, and a request cluttered with an entire customer record when only their shipping address was needed increases the chance the model latches onto an unrelated detail. Minimizing what's passed into context is both the more private and, often, the more reliable design choice.",
+          "The tradeoff to manage is under-minimizing in the other direction: a query scoped too narrowly can leave out context the agent actually needed, producing a technically-safe but unhelpful response. The right scope is task-specific — what does this particular request actually need — not a single fixed rule applied everywhere."
+        ]
       }
     ],
     relatedLinks: [
@@ -11243,7 +11909,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/pii-redaction", label: "PII redaction" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "ai-agents-for-translators": {
@@ -11263,6 +11929,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         heading: "Where certified human translation remains required",
         paragraphs: [
           "Legal, medical, literary and certified translation work carries accuracy and accountability requirements that machine translation cannot satisfy — these should always involve a qualified human translator, with AI tools assisting their workflow rather than substituting for their judgment."
+        ]
+      },
+      {
+        heading: "Post-editing machine translation is already an established professional workflow",
+        paragraphs: [
+          "\"Machine translation post-editing\" (reviewing and correcting an AI-generated draft rather than translating from scratch) is a recognized, already-established practice in the professional translation industry, with its own quality standards and typically different, usually lower, per-word rates than translation from scratch — this isn't a hypothetical future workflow, it's how a meaningful share of commercial translation work already gets done, and the relevant skill for a translator is efficient, high-quality post-editing rather than viewing the AI draft as a threat to bypass.",
+          "Glossary and terminology consistency checking is a strong automation fit specifically because consistency is objectively checkable — did this term get translated the same way every time it appears — which is exactly the kind of mechanical verification that benefits from automated support even in a fully human-translated document."
         ]
       }
     ],
@@ -11292,6 +11965,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Official court records require a certified reporter's verified accuracy and legal accountability — automated transcription can accelerate the draft process but cannot substitute for that certification requirement."
         ]
+      },
+      {
+        heading: "Why legal transcription has a lower error tolerance than most transcription use cases",
+        paragraphs: [
+          "A misheard word in a casual meeting transcript is a minor inconvenience; the same error in a deposition transcript can change the legal meaning of sworn testimony, and that transcript may later be relied on in a courtroom where the exact wording matters — this asymmetric cost of error is the actual reason legal transcription holds a stricter accuracy bar than general-purpose transcription, not just professional convention.",
+          "Speech recognition also has documented, measurable accuracy variation across accents, overlapping speakers, and technical or specialized vocabulary — a proceeding with multiple speakers talking over each other or using domain-specific legal or technical terms is exactly the scenario where an unreviewed automated transcript is most likely to contain a consequential error."
+        ]
       }
     ],
     relatedLinks: [
@@ -11299,7 +11979,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/speech-to-text", label: "Speech-to-text (STT)" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "what-is-an-embedding-space": {
@@ -11312,6 +11992,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "During training, a model learns to position related concepts near each other in this space and unrelated concepts farther apart — the specific dimensions don't correspond to human-interpretable concepts individually, but the overall geometric relationships capture meaningful semantic relationships that similarity search can exploit."
         ]
+      },
+      {
+        heading: "How distance is actually measured, and why it matters for results",
+        paragraphs: [
+          "Different systems measure \"closeness\" in an embedding space using different distance metrics — cosine similarity (the angle between two vectors) is the most common choice for text embeddings because it ignores vector magnitude and focuses purely on direction, while Euclidean distance factors in magnitude too. Using the wrong metric for a given embedding model's training approach can quietly degrade search quality even when the underlying embeddings themselves are good.",
+          "Embedding space dimensionality is a real tradeoff, not just a technical detail: more dimensions can capture finer-grained distinctions but cost more to store and search over at scale, which is why many production retrieval systems will actively reduce dimensionality (via techniques like quantization) once they need to search over millions of vectors economically."
+        ]
       }
     ],
     relatedLinks: [
@@ -11319,7 +12006,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/cosine-similarity", label: "Cosine similarity" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "text-chunking-strategies": {
@@ -11380,6 +12067,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "Semantic search excels at finding conceptually related content even without exact word matches, but can underperform on queries where an exact term (a part number, an error code, a proper noun) matters more than conceptual similarity — combining both search types and merging their results covers more query types than either alone."
         ]
+      },
+      {
+        heading: "The real engineering work is in merging the two result sets well",
+        paragraphs: [
+          "Running both search types is the easy part; combining their results into a single ranked list that's actually better than either alone is where hybrid search implementations differ in quality — a naive approach (just concatenating both result lists) tends to perform worse than a properly weighted fusion method (reciprocal rank fusion is a common one) that accounts for each method's relative confidence on a given query.",
+          "The right balance between keyword and semantic weighting isn't universal — it depends on the actual query patterns a specific application sees, which is why hybrid search systems are usually tuned and evaluated against real query logs rather than configured once with a fixed default and left alone."
+        ]
       }
     ],
     relatedLinks: [
@@ -11387,7 +12081,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/rag", label: "Retrieval-augmented generation (RAG)" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
 
   "agent-memory-vs-rag": {
@@ -11400,6 +12094,13 @@ export const authorityPages: Record<string, AuthorityPage> = {
         paragraphs: [
           "A RAG system answering 'what's our refund policy' retrieves from a document that rarely changes. An agent recalling 'this user mentioned they're vegetarian last week' is retrieving from a dynamically growing, user-specific interaction history — different data sources, different update patterns, and often different retrieval infrastructure, even though both are technically retrieval."
         ]
+      },
+      {
+        heading: "Why this distinction has real privacy implications",
+        paragraphs: [
+          "Because agent memory is inherently personal — tied to a specific user's history rather than a shared knowledge base — it carries privacy obligations RAG's static document retrieval usually doesn't: a user should typically be able to see what the agent remembers about them, correct it, and have it deleted, in a way that doesn't apply to a company's shared refund-policy document. Conflating the two systems technically can obscure this distinction and lead to memory data being treated with the same (looser) governance as static reference documents.",
+          "Systems that use both together need to be clear about which source informed a given response — a user who's told something that mixes an outdated memory of their stated preference with current factual grounding from RAG deserves to know which part came from where, especially if the memory turns out to be wrong or stale."
+        ]
       }
     ],
     relatedLinks: [
@@ -11407,7 +12108,7 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/glossary/rag", label: "Retrieval-augmented generation (RAG)" }
     ],
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-17"
   },
   "mcp-best-practices": {
     title: "MCP Best Practices: Building and Deploying Servers Safely",
