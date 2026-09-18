@@ -39,6 +39,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // the sitemap, since that's flagged by Search Console as a submission error.
   // Same rule applies to /archive, /compare/research and /compare/archive —
   // they're preserved at 200 for continuity but excluded here on purpose.
+  // /guides is noindex by design, and /glossary 301s to /glossary-hub (an
+  // evidence-pending, noindex authority page), so neither is listed.
   const topicClusterPaths = [
     "/best-ai-agents",
     "/best-ai-agents/coding",
@@ -62,8 +64,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/mcp/servers",
     "/india",
     "/research",
-    "/glossary",
-    "/guides",
     "/press",
     "/tools",
     "/trust",
