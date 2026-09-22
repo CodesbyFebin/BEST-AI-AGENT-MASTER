@@ -10,7 +10,13 @@ import { ContentBlocks } from "@/components/ContentBlocks";
 import { entitiesByType } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
 
-type LegacyAuthorityPage = { title: string; description: string; body: string[]; index: boolean };
+type LegacyAuthorityPage = {
+  title: string;
+  description: string;
+  body: string[];
+  index: boolean;
+  relatedLinks?: { href: string; label: string }[];
+};
 type P = { params: Promise<{ slug: string }> };
 
 function getLegacyPage(slug: string): LegacyAuthorityPage | undefined {
@@ -186,6 +192,10 @@ export default async function Page({ params }: P) {
     </> : <div className="prose">
       {legacy!.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
       {slug === "local-llm-benchmarks-india" && <><h2>Verified Indian model cards</h2><ul>{models.map((model) => <li key={model.id}><Link href={`/models/${model.slug}`}>{model.name}</Link> — {model.verification}</li>)}</ul></>}
+      {legacy!.relatedLinks && legacy!.relatedLinks.length > 0 && <>
+        <h2>Related pages</h2>
+        <ul>{legacy!.relatedLinks.map((item) => <li key={item.href}><Link href={item.href}>{item.label}</Link></li>)}</ul>
+      </>}
     </div>}
   </div>;
 }
