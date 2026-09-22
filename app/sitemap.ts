@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { publicEntities, publicIndexableComparisons, getPublicEntityPath, getEvidence } from "@/lib/catalog";
 import { authorityPages } from "@/lib/authority-pages";
-import { isAuthorityPageEvidenceReady } from "@/lib/authority-evidence";
+import { isAuthorityPageEvidenceReady, isMethodologyPageReady } from "@/lib/authority-evidence";
 import { legacyPages, categories } from "@/lib/legacy";
 import { glossaryTerms } from "@/lib/glossary";
 import { trustPages } from "@/lib/trust";
@@ -23,8 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter(([slug, page]) => page.index && slug !== "rankings")
     .map(([slug]) => `/${slug}`);
 
-  const authorityEntries = Object.entries(authorityPages).filter(([slug, page]) =>
-    page.index && isAuthorityPageEvidenceReady(slug, page.evidenceIds)
+  const authorityEntries = Object.entries(authorityPages).filter(
+    ([slug, page]) => page.index && (isAuthorityPageEvidenceReady(slug, page.evidenceIds) || isMethodologyPageReady(page))
   );
   const authorityPaths = authorityEntries.map(([slug]) => `/${slug}`);
   const lastModifiedByPath = new Map<string, string>([

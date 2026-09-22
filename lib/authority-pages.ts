@@ -12927,4 +12927,655 @@ export const authorityPages: Record<string, AuthorityPage> = {
     index: true,
     lastReviewed: "2026-09-16"
   },
+
+  "open-source-indian-ai-projects": {
+    title: "Open-Source AI Projects Built in India: How to Evaluate One",
+    description: "What to check on an open-source AI project's own repository before adopting it, rather than a ranked list of Indian open-source AI.",
+    directAnswer: "This site does not maintain a ranked list of \"best\" open-source AI projects from India, because openness itself is a spectrum — license terms, release cadence, and who actually maintains the code vary project to project and change over time. The reliable check is the project's own repository, not a static summary of it.",
+    sections: [
+      {
+        heading: "What \"open-source\" doesn't tell you by itself",
+        paragraphs: [
+          "A project can publish weights without publishing training data, publish code under a restrictive license, or stop receiving commits entirely while still being described as open-source somewhere online. None of that is visible from a one-line description — it's visible in the repository's license file, commit history, and issue tracker.",
+          "For Indian-language AI specifically, also check whether a project's claimed language coverage has been evaluated on held-out data for that language, or only mentioned in a launch post. The two are not the same, and this site's own glossary entries on instruction tuning and benchmark contamination explain why that distinction matters."
+        ]
+      },
+      {
+        heading: "Where to look instead of a summary page",
+        bullets: [
+          "The repository's license file, for what you can actually do with the code or weights.",
+          "Commit and release history, for whether the project is still maintained.",
+          "The models directory on this site for Indian model identities with a source-linked primary reference."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/models", label: "AI models directory" },
+      { href: "/sarvam-krutrim-model-directory", label: "Sarvam AI & Krutrim ecosystem tools" },
+      { href: "/india", label: "India & Indic AI hub" },
+      { href: "/glossary/model-license-types", label: "Model license types" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "enterprise-ai-agent-adoption-india": {
+    title: "What Indian Enterprises Actually Check Before Adopting an AI Agent",
+    description: "The procurement and security questions an Indian corporate or bank buying team raises about an AI agent vendor, without naming or ranking any vendor as ready for that bar.",
+    directAnswer: "No specific AI agent is named here as \"enterprise-ready\" for an Indian corporation or bank, because that judgment depends on the buyer's own data classification, existing security review process, and regulatory obligations — not on a property of the AI product alone. What follows is the set of questions a buying team typically has to answer for itself.",
+    sections: [
+      {
+        heading: "Questions a procurement or security review usually raises",
+        bullets: [
+          "Where is data processed and stored, and does that satisfy the buyer's own data-residency policy — see data residency for AI agents in India for what to ask.",
+          "What is the vendor's incident-disclosure process, and does it meet the buyer's own regulatory reporting obligations (see CERT-In incident logging for AI).",
+          "Who at the vendor can be contacted for a security questionnaire or penetration-test attestation, and how current is it.",
+          "What happens to data after a contract ends, and is that documented rather than verbal."
+        ]
+      },
+      {
+        heading: "Why this isn't a vendor shortlist",
+        paragraphs: [
+          "An enterprise buying decision in a regulated Indian sector (banking, insurance, healthcare) turns on the buyer's own risk posture as much as the vendor's — the same AI agent can be a reasonable fit for one team's data-handling policy and a poor fit for another's. Publishing a shortlist here would imply a judgment this site cannot make on a buyer's behalf without their own risk criteria."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/rbi-compliant-fintech-ai", label: "RBI digital lending guidelines for AI fintech tools" },
+      { href: "/cert-in-incident-logging-ai", label: "CERT-In incident logging for AI" },
+      { href: "/data-residency-ai-agents-india", label: "Data residency for AI agents in India" },
+      { href: "/trust/evidence-methodology", label: "Evidence methodology" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "ai-agent-pricing-india-inr": {
+    title: "AI Agent Pricing in India: What's Actually Billed in INR",
+    description: "A pointer to this site's dated, source-checked pricing snapshots, and why most AI agent pricing pages targeting India still quote in USD.",
+    directAnswer: "Most global AI agent and coding-tool pricing is still billed in USD even when marketed to Indian buyers — a converted INR figure on a third-party page is usually just that day's exchange rate, not a real INR price. This site publishes an INR figure only where a vendor's own pricing page bills in INR directly, and flags everything else as USD-denominated.",
+    sections: [
+      {
+        heading: "Why an INR number on a random page might not be real pricing",
+        paragraphs: [
+          "A currency-converted price is not the same commitment as a price a vendor actually bills in INR — the converted figure moves with the exchange rate and was never something you could point to in a vendor's own terms. This site's pricing pages record what a vendor's own pricing documentation says, dated to when it was checked, and say plainly when a figure is a foreign-currency price rather than an INR one."
+        ]
+      },
+      {
+        heading: "Where to find dated INR-specific figures on this site",
+        bullets: [
+          "Cursor pricing in India — includes an India-only INR-billed tier alongside its USD tiers.",
+          "GitHub Copilot pricing, Claude Code pricing, and Vapi pricing — dated snapshots noting currency and billing terms as published by each vendor."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/cursor-pricing", label: "Cursor pricing in India" },
+      { href: "/github-copilot-pricing", label: "GitHub Copilot pricing" },
+      { href: "/claude-code-pricing", label: "Claude Code pricing" },
+      { href: "/vapi-pricing", label: "Vapi pricing" },
+      { href: "/trust/freshness-policy", label: "Freshness policy" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "data-residency-ai-agents-india": {
+    title: "Data Residency for AI Agents in India: What to Verify",
+    description: "What \"hosted in India\" actually needs to mean for an AI agent vendor, and why this site doesn't repeat a vendor's residency claim without a primary source.",
+    directAnswer: "\"Data hosted in India\" can mean the primary database region, a cache or CDN edge node, a backup replica, or a sub-processor's own infrastructure — these are not the same claim, and a vendor's marketing page rarely specifies which one it means. This site records a residency claim only when a vendor's own documentation states it precisely enough to check.",
+    sections: [
+      {
+        heading: "What to ask a vendor, specifically",
+        bullets: [
+          "Which data — the primary application database, logs, backups, or all of it — is claimed to stay in India.",
+          "Which cloud region and provider, by name, so the claim can be checked against that provider's own published region list.",
+          "Whether any sub-processor (an analytics tool, an email provider, a support-ticket system) routes data outside India even if the core product doesn't.",
+          "Whether the claim is contractual (in a Data Processing Addendum) or only stated in marketing copy."
+        ]
+      },
+      {
+        heading: "Why this isn't a per-vendor residency checklist",
+        paragraphs: [
+          "A residency claim is only as reliable as the document it's checked against, and that document is specific to one vendor's current infrastructure — which changes as vendors add regions or sub-processors. See cloud providers for AI in India for the regions major providers publish, and enterprise AI agent adoption for the broader procurement questions this sits inside."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/cloud-providers-for-ai-in-india", label: "Cloud providers for AI in India" },
+      { href: "/enterprise-ai-agent-adoption-india", label: "What Indian enterprises check before adopting an AI agent" },
+      { href: "/glossary/data-residency", label: "Data residency (glossary)" },
+      { href: "/trust/privacy-dpdp-editorial-policy", label: "Privacy & DPDP editorial policy" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "vector-databases-hosted-in-india": {
+    title: "Vector Databases and India Data Residency",
+    description: "How a vector database's hosting location interacts with an India data-residency requirement, without naming a winner among vector database options.",
+    directAnswer: "A vector database's own feature set is mostly independent of where it can be hosted — most options covered in this site's vector database comparison can be self-hosted inside an India-region cloud instance, run as a managed service in a provider's India region where one exists, or run only outside India depending on the vendor's current region list. Check the specific option against the current region list rather than assuming residency from the product name alone.",
+    sections: [
+      {
+        heading: "Self-hosted vs. managed changes what you're actually verifying",
+        paragraphs: [
+          "Self-hosting a vector database on infrastructure you control inside an India cloud region makes residency a property of your own deployment, not the vector database vendor's. A managed vector-database service instead depends on that vendor's own published region list — which needs the same direct check described in data residency for AI agents in India."
+        ]
+      },
+      {
+        heading: "What this site's vector database comparison does and doesn't cover",
+        bullets: [
+          "Covers feature and architecture differences relevant to a RAG pipeline.",
+          "Does not track each option's current hosting-region list, since that changes independently of the product itself."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/vector-database-comparison", label: "Vector database comparison" },
+      { href: "/data-residency-ai-agents-india", label: "Data residency for AI agents in India" },
+      { href: "/cloud-providers-for-ai-in-india", label: "Cloud providers for AI in India" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "edge-ai-for-low-bandwidth-india": {
+    title: "Running AI Agents on Low Bandwidth and Budget Devices in India",
+    description: "What actually changes when an AI agent has to work over patchy connectivity or on a budget smartphone, without naming a single best small model.",
+    directAnswer: "Low-bandwidth and on-device deployment mostly changes two things: how large a model you can run at all, and how much you can rely on a live network round-trip for every step of an agent's reasoning. Quantized, smaller open-weight models (see this site's glossary entries on quantization and GGUF) address the first; caching and graceful degradation address the second — neither is a single-product decision.",
+    sections: [
+      {
+        heading: "What actually breaks first over poor connectivity",
+        bullets: [
+          "A multi-step agent loop that calls a remote model on every step accumulates latency and failure risk with each round-trip, more than a single request does.",
+          "A voice interface degrades faster than text under packet loss, since audio has stricter real-time requirements.",
+          "A tool call to an external API adds a second network dependency beyond the model call itself."
+        ]
+      },
+      {
+        heading: "Where to read about the underlying techniques",
+        paragraphs: [
+          "This site's glossary covers the relevant building blocks directly: quantization and post-training quantization for shrinking a model's memory footprint, and edge inference for what running a model on-device (rather than in a data center) actually requires. None of these techniques are specific to India — what's India-specific is how much more often they matter here given device and connectivity constraints in large parts of the market."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/glossary/edge-inference", label: "Edge inference (glossary)" },
+      { href: "/glossary/post-training-quantization", label: "Post-training quantization (glossary)" },
+      { href: "/glossary/gguf", label: "GGUF (glossary)" },
+      { href: "/indic-language-voice-bots", label: "Indic language voice bots" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "mcp-servers-for-indian-saas-erps": {
+    title: "MCP Servers and Indian SaaS/ERP Integrations",
+    description: "What to check before connecting an MCP server to an Indian SaaS or ERP system, and where this site's MCP directory actually stands today.",
+    directAnswer: "This site's MCP server directory is a source-linked catalog, not an assertion that a given server works reliably against a specific Indian ERP or SaaS product's current API — check the server's own repository for which integrations it actually implements and how recently it was updated before connecting it to a production system.",
+    sections: [
+      {
+        heading: "Why \"MCP support\" doesn't mean \"tested against your ERP\"",
+        paragraphs: [
+          "A generic-purpose MCP server (for a database, a ticketing system, a CRM) can technically be pointed at an Indian deployment of that same product, but whether it was built or tested against Indian-specific configuration — GST fields, INR currency handling, regional data centers — is a separate question the server's own documentation may not answer.",
+          "See what is MCP for the protocol basics, and the MCP servers directory for the current, source-linked list this site maintains rather than a static description of individual integrations here."
+        ]
+      },
+      {
+        heading: "What to verify before connecting one to a live system",
+        bullets: [
+          "The server's own repository activity and issue tracker, for whether it's actively maintained.",
+          "Whether it has been used against your specific ERP/SaaS version, not just the vendor's public API in general.",
+          "What permissions it requests, and whether those can be scoped down for a production connection."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/mcp", label: "MCP hub" },
+      { href: "/mcp/servers", label: "MCP servers directory" },
+      { href: "/what-is-mcp", label: "What is MCP?" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "cloud-providers-for-ai-in-india": {
+    title: "Cloud Provider Regions for AI Workloads in India",
+    description: "Which major cloud providers publish an India region, as a starting point for checking a residency claim yourself — not a ranking of providers.",
+    directAnswer: "AWS, Microsoft Azure, and Google Cloud each publish at least one India region in their own current documentation, alongside India-based providers that operate their own data centers. This page names publicly documented regions as a starting point for verification; it does not rank these providers or assert that any one of them fits a specific compliance requirement.",
+    sections: [
+      {
+        heading: "Publicly documented India regions, as a starting point",
+        bullets: [
+          "AWS publishes Asia Pacific (Mumbai) and Asia Pacific (Hyderabad) as separate India regions in its own region list.",
+          "Microsoft Azure publishes Central India, South India, and West India as separate regions in its own region list.",
+          "Google Cloud publishes asia-south1 (Mumbai) and asia-south2 (Delhi) as separate regions in its own region list.",
+          "Several India-headquartered providers operate their own data centers and market India-only hosting directly — verify their current claims on their own site rather than through a summary here."
+        ]
+      },
+      {
+        heading: "A region existing isn't the same as your workload using it",
+        paragraphs: [
+          "An AI agent vendor can run on a provider that has an India region while still deploying that specific product outside it — the region list above tells you what's possible for a provider, not what a given vendor has actually chosen. See data residency for AI agents in India for how to get a vendor to confirm their own configuration."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/data-residency-ai-agents-india", label: "Data residency for AI agents in India" },
+      { href: "/vector-databases-hosted-in-india", label: "Vector databases and India data residency" },
+      { href: "/trust/source-classification", label: "Source classification" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "ai-agent-security-considerations-india": {
+    title: "Security Review Questions for an AI Agent Deployed in India",
+    description: "What a security review of an AI agent typically covers beyond incident reporting, without asserting any product's security posture.",
+    directAnswer: "A security review of an AI agent covers more ground than incident-reporting obligations alone — prompt-injection exposure, tool-call permission scope, and what a compromised agent session can actually reach are separate questions from whether an incident gets reported to CERT-In after the fact. This page lists the questions a review typically raises; it does not attest that any specific product passes them.",
+    sections: [
+      {
+        heading: "Questions beyond incident reporting",
+        bullets: [
+          "What can the agent's tools actually reach — a scoped API key, or broad account access? See agent sandbox and trust boundary in this site's glossary.",
+          "Is user-supplied content (a document, a webpage, an email) treated as untrusted input, or can it alter the agent's instructions? See prompt injection defense.",
+          "Is there a limit on how many tool calls or how much spend an agent session can generate before a human is alerted?",
+          "How is a security finding disclosed, and does that process meet the buyer's own obligations under CERT-In's directions."
+        ]
+      },
+      {
+        heading: "Why this stays a question list, not a verdict",
+        paragraphs: [
+          "A security posture is specific to one product's current implementation and changes with each release — this site does not run its own penetration tests, so it records what a vendor's own security documentation states (where one exists) rather than asserting a security property independently."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/cert-in-incident-logging-ai", label: "CERT-In incident logging for AI" },
+      { href: "/glossary/trust-boundary", label: "Trust boundary (glossary)" },
+      { href: "/glossary/prompt-injection-defense", label: "Prompt injection defense (glossary)" },
+      { href: "/enterprise-ai-agent-adoption-india", label: "What Indian enterprises check before adopting an AI agent" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "ai-agent-sdks-and-frameworks-india": {
+    title: "Choosing an AI Agent SDK or Framework for an India-Focused Product",
+    description: "What actually differs when picking an agent framework for an India-focused product, versus a global one — without naming a single best framework.",
+    directAnswer: "Framework choice for an India-focused agent product mostly comes down to the same criteria as anywhere else — this site's frameworks directory covers those on their own terms — plus a smaller set of India-specific checks: does the framework's tokenizer and prompt-templating handle Indic scripts and Hinglish code-switching cleanly, and does its hosting story allow deployment inside an India cloud region if that's required.",
+    sections: [
+      {
+        heading: "What's actually India-specific in this decision",
+        bullets: [
+          "Tokenizer behavior on Indic scripts and transliterated text — a framework itself doesn't fix a model's tokenizer, but some framework defaults (prompt templates, chunking assumptions) are tuned around English and need adjusting.",
+          "Whether the framework can point at a self-hosted or India-region model endpoint, or assumes a specific US-hosted API.",
+          "Whether structured-output and function-calling support has been exercised against an Indic-language input, not just English."
+        ]
+      },
+      {
+        heading: "Where the general decision is already covered",
+        paragraphs: [
+          "The framework comparison and evaluation questions that apply everywhere — maturity, community activity, license — are covered in this site's frameworks directory and don't need repeating here for an India context specifically."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/frameworks", label: "AI agent frameworks directory" },
+      { href: "/fine-tuning-llms-indian-language-data", label: "Fine-tuning LLMs on Indian-language data" },
+      { href: "/glossary/tokenizer", label: "Tokenizer (glossary)" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "fine-tuning-llms-indian-language-data": {
+    title: "Fine-Tuning LLMs on Indian-Language Data: What's Actually Different",
+    description: "The specific data and evaluation problems that come up when fine-tuning on Indian-language data, distinct from fine-tuning in general.",
+    directAnswer: "Fine-tuning mechanics (LoRA, QLoRA, full fine-tuning) don't change for Indian-language data — what changes is data availability and evaluation: instruction-tuning datasets for most Indian languages are smaller than English ones, real usage frequently code-switches between English and an Indic language mid-sentence, and a held-out test set has to be built deliberately rather than assumed to exist.",
+    sections: [
+      {
+        heading: "Data and evaluation problems specific to this case",
+        bullets: [
+          "Smaller instruction-tuning datasets for most Indian languages than for English, which increases the risk of overfitting on a narrow style of prompt.",
+          "Code-switching (Hinglish and equivalents in other Indic languages) that a training set collected from formal text sources may under-represent.",
+          "A held-out evaluation set has to be built or sourced deliberately — see benchmark contamination for why reusing training-adjacent data to evaluate is misleading.",
+          "Tokenizer efficiency on Indic scripts affects both training cost and effective context length, independent of the fine-tuning method chosen."
+        ]
+      },
+      {
+        heading: "See RAG vs. fine-tuning for the more basic decision",
+        paragraphs: [
+          "Whether to fine-tune at all, versus retrieving relevant context at inference time, is a decision that applies regardless of language — covered in this site's RAG vs. fine-tuning comparison. The considerations on this page apply once fine-tuning specifically has already been chosen."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/rag-vs-fine-tuning", label: "RAG vs fine-tuning" },
+      { href: "/glossary/lora", label: "LoRA (glossary)" },
+      { href: "/glossary/instruction-tuning", label: "Instruction tuning (glossary)" },
+      { href: "/glossary/benchmark-contamination", label: "Benchmark contamination (glossary)" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "how-indian-ai-agents-handle-hinglish": {
+    title: "How AI Agents Handle Hinglish and Code-Switching",
+    description: "What code-switching between Hindi (or another Indic language) and English actually requires of a model, and where it typically still fails.",
+    directAnswer: "Handling Hinglish requires a model whose tokenizer and training data actually included code-switched text, not just separate Hindi and English text — a model can score reasonably on Hindi-only and English-only benchmarks while still struggling on a single sentence that mixes both, since that's a distinct pattern from either language alone.",
+    sections: [
+      {
+        heading: "Why code-switching is a distinct problem from bilingual support",
+        paragraphs: [
+          "\"Supports Hindi\" and \"supports Hinglish\" are different claims. Code-switching within a sentence — not alternating between separate Hindi and English messages — requires training data that actually contains that pattern, which is rarer than monolingual data in either language. A model evaluated only on separate Hindi and English test sets gives no evidence about code-switched performance either way.",
+          "Romanized Hindi (Hindi written in Latin script, as is common in chat and SMS) is a further variant again — it isn't Hindi script and isn't English, and a model's handling of it has to be checked as its own case rather than assumed from either language's score."
+        ]
+      },
+      {
+        heading: "How to actually check this, rather than take a claim at face value",
+        bullets: [
+          "Test with real code-switched sentences from your own domain, not translated English test cases.",
+          "Include romanized (Latin-script) Hindi or other Indic-language input if that's what your users actually type.",
+          "Check the model card, if one exists, for whether code-switched data was part of training — see model card (glossary) for what that document typically discloses."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/glossary/hinglish", label: "Hinglish (glossary)" },
+      { href: "/glossary/model-card", label: "Model card (glossary)" },
+      { href: "/indic-language-voice-bots", label: "Indic language voice bots" },
+      { href: "/how-to-reduce-hallucinations-in-indic-language-models", label: "How to reduce hallucinations in Indic-language models" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "how-to-build-an-ai-agent-for-the-indian-market": {
+    title: "How to Build an AI Agent for the Indian Market",
+    description: "The decisions that actually change when building an AI agent for an Indian audience, as opposed to a checklist of Indian-market buzzwords.",
+    directAnswer: "Building for the Indian market mainly changes four decisions: which languages and code-switching patterns the agent needs to handle, whether payment or billing has to support UPI and INR natively, whether data residency or DPDP obligations constrain hosting, and whether the product needs to work over unreliable connectivity or on budget devices — not every product needs all four.",
+    sections: [
+      {
+        heading: "The four decisions, and where each is covered on this site",
+        bullets: [
+          "Language and code-switching — see how AI agents handle Hinglish and code-switching.",
+          "Payments and billing — see UPI-integrated AI chatbots for what native UPI support actually involves.",
+          "Data residency and DPDP — see what is DPDP compliance for AI and data residency for AI agents in India.",
+          "Connectivity and device constraints — see running AI agents on low bandwidth and budget devices."
+        ]
+      },
+      {
+        heading: "What doesn't automatically need a India-specific answer",
+        paragraphs: [
+          "Core agent architecture — tool use, memory, orchestration patterns — doesn't change based on target market; see this site's frameworks directory and MCP hub for that layer. Treating every part of the stack as needing an \"Indian\" version tends to produce marketing language rather than a real product decision."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/how-indian-ai-agents-handle-hinglish", label: "How AI agents handle Hinglish and code-switching" },
+      { href: "/upi-integrated-ai-chatbots", label: "UPI-integrated AI chatbots" },
+      { href: "/what-is-dpdp-compliance-in-ai", label: "What is DPDP compliance for AI?" },
+      { href: "/edge-ai-for-low-bandwidth-india", label: "Running AI agents on low bandwidth and budget devices" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "how-to-choose-an-ai-agent-vendor-in-india": {
+    title: "How to Choose an AI Agent Vendor in India",
+    description: "A question list for evaluating an AI agent vendor against your own requirements, rather than a ranked recommendation.",
+    directAnswer: "Choosing a vendor comes down to matching your own specific requirements — language coverage, data residency, billing currency, security posture — against what a vendor's own documentation actually states, not against a generic \"best\" list. The questions below are the ones this site's own evidence-first approach treats as load-bearing.",
+    sections: [
+      {
+        heading: "Questions to bring to a vendor evaluation",
+        bullets: [
+          "Does the vendor's pricing page state an INR figure directly, or only a USD figure — see AI agent pricing in India for why that distinction matters.",
+          "Can the vendor state, precisely, which data stays in which region — see data residency for AI agents in India for the specific question to ask.",
+          "Does the vendor have a named security or incident-disclosure contact, and a documented process — see security review questions for an AI agent in India.",
+          "Has the vendor's language or code-switching support been demonstrated on your actual domain's text, not just a generic demo."
+        ]
+      },
+      {
+        heading: "Why this site doesn't publish a vendor shortlist here",
+        paragraphs: [
+          "Which vendor fits depends on which of the above your product actually requires — a fintech product's residency and RBI-adjacent requirements differ from a consumer content app's. A generic shortlist would rank on criteria that may not match your own."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/ai-agent-pricing-india-inr", label: "AI agent pricing in India" },
+      { href: "/data-residency-ai-agents-india", label: "Data residency for AI agents in India" },
+      { href: "/ai-agent-security-considerations-india", label: "Security review questions for an AI agent in India" },
+      { href: "/enterprise-ai-agent-adoption-india", label: "What Indian enterprises check before adopting an AI agent" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "how-to-localize-global-ai-models-for-india": {
+    title: "How to Localize a Global AI Model or Agent for India",
+    description: "What localizing a global model like GPT, Claude, or Gemini for an Indian product actually involves, beyond translating the prompt.",
+    directAnswer: "Localizing a global model for India usually means three separate layers of work — prompting for cultural and linguistic context, retrieval-augmenting with India-specific facts the base model wasn't trained on, and evaluating on Indic and code-switched input specifically — not a single \"add Hindi support\" step.",
+    sections: [
+      {
+        heading: "The three layers, and what each one actually fixes",
+        paragraphs: [
+          "Prompting adds context the model already has latent knowledge of but wouldn't otherwise surface — currency, units, regional idiom, tone conventions. It's the lowest-effort layer and the most limited: it can't add facts the model never saw in training.",
+          "Retrieval (RAG) adds current, India-specific facts the base model doesn't reliably know — a specific regulation's current text, a company's own India-specific policy, live pricing — see this site's RAG vs. fine-tuning comparison for how that layer works.",
+          "Evaluation on Indic and code-switched input is the layer that's most often skipped, since a model can look localized in a demo built around a handful of prompts while still failing on real, messier user input."
+        ]
+      },
+      {
+        heading: "What this doesn't require",
+        bullets: [
+          "It doesn't require fine-tuning the base model in every case — see fine-tuning LLMs on Indian-language data for when that's actually the right tool versus prompting or retrieval.",
+          "It doesn't require switching to an India-built model instead of a global one — the layers above apply to either."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/rag-vs-fine-tuning", label: "RAG vs fine-tuning" },
+      { href: "/fine-tuning-llms-indian-language-data", label: "Fine-tuning LLMs on Indian-language data" },
+      { href: "/how-indian-ai-agents-handle-hinglish", label: "How AI agents handle Hinglish and code-switching" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "how-to-measure-ai-agent-roi-in-inr": {
+    title: "How to Measure AI Agent ROI in INR",
+    description: "A method for measuring an AI agent's return on investment in INR terms, without a benchmark percentage this site cannot verify for your deployment.",
+    directAnswer: "AI agent ROI in INR is measured the same way any automation ROI is: fully-loaded cost of the agent (subscription or usage billing, plus integration and review time) against a specific, measured baseline (time or cost per task before automation) over a fixed period — not against an industry-wide percentage figure, which depends on a task mix this site has no way to verify matches yours.",
+    sections: [
+      {
+        heading: "A measurable method, in order",
+        bullets: [
+          "Pick one specific, recurring task (not \"customer support\" broadly) and measure its current cost per unit — time, or a rate you already pay a person or vendor for it.",
+          "Add up the agent's fully-loaded cost for the same volume: subscription or usage billing, plus the time spent on integration, prompt maintenance, and reviewing its output.",
+          "Compare over a fixed period (a full billing cycle, at minimum) rather than a single day, since agent costs and error rates can vary as volume changes.",
+          "Track error or escalation rate alongside cost — a cheaper-looking automation that increases escalations elsewhere hasn't necessarily reduced total cost."
+        ]
+      },
+      {
+        heading: "Why this site doesn't publish an ROI percentage",
+        paragraphs: [
+          "A percentage improvement figure is only meaningful for the specific task mix, volume, and baseline it was measured against — republishing someone else's percentage as a general expectation would be exactly the kind of unverified quantified claim this site's own evidence policy rules out."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/ai-agent-pricing-india-inr", label: "AI agent pricing in India" },
+      { href: "/how-to-implement-ai-in-indian-sme", label: "How to implement AI in an Indian SME" },
+      { href: "/trust/evidence-methodology", label: "Evidence methodology" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
+
+  "how-to-reduce-hallucinations-in-indic-language-models": {
+    title: "How to Reduce Hallucinations in Indic-Language AI Models",
+    description: "Why hallucination rates in a non-English Indic language can differ from a model's English-language reputation, and what actually reduces them.",
+    directAnswer: "A model's hallucination behavior in an Indic language is not reliably predicted by its English-language reputation, because both training data volume and available fact-checking benchmarks are usually much smaller for Indic languages than for English — the standard mitigations (retrieval grounding, structured output constraints, a verification step) still apply, but they need to be evaluated in the target language, not assumed from English results.",
+    sections: [
+      {
+        heading: "Why English performance doesn't transfer directly",
+        paragraphs: [
+          "Most public hallucination and factuality benchmarks are English-first, so a model's reported score usually doesn't reflect its behavior in Hindi, Tamil, Bengali, or another Indic language at all. Less training data in a given language also generally means the model has less to draw on before it starts producing plausible-sounding but ungrounded text."
+        ]
+      },
+      {
+        heading: "What actually reduces it, evaluated per-language",
+        bullets: [
+          "Retrieval grounding (RAG) — cites and constrains answers to retrieved source text, rather than relying on parametric memory; see RAG vs fine-tuning.",
+          "Structured output formats that force the model to cite a source field, making an ungrounded answer easier to catch.",
+          "A verification or fact-check pass, ideally by a fluent speaker of the target language rather than back-translated review.",
+          "Testing specifically in the target language and script — a mitigation validated only in English gives no evidence about its effect in another language."
+        ]
+      }
+    ],
+    relatedLinks: [
+      { href: "/rag-vs-fine-tuning", label: "RAG vs fine-tuning" },
+      { href: "/how-indian-ai-agents-handle-hinglish", label: "How AI agents handle Hinglish and code-switching" },
+      { href: "/glossary/answer-faithfulness", label: "Answer faithfulness (glossary)" }
+    ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-22",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
+    index: true,
+    lastReviewed: "2026-09-22"
+  },
 };
