@@ -3941,8 +3941,16 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/indic-language-voice-bots", label: "Indic language voice bots" },
       { href: "/vapi-voice-ai-alternatives", label: "Vapi alternatives" }
     ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-24",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-24"
   },
 
   "seo-keyword-research-ai": {
@@ -4332,8 +4340,16 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/indic-language-voice-bots", label: "Indic language voice bots" },
       { href: "/best-ai-voice-agents", label: "Best AI voice agents" }
     ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-24",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-24"
   },
 
   "indic-language-voice-bots": {
@@ -4359,8 +4375,16 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/bhashini-api-ai-integrations", label: "Bhashini API integrations" },
       { href: "/india", label: "India & Indic AI hub" }
     ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-24",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-24"
   },
 
   "content-repurposing-ai-agents": {
@@ -4637,8 +4661,16 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/indian-banking-mcps", label: "Indian banking infrastructure MCPs" },
       { href: "/rbi-compliant-fintech-ai", label: "RBI digital lending guidelines for AI" }
     ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-24",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-24"
   },
 
   "bhashini-api-ai-integrations": {
@@ -4664,8 +4696,16 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/indic-language-voice-bots", label: "Indic language voice bots" },
       { href: "/india", label: "India & Indic AI hub" }
     ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-24",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-24"
   },
 
   "sarvam-krutrim-model-directory": {
@@ -4691,8 +4731,16 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/india", label: "India & Indic AI hub" },
       { href: "/indic-language-ai-models", label: "Indic language AI models" }
     ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-24",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-24"
   },
 
   "agritech-mandi-price-ai": {
@@ -4718,8 +4766,16 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { href: "/how-to-evaluate-ai-agents", label: "How to evaluate AI agents" },
       { href: "/data-privacy-in-ai-agents", label: "AI agent data privacy" }
     ],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-24",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
     index: true,
-    lastReviewed: "2026-08-29"
+    lastReviewed: "2026-09-24"
   },
 
   "how-to-build-an-ai-agent": {
@@ -12239,8 +12295,16 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { heading: "Telephony and interruption handling", bullets: ["Can the agent handle a caller interrupting mid-response (barge-in), or does it talk over them?", "Does it integrate with existing telephony infrastructure (SIP trunking, existing IVR systems) or require a full replacement?", "How does it handle background noise and imperfect audio, which is the norm for real phone calls rather than a studio-quality test set?"] }
     ],
     relatedLinks: [{ href: "/best-ai-voice-agent-platform", label: "Best AI voice agent platform" }, { href: "/agents", label: "AI agents directory" }, { href: "/best-ai-agents", label: "Best AI agents \u2014 selection framework" }],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-24",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
     index: true,
-    lastReviewed: "2026-08-30"
+    lastReviewed: "2026-09-24"
   },
   "best-ai-voice-agent-platform": {
     title: "Best AI Voice Agent Platform: Build vs. Buy Considerations",
@@ -12251,8 +12315,16 @@ export const authorityPages: Record<string, AuthorityPage> = {
       { heading: "What a platform decision actually depends on", paragraphs: ["Speech-to-text and text-to-speech quality for the specific languages/accents needed (see best AI voice agent for the latency and language considerations that carry over directly here), how the platform handles orchestration and interruption, and how much telephony integration work is required versus already built in. These vary enough between platforms that a direct proof-of-concept against real representative calls is worth more than a features comparison table."] }
     ],
     relatedLinks: [{ href: "/best-ai-voice-agent", label: "Best AI voice agent" }, { href: "/best-ai-agent-builders", label: "Best AI agent builders" }, { href: "/agents", label: "AI agents directory" }],
+    methodologyReview: {
+      reviewedBy: "Febin Francis, Founder/Editor",
+      reviewedAt: "2026-09-24",
+      noUnsupportedClaims: true,
+      limitationsDisclosed: true,
+      originalityChecked: true,
+      noUnsupportedSuperlatives: true
+    },
     index: true,
-    lastReviewed: "2026-08-30"
+    lastReviewed: "2026-09-24"
   },
   "best-ai-agent-reddit": {
     title: "What Reddit Actually Says About AI Coding Agents",
