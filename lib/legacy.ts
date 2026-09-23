@@ -14,7 +14,10 @@ export const categories = [
   ["creative-design", "Creative & design agents", "AI agents applied to graphic design, visual and creative asset generation. No fabricated licensing or usage-rights claims."]
 ] as const;
 
-export const legacyPages: Record<string, { title: string; description: string; body: string[]; index: boolean }> = {
+export const legacyPages: Record<
+  string,
+  { title: string; description: string; body: string[]; index: boolean; relatedLinks?: { href: string; label: string }[] }
+> = {
   "best-ai-agent": {
     title: "How to choose the best AI agent",
     description: "Evidence-first checklist for selecting an AI agent without relying on synthetic scores.",
@@ -96,32 +99,64 @@ export const legacyPages: Record<string, { title: string; description: string; b
   "authors": {
     title: "Authors and review responsibility",
     description: "Editorial ownership and evidence-review policy.",
-    body: ["Articles and entity records should identify editorial responsibility when substantive analysis is added.", "Automated ingestion can discover candidates, but discovery is not publication."],
-    index: true
+    body: [
+      "Articles and entity records should identify editorial responsibility when substantive analysis is added.",
+      "Automated ingestion can discover candidates, but discovery is not publication.",
+      "This page is a short summary kept for URL continuity. For who a named reviewer actually is, and what a review attestation covers, see author attribution below."
+    ],
+    relatedLinks: [{ href: "/trust/author-reviewer-policy", label: "Author attribution" }],
+    index: false
   },
   "methodology": {
     title: "Evidence methodology",
     description: "How entities move from discovery to public indexability.",
-    body: ["Discovery → normalization → evidence → verification → publication → indexability.", "A verified entity requires at least one valid primary-authority evidence snapshot with retrieval time and SHA-256. Field-level claims can remain unknown."],
-    index: true
+    body: [
+      "Discovery → normalization → evidence → verification → publication → indexability.",
+      "A verified entity requires at least one valid primary-authority evidence snapshot with retrieval time and SHA-256. Field-level claims can remain unknown.",
+      "This page is a short summary kept for URL continuity. For what a receipt actually contains, how it's hashed, and how the fail-closed gate uses it, see the fuller evidence methodology page below."
+    ],
+    relatedLinks: [{ href: "/trust/evidence-methodology", label: "Evidence methodology — what a receipt actually contains" }],
+    index: false
   },
   "editorial-policy": {
     title: "Editorial policy",
     description: "Fail-closed publication and no fabricated authority.",
-    body: ["No synthetic ratings, testimonials, market-share figures, compliance badges or benchmark winners are published without supporting evidence.", "Editorial judgments are labeled and kept separate from source-derived facts."],
-    index: true
+    body: [
+      "No synthetic ratings, testimonials, market-share figures, compliance badges or benchmark winners are published without supporting evidence.",
+      "Editorial judgments are labeled and kept separate from source-derived facts.",
+      "This page is a short summary kept for URL continuity. For the full editorial process — including the methodology-only publication path for pages with no external claim to evidence — see editorial methodology below."
+    ],
+    relatedLinks: [{ href: "/trust/editorial-methodology", label: "Editorial methodology — how content gets published here" }],
+    index: false
   },
   "review-process": {
     title: "Review process",
     description: "How BestAIAgent.in reviews source evidence.",
-    body: ["Primary sources are preferred for identity, licensing, product status and model-card facts.", "High-volatility fields such as pricing require more frequent refreshes than stable identity fields."],
+    body: [
+      "Primary sources are preferred for identity, licensing, product status and model-card facts. A vendor's own documentation, a project's own repository, or a regulator's own published text counts as primary; a third-party summary, review site, or aggregator counts as secondary and is used only to locate a primary source, never as the evidence itself.",
+      "High-volatility fields such as pricing require more frequent refreshes than stable identity fields — a model's developer or license rarely changes, but a subscription price can change without notice. This site's freshness policy sets how often each field type is expected to be re-checked, and a stale field is marked as such rather than left looking current.",
+      "Review is per-field, not per-page: a page can have its identity fields verified while its pricing field stays unknown, and each field's status is shown independently rather than one blended confidence score for the whole entity."
+    ],
+    relatedLinks: [
+      { href: "/trust/freshness-policy", label: "Freshness policy" },
+      { href: "/trust/source-classification", label: "Source classification: primary and secondary evidence" },
+      { href: "/trust/how-to-verify", label: "How to verify a claim yourself" }
+    ],
     index: true
   },
   "corrections": {
     title: "Corrections",
     description: "How to report a material error or submit better evidence.",
-    body: ["Corrections should identify the entity, field, proposed value and primary source URL.", "Superseded evidence should remain auditable rather than being silently rewritten."],
-    index: true
+    body: [
+      "Corrections should identify the entity, field, proposed value and primary source URL.",
+      "Superseded evidence should remain auditable rather than being silently rewritten.",
+      "This page is a short summary kept for URL continuity. For the full corrections process see the fuller corrections page below; to actually submit one, see contact."
+    ],
+    relatedLinks: [
+      { href: "/trust/corrections", label: "Corrections — full process" },
+      { href: "/contact", label: "Contact and corrections" }
+    ],
+    index: false
   },
   "privacy-policy": {
     title: "Privacy policy",
@@ -138,8 +173,13 @@ export const legacyPages: Record<string, { title: string; description: string; b
   "affiliate-disclosure": {
     title: "Affiliate disclosure",
     description: "Commercial relationship disclosure policy.",
-    body: ["The evidence graph does not sell verification or ranking position.", "If affiliate relationships are introduced, they must be disclosed on the affected page and may not change evidence status."],
-    index: true
+    body: [
+      "The evidence graph does not sell verification or ranking position.",
+      "If affiliate relationships are introduced, they must be disclosed on the affected page and may not change evidence status.",
+      "This page is a short summary kept for URL continuity. For the full disclosure — including how an affiliate link is marked and what it cannot influence — see affiliate disclosure below."
+    ],
+    relatedLinks: [{ href: "/trust/affiliate-disclosure", label: "Affiliate disclosure — full policy" }],
+    index: false
   },
   "contact": {
     title: "Contact and corrections",
@@ -150,7 +190,16 @@ export const legacyPages: Record<string, { title: string; description: string; b
   "knowledge-graph": {
     title: "AI entity knowledge graph",
     description: "How agents, models, frameworks, providers and evidence connect.",
-    body: ["The authority layer models entities and relationships rather than generating pages from keyword permutations.", "Every public detail route should be reachable through normal internal links and machine-readable feeds."],
+    body: [
+      "The authority layer models entities and relationships rather than generating pages from keyword permutations. An agent entity can reference the models it's built on and the provider that publishes it; a provider entity doesn't inherit any product-level claim from the entities it's linked to, since identity and product-specific facts are verified separately (see the providers directory for why that separation matters).",
+      "Every public detail route should be reachable through normal internal links — a category hub, a comparison, a provider page — and not only through a sitemap entry, so a reader (or a crawler) arrives at an entity the same way whichever page they started from.",
+      "The same graph is exposed as machine-readable JSON, not only as HTML: catalog.json for the full public catalog, models.json and providers.json for those two entity types, and llms.txt / llms-full.txt as a plain-text summary aimed at language-model retrieval rather than a browser. None of these feeds carry a claim that isn't also on the corresponding HTML page — they're the same evidence-gated data in a different format, not a separate, looser publication path."
+    ],
+    relatedLinks: [
+      { href: "/catalog.json", label: "catalog.json" },
+      { href: "/llms.txt", label: "llms.txt" },
+      { href: "/providers", label: "Providers directory" }
+    ],
     index: true
   },
   "local-llm-benchmarks-india": {
