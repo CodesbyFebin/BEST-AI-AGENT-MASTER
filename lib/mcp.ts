@@ -53,6 +53,7 @@ export const mcpServers = [
   { slug: "pagerduty-mcp", name: "PagerDuty MCP", sourceUrl: "https://github.com/PagerDuty/pagerduty-mcp-server", status: "source-linked", note: "First-party repository link retained; capabilities should be read from upstream." },
   { slug: "kagi-mcp", name: "Kagi MCP", sourceUrl: "https://github.com/kagisearch/kagimcp", status: "source-linked", note: "First-party repository link retained; capabilities should be read from upstream." },
   { slug: "duckduckgo-mcp", name: "DuckDuckGo MCP", sourceUrl: "https://github.com/nickclyde/duckduckgo-mcp-server", status: "source-linked", note: "Community-maintained repository link retained; capabilities should be read from upstream." }
+  { slug: "statsnet", name: "Statsnet MCP", sourceUrl: "https://github.com/usenetstate/statsnet-mcp", status: "source-linked", note: "Remote MCP https://statsnet.co/mcp — Background check any company in the world: registration, executives, courts and finances. Registry: io.github.usenetstate/statsnet." },
 ] as const;
 
 export const mcpClusters = [
