@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { EntityCard } from "@/components/EntityCard";
 import { SearchBox } from "@/components/SearchBox";
+import { AtlasCostScenario, AtlasDiscovery } from "@/components/AtlasDiscovery";
 import { authorityEvidence } from "@/lib/authority-evidence";
-import { entitiesByType, publicEntities, getPublicCatalogStats } from "@/lib/catalog";
+import { entitiesByType, publicEntities, getPublicCatalogStats, getPublicEntityPath } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
 import { categories } from "@/lib/legacy";
 
@@ -40,10 +41,10 @@ export default function Home() {
       <section className="hero discoveryHero">
         <div className="shell heroGrid">
           <div className="heroCopy">
-            <div className="heroBadge"><span>🇮🇳</span> India-built AI discovery platform</div>
-            <p className="kicker">Discover · compare · verify</p>
-            <h1>Find and Compare AI Agents <span className="gradient">Backed by Evidence</span></h1>
-            <p className="lead">Discover coding, research, automation, voice and business AI agents using verified primary-source evidence, transparent unknowns and dated comparisons.</p>
+            <div className="heroBadge"><span>🇮🇳</span> BestAIAgent.in · Atlas discovery</div>
+            <p className="kicker">Sovereign context · verifiable sources · real discovery</p>
+            <h1>Powering <span className="gradient">AI in India.</span></h1>
+            <p className="lead">Explore AI agents, models, frameworks and MCP infrastructure through dated primary-source evidence. Compare what is verified, understand what remains unknown, and discover India-relevant tools without synthetic rankings.</p>
             <div className="trustChips"><span>✓ Primary-source receipts</span><span>✓ No pay-to-rank</span><span>✓ Canonical URLs</span><span>✓ India / Indic coverage</span></div>
             <div className="ctaRow"><Link className="button buttonPrimary" href="/agents">Explore AI agents</Link><Link className="button" href="/compare">Compare evidence</Link></div>
             <div className="heroSearch"><SearchBox /></div>
@@ -70,6 +71,11 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section atlasSection" id="atlas-discovery"><div className="shell">
+        <div className="sectionHead"><div><p className="eyebrow">Atlas · directory & advisor</p><h2>Explore the verified AI ecosystem</h2><p>Filter the actual public catalog by task and entity type. Matches explain their selection; no unverified sandbox, ranking, deployment or compliance claims.</p></div><Link href="/agents">Full directory →</Link></div>
+        <AtlasDiscovery records={publicEntities.map((entity) => ({ id: entity.id, name: entity.name, type: entity.type, summary: entity.summary, categories: entity.categories, path: getPublicEntityPath(entity) }))} />
+      </div></section>
+
       <section className="section"><div className="shell">
         <div className="sectionHead"><div><p className="eyebrow">Explore by category</p><h2>Find the right agent surface</h2><p>Categories organize verified records by workflow. They do not imply performance, compliance or ranking.</p></div><Link href="/categories">View all categories →</Link></div>
         <div className="categoryGrid">{categories.map(([slug,name,description])=><article className="card categoryCard" key={slug}><div className="categoryIcon">{categoryMarks[slug] ?? "✦"}</div><h3><Link href={`/categories/${slug}`}>{name}</Link></h3><p>{description}</p></article>)}</div>
@@ -93,6 +99,11 @@ export default function Home() {
       <section className="section"><div className="shell">
         <div className="sectionHead"><div><p className="eyebrow">Developer infrastructure</p><h2>Frameworks & MCP</h2><p>Frameworks and protocol infrastructure stay distinct from end-user agents so evidence is attached to the right object.</p></div><Link href="/frameworks">View frameworks →</Link></div>
         <div className="grid">{frameworks.slice(0,5).map((entity)=><EntityCard key={entity.id} entity={entity}/>)}<article className="card"><div className="categoryIcon">◇</div><p className="eyebrow">Protocol hub</p><h3><Link href="/mcp">Model Context Protocol</Link></h3><p>Source-led MCP guidance. Legacy server detail routes stay noindex until canonical upstream and primary evidence qualify them.</p><div className="tagRow"><span className="tag">tools</span><span className="tag">resources</span><span className="tag">prompts</span></div></article></div>
+      </div></section>
+
+      <section className="section sectionAlt" id="spend-scenario"><div className="shell">
+        <div className="sectionHead"><div><p className="eyebrow">Atlas · spend simulator</p><h2>Model an AI investment scenario</h2><p>Enter your own assumptions to explore costs. This is arithmetic, not a claimed productivity benchmark or financial forecast.</p></div></div>
+        <AtlasCostScenario />
       </div></section>
 
       <section className="section"><div className="shell">
