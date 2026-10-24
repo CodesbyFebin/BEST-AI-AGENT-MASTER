@@ -130,7 +130,7 @@ export default function MarketplacePage() {
         <div className="marketplaceContribute">
           <div className="marketplaceContributeMark" aria-hidden="true">+</div>
           <div><p className="marketplaceSectionKicker">FOR BUILDERS</p><h2>Built an agent worth documenting?</h2><p>Suggest a public listing with its official source, a short description and supporting documentation. A maintainer reviews submissions before they enter the catalog.</p><p className="marketplaceFinePrint">This directory does not process purchases, rentals, payouts or affiliate royalties.</p></div>
-          <a className="marketplaceButton marketplaceButtonPrimary" href="https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/issues/new" rel="noopener noreferrer">Suggest a listing <span aria-hidden="true">↗</span></a>
+          <a className="marketplaceButton marketplaceButtonPrimary" href="/submit" rel="noopener noreferrer">Suggest a listing <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
