@@ -22,6 +22,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run test:unit
+      - run: npm run verify:submissions
       - run: npm run verify:catalog
       - run: npm run verify:crawl-graph
       - run: npm run verify:gsc
