@@ -15,6 +15,7 @@ jobs:
       - run: npm run verify:catalog
       - run: npm run verify:crawl-graph
       - run: npm run verify:gsc
+      - run: npm run verify:gsc-release
       - run: npm run verify:quarantine
       - run: npm run verify:editorial
       - run: npm run verify:publication
