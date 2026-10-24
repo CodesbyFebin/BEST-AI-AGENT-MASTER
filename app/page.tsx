@@ -68,7 +68,7 @@ export default function Home() {
             <h1>Powering <span className="gradient">AI in India.</span></h1>
             <p className="lead">Explore AI agents, models, frameworks and MCP infrastructure through dated primary-source evidence. Compare what is verified, understand what remains unknown, and discover India-relevant tools without synthetic rankings.</p>
             <div className="trustChips"><span>✓ Primary-source receipts</span><span>✓ No pay-to-rank</span><span>✓ Canonical URLs</span><span>✓ India / Indic coverage</span></div>
-            <div className="ctaRow"><Link className="button buttonPrimary" href="/agents">Explore AI agents</Link><Link className="button" href="/compare">Compare evidence</Link></div>
+            <div className="ctaRow"><Link className="button buttonPrimary" href="/marketplace">Explore the directory</Link><Link className="button" href="/compare">Compare evidence</Link></div>
             <div className="heroSearch"><SearchBox /></div>
           </div>
 
