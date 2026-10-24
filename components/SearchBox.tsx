@@ -26,9 +26,11 @@ export function SearchBox() {
 
     setLoading(true);
     try {
-      const response = await fetch(`/api/search?q=${encodeURIComponent(value)}`);
+      const response = await fetch("/api/search/");
+      if (!response.ok) throw new Error("Search index unavailable");
       const body = await response.json() as { results: Result[] };
-      setResults(body.results ?? []);
+      const needle = value.trim().toLocaleLowerCase();
+      setResults((body.results ?? []).filter((result) => `${result.name} ${result.type} ${result.summary}`.toLocaleLowerCase().includes(needle)).slice(0, 50));
     } finally {
       setLoading(false);
     }
