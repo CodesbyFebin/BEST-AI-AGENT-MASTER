@@ -55,6 +55,11 @@ Publication rule: discovery is not verification. Public entity detail pages requ
 - ${SITE.url}/trust
 ${trustLines}
 
+## Community marketplace submissions
+- ${SITE.url}/submit — submit through a GitHub pull request
+- ${SITE.url}/marketplace — browse editorially accepted records
+- https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/submissions/TEMPLATE.yaml — YAML submission template
+
 ## Machine-readable
 - ${SITE.url}/catalog.json — evidence-gated published catalog
 - ${SITE.url}/llms-full.txt — extended public index

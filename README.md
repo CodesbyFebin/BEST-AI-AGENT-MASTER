@@ -85,3 +85,7 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) — it covers the two-tier verification
 ## License
 
 No repository-wide software license has been declared. Do not assume MIT or redistribution rights. Contact the maintainer before reusing code or data from this repository.
+
+## Git-based community submissions
+
+Submit an agent, model, bot, skill, MCP server or framework via a GitHub PR. See [submission instructions](submissions/README.md) and [the template](submissions/TEMPLATE.yaml). Run `npm run verify:submissions` before requesting review. New entries are unverified by default; editorial approval does not establish independently proven capabilities. The live submission guide is at https://www.bestaiagent.in/submit.

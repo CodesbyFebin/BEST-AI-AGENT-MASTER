@@ -33,3 +33,9 @@ npm run verify:gitbook-release # strict, intentionally fails until all chapter a
 
 ## Definition of done
 A change is complete only when Node 22 CI and GitHub Pages static build pass; impacted pages are browser-checked for usable navigation, metadata and structured data; source assertions have an evidence trail; and any live deployment or GSC submission is independently confirmed. Green CI is not proof of SEO rankings, actual AI citations, or production DNS.
+
+## Git-based marketplace intake
+- Only validated YAML files in `submissions/{agents,bots,models,skills,mcp-servers,frameworks}/` are accepted.
+- New submissions must be `pending` and contain no fabricated evidence digests. Maintainer approval is required for publication.
+- `npm run verify:submissions` checks field structure and duplicate slugs, not actual claim authenticity.
+- The marketplace does not handle payments or pay-to-rank. Never equate `approved` with cryptographic verification.

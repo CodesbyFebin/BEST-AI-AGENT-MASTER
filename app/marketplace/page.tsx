@@ -5,6 +5,7 @@ import { EntityCard } from "@/components/EntityCard";
 import { entitiesByType, getPublicCatalogStats, getPublicEntityPath, publicEntities } from "@/lib/catalog";
 import { categories } from "@/lib/legacy";
 import { SITE } from "@/lib/site";
+import { getApprovedSubmissions } from "@/lib/submissions";
 
 export const metadata: Metadata = {
   title: "AI Agent Marketplace Directory",
@@ -33,6 +34,7 @@ function topicCount(slug: string) {
 }
 
 export default function MarketplacePage() {
+  const community = getApprovedSubmissions();
   const topics = categories.map(([slug, name, description]) => ({ slug, name, description, count: topicCount(slug) }))
     .filter((topic) => topic.count > 0)
     .slice(0, 8);
@@ -125,12 +127,21 @@ export default function MarketplacePage() {
       </div>
     </section>
 
+    <section className="section">
+      <div className="shell">
+        <div className="marketplaceSectionHead"><div><p className="marketplaceSectionKicker">COMMUNITY / GIT REVIEW</p><h2>Community submissions</h2><p>Editorially approved PR listings only. Submission counts do not imply capability verification.</p></div></div>
+        {community.length ? <div className="grid authorityGrid">{community.map(item => <article className="card" key={item.type + item.slug}>
+          <h3><Link href={`/marketplace/${item.type}/${item.slug}`}>{item.name}</Link></h3>
+          <p>{item.tagline}</p><p className="muted">{item.type} · Editorially approved · Independent verification pending</p>
+        </article>)}</div> : <p>No community YAML submissions have completed review yet. <Link href="/submit">Submit yours →</Link></p>}
+      </div>
+    </section>
     <section className="section marketplaceContributeSection">
       <div className="shell">
         <div className="marketplaceContribute">
           <div className="marketplaceContributeMark" aria-hidden="true">+</div>
           <div><p className="marketplaceSectionKicker">FOR BUILDERS</p><h2>Built an agent worth documenting?</h2><p>Suggest a public listing with its official source, a short description and supporting documentation. A maintainer reviews submissions before they enter the catalog.</p><p className="marketplaceFinePrint">This directory does not process purchases, rentals, payouts or affiliate royalties.</p></div>
-          <a className="marketplaceButton marketplaceButtonPrimary" href="https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/issues/new" rel="noopener noreferrer">Suggest a listing <span aria-hidden="true">↗</span></a>
+          <Link className="marketplaceButton marketplaceButtonPrimary" href="/submit" rel="noopener noreferrer">Suggest a listing <span aria-hidden="true">↗</span></Link>
         </div>
       </div>
     </section>

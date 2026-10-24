@@ -1,0 +1,32 @@
+# Copy to submissions/agents/your-project.yaml (or another category).
+# SHA-256 is optional for a pending submission. Never fabricate a hash.
+id: your-project
+slug: your-project
+type: agent
+name: Your Project
+version: 1.0.0
+tagline: One concise sentence about the project
+description: Describe capabilities as publisher claims pending editorial review.
+repository: https://github.com/yourname/your-project
+categories:
+  - coding
+tags:
+  - developer-tools
+capabilities:
+  - Source-linked capability (not independently verified)
+integrations: []
+deployment: local
+pricing:
+  model: open-source
+  notes: Confirm current licensing and hosted charges upstream.
+evidence:
+  sourceUrl: https://github.com/yourname/your-project
+  retrievedAt: ""
+  sha256: ""
+author:
+  name: Your Name
+  github: yourname
+license: UNKNOWN
+createdAt: "2026-10-25T00:00:00Z"
+updatedAt: "2026-10-25T00:00:00Z"
+status: pending

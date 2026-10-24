@@ -1,0 +1,27 @@
+export type SubmissionType = "agent" | "bot" | "model" | "skill" | "mcp-server" | "framework";
+export type SubmissionStatus = "pending" | "under-review" | "approved" | "rejected" | "quarantined";
+export type Submission = {
+  id: string;
+  slug: string;
+  type: SubmissionType;
+  name: string;
+  version: string;
+  tagline: string;
+  description: string;
+  repository: string;
+  categories: string[];
+  tags: string[];
+  capabilities: string[];
+  integrations: string[];
+  deployment: "local" | "cloud" | "both";
+  pricing: { model: "free" | "freemium" | "paid" | "open-source" | "oss+paid"; notes?: string };
+  evidence: { sourceUrl: string; retrievedAt: string; sha256: string };
+  author: { name: string; github: string };
+  license: string;
+  createdAt: string;
+  updatedAt: string;
+  status: SubmissionStatus;
+  homepage?: string;
+  documentation?: string;
+  demo?: string;
+};
