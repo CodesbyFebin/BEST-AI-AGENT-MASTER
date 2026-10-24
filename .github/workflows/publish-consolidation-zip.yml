@@ -1,0 +1,46 @@
+name: Publish consolidated source ZIP
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-consolidation-zip.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Assemble public source archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/bestaiagent-consolidated/{master-consolidation,source-bestaiagent-in,source-best-ai-agents,source-best-ai-agent}
+          rsync -a --exclude='.git' --exclude='node_modules' --exclude='.next' --exclude='.env' --exclude='.env.*' --exclude='*.zip' --exclude='tsconfig.tsbuildinfo' ./ /tmp/bestaiagent-consolidated/master-consolidation/
+          for mapping in 'bestaiagent.in source-bestaiagent-in' 'Best-Ai-Agents source-best-ai-agents' 'best-ai-agent source-best-ai-agent'; do
+            read -r repo folder <<< "$mapping"
+            git clone --depth 1 "https://github.com/CodesbyFebin/${repo}.git" "/tmp/${repo}"
+            rsync -a --exclude='.git' --exclude='node_modules' --exclude='.next' --exclude='.env' --exclude='.env.*' --exclude='tsconfig.tsbuildinfo' "/tmp/${repo}/" "/tmp/bestaiagent-consolidated/${folder}/"
+            printf '%s %s\n' "$repo" "$(git -C "/tmp/${repo}" rev-parse HEAD)" >> /tmp/bestaiagent-consolidated/DONOR-COMMITS.txt
+          done
+          printf '%s %s\n' BEST-AI-AGENT-MASTER "$(git rev-parse HEAD)" >> /tmp/bestaiagent-consolidated/DONOR-COMMITS.txt
+          cat > /tmp/bestaiagent-consolidated/README.txt <<'EOF'
+          Source archive of four CodesbyFebin repositories. Includes historical donor code,
+          not a single executable app. Donor code is unreviewed and must not be deployed
+          without security, license, evidence, and integration review.
+          EOF
+          mkdir -p consolidation
+          (cd /tmp && zip -q -r "$GITHUB_WORKSPACE/consolidation/BestAIAgent-4-Repositories-Source.zip" bestaiagent-consolidated)
+          unzip -t consolidation/BestAIAgent-4-Repositories-Source.zip | tail -n 1
+          sha256sum consolidation/BestAIAgent-4-Repositories-Source.zip > consolidation/BestAIAgent-4-Repositories-Source.zip.sha256
+      - name: Commit generated archive to public master
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add consolidation/BestAIAgent-4-Repositories-Source.zip*
+          git commit -m 'chore: publish four-repository source archive [skip ci]'
+          git push origin HEAD:main
