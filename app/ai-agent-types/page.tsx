@@ -26,9 +26,6 @@ export default function Page() {
   const directAnswer =
     "AI agents are classified by architecture, autonomy, interaction and orchestration dimensions. No single taxonomy is settled fact; classifications are explained as framing devices."
 
-  const scopeNote =
-    "This page does not recommend one taxonomy over another. It frames common classification dimensions and highlights where evidence is settled, volatile, or unresolved. Claims about capability, pricing, compliance or performance are not made."
-
   const limitations =
     "Inability to distinguish autonomous capability from prompted behavior. Volatility in vendor feature changes. Lack of settled definitions for autonomy levels. No published benchmark suite for cross-taxonomy comparison."
 
