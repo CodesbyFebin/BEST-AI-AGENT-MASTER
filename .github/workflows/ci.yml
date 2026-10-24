@@ -12,6 +12,7 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
+      - run: npm run test:unit
       - run: npm run verify:catalog
       - run: npm run verify:crawl-graph
       - run: npm run verify:gsc

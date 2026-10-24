@@ -21,9 +21,10 @@
     "verify:freshness": "node scripts/freshness.mjs",
     "verify:editorial": "node scripts/verify-editorial-drafts.mjs --self-test && node scripts/verify-editorial-drafts.mjs",
     "verify:gsc-release": "node scripts/verify-gsc-release.mjs",
-    "verify": "npm run verify:catalog && npm run verify:crawl-graph && npm run verify:gsc && npm run verify:quarantine && npm run verify:publication && npm run verify:methodology && npm run verify:freshness && npm run verify:editorial && npm run verify:gsc-release && npm run verify:gitbook-inventory && npm run typecheck && npm run lint && npm run build && python3 scripts/validate-jsonld.py",
+    "verify": "npm run test:unit && npm run verify:catalog && npm run verify:crawl-graph && npm run verify:gsc && npm run verify:quarantine && npm run verify:publication && npm run verify:methodology && npm run verify:freshness && npm run verify:editorial && npm run verify:gsc-release && npm run verify:gitbook-inventory && npm run typecheck && npm run lint && npm run build && python3 scripts/validate-jsonld.py",
     "verify:gitbook-inventory": "node scripts/verify-gitbook-inventory.mjs",
-    "verify:gitbook-release": "node scripts/verify-gitbook-inventory.mjs --strict"
+    "verify:gitbook-release": "node scripts/verify-gitbook-inventory.mjs --strict",
+    "test:unit": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "next": "^16.3.3",
