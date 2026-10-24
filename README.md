@@ -4,14 +4,13 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)
 ![Static catalog](https://img.shields.io/badge/type-static%20catalog-22c55e)
-![License](https://img.shields.io/badge/license-not%20yet%20specified-lightgrey)
-![CI](https://img.shields.io/github/actions/workflow/status/CodesbyFebin/BESTAIAGENT-MASTER/ci.yml?label=CI&logo=github)
-![Stars](https://img.shields.io/github/stars/CodesbyFebin/BESTAIAGENT-MASTER?style=social)
-![Last commit](https://img.shields.io/github/last-commit/CodesbyFebin/BESTAIAGENT-MASTER)
+![CI](https://img.shields.io/github/actions/workflow/status/CodesbyFebin/BEST-AI-AGENT-MASTER/ci.yml?label=CI&logo=github)
+![Stars](https://img.shields.io/github/stars/CodesbyFebin/BEST-AI-AGENT-MASTER?style=social)
+![Last commit](https://img.shields.io/github/last-commit/CodesbyFebin/BEST-AI-AGENT-MASTER)
 
 > Evidence-first authority graph for AI agents, models, frameworks, providers and MCP infrastructure. Unknown stays unknown, no synthetic rankings, no fake reviews.
 
-[Live site](https://bestaiagent.in) · [catalog.json](https://bestaiagent.in/catalog.json) · [llms.txt](https://bestaiagent.in/llms.txt)
+[Live site](https://www.bestaiagent.in) · [catalog.json](https://www.bestaiagent.in/catalog.json) · [llms.txt](https://www.bestaiagent.in/llms.txt)
 
 ## What this is, and isn't
 
@@ -24,10 +23,11 @@ What it covers:
 - **MCP servers** — cataloged by source-link status, not capability claims
 - **Comparisons** — evidence-ready only when both sides are independently verified
 ## Production
-- Canonical domain: `https://www.bestaiagent.in` (all metadata, sitemaps and machine feeds are built around this host — see `lib/site.ts`)
-- Apex: `https://bestaiagent.in` permanently redirects (308) to the canonical `www` host
-- Vercel project: `bestaiagent-master` (team `projects555`)
-- Production repository: `CodesbyFebin/BESTAIAGENT-MASTER`
+- Canonical host: `https://www.bestaiagent.in` (set in `lib/site.ts`).
+- Hosting: **GitHub Pages**, through `.github/workflows/pages.yml`; `GITHUB_PAGES_STATIC=1 npm run build` exports `out/`.
+- Repository: [CodesbyFebin/BEST-AI-AGENT-MASTER](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER).
+- Deployment: [GitHub Pages workflow](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/actions/workflows/pages.yml). Production custom-domain DNS, TLS and legacy redirects must be tested separately.
+- GitHub Pages cannot serve Next.js server redirects or custom headers; see `docs/GITHUB-PAGES-MIGRATION-20261024.md`.
 
 ## Publication doctrine
 
@@ -48,9 +48,9 @@ What's deliberately excluded: synthetic rankings, fabricated ratings or review c
 ## Quick start
 
 ```bash
-git clone https://github.com/CodesbyFebin/BESTAIAGENT-MASTER.git
-cd BESTAIAGENT-MASTER
-npm install
+git clone https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER.git
+cd BEST-AI-AGENT-MASTER
+npm ci
 npm run verify:catalog   # checks evidence hashes before you do anything else
 npm run dev
 ```
@@ -58,8 +58,7 @@ npm run dev
 Production build:
 
 ```bash
-npm run build
-npm start
+GITHUB_PAGES_STATIC=1 npm run build    # GitHub Pages export to out/
 ```
 
 Full verification (what CI runs):
@@ -85,4 +84,4 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) — it covers the two-tier verification
 
 ## License
 
-Not yet specified. Contact the maintainer before reusing code or data from this repository.
+No repository-wide software license has been declared. Do not assume MIT or redistribution rights. Contact the maintainer before reusing code or data from this repository.
