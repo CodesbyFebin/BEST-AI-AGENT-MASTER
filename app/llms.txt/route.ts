@@ -7,7 +7,7 @@ export async function GET() {
   const trustLines = Object.keys(trustPages).map((slug) => `- ${SITE.url}/trust/${slug}`).join("\n");
   const text = `# BestAIAgent.in
 
-Evidence-first authority graph for AI agents, models, frameworks, providers and MCP infrastructure.
+Evidence-first, statically published directory of AI agents, models, frameworks, providers and MCP infrastructure. Content inclusion is not an endorsement.
 
 Publication rule: discovery is not verification. Public entity detail pages require qualified evidence; unresolved historical URLs remain noindex or quarantined.
 
@@ -43,7 +43,6 @@ Publication rule: discovery is not verification. Public entity detail pages requ
 - ${SITE.url}/coding-agents-hub
 - ${SITE.url}/ai-agent-market-map
 - ${SITE.url}/glossary-hub
-- ${SITE.url}/glossary
 - ${SITE.url}/tools
 - ${SITE.url}/api-docs
 - ${SITE.url}/verify
@@ -56,8 +55,12 @@ Publication rule: discovery is not verification. Public entity detail pages requ
 - ${SITE.url}/trust
 ${trustLines}
 
-Machine catalog: ${SITE.url}/catalog.json
-Full public index: ${SITE.url}/llms-full.txt
+## Machine-readable
+- ${SITE.url}/catalog.json — evidence-gated published catalog
+- ${SITE.url}/llms-full.txt — extended public index
+- ${SITE.url}/sitemap.xml — canonical indexable URL set
+
+Hosting: GitHub Pages static export. Editorial draft pages may be reachable but excluded from search indexing.
 `;
 
   return new Response(text, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
