@@ -17,6 +17,8 @@ jobs:
       - run: npm run verify:gsc
       - run: npm run verify:quarantine
       - run: npm run verify:publication
+      - run: npm run verify:methodology
+      - run: npm run verify:freshness
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run build
