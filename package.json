@@ -3,9 +3,7 @@
   "version": "2.1.0",
   "private": true,
   "description": "Evidence-first authority graph for AI agents, models, frameworks, providers and MCP infrastructure.",
-  "engines": {
-    "node": "22.x"
-  },
+  "engines": { "node": "22.x" },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,22 +16,11 @@
     "verify:quarantine": "node scripts/verify-quarantine.mjs",
     "verify:publication": "node scripts/verify-publication-integrity.mjs",
     "verify:methodology": "node scripts/verify-methodology-pages.mjs",
-    "verify": "npm run verify:catalog && npm run verify:crawl-graph && npm run verify:gsc && npm run verify:quarantine && npm run verify:publication && npm run verify:methodology && npm run verify:freshness && npm run typecheck && npm run lint && npm run build && python3 scripts/validate-jsonld.py",
-    "verify:freshness": "node scripts/freshness.mjs"
-    "verify": "npm run verify:catalog && npm run verify:crawl-graph && npm run verify:gsc && npm run verify:quarantine && npm run verify:publication && npm run verify:methodology && npm run verify:editorial && npm run typecheck && npm run lint && npm run build && python3 scripts/validate-jsonld.py",
-    "verify:editorial": "node scripts/verify-editorial-drafts.mjs --self-test && node scripts/verify-editorial-drafts.mjs"
+    "verify:freshness": "node scripts/freshness.mjs",
+    "verify:editorial": "node scripts/verify-editorial-drafts.mjs --self-test && node scripts/verify-editorial-drafts.mjs",
+    "verify:gsc-release": "node scripts/verify-gsc-release.mjs",
+    "verify": "npm run verify:catalog && npm run verify:crawl-graph && npm run verify:gsc && npm run verify:quarantine && npm run verify:publication && npm run verify:methodology && npm run verify:freshness && npm run verify:editorial && npm run verify:gsc-release && npm run typecheck && npm run lint && npm run build && python3 scripts/validate-jsonld.py"
   },
-  "dependencies": {
-    "next": "^16.3.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
-  },
-  "devDependencies": {
-    "@types/node": "24.3.0",
-    "@types/react": "19.1.11",
-    "@types/react-dom": "19.1.7",
-    "eslint": "9.35.0",
-    "eslint-config-next": "16.2.6",
-    "typescript": "5.9.2"
-  }
+  "dependencies": { "next": "^16.3.3", "react": "19.2.0", "react-dom": "19.2.0" },
+  "devDependencies": { "@types/node": "24.3.0", "@types/react": "19.1.11", "@types/react-dom": "19.1.7", "eslint": "9.35.0", "eslint-config-next": "16.2.6", "typescript": "5.9.2" }
 }
