@@ -1,12 +1,11 @@
 import { authorityPages } from "@/lib/authority-pages";
 import { publicEntities } from "@/lib/catalog";
 
-export async function GET(request: Request) {
-  const q = new URL(request.url).searchParams.get("q")?.trim().toLowerCase() ?? "";
-  if (!q) return Response.json({ query: q, count: 0, results: [] });
+export const dynamic = "force-static";
+
+export async function GET() {
 
   const entityResults = publicEntities
-    .filter((entity) => `${entity.name} ${entity.developer} ${entity.summary} ${entity.categories.join(" ")}`.toLowerCase().includes(q))
     .map((entity) => ({
       id: entity.id,
       name: entity.name,
@@ -19,10 +18,6 @@ export async function GET(request: Request) {
 
   const authorityResults = Object.entries(authorityPages)
     .filter(([, page]) => page.index)
-    .filter(([slug, page]) => {
-      const sectionText = page.sections.flatMap((section) => [section.heading, ...(section.paragraphs ?? []), ...(section.bullets ?? [])]).join(" ");
-      return `${slug} ${page.title} ${page.description} ${page.directAnswer} ${sectionText}`.toLowerCase().includes(q);
-    })
     .map(([slug, page]) => ({
       id: `authority:${slug}`,
       name: page.title,
@@ -33,6 +28,6 @@ export async function GET(request: Request) {
       url: `/${slug}`
     }));
 
-  const results = [...entityResults, ...authorityResults].slice(0, 50);
-  return Response.json({ query: q, count: results.length, results });
+  const results = [...entityResults, ...authorityResults];
+  return Response.json({ count: results.length, results });
 }
