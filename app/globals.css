@@ -38,3 +38,37 @@ button,input{font:inherit}.shell{width:min(1200px,calc(100% - 36px));margin:auto
 @media(max-width:760px){.shell{width:min(100% - 24px,1200px)}.hero{padding-top:42px}.heroVisual{display:none}.grid{grid-template-columns:1fr 1fr}.categoryGrid{grid-template-columns:1fr 1fr}.metricStrip{grid-template-columns:1fr 1fr}.metricStrip>div:nth-child(2){border-right:0}.metricStrip>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.footerGrid{grid-template-columns:1fr 1fr}.discoveryBandGrid{grid-template-columns:1fr}.navSearch span{display:none}.navSearch{min-width:auto}.footnote{flex-direction:column}}
 @media(max-width:520px){.grid,.categoryGrid,.clusterGrid,.footerGrid{grid-template-columns:1fr}.metricStrip{grid-template-columns:1fr 1fr}.navCta{display:none}.brand small{display:none}.brand{grid-template-rows:auto}.brandMark{grid-row:auto}.sectionHead{align-items:start;flex-direction:column}.card{min-height:0}.discoveryBand{padding:20px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Atlas upgrade: source-inspired layout with data from the verified catalog. */
+.discoveryHero{border-top:3px solid transparent;border-image:linear-gradient(90deg,#ff9933 33%,#fff 33% 66%,#138808 66%) 1}
+.discoveryHero .gradient{background:linear-gradient(90deg,#ffc282,#ff9933,#34d399);-webkit-background-clip:text;background-clip:text;color:transparent}
+.discoveryHero .heroBadge{border-color:rgba(255,153,51,.38);color:#ffcc9f}
+.atlasSection{background:radial-gradient(600px 260px at 80% 0%,rgba(52,211,153,.08),transparent 80%),#080d16}
+.atlasExplorer,.atlasCostGrid{border:1px solid rgba(52,211,153,.22);background:linear-gradient(145deg,rgba(12,24,28,.97),rgba(8,13,23,.97));border-radius:18px;overflow:hidden}
+.atlasControls{display:grid;grid-template-columns:2fr 1fr 1.25fr;gap:12px;padding:18px;border-bottom:1px solid var(--line)}
+.atlasControls label,.atlasCostInputs label{display:grid;gap:7px;color:#bccac6;font-size:11px;font-weight:700}
+.atlasControls input,.atlasControls select,.atlasCostInputs input{width:100%;min-width:0;padding:11px 12px;color:var(--ink);border:1px solid #35514d;border-radius:9px;background:#0a151a;outline:none}
+.atlasControls input:focus-visible,.atlasControls select:focus-visible,.atlasCostInputs input:focus-visible,.atlasResult:focus-visible{outline:2px solid #34d399;outline-offset:2px}
+.atlasControls option{background:#0a151a}
+.atlasDiscoveryLayout{display:grid;grid-template-columns:1.08fr 1fr;min-height:390px}
+.atlasResults{padding:17px;max-height:560px;overflow-y:auto;border-right:1px solid var(--line)}
+.atlasResultsCaption{font-size:11px;color:#a1b0b4;margin-bottom:12px}
+.atlasResult{display:flex;justify-content:space-between;align-items:center;width:100%;padding:12px 13px;margin-bottom:7px;border:1px solid #263e43;border-radius:10px;background:#101b23;color:var(--ink);text-align:left;cursor:pointer}
+.atlasResult:hover,.atlasResultActive{border-color:#34d399;background:#14292a}
+.atlasResult span:first-child{display:grid;gap:2px}
+.atlasResult small{font-size:10px;text-transform:capitalize;color:#9baeb4}
+.atlasDetail{padding:24px;display:flex;flex-direction:column;gap:13px;justify-content:center}
+.atlasDetail h3{font-size:29px;margin:0}.atlasDetail p{color:#bacacb;margin:0}
+.atlasDetail .button{align-self:start;background:linear-gradient(130deg,#34d399,#149d76);color:#03150f}
+.atlasExplain{font-size:11px;padding:13px;border-left:2px solid #34d399;background:rgba(52,211,153,.04)}
+.atlasMore{font-size:11px;color:#8de0c4}
+.atlasCostGrid{display:grid;grid-template-columns:1fr 1fr}
+.atlasCostInputs{padding:26px;display:grid;gap:20px;border-right:1px solid var(--line)}
+.atlasCostInputs label strong{color:#e8f8ee;font-size:15px}
+.atlasCostInputs input[type=range]{padding:0;accent-color:#34d399}
+.atlasCostOutput{padding:26px;display:grid;align-content:center;gap:9px}
+.atlasCostOutput span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#97adad}
+.atlasCostOutput strong{font-size:clamp(24px,3vw,38px);line-height:1.1}
+.atlasPositive{color:#34d399}.atlasNegative{color:#fb7185}
+.atlasCostOutput p{font-size:11px;color:#9cb3b5;line-height:1.65}
+@media(max-width:760px){.atlasControls{grid-template-columns:1fr}.atlasDiscoveryLayout,.atlasCostGrid{grid-template-columns:1fr}.atlasResults,.atlasCostInputs{border-right:0;border-bottom:1px solid var(--line)}.atlasResults{max-height:390px}}
