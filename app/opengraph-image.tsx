@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import { publicEntities, evidence, isEvidenceVerified } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
 
+export const dynamic = "force-static";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = `${SITE.name} — Evidence-backed AI agent & model graph`;

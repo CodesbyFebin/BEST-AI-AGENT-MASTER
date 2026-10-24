@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static";
 import { SITE } from "@/lib/site";
 
 // Explicit allow rules for real AI-crawler user-agent tokens, on top of the

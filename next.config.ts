@@ -1,10 +1,14 @@
 import type { NextConfig } from "next";
 import legacyRedirects from "./data/legacy-redirects.json";
 
+const pagesExport = process.env.GITHUB_PAGES_STATIC === "1";
+
 const nextConfig: NextConfig = {
+  ...(pagesExport ? { output: "export" as const, trailingSlash: true } : {}),
   reactStrictMode: true,
   poweredByHeader: false,
   async redirects() {
+    if (pagesExport) return [];
     return Object.entries(legacyRedirects).map(([source, destination]) => ({
       source,
       destination,
@@ -18,6 +22,7 @@ const nextConfig: NextConfig = {
   // that all rewrote to the same handful of real sitemaps but were never
   // linked from robots.txt or sitemap.xml itself. Do not re-add that pattern.
   async headers() {
+    if (pagesExport) return [];
     return [{
       source: "/:path*",
       headers: [
