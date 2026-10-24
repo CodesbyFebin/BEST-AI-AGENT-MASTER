@@ -19,7 +19,7 @@ export default function Page() {
         <h2>Migration and reversibility</h2>
         <p>Before migrating, test prompt/config portability, connectors, export formats, retained history and access revocation. Create a rollback plan that includes the previous workflow and credentials. Evaluate one production-like workflow in a restricted environment, then expand only after security and human review pass.</p>
         <h2>India-focused considerations</h2>
-        <p>Assess language quality on your real inputs, region-specific latency, invoicing, regional availability and data processing terms. 'Built in India' and 'data hosted in India' describe different characteristics. For regulated use cases, do not infer legal compliance from country of origin or from a website badge.</p>
+        <p>Assess language quality on your real inputs, region-specific latency, invoicing, regional availability and data processing terms. &lsquo;Built in India&rsquo; and &lsquo;data hosted in India&rsquo; describe different characteristics. For regulated use cases, do not infer legal compliance from country of origin or from a website badge.</p>
       <h2>Frequently asked questions</h2>
       <h3>Does a published catalog identity mean every product claim is verified?</h3><p>No. Identity and upstream-source verification are separate from price, performance, regulatory, security and integration assertions. Consult the dated source attached to the individual field.</p>
       <h3>Can I select a product from one score?</h3><p>No. Compare representative task success, security controls, billing and support using consistent conditions and evidence.</p>

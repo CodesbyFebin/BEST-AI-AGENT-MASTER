@@ -9,7 +9,6 @@ const redirects = readJson("data/legacy-redirects.json");
 const policy = readJson("data/gsc-migration-policy.json");
 const authoritySource = readText("lib/authority-pages.ts");
 const nextConfig = readText("next.config.ts");
-const toolsTs = readText("lib/tools.ts");
 
 // Import tools object for structured validation
 const { tools } = await import("../lib/tools.ts");
