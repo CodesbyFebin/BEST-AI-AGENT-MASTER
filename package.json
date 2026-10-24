@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "agent-scan:rescan": "node scripts/agent-scan/scan.mts",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",

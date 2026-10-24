@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Entity } from "@/lib/catalog";
 import { StatusBadge } from "./StatusBadge";
 import { EntityLogo } from "./EntityLogo";
+import { AgentSecurityReport } from "./AgentSecurityReport";
 
 export function EntityCard({ entity }: { entity: Entity }) {
   return (
@@ -19,6 +20,9 @@ export function EntityCard({ entity }: { entity: Entity }) {
         <StatusBadge state={entity.verification} />
         {entity.categories.slice(0, 3).map((tag) => <span className="tag" key={tag}>{tag}</span>)}
       </div>
+      {entity.type === "agent" && entity.sourceUrl.startsWith("https://github.com/")
+        ? <AgentSecurityReport entitySlug={entity.slug} sourceUrl={entity.sourceUrl} compact />
+        : null}
     </article>
   );
 }

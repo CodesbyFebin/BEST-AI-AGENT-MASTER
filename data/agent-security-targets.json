@@ -1,0 +1,13 @@
+[
+  { "slug": "openhands", "repository": "https://github.com/OpenHands/OpenHands" },
+  { "slug": "cline", "repository": "https://github.com/cline/cline" },
+  { "slug": "aider", "repository": "https://github.com/Aider-AI/aider" },
+  { "slug": "gemini-cli", "repository": "https://github.com/google-gemini/gemini-cli" },
+  { "slug": "qwen-code", "repository": "https://github.com/QwenLM/qwen-code" },
+  { "slug": "swe-agent", "repository": "https://github.com/SWE-agent/SWE-agent" },
+  { "slug": "browser-use", "repository": "https://github.com/browser-use/browser-use" },
+  { "slug": "gpt-researcher", "repository": "https://github.com/assafelovic/gpt-researcher" },
+  { "slug": "continue", "repository": "https://github.com/continuedev/continue" },
+  { "slug": "devika", "repository": "https://github.com/stitionai/devika" },
+  { "slug": "perplexica", "repository": "https://github.com/ItzCrazyKns/Vane" }
+]

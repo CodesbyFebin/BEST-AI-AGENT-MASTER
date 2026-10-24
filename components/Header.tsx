@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const links = [
-  ["/agents", "AI Agents"],
+  ["/marketplace", "Marketplace"],
   ["/categories", "Categories"],
   ["/compare", "Compare"],
   ["/india", "Built in India"],
@@ -25,7 +25,7 @@ export function Header() {
           {links.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
         </nav>
         <Link href="/search" className="navSearch" aria-label="Search BestAIAgent.in">⌕ <span>Search</span></Link>
-        <Link href="/agents" className="navCta">Explore</Link>
+        <Link href="/marketplace" className="navCta">Explore</Link>
       </div>
     </header>
   );

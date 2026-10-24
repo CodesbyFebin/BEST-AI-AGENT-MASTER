@@ -56,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const paths = new Set<string>([
     "/",
+    "/marketplace",
     "/agents",
     "/models",
     "/frameworks",
