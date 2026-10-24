@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static";
 import { publicEntities, publicIndexableComparisons, getPublicEntityPath, getEvidence } from "@/lib/catalog";
 import { authorityPages } from "@/lib/authority-pages";
 import { isAuthorityPageEvidenceReady, isMethodologyPageReady } from "@/lib/authority-evidence";
