@@ -24,6 +24,28 @@ const authorityEntryPoints = [
   ["AI agent glossary", "/glossary-hub", "Canonical definitions for the entity and evidence terms used across the site.", "Aa"]
 ] as const;
 
+// Canonical directory entry points. These are topic views, not duplicate product records.
+const homepagePillars = [
+  ["Coding agents", "/best-ai-agents/coding", "IDE, CLI and local development workflows."],
+  ["Voice agents", "/categories/voice-bots", "Speech systems and conversational workflows."],
+  ["Agent orchestration", "/frameworks", "Frameworks, orchestration and runtime infrastructure."],
+  ["Business agents", "/categories/business", "Sales, operations and business automation."],
+  ["Research agents", "/categories/research", "Research, retrieval and browser workflows."],
+  ["Open-source agents", "/categories/open-source", "Inspectable repositories and deployment options."],
+  ["MCP infrastructure", "/mcp", "Protocol guidance and source-linked MCP servers."],
+  ["Built in India", "/india", "Indian and Indic models with publisher-source provenance."],
+  ["Pricing guides", "/cursor-pricing", "Source-specific price evidence; check plans before purchasing."],
+  ["Verified comparisons", "/compare", "Evidence-gated comparisons and explicit unknowns."]
+] as const;
+
+const homepageQuestions = [
+  ["What does a verified directory record mean?", "The upstream identity has passed the site's publication gate. It does not imply independently tested performance or regulatory compliance."],
+  ["How are products ordered?", "This directory does not sell ranking positions. Category views group available records by documented workflow and source evidence."],
+  ["Are pricing figures guaranteed current?", "No. Pricing can change. Check the vendor's current billing page before procurement."],
+  ["Does an MCP listing establish that a server is secure?", "No. A source-linked server must still be reviewed for permissions, authentication, transport security and execution boundaries."],
+  ["Where can I inspect the verification method?", "See the evidence methodology and corrections policy for the publication and dispute processes."]
+] as const;
+
 const categoryMarks: Record<string, string> = {
   "coding-agents": "</>", "voice-bots": "◉", orchestration: "⌘", business: "▣", crm: "◎",
   "customer-support": "☏", sales: "↗", marketing: "✦", research: "⌕", automation: "⚙"
@@ -116,6 +138,17 @@ export default function Home() {
           <a className="card" href="/sitemap.xml"><div className="cardTop"><div className="glyph">◫</div><h3>/sitemap.xml</h3></div><p>The single canonical sitemap — every URL here is indexable; nothing noindex is ever listed.</p></a>
           <Link className="card" href="/methodology"><div className="cardTop"><div className="glyph">✓</div><h3>How the gate works</h3></div><p>The publication rule these exports and the HTML site both obey, explained.</p></Link>
         </div>
+      </div></section>
+
+      <section className="section" id="homepage-pillars"><div className="shell">
+        <div className="sectionHead"><div><p className="eyebrow">Browse by purpose</p><h2>Ten evidence-first discovery paths</h2><p>Each link opens an existing canonical topic view. Entity claims stay on their canonical profiles; inclusion here does not represent an endorsement.</p></div><Link href="/best-ai-agents">Explore the authority hub →</Link></div>
+        <div className="grid authorityGrid">{homepagePillars.map(([title,href,description])=><article className="card" key={href}><p className="eyebrow">Directory pillar</p><h3><Link href={href}>{title}</Link></h3><p>{description}</p><p><Link href={href}>Explore {title.toLowerCase()} →</Link></p></article>)}</div>
+      </div></section>
+
+      <section className="section sectionAlt" id="homepage-faq"><div className="shell">
+        <div className="sectionHead"><div><p className="eyebrow">Questions & evidence</p><h2>How should you evaluate AI agents in this directory?</h2><p>These answers describe editorial policy, not claims about an individual vendor.</p></div><Link href="/trust">Trust and methodology →</Link></div>
+        <div className="grid">{homepageQuestions.map(([question,answer])=><article className="card" key={question}><h3>{question}</h3><p>{answer}</p></article>)}</div>
+        <p><Link href="/verify">Inspect verification guidance</Link> · <Link href="/trust/corrections">Request a correction</Link></p>
       </div></section>
 
       <section className="section sectionAlt"><div className="shell"><div className="discoveryBand"><div className="discoveryBandGrid"><div><p className="eyebrow">Trust layer</p><h2>Evidence decides what becomes indexable.</h2><p>Discovery → normalization → evidence → verification → publication. Donor keywords and old URLs are useful research inputs, but unresolved candidates remain quarantined.</p></div><div className="ctaRow"><Link className="button buttonPrimary" href="/methodology">Read methodology</Link><Link className="button" href="/editorial-policy">Editorial policy</Link></div></div></div></div></section>
