@@ -1,5 +1,5 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
-import { join, basename } from "node:path";
+import { join } from "node:path";
 import { createRequire } from "node:module";
 const { load, JSON_SCHEMA } = createRequire(import.meta.url)("js-yaml");
 
