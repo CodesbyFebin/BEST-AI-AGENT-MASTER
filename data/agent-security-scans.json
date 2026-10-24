@@ -1,0 +1,2086 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-24T18:34:30.811Z",
+  "methodology": "Heuristic source-pattern scan; publication remains manual and separate from identity evidence.",
+  "reports": [
+    {
+      "entitySlug": "openhands",
+      "repository": "https://github.com/OpenHands/OpenHands",
+      "repositoryCommit": "fee10e3d2909ebbf9950578575b1ee011492171e",
+      "scannedAt": "2026-10-24T18:33:45.670Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 80,
+      "heuristicRiskLevel": "CRITICAL",
+      "typeConfidence": 0.75,
+      "confidenceSignals": [
+        "Repository contains agent, skill, tool, or MCP paths",
+        "Recognized agent or MCP framework signal",
+        "Tool registration or tool-calling signal"
+      ],
+      "triage": {
+        "status": "reject",
+        "reason": "Heuristic risk threshold reached; requires maintainer review."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 80/100"
+      ],
+      "findings": [
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "README.md",
+          "line": 70,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "README.md",
+          "line": 115,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "tests/e2e/mock-llm/backends/mock-llm-auth-modes.spec.ts",
+          "line": 49,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "FILE-002",
+          "domain": "FILE",
+          "severity": "INFO",
+          "file": "tests/e2e/live-acp/harness.mts",
+          "line": 145,
+          "pattern": "process\\.env\\.(?:OPENAI|ANTHROPIC|STRIPE|AWS|GOOGLE)_",
+          "description": "Code references a provider credential environment variable; confirm least-privilege handling.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-002",
+          "domain": "FILE",
+          "severity": "INFO",
+          "file": "tests/e2e/live-acp/harness.mts",
+          "line": 151,
+          "pattern": "process\\.env\\.(?:OPENAI|ANTHROPIC|STRIPE|AWS|GOOGLE)_",
+          "description": "Code references a provider credential environment variable; confirm least-privilege handling.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-002",
+          "domain": "FILE",
+          "severity": "INFO",
+          "file": "tests/e2e/live/utils/agent-server-conversation.ts",
+          "line": 23,
+          "pattern": "process\\.env\\.(?:OPENAI|ANTHROPIC|STRIPE|AWS|GOOGLE)_",
+          "description": "Code references a provider credential environment variable; confirm least-privilege handling.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-002",
+          "domain": "FILE",
+          "severity": "INFO",
+          "file": "tests/e2e/live/utils/agent-server-conversation.ts",
+          "line": 24,
+          "pattern": "process\\.env\\.(?:OPENAI|ANTHROPIC|STRIPE|AWS|GOOGLE)_",
+          "description": "Code references a provider credential environment variable; confirm least-privilege handling.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "src/root.tsx",
+          "line": 103,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/utils/parse-git-tree-url.ts",
+          "line": 35,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/mocks/automation-handlers.ts",
+          "line": 52,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/manifests/manifest-template.ts",
+          "line": 41,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "src/i18n/index.ts",
+          "line": 57,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "src/hooks/chat/use-clamp-drag-selection.test.ts",
+          "line": 75,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "src/hooks/chat/use-clamp-drag-selection.test.ts",
+          "line": 80,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "src/components/shared/text-shimmer.tsx",
+          "line": 73,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/components/features/markdown/code.tsx",
+          "line": 26,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/components/features/chat/chat-markdown-path-code.tsx",
+          "line": 115,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "src/components/features/chat/mono-component.tsx",
+          "line": 6,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "src/components/features/chat/path-component.tsx",
+          "line": 20,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "src/components/features/chat/utils/chat-input.utils.ts",
+          "line": 93,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        }
+      ],
+      "filesScanned": 2237,
+      "filesSkipped": 192,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    },
+    {
+      "entitySlug": "cline",
+      "repository": "https://github.com/cline/cline",
+      "repositoryCommit": "40c5d99031fe1128189c5b52e40638d2b7787754",
+      "scannedAt": "2026-10-24T18:33:46.779Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 100,
+      "heuristicRiskLevel": "CRITICAL",
+      "typeConfidence": 0.75,
+      "confidenceSignals": [
+        "Repository contains agent, skill, tool, or MCP paths",
+        "Recognized agent or MCP framework signal",
+        "Tool registration or tool-calling signal"
+      ],
+      "triage": {
+        "status": "reject",
+        "reason": "Heuristic risk threshold reached; requires maintainer review."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 100/100"
+      ],
+      "findings": [
+        {
+          "id": "FILE-002",
+          "domain": "FILE",
+          "severity": "INFO",
+          "file": "sdk/README.md",
+          "line": 197,
+          "pattern": "process\\.env\\.(?:OPENAI|ANTHROPIC|STRIPE|AWS|GOOGLE)_",
+          "description": "Code references a provider credential environment variable; confirm least-privilege handling.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "sdk/scripts/release.ts",
+          "line": 534,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "sdk/packages/ui/README.md",
+          "line": 283,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/tests/markdown-diagram-links.test.ts",
+          "line": 64,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "sdk/packages/ui/tests/markdown-diagram-links.test.ts",
+          "line": 41,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/tests/mermaid-diagram.test.ts",
+          "line": 52,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "sdk/packages/ui/components/mermaid-block.tsx",
+          "line": 425,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "sdk/packages/ui/components/mermaid-block.tsx",
+          "line": 426,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/mermaid-diagram.ts",
+          "line": 94,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/mermaid-diagram.ts",
+          "line": 108,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/mermaid-diagram.ts",
+          "line": 130,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/mermaid-diagram.ts",
+          "line": 365,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/mermaid-diagram.ts",
+          "line": 382,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/mermaid-diagram.ts",
+          "line": 503,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/mermaid-diagram.ts",
+          "line": 590,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/mermaid-diagram.ts",
+          "line": 1022,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/mermaid-diagram.ts",
+          "line": 1056,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "sdk/packages/ui/components/mermaid-diagram.ts",
+          "line": 1178,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/agent-chat/tool-summary/parsers.ts",
+          "line": 306,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sdk/packages/ui/components/agent-chat/tool-summary/parsers.ts",
+          "line": 323,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        }
+      ],
+      "filesScanned": 1749,
+      "filesSkipped": 1911,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    },
+    {
+      "entitySlug": "aider",
+      "repository": "https://github.com/Aider-AI/aider",
+      "repositoryCommit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+      "scannedAt": "2026-10-24T18:33:46.174Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 40,
+      "heuristicRiskLevel": "HIGH",
+      "typeConfidence": 0.5,
+      "confidenceSignals": [
+        "Recognized agent or MCP framework signal",
+        "Tool registration or tool-calling signal"
+      ],
+      "triage": {
+        "status": "review",
+        "reason": "Manual review recommended (confidence 0.50, heuristic risk 40)."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 40/100"
+      ],
+      "findings": [
+        {
+          "id": "CMD-001",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "benchmark/README.md",
+          "line": 26,
+          "pattern": "os\\.system\\s*\\(|subprocess\\.(?:call|run|Popen)\\s*\\([^\\n)]*shell\\s*=\\s*True",
+          "description": "Shell execution pattern; inspect input handling and command boundaries.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-001",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "aider/editor.py",
+          "line": 134,
+          "pattern": "os\\.system\\s*\\(|subprocess\\.(?:call|run|Popen)\\s*\\([^\\n)]*shell\\s*=\\s*True",
+          "description": "Shell execution pattern; inspect input handling and command boundaries.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "NET-001",
+          "domain": "NET",
+          "severity": "WARNING",
+          "file": "aider/website/_data/deepseek-down.yml",
+          "line": 126,
+          "pattern": "https?:\\/\\/[a-z0-9.-]+\\.(?:ru|cn|ir|kp|xyz|top)\\/",
+          "description": "Reference to a watched high-risk top-level domain; verify the destination and context.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "NET-001",
+          "domain": "NET",
+          "severity": "WARNING",
+          "file": "aider/website/_data/quant.yml",
+          "line": 65,
+          "pattern": "https?:\\/\\/[a-z0-9.-]+\\.(?:ru|cn|ir|kp|xyz|top)\\/",
+          "description": "Reference to a watched high-risk top-level domain; verify the destination and context.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        }
+      ],
+      "filesScanned": 233,
+      "filesSkipped": 8,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    },
+    {
+      "entitySlug": "gemini-cli",
+      "repository": "https://github.com/google-gemini/gemini-cli",
+      "repositoryCommit": "cd1b45c2db0a5ea7b7fc3b67c1ba5879601d6005",
+      "scannedAt": "2026-10-24T18:33:46.100Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 100,
+      "heuristicRiskLevel": "CRITICAL",
+      "typeConfidence": 1,
+      "confidenceSignals": [
+        "README describes agentic or tool behavior",
+        "Repository contains agent, skill, tool, or MCP paths",
+        "Recognized agent or MCP framework signal",
+        "Tool registration or tool-calling signal"
+      ],
+      "triage": {
+        "status": "reject",
+        "reason": "Heuristic risk threshold reached; requires maintainer review."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 100/100"
+      ],
+      "findings": [
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "Dockerfile",
+          "line": 90,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "Dockerfile",
+          "line": 91,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "README.md",
+          "line": 48,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "README.md",
+          "line": 71,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "README.md",
+          "line": 85,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "README.md",
+          "line": 95,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "README.md",
+          "line": 105,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "tools/gemini-cli-bot/.gemini/skills/critique/SKILL.md",
+          "line": 94,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "tools/gemini-cli-bot/.gemini/skills/critique/SKILL.md",
+          "line": 95,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tools/caretaker-agent/cloudrun/pr-generator/tests/test_command_executor.py",
+          "line": 30,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tools/caretaker-agent/cloudrun/pr-generator/tests/test_command_executor.py",
+          "line": 35,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/lint.js",
+          "line": 296,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "NET-002",
+          "domain": "NET",
+          "severity": "WARNING",
+          "file": "scripts/telemetry_utils.js",
+          "line": 168,
+          "pattern": "socket\\.(?:connect|createConnection)\\s*\\(",
+          "description": "Raw socket operation; inspect the destination and data flow.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "packages/vscode-ide-companion/scripts/check-vscode-release.js",
+          "line": 33,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "packages/sdk/src/shell.ts",
+          "line": 34,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "packages/sdk/src/types.ts",
+          "line": 183,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "packages/sdk/examples/session-context.ts",
+          "line": 38,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "packages/devtools/client/src/App.tsx",
+          "line": 1706,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/core/src/utils/atCommandUtils.test.ts",
+          "line": 425,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/core/src/utils/atCommandUtils.test.ts",
+          "line": 482,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        }
+      ],
+      "filesScanned": 1263,
+      "filesSkipped": 1209,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    },
+    {
+      "entitySlug": "qwen-code",
+      "repository": "https://github.com/QwenLM/qwen-code",
+      "repositoryCommit": "f4f602d606665951b5382d40d72326331757c6b3",
+      "scannedAt": "2026-10-24T18:34:22.605Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 100,
+      "heuristicRiskLevel": "CRITICAL",
+      "typeConfidence": 1,
+      "confidenceSignals": [
+        "README describes agentic or tool behavior",
+        "Repository contains agent, skill, tool, or MCP paths",
+        "Recognized agent or MCP framework signal",
+        "Tool registration or tool-calling signal"
+      ],
+      "triage": {
+        "status": "reject",
+        "reason": "Heuristic risk threshold reached; requires maintainer review."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 100/100"
+      ],
+      "findings": [
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "Dockerfile",
+          "line": 77,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "README.md",
+          "line": 56,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/check-failsafe-reports.js",
+          "line": 77,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/check-i18n.ts",
+          "line": 261,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "scripts/check-release-tarball-exec-bits.mjs",
+          "line": 21,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/copy_bundle_assets.js",
+          "line": 696,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/flyway-migration-utils.js",
+          "line": 42,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-changelog.js",
+          "line": 85,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-changelog.js",
+          "line": 115,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-changelog.js",
+          "line": 166,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-changelog.js",
+          "line": 183,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-changelog.js",
+          "line": 256,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-changelog.js",
+          "line": 316,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-release-notes.js",
+          "line": 88,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-release-notes.js",
+          "line": 103,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-release-notes.js",
+          "line": 120,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-release-notes.js",
+          "line": 145,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-release-notes.js",
+          "line": 153,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-release-notes.js",
+          "line": 211,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "scripts/generate-release-notes.js",
+          "line": 755,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        }
+      ],
+      "filesScanned": 1200,
+      "filesSkipped": 8903,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    },
+    {
+      "entitySlug": "swe-agent",
+      "repository": "https://github.com/SWE-agent/SWE-agent",
+      "repositoryCommit": "3ea751c087f32b16e039a2233dd6eefecef325d5",
+      "scannedAt": "2026-10-24T18:34:07.460Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 14,
+      "heuristicRiskLevel": "LOW",
+      "typeConfidence": 0.5,
+      "confidenceSignals": [
+        "Repository contains agent, skill, tool, or MCP paths",
+        "Tool registration or tool-calling signal"
+      ],
+      "triage": {
+        "status": "review",
+        "reason": "Manual review recommended (confidence 0.50, heuristic risk 14)."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 14/100"
+      ],
+      "findings": [
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "sweagent/inspector/fileViewer.js",
+          "line": 72,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "sweagent/inspector/fileViewer.js",
+          "line": 24,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "sweagent/inspector/fileViewer.js",
+          "line": 233,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        }
+      ],
+      "filesScanned": 204,
+      "filesSkipped": 2,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    },
+    {
+      "entitySlug": "browser-use",
+      "repository": "https://github.com/browser-use/browser-use",
+      "repositoryCommit": "3df5806a0d097a1546d92c49bcf1b28c9972c3bd",
+      "scannedAt": "2026-10-24T18:34:07.001Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 100,
+      "heuristicRiskLevel": "CRITICAL",
+      "typeConfidence": 0.75,
+      "confidenceSignals": [
+        "Repository contains agent, skill, tool, or MCP paths",
+        "Recognized agent or MCP framework signal",
+        "Tool registration or tool-calling signal"
+      ],
+      "triage": {
+        "status": "reject",
+        "reason": "Heuristic risk threshold reached; requires maintainer review."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 100/100"
+      ],
+      "findings": [
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/ci/security/test_download_filename_sanitization.py",
+          "line": 7,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/ci/security/test_download_filename_sanitization.py",
+          "line": 30,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/ci/security/test_download_filename_sanitization.py",
+          "line": 33,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "tests/ci/integrations/test_openai_browser_use.py",
+          "line": 36,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/ci/infrastructure/test_filesystem.py",
+          "line": 1390,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "NET-001",
+          "domain": "NET",
+          "severity": "WARNING",
+          "file": "examples/models/modelscope_example.py",
+          "line": 26,
+          "pattern": "https?:\\/\\/[a-z0-9.-]+\\.(?:ru|cn|ir|kp|xyz|top)\\/",
+          "description": "Reference to a watched high-risk top-level domain; verify the destination and context.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "NET-001",
+          "domain": "NET",
+          "severity": "WARNING",
+          "file": "examples/file_system/alphabet_earnings.py",
+          "line": 17,
+          "pattern": "https?:\\/\\/[a-z0-9.-]+\\.(?:ru|cn|ir|kp|xyz|top)\\/",
+          "description": "Reference to a watched high-risk top-level domain; verify the destination and context.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "examples/custom-functions/action_filters.py",
+          "line": 87,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "browser_use/tools/service.py",
+          "line": 233,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "INJ-001",
+          "domain": "INJ",
+          "severity": "WARNING",
+          "file": "browser_use/sandbox/sandbox.py",
+          "line": 337,
+          "pattern": "pickle\\.loads?\\s*\\(|yaml\\.load\\s*\\([^\\n)]*(?!SafeLoader)",
+          "description": "Potentially unsafe deserialization call; verify parser mode and input trust.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "browser_use/mcp/cli_mcp.py",
+          "line": 120,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "browser_use/mcp/cli_mcp.py",
+          "line": 143,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "browser_use/browser/demo_mode.py",
+          "line": 460,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "browser_use/browser/demo_mode.py",
+          "line": 610,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "browser_use/browser/demo_mode.py",
+          "line": 682,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        }
+      ],
+      "filesScanned": 465,
+      "filesSkipped": 5,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    },
+    {
+      "entitySlug": "gpt-researcher",
+      "repository": "https://github.com/assafelovic/gpt-researcher",
+      "repositoryCommit": "3582a6841fe7dc801e2a34e34ee408641aea9bce",
+      "scannedAt": "2026-10-24T18:34:07.046Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 100,
+      "heuristicRiskLevel": "CRITICAL",
+      "typeConfidence": 1,
+      "confidenceSignals": [
+        "README describes agentic or tool behavior",
+        "Repository contains agent, skill, tool, or MCP paths",
+        "Recognized agent or MCP framework signal",
+        "Tool registration or tool-calling signal"
+      ],
+      "triage": {
+        "status": "reject",
+        "reason": "Heuristic risk threshold reached; requires maintainer review."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 100/100"
+      ],
+      "findings": [
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "tests/test_agent_creator_json_shape.py",
+          "line": 31,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "tests/test_filter_urls_guards.py",
+          "line": 28,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "tests/test_mcp.py",
+          "line": 17,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "tests/test_mcp.py",
+          "line": 18,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/test_security_fix.py",
+          "line": 65,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/test_security_fix.py",
+          "line": 71,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/test_security_fix.py",
+          "line": 222,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/test_security_fix.py",
+          "line": 301,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/test_security_fix.py",
+          "line": 334,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/test_url_security.py",
+          "line": 26,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "tests/test_url_security.py",
+          "line": 30,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "INJ-001",
+          "domain": "INJ",
+          "severity": "WARNING",
+          "file": "gpt_researcher/scraper/browser/browser.py",
+          "line": 140,
+          "pattern": "pickle\\.loads?\\s*\\(|yaml\\.load\\s*\\([^\\n)]*(?!SafeLoader)",
+          "description": "Potentially unsafe deserialization call; verify parser mode and input trust.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "frontend/scripts.js",
+          "line": 175,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "frontend/scripts.js",
+          "line": 182,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "frontend/scripts.js",
+          "line": 189,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "frontend/scripts.js",
+          "line": 540,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "frontend/scripts.js",
+          "line": 543,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "frontend/scripts.js",
+          "line": 579,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "frontend/scripts.js",
+          "line": 651,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "frontend/scripts.js",
+          "line": 652,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        }
+      ],
+      "filesScanned": 509,
+      "filesSkipped": 1,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    },
+    {
+      "entitySlug": "continue",
+      "repository": "https://github.com/continuedev/continue",
+      "repositoryCommit": "5522c6f44ca0ac3528b37244818fbfa39b5af470",
+      "scannedAt": "2026-10-24T18:34:30.426Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 100,
+      "heuristicRiskLevel": "CRITICAL",
+      "typeConfidence": 0.75,
+      "confidenceSignals": [
+        "Repository contains agent, skill, tool, or MCP paths",
+        "Recognized agent or MCP framework signal",
+        "Tool registration or tool-calling signal"
+      ],
+      "triage": {
+        "status": "reject",
+        "reason": "Heuristic risk threshold reached; requires maintainer review."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 100/100"
+      ],
+      "findings": [
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "skills/cn-check/SKILL.md",
+          "line": 110,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "DEP-001",
+          "domain": "DEP",
+          "severity": "INFO",
+          "file": "skills/cn-check/SKILL.md",
+          "line": 32,
+          "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
+          "description": "Global package installation instruction; review package provenance and scope.",
+          "astRef": "AST02",
+          "astTitle": "Supply Chain Compromise"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 158,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 357,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 397,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 645,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 825,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 833,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 841,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 973,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 1007,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 1015,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 1033,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 1057,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/test/terminalCommandSecurity.test.ts",
+          "line": 1663,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/src/evaluateTerminalCommandSecurity.ts",
+          "line": 446,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-001",
+          "domain": "FILE",
+          "severity": "WARNING",
+          "file": "packages/terminal-security/src/evaluateTerminalCommandSecurity.ts",
+          "line": 447,
+          "pattern": "(?:~\\/\\.ssh|\\.ssh\\/|id_rsa|\\/etc\\/(?:passwd|shadow))",
+          "description": "Reference to a sensitive system or credential path; verify that access is necessary and scoped.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "NET-001",
+          "domain": "NET",
+          "severity": "WARNING",
+          "file": "packages/openai-adapters/src/index.ts",
+          "line": 168,
+          "pattern": "https?:\\/\\/[a-z0-9.-]+\\.(?:ru|cn|ir|kp|xyz|top)\\/",
+          "description": "Reference to a watched high-risk top-level domain; verify the destination and context.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "FILE-002",
+          "domain": "FILE",
+          "severity": "INFO",
+          "file": "packages/openai-adapters/src/test/anthropic-caching-scenarios.live.test.ts",
+          "line": 18,
+          "pattern": "process\\.env\\.(?:OPENAI|ANTHROPIC|STRIPE|AWS|GOOGLE)_",
+          "description": "Code references a provider credential environment variable; confirm least-privilege handling.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        },
+        {
+          "id": "FILE-002",
+          "domain": "FILE",
+          "severity": "INFO",
+          "file": "packages/openai-adapters/src/test/anthropic-caching.live.test.ts",
+          "line": 19,
+          "pattern": "process\\.env\\.(?:OPENAI|ANTHROPIC|STRIPE|AWS|GOOGLE)_",
+          "description": "Code references a provider credential environment variable; confirm least-privilege handling.",
+          "astRef": "AST03",
+          "astTitle": "Over-Privileged Skills"
+        }
+      ],
+      "filesScanned": 2146,
+      "filesSkipped": 3,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    },
+    {
+      "entitySlug": "devika",
+      "repository": "https://github.com/stitionai/devika",
+      "repositoryCommit": "80bb343cbe4a4e5f5a0ba08d2524920139baceb6",
+      "scannedAt": "2026-10-24T18:34:26.838Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 18,
+      "heuristicRiskLevel": "MEDIUM",
+      "typeConfidence": 0.5,
+      "confidenceSignals": [
+        "README describes agentic or tool behavior",
+        "Repository contains agent, skill, tool, or MCP paths"
+      ],
+      "triage": {
+        "status": "review",
+        "reason": "Manual review recommended (confidence 0.50, heuristic risk 18)."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 18/100"
+      ],
+      "findings": [
+        {
+          "id": "NET-002",
+          "domain": "NET",
+          "severity": "WARNING",
+          "file": "ui/src/lib/sockets.js",
+          "line": 10,
+          "pattern": "socket\\.(?:connect|createConnection)\\s*\\(",
+          "description": "Raw socket operation; inspect the destination and data flow.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "ui/src/lib/components/MonacoEditor.js",
+          "line": 62,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "ui/src/lib/components/MonacoEditor.js",
+          "line": 94,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "ui/src/lib/components/MonacoEditor.js",
+          "line": 99,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        },
+        {
+          "id": "INJ-002",
+          "domain": "INJ",
+          "severity": "INFO",
+          "file": "ui/src/lib/components/MonacoEditor.js",
+          "line": 102,
+          "pattern": "innerHTML\\s*=|dangerouslySetInnerHTML",
+          "description": "HTML injection sink pattern; verify escaping and sanitization.",
+          "astRef": "AST04",
+          "astTitle": "Insecure Metadata"
+        }
+      ],
+      "filesScanned": 93,
+      "filesSkipped": 0,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    },
+    {
+      "entitySlug": "perplexica",
+      "repository": "https://github.com/ItzCrazyKns/Vane",
+      "repositoryCommit": "348feca3e378fb4157b217724ed508dc707f853f",
+      "scannedAt": "2026-10-24T18:34:27.800Z",
+      "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
+      "scannerVersion": "1.0.0",
+      "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
+      "heuristicRiskScore": 100,
+      "heuristicRiskLevel": "CRITICAL",
+      "typeConfidence": 0.5,
+      "confidenceSignals": [
+        "Repository contains agent, skill, tool, or MCP paths",
+        "Tool registration or tool-calling signal"
+      ],
+      "triage": {
+        "status": "reject",
+        "reason": "Heuristic risk threshold reached; requires maintainer review."
+      },
+      "publicationStatus": "unreviewed",
+      "badges": [
+        "Static pattern scan",
+        "Heuristic risk 100/100"
+      ],
+      "findings": [
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 12,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 62,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 115,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 116,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 119,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 153,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 154,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 158,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 269,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 270,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
+          "file": "src/lib/db/migrate.ts",
+          "line": 275,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        }
+      ],
+      "filesScanned": 176,
+      "filesSkipped": 0,
+      "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
+    }
+  ],
+  "failures": []
+}

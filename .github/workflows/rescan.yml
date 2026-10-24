@@ -1,0 +1,45 @@
+name: Weekly Agent Security Re-scan
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: agent-security-rescan
+  cancel-in-progress: false
+
+jobs:
+  rescan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      # Node 22.18+ runs erasable TypeScript directly; no scanner package install is needed.
+      - name: Run bounded, read-only repository scan
+        id: scan
+        run: node scripts/agent-scan/scan.mts --input data/agent-security-targets.json --out data/agent-security-scans.json
+
+      - name: Open review PR for updated scan reports
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: chore/agent-security-rescan
+          delete-branch: true
+          add-paths: data/agent-security-scans.json
+          title: "chore: refresh heuristic agent security reports"
+          commit-message: "chore: refresh heuristic agent security reports"
+          body: |
+            Automated static pattern scans of registered public repositories.
+
+            - Reports available: ${{ steps.scan.outputs.count }}
+            - Refresh failures: ${{ steps.scan.outputs.failures }}
+            - Review findings, commit pins, and scan limits before merging.
+
+            These are heuristic signals, not security audits or safe-to-run approvals. The workflow never executes repository code.

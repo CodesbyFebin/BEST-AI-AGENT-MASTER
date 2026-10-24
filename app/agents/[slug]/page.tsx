@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { StatusBadge } from "@/components/StatusBadge";
 import { EntityLogo } from "@/components/EntityLogo";
+import { AgentSecurityReport } from "@/components/AgentSecurityReport";
 import { entities, getEntity, getEvidence, legacyAgentSources } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
 
@@ -64,6 +65,9 @@ export default async function Page({ params }: P) {
       <div className="tagRow"><StatusBadge state={entity.verification} />{entity.categories.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
       <p><a className="button" href={entity.sourceUrl}>Official upstream ↗</a></p>
     </section>
+    {entity.sourceUrl.startsWith("https://github.com/")
+      ? <AgentSecurityReport entitySlug={entity.slug} sourceUrl={entity.sourceUrl} />
+      : null}
     <section className="evidence"><h2>Evidence receipts</h2>{receipts.map((receipt) => <div key={receipt.id}><p><strong>{receipt.field}</strong> · {receipt.status}</p><p className="muted">Retrieved {receipt.retrievedAt}</p><code>{receipt.contentHash}</code></div>)}</section>
     <div className="prose"><h2>Interpretation</h2><p>The repository identity is verified. Capability, pricing, compliance and benchmark fields are not automatically inherited from that identity and remain unknown unless separately evidenced.</p></div>
     {entity.categories.some((c) => /coding|developer|code/i.test(c)) ? (
