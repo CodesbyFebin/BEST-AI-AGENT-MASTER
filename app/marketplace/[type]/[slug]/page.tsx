@@ -5,11 +5,13 @@ import { getApprovedSubmission, getApprovedSubmissions } from "@/lib/submissions
 type Props = { params: Promise<{ type: string; slug: string }> };
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return getApprovedSubmissions().map((s) => ({type: s.type, slug: s.slug}));
+  const paths = getApprovedSubmissions().map((s) => ({type: s.type, slug: s.slug}));
+  return paths.length ? paths : [{type:"about",slug:"submissions"}];
 }
 export async function generateMetadata({params}:Props): Promise<Metadata> {
   const {type,slug}=await params;
   const s=getApprovedSubmission(type,slug);
+  if(type==="about" && slug==="submissions") return {title:"Community submission process",robots:{index:false,follow:true}};
   if(!s)return {title:"Not found",robots:{index:false,follow:true}};
   const url=`/marketplace/${type}/${slug}`;
   return {title:s.name,description:s.tagline,alternates:{canonical:url},robots:{index:false,follow:true},
@@ -17,6 +19,7 @@ export async function generateMetadata({params}:Props): Promise<Metadata> {
 }
 export default async function Page({params}:Props) {
   const {type,slug}=await params;
+  if(type==="about" && slug==="submissions") return <div className="shell detail"><h1>Community submissions</h1><p>Community records are published only after editorial approval. No project is marked independently verified by an unvalidated YAML hash.</p><p><Link href="/submit">Submit a project via GitHub PR →</Link></p></div>;
   const s=getApprovedSubmission(type,slug);if(!s)notFound();
   return <article className="shell detail">
     <p className="eyebrow">Community-submitted · Editorially approved · Not independently verified</p>
