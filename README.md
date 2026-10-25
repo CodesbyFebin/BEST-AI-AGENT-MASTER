@@ -254,6 +254,14 @@ npm run audit:live-hosts -- host-audit.json
 gh run list --limit 10
 ```
 
+## Companion project: Agentic Marketplace
+
+**[CodesbyFebin/Agentic-Marketplace](https://github.com/CodesbyFebin/Agentic-Marketplace)** is the separately maintained, public companion repository for a future agentic marketplace ecosystem. It is a distinct project, not the current BestAIAgent.in deployment. At the time of linking, the companion repository contains no published implementation files; marketplace transactions, agent execution, subscriptions, authentication, and integration APIs must not be described as shipped or wired to this directory.
+
+The intended relationship is complementary: **BestAIAgent.in** provides evidence-conscious discovery, source provenance, canonical entity data, and GitHub PR submissions, while the companion project may evolve its own marketplace capabilities under independent architecture, security, licensing, and release review. Links between repositories establish navigation, not a shared database, verified synchronization protocol, or guarantee of feature parity.
+
+[Visit Agentic Marketplace on GitHub](https://github.com/CodesbyFebin/Agentic-Marketplace) · [Explore BestAIAgent.in](https://bestaiagent.in/marketplace) · [Submit a directory entry](https://bestaiagent.in/submit)
+
 ## Release, publication, and GitHub discoverability
 
 This is a **publicly readable, source-available repository**. A repository-wide open-source license is **not declared**, so the site must not carry an OSI-approved or MIT badge until the copyright holder makes an explicit license decision. GitHub releases can publish tagged versions of the source, but publishing a release does not itself grant redistribution rights. A public catalog listing is not an endorsement, source-level security audit, or warranty.
