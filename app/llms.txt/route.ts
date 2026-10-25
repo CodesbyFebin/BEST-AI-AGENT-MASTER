@@ -11,6 +11,11 @@ Evidence-first, statically published directory of AI agents, models, frameworks,
 
 Publication rule: discovery is not verification. Public entity detail pages require qualified evidence; unresolved historical URLs remain noindex or quarantined.
 
+## About this directory
+- Typed source records and a publication gate generate static content on GitHub Pages.
+- Identity, product features, prices, performance and compliance require separate evidence.
+- Unreviewed submissions and editorial drafts are not independently verified.
+
 ## Core directories
 - ${SITE.url}/agents
 - ${SITE.url}/models
@@ -60,12 +65,17 @@ ${trustLines}
 - ${SITE.url}/marketplace — browse editorially accepted records
 - https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/submissions/TEMPLATE.yaml — YAML submission template
 
+## Buyer research
+- ${SITE.url}/pricing — pricing methodology and uncertainty
+- ${SITE.url}/alternatives — alternatives research
+- ${SITE.url}/research — research hub
+
 ## Machine-readable
 - ${SITE.url}/catalog.json — evidence-gated published catalog
 - ${SITE.url}/llms-full.txt — extended public index
 - ${SITE.url}/sitemap.xml — canonical indexable URL set
 
-Hosting: GitHub Pages static export. Editorial draft pages may be reachable but excluded from search indexing.
+Hosting: GitHub Pages static export. The sitemap is a gated flat URL list; sitemap shards are not active. No guaranteed rankings, independent source rehash, live indexing counts or AI citations are implied.
 `;
 
   return new Response(text, { headers: { "Content-Type": "text/plain; charset=utf-8" } });

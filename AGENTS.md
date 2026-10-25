@@ -39,3 +39,13 @@ A change is complete only when Node 22 CI and GitHub Pages static build pass; im
 - New submissions must be `pending` and contain no fabricated evidence digests. Maintainer approval is required for publication.
 - `npm run verify:submissions` checks field structure and duplicate slugs, not actual claim authenticity.
 - The marketplace does not handle payments or pay-to-rank. Never equate `approved` with cryptographic verification.
+
+## Canonical, metadata, and review consistency
+- Preserve `https://www.bestaiagent.in` as configured in `lib/site.ts`. Do not claim the apex has a working HTTP 308 redirect until `npm run audit:live-hosts` produces external evidence.
+- The root document already uses `lang="en-IN"`. GitHub Pages static export uses `trailingSlash: true`; do not assert a no-trailing-slash redirect policy without external verification.
+- `/llms.txt` comes from `app/llms.txt/route.ts`; do not create a duplicate `public/llms.txt`.
+- Sitemaps are currently unsplit. `SITEMAP_SPLIT_ENABLED` remains off; no sitemap shards should be advertised until actually built and deployed.
+- Treat historical GSC counts (including 925 indexed, 509 discovered) as dated user-supplied observations until checked against a fresh authenticated export.
+- This repository has native Node unit tests in `tests/`; run `npm run test:unit` and `npm run verify:submissions` before publishing.
+- Do not add a MIT license or redistribution claim unless the copyright holder expressly approves that license for this repository and its data.
+- Do not claim Vercel is the live deployment target, that every entity is verified, or that build-time SEO validation proves actual search visibility.
