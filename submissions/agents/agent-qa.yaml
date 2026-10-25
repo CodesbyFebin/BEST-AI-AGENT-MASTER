@@ -1,0 +1,45 @@
+id: agent-qa
+slug: agent-qa
+type: agent
+name: agent-qa
+version: 0.2.3
+tagline: QA for web and mobile apps with persistent memory and validated self-improvement.
+description: >-
+  agent-qa runs plain-language tests on web, Android and iOS through CLI and MCP.
+  Its memidex memory keeps reviewable facts and working procedures, and its
+  self-improvement workflow validates lessons from runs. These capabilities are
+  documented by the publisher; this submission is pending editorial review.
+repository: https://github.com/vostride/agent-qa
+homepage: https://vostride.com
+documentation: https://vostride.com/docs/agent-qa
+categories:
+  - testing
+  - developer-tools
+tags:
+  - qa
+  - browser-automation
+  - mobile
+  - mcp
+  - memory
+capabilities:
+  - Plain-language web, Android and iOS interface testing
+  - Persistent memory of product facts and working procedures
+  - Validated lessons from test runs and user feedback
+integrations:
+  - CLI
+  - MCP
+deployment: local
+pricing:
+  model: free
+  notes: Local package; configured model access is required and provider charges may apply.
+evidence:
+  sourceUrl: https://raw.githubusercontent.com/vostride/agent-qa/v0.2.3/README.md
+  retrievedAt: "2026-10-25T22:16:23Z"
+  sha256: c7bb88b0cf90592c5bd4ff2a24ec8c55a8c5aed52092beb1832a6accd4d86dcd
+author:
+  name: vostride
+  github: vostride
+license: FSL-1.1-ALv2
+createdAt: "2026-10-25T22:18:49Z"
+updatedAt: "2026-10-25T22:18:49Z"
+status: pending
