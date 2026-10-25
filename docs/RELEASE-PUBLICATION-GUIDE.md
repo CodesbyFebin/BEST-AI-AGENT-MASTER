@@ -72,3 +72,7 @@ Topic PUT **replaces all** existing topics, rather than appending to them. Revie
 - Contributor experience: local Node 22 commands, build gates, Git-based YAML submissions and evidence hashing.
 - Publication: license is not yet selected; public readability does not equal OSI licensing.
 - Outstanding operator gates remain outside the source release.
+
+## Companion repository link
+
+BestAIAgent.in cross-links [CodesbyFebin/Agentic-Marketplace](https://github.com/CodesbyFebin/Agentic-Marketplace), a separate publicly visible repository with no implementation files confirmed at link time. Do not treat the cross-link as a deployed integration, working marketplace backend, payment processor, or package publication. Any functional integration requires explicit contracts and qualification in a later PR.
