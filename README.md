@@ -4,6 +4,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)
 ![Static catalog](https://img.shields.io/badge/type-static%20catalog-22c55e)
+![GitHub Pages](https://img.shields.io/badge/hosting-GitHub%20Pages-222?logo=github)
 ![CI](https://img.shields.io/github/actions/workflow/status/CodesbyFebin/BEST-AI-AGENT-MASTER/ci.yml?label=CI&logo=github)
 ![Stars](https://img.shields.io/github/stars/CodesbyFebin/BEST-AI-AGENT-MASTER?style=social)
 ![Last commit](https://img.shields.io/github/last-commit/CodesbyFebin/BEST-AI-AGENT-MASTER)
@@ -45,6 +46,14 @@ An entity without a passing evidence receipt still gets a page — it just stays
 
 What's deliberately excluded: synthetic rankings, fabricated ratings or review counts, unverifiable benchmark claims, mass-generated placeholder pages, and any comparison whose title doesn't match the entities it actually points to (this repo has caught and fixed exactly that bug once already — see `CONTRIBUTING.md`).
 
+## Quality and release gates
+
+- **Canonical:** `https://www.bestaiagent.in`. GitHub Pages exports static HTML; it does **not** implement Next.js `redirects()` or `headers()` as HTTP responses.
+- **Language:** the root document uses `lang="en-IN"`. Canonical routing and trailing slash output must be checked independently against the live host.
+- **Editorial:** source-linked, imported, pending and verified are distinct states; a SHA-256-shaped value is not independently reproduced evidence.
+- **SEO/AEO/GEO:** `sitemap.xml`, structured metadata and `llms.txt` aid discovery; measured rankings, citations and GSC coverage are separate live outcomes.
+- **Operational gaps:** host unification, legacy redirects, fresh GSC exports, glossary source review and field Core Web Vitals remain independently gated.
+
 ## Quick start
 
 ```bash
@@ -77,9 +86,12 @@ python3 scripts/validate-jsonld.py   # validates every JSON-LD block in the buil
 | `/llms.txt`, `/llms-full.txt` | Text | AI-crawler ingestion surfaces |
 | `/sitemap.xml` | XML | Only indexable URLs — noindex pages are never listed here |
 | `/robots.txt` | Text | Explicitly allows OAI-SearchBot and PerplexityBot alongside standard crawlers |
-| `/api/health`, `/api/search`, `/api/catalog` | JSON | — |
+| `/api/search/` | Static JSON | Build-time index for browser-side filtering; no request-time search API |
 
 ## Contributing
+
+Pull requests for new records use [`submissions/TEMPLATE.yaml`](submissions/TEMPLATE.yaml), with `npm run verify:submissions` and editorial review. A pending or approved YAML submission alone never certifies its factual capabilities.
+
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) — it covers the two-tier verification model, exactly how to promote an entity from imported to verified with a real evidence hash, and what gets rejected on review (fabricated schema data, gate-lowering changes, unverifiable claims).
 
 ## License
