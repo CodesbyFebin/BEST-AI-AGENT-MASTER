@@ -3,7 +3,7 @@
 ## Repository reality
 - Canonical repository: `CodesbyFebin/BEST-AI-AGENT-MASTER`.
 - Next.js 16 App Router, TypeScript, React 19. GitHub Pages deploys a static HTML export from `out/` with `GITHUB_PAGES_STATIC=1`.
-- Canonical domain: `https://www.bestaiagent.in`. Do not change canonical routing without an explicit migration.
+- Canonical domain: `https://bestaiagent.in`. Do not change canonical routing without an explicit migration.
 - Public catalog and editorial source records are held in `lib/*.ts`, with evidence and publication checks. A static `app/api/search/route.ts` exports a read-only search index; `components/SearchBox.tsx` filters locally.
 - A static site is not immune to supply-chain attacks or content integrity failures. Do not introduce credentials, personal data, or invented evidence.
 
@@ -41,7 +41,7 @@ A change is complete only when Node 22 CI and GitHub Pages static build pass; im
 - The marketplace does not handle payments or pay-to-rank. Never equate `approved` with cryptographic verification.
 
 ## Canonical, metadata, and review consistency
-- Preserve `https://www.bestaiagent.in` as configured in `lib/site.ts`. Do not claim the apex has a working HTTP 308 redirect until `npm run audit:live-hosts` produces external evidence.
+- Use `https://bestaiagent.in` as configured in `lib/site.ts`. Do not claim www → apex 301 redirects work until `npm run audit:live-hosts` produces external evidence.
 - The root document already uses `lang="en-IN"`. GitHub Pages static export uses `trailingSlash: true`; do not assert a no-trailing-slash redirect policy without external verification.
 - `/llms.txt` comes from `app/llms.txt/route.ts`; do not create a duplicate `public/llms.txt`.
 - Sitemaps are currently unsplit. `SITEMAP_SPLIT_ENABLED` remains off; no sitemap shards should be advertised until actually built and deployed.
