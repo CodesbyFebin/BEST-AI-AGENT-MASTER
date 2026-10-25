@@ -16,7 +16,7 @@ for (const host of hosts) for (const path of paths) {
    let canonicalTag = null;
    if (type.includes("text/html") && res.ok) {
      const html = (await res.text()).slice(0, 200000);
-     canonicalTag = html.match(/<link\\s+[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)/i)?.[1] ?? null;
+     canonicalTag = html.match(/<link\s+[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)/i)?.[1] ?? null;
    } else await res.body?.cancel();
    entries.push({ url, status: res.status, location: redirectTo, canonicalTag, contentType: type });
   } finally { clearTimeout(timeout); }
