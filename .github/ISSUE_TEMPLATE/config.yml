@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security disclosure
+    url: https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/security/advisories/new
+    about: Submit sensitive vulnerabilities privately if private reporting is enabled
+  - name: Community marketplace submissions
+    url: https://bestaiagent.in/submit
+    about: Follow the evidence-first GitHub PR submission process
+  - name: Companion Agentic Marketplace
+    url: https://github.com/CodesbyFebin/Agentic-Marketplace
+    about: Separate project; not a runtime dependency of this directory
