@@ -9,4 +9,11 @@ The [Engineering, Governance, Automation and Operations Handbook](ENGINEERING-OP
 - MCP server permissions, catalog provenance, security scanning and source-linked publication.
 - Releases, tags, responsible licensing, SEO/AEO/GEO, data freshness and verification.
 
+
+## Discovery, author and machine interfaces
+
+- [Ethical GitHub discovery, owner attribution and marketplace cross-links](DISCOVERY-AND-REFERRALS.md)
+- [AI machine-readable content and endpoint inventory](AI-MACHINE-READABLE.md)
+- [Maintainer identity](../../AUTHORS.md)
+- [Citation metadata](../../CITATION.cff)
 **This folder is a versioned repository wiki, not GitHub's separate wiki Git repository.** Policies describe desired safeguards; they are not proof that account-level permissions or external cloud settings have been activated.
