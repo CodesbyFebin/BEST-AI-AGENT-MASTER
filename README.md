@@ -29,6 +29,28 @@
 
 [Architecture](#architecture-build-once-publish-static-artifacts) · [Evidence policy](#evidence-first-data-doctrine) · [SEO](#seo-canonical-crawlability-and-technical-hygiene) · [AEO](#aeo-useful-answers-without-answer-engine-theater) · [GEO](#geo-evidence-backed-generative-discovery) · [Submission workflow](#github-pr-submission-workflow) · [Engineering wiki](docs/wiki/README.md) · [Release guide](docs/RELEASE-PUBLICATION-GUIDE.md)
 
+## Contents
+
+- [Entity type definitions](#entity-type-definitions)
+- [Where should I start?](#where-should-i-start)
+- [What this repository is not](#what-this-repository-is-not)
+- [What problem does BestAIAgent.in solve?](#what-problem-does-bestaiagentin-solve)
+- [Who should use this project?](#who-should-use-this-project)
+- [Architecture: build once, publish static artifacts](#architecture-build-once-publish-static-artifacts)
+- [Evidence-first data doctrine](#evidence-first-data-doctrine)
+- [Publication states and indexability](#publication-states-and-indexability)
+- [Core topic pillars and content clusters](#core-topic-pillars-and-content-clusters)
+- [Navigating the website](#navigating-the-website)
+- [SEO: canonical, crawlability, and technical hygiene](#seo-canonical-crawlability-and-technical-hygiene)
+- [AEO: useful answers without answer-engine theater](#aeo-useful-answers-without-answer-engine-theater)
+- [GEO: evidence-backed generative discovery](#geo-evidence-backed-generative-discovery)
+- [Local setup and reproducible build](#local-setup-and-reproducible-build)
+- [Frequently asked questions](#frequently-asked-questions)
+- [Companion project: Agentic Marketplace](#companion-project-agentic-marketplace)
+- [Release, publication, and GitHub discoverability](#release-publication-and-github-discoverability)
+- [Maintainer, discoverability and project relationships](#maintainer-discoverability-and-project-relationships)
+- [Engineering wiki, governance and automation](#engineering-wiki-governance-and-automation)
+
 ## Project badges — 20 verifiable signals
 
 [![Next.js 16](https://img.shields.io/badge/Next.js-16-black?style=flat-square)](https://nextjs.org/) [![React 19](https://img.shields.io/badge/React-19-149eca?style=flat-square)](https://react.dev/) [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square)](https://www.typescriptlang.org/) [![Node 22](https://img.shields.io/badge/Node.js-22-339933?style=flat-square)](https://nodejs.org/) [![GitHub Pages](https://img.shields.io/badge/Hosting-GitHub_Pages-222222?style=flat-square)](https://pages.github.com/) [![Static Export](https://img.shields.io/badge/Build-static_export-0a7a67?style=flat-square)](https://nextjs.org/docs/app/guides/static-exports) [![CI](https://img.shields.io/badge/CI-Workflow-blue?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/actions/workflows/ci.yml) [![Pages Deploy](https://img.shields.io/badge/Pages-Workflow-blue?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/actions/workflows/pages.yml) [![PR Intake](https://img.shields.io/badge/Submissions-GitHub_PR-6e40c9?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/tree/main/submissions) [![YAML](https://img.shields.io/badge/Intake-YAML-cb171e?style=flat-square)](https://yaml.org/) [![Evidence](https://img.shields.io/badge/Evidence-SHA--256-555555?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/docs/EVIDENCE_POLICY.md) [![No rankings](https://img.shields.io/badge/Rankings-no_synthetic_data-0a7a67?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/CONTRIBUTING.md) [![No DB](https://img.shields.io/badge/Runtime_DB-none-555555?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER) [![Canonical](https://img.shields.io/badge/Canonical-apex-0a7a67?style=flat-square)](https://bestaiagent.in) [![JSON-LD](https://img.shields.io/badge/Structured_Data-JSON--LD-f0ad4e?style=flat-square)](https://schema.org/) [![Sitemap](https://img.shields.io/badge/Sitemap-single_XML-555555?style=flat-square)](https://bestaiagent.in/sitemap.xml) [![llms.txt](https://img.shields.io/badge/LLMs-llms.txt-444444?style=flat-square)](https://bestaiagent.in/llms.txt) [![robots.txt](https://img.shields.io/badge/Crawlers-robots.txt-555555?style=flat-square)](https://bestaiagent.in/robots.txt) [![Tests](https://img.shields.io/badge/Tests-Node_native-339933?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/tree/main/tests) [![License](https://img.shields.io/badge/License-not_declared-9f602c?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER)
@@ -65,6 +87,34 @@ Maintainership is technical and editorial. A contributor submitting a new entry 
 The static architecture suits a directory with transparent updates and predictable deployment. It does not suit real-time individualized recommendations, private customer records, credential storage, payments, protected API access, or automated agent orchestration without an additional separately reviewed backend. Avoid describing the current website as a SaaS platform simply because marketplace pages exist.
 
 Readers are encouraged to consult original publisher documentation when pricing, terms, laws, endpoints, model weights, or API behavior may have changed. Evidence snapshots preserve historical observations; they do not guarantee those facts remain accurate indefinitely.
+
+## Entity type definitions
+
+The catalog uses five principal entity types. These descriptions identify the category, not a guarantee that any particular listing performs every function associated with it.
+
+| Entity type | Working definition | What evidence may establish |
+| --- | --- | --- |
+| **AI agent** | Software using model-driven decisions and tools to pursue tasks across one or more steps | Repository identity, documented interfaces and observed implementation details |
+| **AI model** | A published machine-learning model, including language, embedding and multimodal models | Model card, publisher identity, weights and documented modalities |
+| **Framework** | A library or development toolkit used to assemble agents and adjacent AI workflows | Package identity, maintained source, examples and declared integration patterns |
+| **Provider** | A platform offering model inference, hosting or related APIs | Publisher documentation and directly sourced service details |
+| **MCP server** | A server exposing tools, resources or prompts using the Model Context Protocol | Source-linked transport, tools and configuration; **not** an automatic security assessment |
+
+An entity can be source-linked without its pricing, safety, benchmarks or operational claims being independently verified. Read the [evidence doctrine](#evidence-first-data-doctrine) before treating catalog fields as procurement decisions.
+
+## Where should I start?
+
+**Developers:** Browse [AI agents](https://bestaiagent.in/agents), [coding agents](https://bestaiagent.in/coding-agents), or [MCP servers](https://bestaiagent.in/mcp/servers); inspect the primary sources and confirm tool permissions before installation.
+
+**Researchers:** Begin with the [evidence policy](docs/EVIDENCE_POLICY.md), [public catalog](https://bestaiagent.in/catalog.json), and [reproducible hash guide](docs/HASH-EVIDENCE-REPRODUCIBILITY.md). A source hash does not validate the truth of a statement.
+
+**Evaluators and buyers:** Use the [comparisons](https://bestaiagent.in/compare), [alternatives](https://bestaiagent.in/alternatives), and [pricing research](https://bestaiagent.in/pricing). Unsupported winner declarations and unknown vendor prices remain unknown.
+
+**Contributors:** Read [CONTRIBUTING.md](CONTRIBUTING.md), [submissions/README.md](submissions/README.md), and the [engineering wiki](docs/wiki/README.md). New YAML entries require maintainer review.
+
+## What this repository is not
+
+BestAIAgent.in is **not** a paid agent marketplace, transaction processor, live execution sandbox, model-serving endpoint, enterprise security certificate, or real-time price tracker. The companion [Agentic-Marketplace](https://github.com/CodesbyFebin/Agentic-Marketplace) is a separate repository, not an existing production integration. A verified catalog identity is not blanket validation of every capability. Public source visibility is not an open-source license grant.
 
 ## Architecture: build once, publish static artifacts
 
@@ -244,7 +294,19 @@ A public repository is an invitation to review and contribute under the stated p
 
 **What should I inspect first?** The publication doctrine, typed catalog records, actual evidence snapshots, verification scripts, GitHub Actions workflow, and current deployment settings.
 
+
+**What MCP server information is included?** The directory links to sources and known interface details where supported. It does not deploy, execute, or certify external MCP servers.
+
+**Can I reuse the catalog JSON?** The repository has no repository-wide license. Obtain rights-holder permission for reuse and comply with any upstream source terms.
+
+**Why is a page reachable but noindexed?** Research continuity and search publication have different requirements. An entry may remain accessible while its evidence review is incomplete.
+
+**How does this differ from an ordinary ranked list?** It separates source identity from field-level claims and does not invent a winner when measurements or provenance are absent.
+
 ## Architecture at a glance
+
+The diagram below summarizes the source-to-publication pipeline. GitHub Pages serves generated artifacts; external DNS and edge redirects require separate operator validation.
+
 
 ```mermaid
 flowchart TD
@@ -306,6 +368,18 @@ gh release create v2.1.0-docs --repo CodesbyFebin/BEST-AI-AGENT-MASTER --title "
 ```
 
 Use a new tag only once; confirm the latest GitHub release/tag before executing these sample commands. A GitHub source release is not a package-registry publication, paid product offering, signed binary, or search-engine indexing event. The GitHub CLI commands are for a maintainer with write permission; they are not automatically executed by this README.
+
+## Cite this repository
+
+Use the maintained [CITATION.cff](CITATION.cff) for project attribution. For a specific entity or conclusion, cite the source-linked canonical page and the primary evidence available at the time of access. Do not present a SHA-256 digest as independent factual verification.
+
+```text
+BestAIAgent.in — Evidence-first AI Agent Directory
+Maintainer: CodesbyFebin
+Repository: https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER
+Website: https://bestaiagent.in
+Accessed: YYYY-MM-DD
+```
 
 ## Maintainer and review navigation
 
