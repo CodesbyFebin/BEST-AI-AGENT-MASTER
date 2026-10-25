@@ -1,0 +1,9 @@
+# Proposed code-ownership review map. GitHub requires a protected branch/ruleset setting
+# for mandatory code-owner review; presence of this file alone does not enforce approval.
+* @CodesbyFebin
+/.github/ @CodesbyFebin
+/lib/catalog.ts @CodesbyFebin
+/lib/evidence.ts @CodesbyFebin
+/app/sitemap.ts @CodesbyFebin
+/scripts/ @CodesbyFebin
+/submissions/ @CodesbyFebin
