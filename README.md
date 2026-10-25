@@ -8,6 +8,27 @@
   <p><a href="https://bestaiagent.in">Explore the website</a> · <a href="https://bestaiagent.in/marketplace">Marketplace</a> · <a href="https://bestaiagent.in/submit">Submit a project</a> · <a href="https://bestaiagent.in/catalog.json">Catalog JSON</a> · <a href="CONTRIBUTING.md">Contribute</a></p>
 </div>
 
+
+### Quick answer
+
+**BestAIAgent.in is an evidence-first directory for AI agents, AI models, agent frameworks, providers and MCP servers.** Its Next.js 16 application compiles typed source records and evidence-gated pages into a static GitHub Pages website. Unverified claims remain unknown; the site does not process marketplace payments or publish synthetic product winners.
+
+### At a glance
+
+| Question | Answer |
+| --- | --- |
+| Who maintains this project? | [CodesbyFebin](https://github.com/CodesbyFebin) is the featured maintainer; actual Git contributors remain credited in history |
+| Where is the live site? | [bestaiagent.in](https://bestaiagent.in) — apex canonical |
+| What is the deployment? | GitHub Pages static export |
+| How are entries submitted? | Reviewed YAML submissions through GitHub pull requests |
+| Where is the companion marketplace? | [Agentic-Marketplace](https://github.com/CodesbyFebin/Agentic-Marketplace) — separate project |
+| What is the license? | No repository-wide license declared |
+| Where are source releases documented? | [Release notes](docs/releases/) and [GitHub Releases](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/releases) |
+
+### Navigate the project
+
+[Architecture](#architecture-build-once-publish-static-artifacts) · [Evidence policy](#evidence-first-data-doctrine) · [SEO](#seo-canonical-crawlability-and-technical-hygiene) · [AEO](#aeo-useful-answers-without-answer-engine-theater) · [GEO](#geo-evidence-backed-generative-discovery) · [Submission workflow](#github-pr-submission-workflow) · [Engineering wiki](docs/wiki/README.md) · [Release guide](docs/RELEASE-PUBLICATION-GUIDE.md)
+
 ## Project badges — 20 verifiable signals
 
 [![Next.js 16](https://img.shields.io/badge/Next.js-16-black?style=flat-square)](https://nextjs.org/) [![React 19](https://img.shields.io/badge/React-19-149eca?style=flat-square)](https://react.dev/) [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square)](https://www.typescriptlang.org/) [![Node 22](https://img.shields.io/badge/Node.js-22-339933?style=flat-square)](https://nodejs.org/) [![GitHub Pages](https://img.shields.io/badge/Hosting-GitHub_Pages-222222?style=flat-square)](https://pages.github.com/) [![Static Export](https://img.shields.io/badge/Build-static_export-0a7a67?style=flat-square)](https://nextjs.org/docs/app/guides/static-exports) [![CI](https://img.shields.io/badge/CI-Workflow-blue?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/actions/workflows/ci.yml) [![Pages Deploy](https://img.shields.io/badge/Pages-Workflow-blue?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/actions/workflows/pages.yml) [![PR Intake](https://img.shields.io/badge/Submissions-GitHub_PR-6e40c9?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/tree/main/submissions) [![YAML](https://img.shields.io/badge/Intake-YAML-cb171e?style=flat-square)](https://yaml.org/) [![Evidence](https://img.shields.io/badge/Evidence-SHA--256-555555?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/docs/EVIDENCE_POLICY.md) [![No rankings](https://img.shields.io/badge/Rankings-no_synthetic_data-0a7a67?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/CONTRIBUTING.md) [![No DB](https://img.shields.io/badge/Runtime_DB-none-555555?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER) [![Canonical](https://img.shields.io/badge/Canonical-apex-0a7a67?style=flat-square)](https://bestaiagent.in) [![JSON-LD](https://img.shields.io/badge/Structured_Data-JSON--LD-f0ad4e?style=flat-square)](https://schema.org/) [![Sitemap](https://img.shields.io/badge/Sitemap-single_XML-555555?style=flat-square)](https://bestaiagent.in/sitemap.xml) [![llms.txt](https://img.shields.io/badge/LLMs-llms.txt-444444?style=flat-square)](https://bestaiagent.in/llms.txt) [![robots.txt](https://img.shields.io/badge/Crawlers-robots.txt-555555?style=flat-square)](https://bestaiagent.in/robots.txt) [![Tests](https://img.shields.io/badge/Tests-Node_native-339933?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/tree/main/tests) [![License](https://img.shields.io/badge/License-not_declared-9f602c?style=flat-square)](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER)
