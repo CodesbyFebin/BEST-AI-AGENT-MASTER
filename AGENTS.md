@@ -49,3 +49,8 @@ A change is complete only when Node 22 CI and GitHub Pages static build pass; im
 - This repository has native Node unit tests in `tests/`; run `npm run test:unit` and `npm run verify:submissions` before publishing.
 - Do not add a MIT license or redistribution claim unless the copyright holder expressly approves that license for this repository and its data.
 - Do not claim Vercel is the live deployment target, that every entity is verified, or that build-time SEO validation proves actual search visibility.
+
+## Snapshot hash reproducibility
+- `scripts/hash-evidence.mjs` recomputes deterministic hashes of retained JSON evidence snapshots; it does not independently verify assertions or change publication status.
+- Run `node scripts/hash-evidence.mjs snapshot.json --verify sha256:<digest>` only with a real retained snapshot. See `docs/HASH-EVIDENCE-REPRODUCIBILITY.md`.
+- Hosting is GitHub Pages; www → apex 301 depends on an externally verified Cloudflare edge rule. Never claim this redirects automatically.
