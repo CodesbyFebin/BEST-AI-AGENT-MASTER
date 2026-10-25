@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you reference the BestAIAgent.in directory, cite the project and link to the relevant primary-source record. A citation is not verification of external claims."
+title: "BestAIAgent.in — Evidence-First AI Agent Directory"
+type: software
+authors:
+  - name: "CodesbyFebin"
+    website: "https://github.com/CodesbyFebin"
+repository-code: "https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER"
+url: "https://bestaiagent.in"
+abstract: "Statically published, source-linked directory covering AI agents, models, frameworks, providers and MCP infrastructure."

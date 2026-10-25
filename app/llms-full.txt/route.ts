@@ -48,6 +48,11 @@ export async function GET() {
     "## Evidence-ready comparisons",
     ...comparisonLines,
     "",
+    "## Maintainer and companion projects",
+    "- CodesbyFebin — https://github.com/CodesbyFebin",
+    "- Engineering wiki — https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/docs/wiki/README.md",
+    "- Companion Agentic Marketplace (separate repository) — https://github.com/CodesbyFebin/Agentic-Marketplace",
+    "",
     "## Trust and methodology",
     ...trustLines
   ];

@@ -65,6 +65,13 @@ ${trustLines}
 - ${SITE.url}/marketplace — browse editorially accepted records
 - https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/submissions/TEMPLATE.yaml — YAML submission template
 
+## Ownership, documentation, and companion ecosystem
+- https://github.com/CodesbyFebin — project maintainer
+- https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/AUTHORS.md — maintainer attribution
+- https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/CITATION.cff — citation metadata
+- https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/blob/main/docs/wiki/README.md — repository wiki
+- https://github.com/CodesbyFebin/Agentic-Marketplace — separate companion repository; no claimed runtime integration
+
 ## Buyer research
 - ${SITE.url}/pricing — pricing methodology and uncertainty
 - ${SITE.url}/alternatives — alternatives research

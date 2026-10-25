@@ -304,6 +304,16 @@ Use a new tag only once; confirm the latest GitHub release/tag before executing 
 | Documentation import gates | `scripts/verify-gitbook-inventory.mjs` |
 
 
+## Maintainer, discoverability and project relationships
+
+**Project owner and featured maintainer:** [CodesbyFebin](https://github.com/CodesbyFebin). See [AUTHORS.md](AUTHORS.md) for the authorship distinction; GitHub's Contributors graph is generated from actual commit history and may include automation accounts. This project does not hide or rewrite that history.
+
+**Companion reference:** [CodesbyFebin/Agentic-Marketplace](https://github.com/CodesbyFebin/Agentic-Marketplace). This is an independent companion repository, not an existing referral commission network, deployed marketplace API, or guaranteed income mechanism.
+
+**GitHub discovery:** [Citation metadata](CITATION.cff) · [Machine-readable index guide](docs/wiki/AI-MACHINE-READABLE.md) · [Discovery and ethical referral policy](docs/wiki/DISCOVERY-AND-REFERRALS.md) · [Engineering wiki](docs/wiki/README.md) · [Security policy](SECURITY.md).
+
+Public source availability is **not** an open-source license grant. No fake stars, artificial ranking, fabricated contributor identities, keyword stuffing, or undisclosed promotional links.
+
 ## Engineering wiki, governance and automation
 
 The [14,000+ word Engineering, Governance and Operations Wiki](docs/wiki/ENGINEERING-OPERATIONS-HANDBOOK.md) describes code and planning agents, review policies, GitHub webhooks, runner and Internet access constraints, OIDC federation, protected environments, branch rulesets, MCP server controls, cloud deployment, evidence and licensing. The [Security Policy](SECURITY.md) supports responsible disclosure, and [CODEOWNERS](.github/CODEOWNERS) identifies the proposed review owner.
