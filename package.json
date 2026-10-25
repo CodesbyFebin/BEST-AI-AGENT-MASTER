@@ -26,7 +26,8 @@
     "verify:gitbook-inventory": "node scripts/verify-gitbook-inventory.mjs",
     "verify:gitbook-release": "node scripts/verify-gitbook-inventory.mjs --strict",
     "test:unit": "node --test tests/*.test.mjs",
-    "verify:submissions": "node scripts/validate-submission.mjs"
+    "verify:submissions": "node scripts/validate-submission.mjs",
+    "audit:live-hosts": "node scripts/audit-live-hosts.mjs"
   },
   "dependencies": {
     "next": "^16.3.3",
