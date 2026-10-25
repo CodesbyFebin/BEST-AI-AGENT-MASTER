@@ -303,6 +303,13 @@ Use a new tag only once; confirm the latest GitHub release/tag before executing 
 | GSC readiness and triage | `docs/` |
 | Documentation import gates | `scripts/verify-gitbook-inventory.mjs` |
 
+
+## Engineering wiki, governance and automation
+
+The [14,000+ word Engineering, Governance and Operations Wiki](docs/wiki/ENGINEERING-OPERATIONS-HANDBOOK.md) describes code and planning agents, review policies, GitHub webhooks, runner and Internet access constraints, OIDC federation, protected environments, branch rulesets, MCP server controls, cloud deployment, evidence and licensing. The [Security Policy](SECURITY.md) supports responsible disclosure, and [CODEOWNERS](.github/CODEOWNERS) identifies the proposed review owner.
+
+**Operational distinction:** a documentation policy or CODEOWNERS file does not automatically configure repository rulesets, third-party OAuth providers, webhook receivers, cloud identities or GitHub environment protection. Those operator-only settings require separate authorization and verification. The repository remains publicly readable and source-available; no license has been selected.
+
 ## Contribution, support, and attribution
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the precise evidence and reviewer contract, [AGENTS.md](AGENTS.md) for engineering boundaries, and [submissions/README.md](submissions/README.md) for the developer intake workflow. Start with a focused issue or pull request rather than pushing unsupported catalog facts. Source disagreements are reviewable questions, not opportunities to make the validator less strict.
