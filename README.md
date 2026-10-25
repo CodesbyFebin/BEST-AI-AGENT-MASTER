@@ -254,6 +254,30 @@ npm run audit:live-hosts -- host-audit.json
 gh run list --limit 10
 ```
 
+## Release, publication, and GitHub discoverability
+
+This is a **publicly readable, source-available repository**. A repository-wide open-source license is **not declared**, so the site must not carry an OSI-approved or MIT badge until the copyright holder makes an explicit license decision. GitHub releases can publish tagged versions of the source, but publishing a release does not itself grant redistribution rights. A public catalog listing is not an endorsement, source-level security audit, or warranty.
+
+Releases should use semantic version labels when they correspond to reviewed changes. Each release note should identify the commit, passed GitHub Actions workflows, static-export result, important catalog/evidence policy modifications, redirects affected, and separately pending operational gates. Do not describe a source archive as a deployed live release unless the production Pages run for the same commit completed successfully.
+
+Suggested GitHub Topics: `ai-agents`, `ai-directory`, `ai-models`, `ai-frameworks`, `mcp`, `model-context-protocol`, `nextjs`, `typescript`, `react`, `github-pages`, `static-site`, `seo`, `answer-engine-optimization`, `generative-ai`, `ai-tools`, `structured-data`, `knowledge-graph`, `evidence-based`, `source-available`, `developer-tools`. Topics are search metadata, not independent quality certifications. Avoid `vercel` and `open-source` unless their meanings match a verified deployment or license.
+
+### How to publish a source release
+
+After required CI checks and deployment qualification, maintainers can run:
+
+```bash
+gh auth status
+gh repo set-default CodesbyFebin/BEST-AI-AGENT-MASTER
+git checkout main && git pull --ff-only origin main
+gh run list --branch main --limit 5
+git tag -a v2.1.0-docs -m "BestAIAgent.in documentation and publication baseline"
+git push origin v2.1.0-docs
+gh release create v2.1.0-docs --repo CodesbyFebin/BEST-AI-AGENT-MASTER --title "BestAIAgent.in — Documentation and Publication Baseline" --notes-file docs/RELEASE-PUBLICATION-GUIDE.md --verify-tag
+```
+
+Use a new tag only once; confirm the latest GitHub release/tag before executing these sample commands. A GitHub source release is not a package-registry publication, paid product offering, signed binary, or search-engine indexing event. The GitHub CLI commands are for a maintainer with write permission; they are not automatically executed by this README.
+
 ## Maintainer and review navigation
 
 | Concern | Primary file or directory |
