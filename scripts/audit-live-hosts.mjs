@@ -1,7 +1,7 @@
 // Read-only production host and canonical audit. No DNS/GSC changes.
 import { writeFileSync } from "node:fs";
-const canonical = "https://www.bestaiagent.in";
-const hosts = [canonical, "https://bestaiagent.in"];
+const canonical = "https://bestaiagent.in";
+const hosts = [canonical, "https://www.bestaiagent.in"];
 const paths = ["/", "/india", "/mcp", "/agents", "/marketplace", "/blog", "/sitemap.xml", "/llms.txt", "/robots.txt"];
 const entries = [];
 for (const host of hosts) for (const path of paths) {
@@ -22,10 +22,10 @@ for (const host of hosts) for (const path of paths) {
   } finally { clearTimeout(timeout); }
  } catch (error) { entries.push({ url, error: String(error) }); }
 }
-const apex = entries.filter(x => x.url.startsWith("https://bestaiagent.in/"));
-const conflicts = apex.filter(x => !(x.status >= 300 && x.status < 400 && x.location?.startsWith(canonical)));
-const result = { timestamp: new Date().toISOString(), expectedCanonicalHost: canonical, sampledUrls: entries.length, entries, apexHostNotRedirectingToWww: conflicts.map(x => x.url), note: "Sampling is diagnostic only. No authority over DNS, GSC property or Cloudflare configuration." };
+const www = entries.filter(x => x.url.startsWith("https://www.bestaiagent.in/"));
+const conflicts = www.filter(x => !(x.status === 301 && x.location?.startsWith(canonical)));
+const result = { timestamp: new Date().toISOString(), expectedCanonicalHost: canonical, sampledUrls: entries.length, entries, wwwHostNotRedirectingToApex: conflicts.map(x => x.url), note: "Sampling is diagnostic only. No authority over DNS, GSC property or Cloudflare configuration." };
 const dest = process.argv[2];
 if (dest) writeFileSync(dest, JSON.stringify(result, null, 2) + "\n");
-console.log(JSON.stringify({ sampledUrls: entries.length, apexHostConflicts: conflicts.length, findings: conflicts, reportFile: dest ?? null }, null, 2));
+console.log(JSON.stringify({ sampledUrls: entries.length, wwwHostConflicts: conflicts.length, findings: conflicts, reportFile: dest ?? null }, null, 2));
 if (conflicts.length) process.exitCode = 1;

@@ -11,7 +11,7 @@
 
 > Evidence-first authority graph for AI agents, models, frameworks, providers and MCP infrastructure. Unknown stays unknown, no synthetic rankings, no fake reviews.
 
-[Live site](https://www.bestaiagent.in) · [catalog.json](https://www.bestaiagent.in/catalog.json) · [llms.txt](https://www.bestaiagent.in/llms.txt)
+[Live site](https://bestaiagent.in) · [catalog.json](https://bestaiagent.in/catalog.json) · [llms.txt](https://bestaiagent.in/llms.txt)
 
 ## What this is, and isn't
 
@@ -24,7 +24,7 @@ What it covers:
 - **MCP servers** — cataloged by source-link status, not capability claims
 - **Comparisons** — evidence-ready only when both sides are independently verified
 ## Production
-- Canonical host: `https://www.bestaiagent.in` (set in `lib/site.ts`).
+- Canonical host: `https://bestaiagent.in` (set in `lib/site.ts`).
 - Hosting: **GitHub Pages**, through `.github/workflows/pages.yml`; `GITHUB_PAGES_STATIC=1 npm run build` exports `out/`.
 - Repository: [CodesbyFebin/BEST-AI-AGENT-MASTER](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER).
 - Deployment: [GitHub Pages workflow](https://github.com/CodesbyFebin/BEST-AI-AGENT-MASTER/actions/workflows/pages.yml). Production custom-domain DNS, TLS and legacy redirects must be tested separately.
@@ -48,7 +48,7 @@ What's deliberately excluded: synthetic rankings, fabricated ratings or review c
 
 ## Quality and release gates
 
-- **Canonical:** `https://www.bestaiagent.in`. GitHub Pages exports static HTML; it does **not** implement Next.js `redirects()` or `headers()` as HTTP responses.
+- **Canonical:** `https://bestaiagent.in`. GitHub Pages exports static HTML; it does **not** implement Next.js `redirects()` or `headers()` as HTTP responses.
 - **Language:** the root document uses `lang="en-IN"`. Canonical routing and trailing slash output must be checked independently against the live host.
 - **Editorial:** source-linked, imported, pending and verified are distinct states; a SHA-256-shaped value is not independently reproduced evidence.
 - **SEO/AEO/GEO:** `sitemap.xml`, structured metadata and `llms.txt` aid discovery; measured rankings, citations and GSC coverage are separate live outcomes.
@@ -100,4 +100,4 @@ No repository-wide software license has been declared. Do not assume MIT or redi
 
 ## Git-based community submissions
 
-Submit an agent, model, bot, skill, MCP server or framework via a GitHub PR. See [submission instructions](submissions/README.md) and [the template](submissions/TEMPLATE.yaml). Run `npm run verify:submissions` before requesting review. New entries are unverified by default; editorial approval does not establish independently proven capabilities. The live submission guide is at https://www.bestaiagent.in/submit.
+Submit an agent, model, bot, skill, MCP server or framework via a GitHub PR. See [submission instructions](submissions/README.md) and [the template](submissions/TEMPLATE.yaml). Run `npm run verify:submissions` before requesting review. New entries are unverified by default; editorial approval does not establish independently proven capabilities. The live submission guide is at https://bestaiagent.in/submit.
