@@ -30,7 +30,7 @@
     "audit:live-hosts": "node scripts/audit-live-hosts.mjs"
   },
   "dependencies": {
-    "next": "^16.3.3",
+    "next": "^16.4.3",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
