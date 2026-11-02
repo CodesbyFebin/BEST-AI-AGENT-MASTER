@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T18:34:30.811Z",
+  "generatedAt": "2026-11-02T14:12:17.046Z",
   "methodology": "Heuristic source-pattern scan; publication remains manual and separate from identity evidence.",
   "reports": [
     {
       "entitySlug": "openhands",
       "repository": "https://github.com/OpenHands/OpenHands",
-      "repositoryCommit": "fee10e3d2909ebbf9950578575b1ee011492171e",
-      "scannedAt": "2026-10-24T18:33:45.670Z",
+      "repositoryCommit": "974ea6ae96945b4c0baffe71a748e491c1316f43",
+      "scannedAt": "2026-11-02T14:12:00.762Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
@@ -250,15 +250,15 @@
           "astTitle": "Insecure Metadata"
         }
       ],
-      "filesScanned": 2237,
-      "filesSkipped": 192,
+      "filesScanned": 2227,
+      "filesSkipped": 257,
       "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
     },
     {
       "entitySlug": "cline",
       "repository": "https://github.com/cline/cline",
-      "repositoryCommit": "40c5d99031fe1128189c5b52e40638d2b7787754",
-      "scannedAt": "2026-10-24T18:33:46.779Z",
+      "repositoryCommit": "a6507a62a147db4a35e27f4294589742ccac5060",
+      "scannedAt": "2026-11-02T14:12:00.875Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
@@ -501,15 +501,15 @@
           "astTitle": "Malicious Skills"
         }
       ],
-      "filesScanned": 1749,
-      "filesSkipped": 1911,
+      "filesScanned": 1729,
+      "filesSkipped": 1995,
       "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
     },
     {
       "entitySlug": "aider",
       "repository": "https://github.com/Aider-AI/aider",
       "repositoryCommit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
-      "scannedAt": "2026-10-24T18:33:46.174Z",
+      "scannedAt": "2026-11-02T14:11:59.553Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
@@ -582,8 +582,8 @@
     {
       "entitySlug": "gemini-cli",
       "repository": "https://github.com/google-gemini/gemini-cli",
-      "repositoryCommit": "cd1b45c2db0a5ea7b7fc3b67c1ba5879601d6005",
-      "scannedAt": "2026-10-24T18:33:46.100Z",
+      "repositoryCommit": "6814e00d6b148c3a1d57244d5d7040f7c541009d",
+      "scannedAt": "2026-11-02T14:12:00.534Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
@@ -827,15 +827,15 @@
           "astTitle": "Over-Privileged Skills"
         }
       ],
-      "filesScanned": 1263,
-      "filesSkipped": 1209,
+      "filesScanned": 1262,
+      "filesSkipped": 1217,
       "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
     },
     {
       "entitySlug": "qwen-code",
       "repository": "https://github.com/QwenLM/qwen-code",
-      "repositoryCommit": "f4f602d606665951b5382d40d72326331757c6b3",
-      "scannedAt": "2026-10-24T18:34:22.605Z",
+      "repositoryCommit": "b142071ab2fb203182f7fbba12dccdc22b2ae6d7",
+      "scannedAt": "2026-11-02T14:12:16.621Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
@@ -863,7 +863,7 @@
           "domain": "DEP",
           "severity": "INFO",
           "file": "Dockerfile",
-          "line": 77,
+          "line": 78,
           "pattern": "(?:pip\\s+install[^\\n]*--user|npm\\s+install\\s+-g)",
           "description": "Global package installation instruction; review package provenance and scope.",
           "astRef": "AST02",
@@ -885,7 +885,7 @@
           "domain": "CMD",
           "severity": "WARNING",
           "file": "scripts/check-failsafe-reports.js",
-          "line": 77,
+          "line": 131,
           "pattern": "\\b(?:eval|exec)\\s*\\(",
           "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
           "astRef": "AST01",
@@ -929,7 +929,7 @@
           "domain": "CMD",
           "severity": "WARNING",
           "file": "scripts/flyway-migration-utils.js",
-          "line": 42,
+          "line": 54,
           "pattern": "\\b(?:eval|exec)\\s*\\(",
           "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
           "astRef": "AST01",
@@ -1005,6 +1005,17 @@
           "id": "CMD-002",
           "domain": "CMD",
           "severity": "WARNING",
+          "file": "scripts/generate-managed-agent-configuration-reference.mjs",
+          "line": 51,
+          "pattern": "\\b(?:eval|exec)\\s*\\(",
+          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
+          "astRef": "AST01",
+          "astTitle": "Malicious Skills"
+        },
+        {
+          "id": "CMD-002",
+          "domain": "CMD",
+          "severity": "WARNING",
           "file": "scripts/generate-release-notes.js",
           "line": 88,
           "pattern": "\\b(?:eval|exec)\\s*\\(",
@@ -1066,28 +1077,17 @@
           "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
           "astRef": "AST01",
           "astTitle": "Malicious Skills"
-        },
-        {
-          "id": "CMD-002",
-          "domain": "CMD",
-          "severity": "WARNING",
-          "file": "scripts/generate-release-notes.js",
-          "line": 755,
-          "pattern": "\\b(?:eval|exec)\\s*\\(",
-          "description": "Dynamic code execution pattern; verify whether untrusted input can reach it.",
-          "astRef": "AST01",
-          "astTitle": "Malicious Skills"
         }
       ],
-      "filesScanned": 1200,
-      "filesSkipped": 8903,
+      "filesScanned": 1207,
+      "filesSkipped": 5442,
       "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
     },
     {
       "entitySlug": "swe-agent",
       "repository": "https://github.com/SWE-agent/SWE-agent",
       "repositoryCommit": "3ea751c087f32b16e039a2233dd6eefecef325d5",
-      "scannedAt": "2026-10-24T18:34:07.460Z",
+      "scannedAt": "2026-11-02T14:12:02.599Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
@@ -1149,8 +1149,8 @@
     {
       "entitySlug": "browser-use",
       "repository": "https://github.com/browser-use/browser-use",
-      "repositoryCommit": "3df5806a0d097a1546d92c49bcf1b28c9972c3bd",
-      "scannedAt": "2026-10-24T18:34:07.001Z",
+      "repositoryCommit": "b49a68e4060acb226da8f784194fef301c53a6d7",
+      "scannedAt": "2026-11-02T14:12:02.075Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
@@ -1338,7 +1338,7 @@
           "astTitle": "Insecure Metadata"
         }
       ],
-      "filesScanned": 465,
+      "filesScanned": 466,
       "filesSkipped": 5,
       "scopeNote": "Heuristic static pattern scan of selected text files only. It does not execute code, inspect runtime behavior, or establish that a repository is secure."
     },
@@ -1346,7 +1346,7 @@
       "entitySlug": "gpt-researcher",
       "repository": "https://github.com/assafelovic/gpt-researcher",
       "repositoryCommit": "3582a6841fe7dc801e2a34e34ee408641aea9bce",
-      "scannedAt": "2026-10-24T18:34:07.046Z",
+      "scannedAt": "2026-11-02T14:12:02.507Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
@@ -1598,7 +1598,7 @@
       "entitySlug": "continue",
       "repository": "https://github.com/continuedev/continue",
       "repositoryCommit": "5522c6f44ca0ac3528b37244818fbfa39b5af470",
-      "scannedAt": "2026-10-24T18:34:30.426Z",
+      "scannedAt": "2026-11-02T14:12:07.582Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
@@ -1849,7 +1849,7 @@
       "entitySlug": "devika",
       "repository": "https://github.com/stitionai/devika",
       "repositoryCommit": "80bb343cbe4a4e5f5a0ba08d2524920139baceb6",
-      "scannedAt": "2026-10-24T18:34:26.838Z",
+      "scannedAt": "2026-11-02T14:12:03.681Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
@@ -1934,7 +1934,7 @@
       "entitySlug": "perplexica",
       "repository": "https://github.com/ItzCrazyKns/Vane",
       "repositoryCommit": "348feca3e378fb4157b217724ed508dc707f853f",
-      "scannedAt": "2026-10-24T18:34:27.800Z",
+      "scannedAt": "2026-11-02T14:12:04.185Z",
       "standard": "OWASP Agentic Skills Top 10 (AST10) v1.0 referenced",
       "scannerVersion": "1.0.0",
       "scoreMethod": "Local weighted pattern count; not an OWASP score, vulnerability probability, or security certification.",
